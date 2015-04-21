@@ -29,9 +29,17 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.9'
   spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rdoc', '~> 4.2.0'
+  spec.add_development_dependency 'jeweler', '~> 2.0.1'
+  spec.add_development_dependency 'yard', '~> 0.8.7.6'
+  spec.add_development_dependency 'gem-release', '~> 0.7.3'
+  spec.add_development_dependency 'coveralls', '0.8.1'
+  spec.add_development_dependency 'rspec', '3.2.0'
+  spec.add_development_dependency 'shoulda', '3.5.0'
+  spec.add_development_dependency 'simplecov', '0.10.0'
 
   spec.add_runtime_dependency 'dir', '~> 0.1.2'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6.6.2'
   spec.add_runtime_dependency 'rainbow', '~> 2.0.0'
-  #spec.add_runtime_dependency 'pry', '~> 0.10.1'
+  spec.add_runtime_dependency 'pry', '~> 0.10.1'
 end

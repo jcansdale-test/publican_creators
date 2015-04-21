@@ -1,0 +1,74 @@
+= \youtube_dlhelper
+
+home :: https://github.com/saigkill/youtube_dlhelper
+license :: http://opensource.org/licenses/GPL-3.0
+version :: {<img src="https://badge.fury.io/rb/youtube_dlhelper.png" alt="version">}[http://rubygems.org/gems/youtube_dlhelper]
+continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/youtube_dlhelper.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/youtube_dlhelper]
+test coverage :: {<img src="https://coveralls.io/repos/saigkill/youtube_dlhelper/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/youtube_dlhelper?branch=master]
+code quality :: {<img src="https://codeclimate.com/github/saigkill/youtube_dlhelper.png" />}[https://codeclimate.com/github/saigkill/youtube_dlhelper]
+dependency check :: {<img src="https://gemnasium.com/saigkill/youtube_dlhelper.png" alt="Dependency Status" />}[https://gemnasium.com/saigkill/youtube_dlhelper]
+still maintained? :: {<img src="http://stillmaintained.com/saigkill/youtube_dlhelper.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/youtube_dlhelper]
+documentation :: http://rubydoc.info/github/saigkill/youtube_dlhelper/master/frames
+bugs :: https://github.com/saigkill/youtube_dlhelper/issues
+authors blog :: http://saigkill.ddns.net/wordpress/
+ohloh :: https://www.ohloh.net/p/youtube_dlhelper
+openhatch :: http://openhatch.org/projects/youtube_dlhelper
+
+== Description
+
+The youtube_dlhelper is a short tool for download and manage the downloaded files. You are running the program inside the command line with a Youtube URL. Then it aska for a
+group name or interpreters name. Now it creates a Subfolder inside your Musicdirectory. Then it makes a MP3 from the downloaded file and moves it to the folder.
+
+== Installation
+
+The installation is very easy.
+
+    gem install youtube_dlhelper
+
+== Hard dependencies
+Just a preinstalled ffmpeg.
+
+== Soft dependencies
+I'm using:
+
+* highline
+* dir
+* fileutils2
+* parseconfig
+* viddl-rb
+* streamio-ffmpeg
+* rainbow
+
+Bundler should solve the dependencies by itself.
+
+== Configuration
+There are two important settings for you to set. Look into the lib/youtube_dlhelper.conf.
+
+=== musicdir
+The musicdir actually points to my place: musicdir = '/home/sascha/Musik' So you have to replace it with your once.
+
+=== ogg_file_accept
+In many cases Youtube gives out a *.mp4 file and then viddl extracts the audio to a *.m4a file. The ripper transcodes them to MP3. In some cases Yotube delivers a *.webm file and the extracted audio comes into a .ogg file. If you accepts that, youtube_dlhelper exits. If you change the setting from true to false youtube_dlhelper starts the ripper to transcode it to MP3.
+
+== Usage
+
+    bin/youtube_dlhelper YoutubeURL
+
+
+Example:
+
+    youtube_dlhelper http://www.youtube.com/watch?v=aHjpOzsQ9YI
+    If a http:// URL doesn't work use http:// instead
+
+Before running the program you have to open the youtube_dlhelper.conf and change the settings (See Configuration).
+
+== Feature Requests & Bug Reports
+You can file Requests and Reports on the Github Repository: https://github.com/saigkill/youtube_dlhelper/issues
+
+== Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
