@@ -1,3 +1,13 @@
+require 'PublicanCreators/change'
+
+module PublicanCreatorsExport
+
+  def self.export_buildscript(titel)
+    builds = "#{titel}/de-DE/build.sh"
+    # Shellscriptoutput oder Modifikation
+    puts 'Exportiere Build-Shellscript in das neue Verzeichnis'
+    FileUtils.touch "#{builds}"
+    File.write "#{builds}", <<EOF
 #!/bin/bash
 # Description: This script builds PDF, DOCX, ODT, RTF and WML
 # Usage: build.sh [-docx] [-odt] [-rtf] [-wml] [-pdf]
@@ -129,3 +139,6 @@ case "$1" in
         usage
 esac
 exit 0
+EOF
+  end
+end

@@ -33,4 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'dir', '~> 0.1.2'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6.6.2'
   spec.add_runtime_dependency 'rainbow', '~> 2.0.0'
+  #spec.add_runtime_dependency 'pry', '~> 0.10.1'
 end
