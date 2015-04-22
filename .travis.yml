@@ -15,7 +15,7 @@ before_install:
   - sudo add-apt-repository ppa:sascha-manns-h/publican -y
   - sudo apt-get update
   - sudo apt-get install publican yad
-  - sudo apt-get install publican-xcom publican-manns publican-ils
+  - sudo apt-get install publican-xcom
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose

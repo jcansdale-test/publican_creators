@@ -61,8 +61,8 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3906977" vertical-offset="0" max-vertical-offset="645">
-              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.4744186" vertical-offset="0" max-vertical-offset="645">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -514,7 +514,11 @@
       <created>1429724224792</created>
       <updated>1429724224792</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed apt-get install in before_install">
+      <created>1429725093368</created>
+      <updated>1429725093368</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers>
       <YouTrack shared="false" url="http://localhost:8112">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -971,8 +975,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3906977" vertical-offset="0" max-vertical-offset="645">
-          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.4744186" vertical-offset="0" max-vertical-offset="645">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding />
         </state>
       </provider>
