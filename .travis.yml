@@ -12,7 +12,10 @@ env:
     - LC_ALL=en_US.UTF-8
 
 before_install:
-  - sudo apt-get publican yad
+  - sudo add-apt-repository ppa:sascha-manns-h/publican
+  - sudo apt-get update
+  - sudo apt-get install publican yad
+  - sudo apt-get install publican-xcom publican-manns publican-ils
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose
