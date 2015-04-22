@@ -4,15 +4,15 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'PublicanCreators/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'PublicanCreators'
-  spec.version       = PublicanCreators::VERSION
-  spec.authors       = ['Sascha Manns']
-  spec.email         = ['Sascha.Manns@xcom.de']
+  spec.name = 'PublicanCreators'
+  spec.version = PublicanCreators::VERSION
+  spec.authors = ['Sascha Manns']
+  spec.email = ['Sascha.Manns@xcom.de']
 
-  spec.summary       = %q{A short program to fix the publican documentation}
-  spec.description   = %q{This program creates a publican initial documentation from a special brand. Then it modifies the output to our needs.}
-  spec.homepage      = 'https://github.com/saigkill/PublicanCreators'
-  spec.license       = 'GPL-3'
+  spec.summary = %q{A short program to fix the publican documentation}
+  spec.description = %q{This program creates a publican initial documentation from a special brand. Then it modifies the output to our needs.}
+  spec.homepage = 'https://github.com/saigkill/PublicanCreators'
+  spec.license = 'GPL-3'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
@@ -22,15 +22,14 @@ Gem::Specification.new do |spec|
     raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'bin'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir = 'bin'
+  spec.executables = spec.files.grep(%r{^sh/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.9'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake', '~> 10.4.2'
   spec.add_development_dependency 'rdoc', '~> 4.2.0'
-  spec.add_development_dependency 'jeweler', '~> 2.0.1'
   spec.add_development_dependency 'yard', '~> 0.8.7.6'
   spec.add_development_dependency 'gem-release', '~> 0.7.3'
   spec.add_development_dependency 'coveralls', '0.8.1'
@@ -43,3 +42,4 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rainbow', '~> 2.0.0'
   spec.add_runtime_dependency 'pry', '~> 0.10.1'
 end
+

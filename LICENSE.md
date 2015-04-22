@@ -1,4 +1,4 @@
-Copyright (c) 2013-2015 Sascha Manns <Sascha.Manns@bdvb.de>
+Copyright (c) 2013-2015 Sascha Manns <Sascha.Manns@xcom.de>
 
 # GNU GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007

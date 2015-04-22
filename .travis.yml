@@ -1,0 +1,22 @@
+language: ruby
+rvm:
+  - 2.2.2
+  - 2.2.1
+
+env:
+  global:
+    - JRUBY_OPTS=-Xcext.enabled=true
+    - CI=true
+    - TRAVIS=true
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+
+before_install:
+  - sudo apt-get publican yad
+
+after_success:
+    - CI=true TRAVIS=true coveralls --verbose
+
+notifications:
+  email:
+    - Sascha.Manns@bdvb.de

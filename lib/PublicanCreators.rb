@@ -8,7 +8,6 @@ require 'PublicanCreators/get'
 require 'PublicanCreators/change'
 require 'PublicanCreators/export'
 require 'fileutils'
-require 'tempfile'
 require 'nokogiri'
 require 'rainbow/ext/string'
 require 'bundler/setup'
@@ -36,16 +35,54 @@ puts 'GNU General Public License for more details.'
 puts 'You should have received a copy of the GNU General Public License'
 puts 'along with this program.  If not, see <http://www.gnu.org/licenses/>.'
 
-titel = PublicanCreatorsGet.get_title
-titel = titel[0]
-report = titel[1]
-book = titel[2]
+titelget = PublicanCreatorsGet.get_title
+umgebung = titelget[0] # Dienstlich oder Privat
+typ = titelget[1] # Artikel oder Buch
+opt = titelget[2] # Report oder ILS
+titel = titelget[3] # Titel
 
+puts "Umgebung: #{umgebung}"
+puts "Typ: #{typ}"
+puts "Opt: #{opt}"
+puts "Titel: #{titel}"
+
+if opt == 'Report'
+  report = 'TRUE'
+else
+  report = 'FALSE'
+end
+if opt == 'ILS'
+  ils = 'TRUE'
+else
+  ils = 'FALSE'
+end
+
+devel = 'true'
 # Variablen
+if devel == 'true'
+  target = 'publican-dokumentation2'
+  target_manns = 'publican-manns2'
+else
+  target = 'publican-dokumentation'
+  target_manns = 'publican-manns'
+end
+
 home = Dir.home
-articles_dir = "#{home}/Dokumente/Textdokumente/publican-dokumentation2/articles/Projekte/GSBUHA/Dokumentation/"
-reports_docdir = "#{home}/Dokumente/Textdokumente/publican-dokumentation2/articles/Projekte/GSBUHA/Dokumentation/Reports/"
-books_docdir = "#{home}/Dokumente/Textdokumente/publican-dokumentation2/books"
+if umgebung == 'Dienstlich'
+  if report == 'TRUE'
+    articles_dir = "#{home}/Dokumente/Textdokumente/#{target}/articles/Projekte/GSBUHA/Dokumentation/Reports/"
+  else
+    articles_dir = "#{home}/Dokumente/Textdokumente/#{target}/articles/Projekte/GSBUHA/Dokumentation/"
+  end
+  books_docdir = "#{home}/Dokumente/Textdokumente/#{target}/books"
+else
+  if ils == 'FALSE'
+    articles_dir = "#{home}/Dokumente/Textdokumente/#{target_manns}/articles"
+  else
+    articles_dir = "#{home}/Dokumente/Textdokumente/#{target_manns}/articles/ils"
+  end
+  books_docdir = "#{home}/Dokumente/Textdokumente/#{target_manns}/books"
+end
 
 artinfo = "#{titel}/de-DE/Article_Info.xml"
 bookinfo = "#{titel}/de-DE/Book_Info.xml"
@@ -54,71 +91,43 @@ agroup = "#{titel}/de-DE/Author_Group.xml"
 builds = "#{titel}/de-DE/build.sh"
 ent = "#{titel}/de-DE/#{titel}.ent"
 
-if book == 'FALSE'
-  # Checkt ob articles_dir exisitert. Wenn nicht, wird es erstellt
-  puts "Erstellt Verzeichnis #{articles_dir}"
-  Checker.check_dir(articles_dir)
-
-  # Wechsel in article Verzeichnis
-  puts 'Wechsle in article Verzeichnis'
-  FileUtils.cd(articles_dir) do
-
-    PublicanCreatorsChange.init_doku(titel)
-
-    PublicanCreatorsChange.add_entity(ent)
-
-    PublicanCreatorsChange.change_holder(titel)
-
-    PublicanCreatorsChange.remove_legal(artinfo)
-
-    PublicanCreatorsChange.remove_orgname(artinfo)
-
-    PublicanCreatorsChange.fix_revhist(revhist)
-
-    PublicanCreatorsChange.fix_authorgroup(agroup)
-
-    PublicanCreatorsExport.export_buildscript(titel)
-
-    PublicanCreatorsChange.make_buildscript_exe(builds)
-
-    # Verschiebe erzeugtes Verzeichnis
-    puts 'Verschiebe Verzeichnis an den richtigen Platz'
-    if report == 'TRUE'
-      Checker.check_dir(reports_docdir)
-      FileUtils.mv "#{titel}", "#{reports_docdir}"
-      puts "Sie finden Ihre Dokumentation unter #{reports_docdir}/#{titel}"
-    else
-      puts "Sie finden Ihre Dokumentation unter #{articles_dir}/#{titel}"
-    end
-  end
-
+if typ == 'Artikel'
+  todo = "#{articles_dir}"
 else
-  # Checkt ob articles_dir exisitert. Wenn nicht, wird es erstellt
-  puts "Erstellt Verzeichnis #{books_docdir}"
-  Checker.check_dir(books_docdir)
-
-  # Wechsel in article Verzeichnis
-  puts 'Wechsle in article Verzeichnis'
-  FileUtils.cd(books_docdir) do
-
-    PublicanCreatorsChange.init_doku_book(titel)
-
-    PublicanCreatorsChange.add_entity(ent)
-
-    PublicanCreatorsChange.change_holder(titel)
-
-    PublicanCreatorsChange.remove_orgname(bookinfo)
-
-    PublicanCreatorsChange.fix_revhist(revhist)
-
-    PublicanCreatorsChange.fix_authorgroup(agroup)
-
-    PublicanCreatorsExport.export_buildscript(titel)
-
-    PublicanCreatorsChange.make_buildscript_exe(builds)
-
-    puts "Sie finden Ihre Dokumentation unter #{books_docdir}/#{titel}"
-  end
+  todo = "#{books_docdir}"
 end
 
-puts "Vielen Dank für die Benutzung von #{my_name} #{version}"
+# Checkt ob articles_dir exisitert. Wenn nicht, wird es erstellt
+puts "Erstellt Verzeichnis #{todo}"
+Checker.check_dir(todo)
+
+# Wechsel in article Verzeichnis
+puts 'Wechsle in article Verzeichnis'
+FileUtils.cd(todo) do
+
+  PublicanCreatorsChange.init_doku(titel, umgebung, typ, ils)
+
+  PublicanCreatorsChange.add_entity(ent, umgebung)
+
+  PublicanCreatorsChange.change_holder(titel, ent, umgebung)
+
+  PublicanCreatorsChange.remove_legal(artinfo, umgebung, typ)
+
+  if typ == 'Artikel'
+    PublicanCreatorsChange.remove_orgname(artinfo, umgebung)
+  else
+    PublicanCreatorsChange.remove_orgname(bookinfo, umgebung)
+  end
+
+  PublicanCreatorsChange.fix_revhist(revhist, umgebung)
+
+  PublicanCreatorsChange.fix_authorgroup(agroup, umgebung)
+
+  PublicanCreatorsExport.export_buildscript(titel)
+
+  PublicanCreatorsChange.make_buildscript_exe(builds)
+
+  puts "Sie finden Ihre Dokumentation unter #{articles_dir}/#{titel}"
+
+  puts "Vielen Dank für die Benutzung von #{my_name} #{version}"
+end

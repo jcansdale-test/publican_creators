@@ -1,69 +1,67 @@
-= \youtube_dlhelper
+= \PublicanCreators
 
-home :: https://github.com/saigkill/youtube_dlhelper
+home :: https://github.com/saigkill/PublicanCreators
 license :: http://opensource.org/licenses/GPL-3.0
-version :: {<img src="https://badge.fury.io/rb/youtube_dlhelper.png" alt="version">}[http://rubygems.org/gems/youtube_dlhelper]
-continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/youtube_dlhelper.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/youtube_dlhelper]
-test coverage :: {<img src="https://coveralls.io/repos/saigkill/youtube_dlhelper/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/youtube_dlhelper?branch=master]
-code quality :: {<img src="https://codeclimate.com/github/saigkill/youtube_dlhelper.png" />}[https://codeclimate.com/github/saigkill/youtube_dlhelper]
-dependency check :: {<img src="https://gemnasium.com/saigkill/youtube_dlhelper.png" alt="Dependency Status" />}[https://gemnasium.com/saigkill/youtube_dlhelper]
-still maintained? :: {<img src="http://stillmaintained.com/saigkill/youtube_dlhelper.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/youtube_dlhelper]
-documentation :: http://rubydoc.info/github/saigkill/youtube_dlhelper/master/frames
-bugs :: https://github.com/saigkill/youtube_dlhelper/issues
+version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="version">}[http://rubygems.org/gems/PublicanCreators]
+continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/PublicanCreators]
+test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/PublicanCreators?branch=master]
+code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators.png" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
+dependency check :: {<img src="https://gemnasium.com/saigkill/PublicanCreators.png" alt="Dependency Status" />}[https://gemnasium.com/saigkill/PublicanCreators]
+still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/PublicanCreators]
+documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
+bugs :: https://github.com/saigkill/PublicanCreators/issues
 authors blog :: http://saigkill.ddns.net/wordpress/
-ohloh :: https://www.ohloh.net/p/youtube_dlhelper
-openhatch :: http://openhatch.org/projects/youtube_dlhelper
+ohloh :: https://www.ohloh.net/p/PublicanCreators
+openhatch :: http://openhatch.org/projects/PublicanCreators
 
 == Description
 
-The youtube_dlhelper is a short tool for download and manage the downloaded files. You are running the program inside the command line with a Youtube URL. Then it aska for a
-group name or interpreters name. Now it creates a Subfolder inside your Musicdirectory. Then it makes a MP3 from the downloaded file and moves it to the folder.
+PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool. PublicanCreators asks after launching which title, type and environment
+should be used. Then it starts publican with that settings and works then with the produced files. So it adds the users information in the Article_Info, Revision_History and
+so on. In the present version it loads the XCOM Entities into the new produced entity file. Also it removes by choosing "Work" the Legalnotice from any articles root.
+In future version it is planned to exclude the hardcoded things into a config file. So every user can define its own settings.
 
 == Installation
 
 The installation is very easy.
 
-    gem install youtube_dlhelper
+    gem install PublicanCreators
 
 == Hard dependencies
-Just a preinstalled ffmpeg.
+* yad
+* publican
+* publican-xcom and publican-manns from Ubuntu Launchpad
 
 == Soft dependencies
 I'm using:
 
-* highline
 * dir
-* fileutils2
-* parseconfig
-* viddl-rb
-* streamio-ffmpeg
+* fileutils
+* nokogiri
 * rainbow
 
 Bundler should solve the dependencies by itself.
 
 == Configuration
-There are two important settings for you to set. Look into the lib/youtube_dlhelper.conf.
+Currently no config file available.
 
-=== musicdir
-The musicdir actually points to my place: musicdir = '/home/sascha/Musik' So you have to replace it with your once.
-
-=== ogg_file_accept
-In many cases Youtube gives out a *.mp4 file and then viddl extracts the audio to a *.m4a file. The ripper transcodes them to MP3. In some cases Yotube delivers a *.webm file and the extracted audio comes into a .ogg file. If you accepts that, youtube_dlhelper exits. If you change the setting from true to false youtube_dlhelper starts the ripper to transcode it to MP3.
+== Settings
+PublicanCreators knows two environments: Work and Private. Then it knows the types: Article and Book. Then it handles the options: Normal, Reports and ILS.
+By using Work it uses the publican XCOM brand. By using private it uses the publican-manns brand for creating new documentation.
+If you choose the XCOM style the book type mades a normal book with resolved user information. A Work Article also produces a Article with XCOM brand, with
+also resolved user information but with removed Legalnotice and removed Orgname (It places a big image on articlemainpage.
+Reports are normal Articles but they are placed into another subdirectory.
+The environment private just produces a normal output just with using the manns brand.
+ILS i'm using for creating homeworks for a distance learning school.
 
 == Usage
 
-    bin/youtube_dlhelper YoutubeURL
+    bin/PublicanCreators
 
-
-Example:
-
-    youtube_dlhelper http://www.youtube.com/watch?v=aHjpOzsQ9YI
-    If a http:// URL doesn't work use http:// instead
-
-Before running the program you have to open the youtube_dlhelper.conf and change the settings (See Configuration).
+Or just use the Menu button.
 
 == Feature Requests & Bug Reports
-You can file Requests and Reports on the Github Repository: https://github.com/saigkill/youtube_dlhelper/issues
+You can file Requests and Reports on the Github Repository: https://github.com/saigkill/PublicanCreators/issues
 
 == Contributing
 

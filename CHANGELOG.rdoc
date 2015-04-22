@@ -1,0 +1,9 @@
+= \CHANGELOG
+
+== unreleased
+
+=== Features
+* Fetches the titlename, type and environment from a yad dialogbox
+* Creates the initial documentation by using publican with using your titlename, your choosen type and environment
+
+=== Bugfixes
