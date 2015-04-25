@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov', '0.10.0'
 
   spec.add_runtime_dependency 'dir', '~> 0.1.2'
-  spec.add_runtime_dependency 'nokogiri', '~> 1.6', '~> 1.6.6.2'
-  spec.add_runtime_dependency 'parseconfig', '1.0', '~> 1.0.6'
+  spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
+  spec.add_runtime_dependency 'parseconfig', '~> 1.0', '>= 1.0.6'
 end
 
