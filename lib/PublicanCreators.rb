@@ -31,6 +31,7 @@ require 'fileutils'
 require 'nokogiri'
 require 'bundler/setup'
 
+# Main class from PublicanCreators
 class PublicanCreators
   my_name = 'PublicanCreators.rb'
   version = PublicanCreatorsVersion::VERSION
@@ -166,34 +167,54 @@ class PublicanCreators
     todo = "#{books_dir}"
   end
 
-# Checks if the needed directory is available. Otherwise it creates one.
   puts "Creating directory #{todo}"
+  # Checks if the needed directory is available. Otherwise it creates one.
   Checker.check_dir(todo)
 
-# Change to target directory
   puts 'Change to this directory'
+  # Change to target directory
   FileUtils.cd(todo) do
 
-    PublicanCreatorsChange.init_docu(title, environment, type, homework, language, brand, brand_homework, brand_private, db5)
+    if environment == 'Work'
+      # Create the initial documentation for work
+      PublicanCreatorsChange.init_docu_work(title, type, language, brand, db5)
+    else
+      if homework == 'TRUE'
+        # Create the initial documentation for homework
+        PublicanCreatorsChange.init_docu_homework(homework, type, language, title, brand_homework, db5)
+      else
+        # Create the initial documentation for private
+        PublicanCreatorsChange.init_docu_private(title, type, language, brand_private, db5)
+      end
+    end
 
+    # Add the entities to the entity file
     PublicanCreatorsChange.add_entity(ent, environment, global_entities, brand)
 
+    # Change the default holder to the present one
     PublicanCreatorsChange.change_holder(title, ent, environment, name, company_name)
 
+    # Remove legalnotice from Article_Info
     PublicanCreatorsChange.remove_legal(artinfo, environment, type, legal)
 
     if type == 'Article'
+      # Remove title logo
       PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo)
     else
+      # Remove title logo
       PublicanCreatorsChange.remove_orgname(bookinfo, environment, title_logo)
     end
 
+    # Change the Revision History
     PublicanCreatorsChange.fix_revhist(revhist, environment, name, email_business, email)
 
+    # Change Author group
     PublicanCreatorsChange.fix_authorgroup(agroup, environment, name, email, email_business, company_name, company_division)
 
+    # Export a buildscript
     PublicanCreatorsExport.export_buildscript(title, builds, language)
 
+    # Make buildscript executable
     PublicanCreatorsChange.make_buildscript_exe(builds)
 
     puts "Now you can find your documentation there: #{todo}/#{title}"

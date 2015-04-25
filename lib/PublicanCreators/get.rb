@@ -26,6 +26,7 @@
 require 'parseconfig'
 require 'dir'
 
+# This module contains two methods for getting users input
 module PublicanCreatorsGet
 
   # ask for the title
@@ -39,7 +40,7 @@ module PublicanCreatorsGet
     title = titlechomp.split(' ')
   end
 
-  # get configuration
+  # get configuration from configuration file
   def self.config
     #config = ParseConfig.new(File.join(File.dirname(__FILE__), '.publicancreators.cfg'))
     home = Dir.home
