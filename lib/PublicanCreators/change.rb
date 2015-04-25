@@ -27,66 +27,71 @@ require 'nokogiri'
 require 'dir'
 require 'PublicanCreators/checker'
 
-# This module contains all methods who making changes in files
 module PublicanCreatorsChange
 
-  # This method creates an initial documentation for work with publican
-  def self.init_docu_work(title, type, language, brand, db5)
-    if type == 'Article'
-      # Initial creation of documentation with publican
-      puts 'Creating initial documentation ...'
-      string = "--type Article --lang #{language} --name #{title}"
-      if brand == ''
-        # do nothing
-      else
-        string << " --brand #{brand}"
-      end
-      if db5 == 'true'
-        string << ' --dtdver 5.0'
-      end
-      system("publican create #{string}")
-    else
-      # Initial creation of documentation with publican
-      puts 'Creating initial documentation ...'
-      string = "--lang #{language} --name #{title}"
-      if brand == ''
-        # do nothing
-      else
-        string << " --brand #{brand}"
-      end
-      if db5 == 'true'
-        string << ' --dtdver 5.0'
-      end
-      system("publican create #{string}")
-    end
-  end
-
-  def self.init_docu_homework(homework, type, language, title, brand_homework, db5)
-    if homework == 'TRUE'
+  def self.init_docu(title, environment, type, homework, language, brand, brand_homework, brand_private, db5)
+    if environment == 'Work'
       if type == 'Article'
+        # Initial creation of documentation with publican
         puts 'Creating initial documentation ...'
         string = "--type Article --lang #{language} --name #{title}"
-        if brand_homework == ''
+        if brand == ''
           # do nothing
         else
-          string << " --brand #{brand_homework}"
+          string << " --brand #{brand}"
+        end
+        if db5 == 'true'
+          string << ' --dtdver 5.0'
+        end
+        system("publican create #{string}")
+      else
+        # Initial creation of documentation with publican
+        puts 'Creating initial documentation ...'
+        string = "--lang #{language} --name #{title}"
+        if brand == ''
+          # do nothing
+        else
+          string << " --brand #{brand}"
         end
         if db5 == 'true'
           string << ' --dtdver 5.0'
         end
         system("publican create #{string}")
       end
-    end
-  end
-
-  # This method creates an initial documentation with publican
-  def self.init_docu_private(title, type, language, brand_private, db5)
-    if type == 'Article'
-      # Initial creation of documentation with publican
-      puts 'Creating initial documentation ...'
-      string = "--type Article --lang #{language} --name #{title}"
-      if brand_private == ''
-        # do nothing
+    else
+      if type == 'Article'
+        # Initial creation of documentation with publican
+        if homework == 'FALSE'
+          puts 'Creating initial documentation ...'
+          string = "--type Article --lang #{language} --name #{title}"
+          if brand == ''
+            # do nothing
+          else
+            string << " --brand #{brand_private}"
+          end
+          if db5 == 'true'
+            string << ' --dtdver 5.0'
+          end
+          system("publican create #{string}")
+        else
+          puts 'Creating initial documentation ...'
+          string = "--type Article --lang #{language} --name #{title}"
+          if brand == ''
+            # do nothing
+          else
+            string << " --brand #{brand_homework}"
+          end
+          if db5 == 'true'
+            string << ' --dtdver 5.0'
+          end
+          system("publican create #{string}")
+        end
+      else
+        # Initial creation of documentation with publican
+        puts 'Creating initial documentation ...'
+        string = "--lang #{language} --name #{title}"
+        if brand == ''
+          # do nothing
         else
           string << " --brand #{brand_private}"
         end
@@ -94,24 +99,9 @@ module PublicanCreatorsChange
           string << ' --dtdver 5.0'
         end
         system("publican create #{string}")
-    else
-      # Initial creation of documentation with publican
-      puts 'Creating initial documentation ...'
-      string = "--lang #{language} --name #{title}"
-      if brand_private == ''
-        # do nothing
-      else
-        string << " --brand #{brand_private}"
       end
-      if db5 == 'true'
-        string << ' --dtdver 5.0'
-      end
-      system("publican create #{string}")
     end
-  end
-
-  # checking if new documentation directory exists
-  def self.dir_exists(title)
+    # checking if new documentation directory exists
     if Dir.exist?(title)
       puts 'Creating documentation was a success...'
     else
@@ -119,7 +109,6 @@ module PublicanCreatorsChange
     end
   end
 
-  # This method adds entities from an global entity file
   def self.add_entity(ent, environment, global_entities, brand)
     if environment == 'Work'
       if brand == 'XCOM'
@@ -141,7 +130,6 @@ module PublicanCreatorsChange
     end
   end
 
-  # This method can change the holder in the projects entity file
   def self.change_holder(title, ent, environment, name, company_name)
     # Replace the Holder with the real one
     puts 'Replace holder field with the present user'
@@ -158,7 +146,6 @@ module PublicanCreatorsChange
     end
   end
 
-  # This method removes the orgname node in Article_Info because the title_logo will be defined in XSL-FO
   def self.remove_orgname(artinfo, environment, title_logo)
     # Remove titlepage logo because of doing this with the publican branding files
     if environment == 'Work'
@@ -178,7 +165,6 @@ module PublicanCreatorsChange
     end
   end
 
-  # This method removes the legal notice in the case that you are using it in another way
   def self.remove_legal(artinfo, environment, type, legal)
     if environment == 'Work'
       if type == 'Article'
@@ -199,7 +185,6 @@ module PublicanCreatorsChange
 
   end
 
-  # This method changes the default information with users information from config file
   def self.fix_revhist(revhist, environment, name, email_business, email)
     namechomp = name.chomp
     # Split the variable to the array title[*]
@@ -238,7 +223,6 @@ module PublicanCreatorsChange
     }
   end
 
-  # This method also changes the default information with the user information from the config file
   def self.fix_authorgroup(agroup, environment, name, email, email_business, company_name, company_division)
     namechomp = name.chomp
     # Split the variable to the array title[*]
@@ -297,7 +281,6 @@ module PublicanCreatorsChange
     }
   end
 
-  # This method just makes the buildscript executable
   def self.make_buildscript_exe(builds)
     # Make the buildscript executable
     puts 'Making the buildscript executable ...'

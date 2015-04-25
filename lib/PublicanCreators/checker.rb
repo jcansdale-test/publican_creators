@@ -26,7 +26,6 @@
 require 'dir'
 require 'fileutils'
 
-# This Checker module contains a checker method
 module Checker
 
   # Checks if the targetdirectory are present. If not, it creates one

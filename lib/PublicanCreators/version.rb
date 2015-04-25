@@ -18,8 +18,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-# This module just contains the Version number
 module PublicanCreatorsVersion
-  # Just the present version number
   VERSION = '0.1.0'
 end
