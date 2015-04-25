@@ -1,3 +1,28 @@
+# Changer Module for PublicanCreators
+# It mades all changes in the files
+#
+# Copyright (C) 2015  Sascha Manns <Sascha.Manns@xcom.de>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:#
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+# Dependencies
+
 require 'nokogiri'
 require 'dir'
 require 'PublicanCreators/checker'
@@ -124,19 +149,20 @@ module PublicanCreatorsChange
   def self.remove_orgname(artinfo, environment, title_logo)
     # Remove titlepage logo because of doing this with the publican branding files
     if environment == 'Work'
-      if title_logo == 'false'
-        puts 'Remove title logo from Article_Info'
-        doc = Nokogiri::XML(IO.read(artinfo))
-        doc.search('orgname').each do |node|
-          node.remove
-          node.content = 'Children removed'
+      if type == 'Article'
+        if title_logo == 'false'
+          puts 'Remove title logo from Article_Info'
+          doc = Nokogiri::XML(IO.read(artinfo))
+          doc.search('orgname').each do |node|
+            node.remove
+            node.content = 'Children removed'
+          end
+          IO.write(artinfo, doc.to_xml)
         end
-        IO.write(artinfo, doc.to_xml)
+      else
+        puts 'Nothing to do'
       end
-    else
-      puts 'Nothing to do'
     end
-
   end
 
   def self.remove_legal(artinfo, environment, type, legal)
