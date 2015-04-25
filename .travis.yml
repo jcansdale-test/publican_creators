@@ -3,6 +3,9 @@ rvm:
   - 2.2.2
   - 2.2.1
 
+os:
+  - linux
+
 env:
   global:
     - JRUBY_OPTS=-Xcext.enabled=true

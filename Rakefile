@@ -1,4 +1,7 @@
-require "bundler/gem_tasks"
+# -*- ruby -*-
+require 'bundler/gem_tasks'
+require 'rubygems'
+require 'hoe'
 
 # encoding: utf-8
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
@@ -23,7 +26,7 @@ require 'rspec/core'
 require 'rspec/core/rake_task'
 desc 'Does anything with RSpec'
 RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList['spec/**/*_spec.rb']
+  spec.pattern = FileList['test/**/*_spec.rb']
 end
 task :default => :spec
 
@@ -36,5 +39,7 @@ task :test_with_coveralls => [:spec, 'coveralls:push']
 require 'yard'
 desc 'Run yarddoc for the source'
 YARD::Rake::YardocTask.new do |t|
-  t.files = %w(lib/**/*.rb CHANGELOG.rdoc CODE_OF_CONDUCT.md LICENSE.md README.md) # optional
+  t.files = %w('lib/**/*.rb', '-', 'CHANGELOG.rdoc', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
 end
+
+# vim: syntax=ruby

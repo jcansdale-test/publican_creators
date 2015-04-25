@@ -5,14 +5,14 @@ require 'PublicanCreators/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'PublicanCreators'
-  spec.version = PublicanCreators::VERSION
+  spec.version = PublicanCreatorsVersion::VERSION
   spec.authors = ['Sascha Manns']
   spec.email = ['Sascha.Manns@xcom.de']
 
   spec.summary = %q{A short program to fix the publican documentation}
   spec.description = %q{This program creates a publican initial documentation from a special brand. Then it modifies the output to our needs.}
   spec.homepage = 'https://github.com/saigkill/PublicanCreators'
-  spec.license = 'GPL-3'
+  spec.license = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
@@ -39,7 +39,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'dir', '~> 0.1.2'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6.6.2'
-  spec.add_runtime_dependency 'rainbow', '~> 2.0.0'
-  spec.add_runtime_dependency 'pry', '~> 0.10.1'
+  spec.add_runtime_dependency 'parseconfig', '~> 1.0.6'
 end
 

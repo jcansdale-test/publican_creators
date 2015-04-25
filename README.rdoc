@@ -1,7 +1,7 @@
 = \PublicanCreators
 
 home :: https://github.com/saigkill/PublicanCreators
-license :: http://opensource.org/licenses/GPL-3.0
+license :: http://opensource.org/licenses/MIT
 version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="version">}[http://rubygems.org/gems/PublicanCreators]
 continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/PublicanCreators]
 test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/PublicanCreators?branch=master]

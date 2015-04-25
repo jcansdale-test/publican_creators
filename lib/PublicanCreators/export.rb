@@ -1,11 +1,11 @@
 require 'PublicanCreators/change'
+require 'fileutils'
 
 module PublicanCreatorsExport
 
-  def self.export_buildscript(titel)
-    builds = "#{titel}/de-DE/build.sh"
-    # Shellscriptoutput oder Modifikation
-    puts 'Exportiere Build-Shellscript in das neue Verzeichnis'
+  # Exports a predefined Shellscript to the target directory.
+  def self.export_buildscript(title, builds, language)
+    puts 'Export the buildscript into new directory...'
     FileUtils.touch "#{builds}"
     File.write "#{builds}", <<EOF
 #!/bin/bash
@@ -43,54 +43,54 @@ exit 1
 case "$1" in
     -docx)
         echo "Auflösung aller XML-Entities und XI-XIncludes"
-        xmllint --noent --dropdtd --xinclude #{titel}.xml -o #{titel}-resolved.xml
+        xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
         echo "Formatiere XML nach XSL-FO"
-        saxon-xslt -o #{titel}.fo #{titel}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
-        rm #{titel}-resolved.xml
+        saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
+        rm #{title}-resolved.xml
         echo "Führe Transformation nach DOCX durch"
-        fo2docx #{titel}.fo > #{titel}.docx
+        fo2docx #{title}.fo > #{title}.docx
         echo "Starte LibreOffice Writer zur Ansicht"
-        lowriter #{titel}.docx &
+        lowriter #{title}.docx &
         ;;
     -odt)
         echo "Auflösung aller XML-Entities und XI-XIncludes"
-        xmllint --noent --dropdtd --xinclude #{titel}.xml -o #{titel}-resolved.xml
+        xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
         echo "Formatiere XML nach XSL-FO"
-        saxon-xslt -o #{titel}.fo #{titel}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
-        rm #{titel}-resolved.xml
+        saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
+        rm #{title}-resolved.xml
         echo "Führe Transformation nach ODT durch"
-        fo2odt #{titel}.fo > #{titel}.odt
+        fo2odt #{title}.fo > #{title}.odt
         echo "Starte LibreOffice Writer zur Ansicht"
-        lowriter #{titel}.odt &
+        lowriter #{title}.odt &
         ;;
     -rtf)
         echo "Auflösung aller XML-Entities und XI-XIncludes"
-        xmllint --noent --dropdtd --xinclude #{titel}.xml -o #{titel}-resolved.xml
+        xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
         echo "Formatiere XML nach XSL-FO"
-        saxon-xslt -o #{titel}.fo #{titel}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
-        rm #{titel}-resolved.xml
+        saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
+        rm #{title}-resolved.xml
         echo "Führe Transformation nach RTF durch"
-        fo2rtf #{titel}.fo > #{titel}.rtf
+        fo2rtf #{title}.fo > #{title}.rtf
         echo "Starte LibreOffice Writer zur Ansicht"
-        lowriter #{titel}.rtf &
+        lowriter #{title}.rtf &
         ;;
     -wml)
         echo "Auflösung aller XML-Entities und XI-XIncludes"
-        xmllint --noent --dropdtd --xinclude #{titel}.xml -o #{titel}-resolved.xml
+        xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
         echo "Formatiere XML nach XSL-FO"
-        saxon-xslt -o #{titel}.fo #{titel}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
-        rm #{titel}-resolved.xml
+        saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
+        rm #{title}-resolved.xml
         echo "Führe Transformation nach WML durch"
-        fo2wml #{titel}.fo > #{titel}.wml
+        fo2wml #{title}.fo > #{title}.wml
         echo "Starte LibreOffice Writer zur Ansicht"
-        lowriter #{titel}.wml &
+        lowriter #{title}.wml &
         ;;
     -pdf)
         cd ..
         echo "Räume temporäres Verzeichnis auf"
         publican clean
         echo "Formatiere Docbook Dokument und rendere es nach PDF"
-        publican build --langs=de-DE --formats=pdf --allow_network
+        publican build --langs=#{language} --formats=pdf --allow_network
         echo "Starte PDF-Betrachter"
         /opt/cxoffice/bin/wine --bottle "PDF-XChange Viewer 2.x" --cx-app PDFXCview.exe tmp/de-DE/pdf/*.pdf &
         ;;
@@ -99,7 +99,7 @@ case "$1" in
         echo "Räume temporäres Verzeichnis auf"
         publican clean
         echo "Formatiere Docbook Dokument und rendere es nach HTML"
-        publican build --langs=de-DE --formats=html --allow_network
+        publican build --langs=#{language} --formats=html --allow_network
         echo "Starte Browser"
         firefox tmp/de-DE/html/index.html &
         ;;
@@ -108,14 +108,14 @@ case "$1" in
         echo "Räume temporäres Verzeichnis auf"
         publican clean
         echo "Formatiere Docbook Dokument und rendere es nach MAN"
-        publican build --langs=de-DE --formats=man --allow_network
+        publican build --langs=#{language} --formats=man --allow_network
         ;;
      -txt)
         cd ..
         echo "Räume temporäres Verzeichnis auf"
         publican clean
         echo "Formatiere Docbook Dokument und rendere es nach HTML"
-        publican build --langs=de-DE --formats=txt --allow_network
+        publican build --langs=#{language} --formats=txt --allow_network
         echo "Starte Texteditor"
         gedit tmp/de-DE/txt/*.txt &
         ;;
@@ -124,7 +124,7 @@ case "$1" in
         echo "Räume temporäres Verzeichnis auf"
         publican clean
         echo "Formatiere Docbook Dokument und rendere es nach EPUB"
-        publican build --langs=de-DE --formats=epub --allow_network
+        publican build --langs=#{language} --formats=epub --allow_network
         echo "Starte EPUB-Betrachter"
         ebook-viewer tmp/de-DE/*.epub &
         ;;
@@ -133,7 +133,7 @@ case "$1" in
         echo "Räume temporäres Verzeichnis auf"
         publican clean
         echo "Formatiere Docbook Dokument und rendere es nach HTML"
-        publican build --langs=de-DE --formats=eclipse --allow_network
+        publican build --langs=#{language} --formats=eclipse --allow_network
         ;;
     *)
         usage
