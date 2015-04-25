@@ -16,21 +16,25 @@ openhatch :: http://openhatch.org/projects/PublicanCreators
 
 == Description
 
-PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool. PublicanCreators asks after launching which title, type and environment
-should be used. Then it starts publican with that settings and works then with the produced files. So it adds the users information in the Article_Info, Revision_History and
-so on. In the present version it loads the XCOM Entities into the new produced entity file. Also it removes by choosing "Work" the Legalnotice from any articles root.
-In future version it is planned to exclude the hardcoded things into a config file. So every user can define its own settings.
+PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators asks after
+launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. So it adds the users
+information in the Article_Info, Revision_History and so on.
+You can write your own settings in the Configurations file.
 
 == Installation
 
 The installation is very easy.
 
     gem install PublicanCreators
+    bin/setup.sh
+
+If you are updated to a newer gem just run:
+
+    bin/update.sh
 
 == Hard dependencies
 * yad
 * publican
-* publican-xcom and publican-manns from Ubuntu Launchpad
 
 == Soft dependencies
 I'm using:
@@ -38,27 +42,14 @@ I'm using:
 * dir
 * fileutils
 * nokogiri
-* rainbow
 
 Bundler should solve the dependencies by itself.
 
-== Configuration
-Currently no config file available.
-
-== Settings
-PublicanCreators knows two environments: Work and Private. Then it knows the types: Article and Book. Then it handles the options: Normal, Reports and ILS.
-By using Work it uses the publican XCOM brand. By using private it uses the publican-manns brand for creating new documentation.
-If you choose the XCOM style the book type mades a normal book with resolved user information. A Work Article also produces a Article with XCOM brand, with
-also resolved user information but with removed Legalnotice and removed Orgname (It places a big image on articlemainpage.
-Reports are normal Articles but they are placed into another subdirectory.
-The environment private just produces a normal output just with using the manns brand.
-ILS i'm using for creating homeworks for a distance learning school.
-
 == Usage
 
-    bin/PublicanCreators
+    bin/PublicanCreators.rb
 
-Or just use the Menu button.
+Or just use the Launcher.
 
 == Feature Requests & Bug Reports
 You can file Requests and Reports on the Github Repository: https://github.com/saigkill/PublicanCreators/issues
