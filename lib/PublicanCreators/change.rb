@@ -232,7 +232,7 @@ module PublicanCreatorsChange
     }
   end
 
-  def self.fix_authorgroup(environment, name, email, email_business, company_name, company_division)
+  def self.fix_authorgroup_work(title, name, email_business, company_name, company_division)
     agroup = "#{title}/de-DE/Author_Group.xml"
     namechomp = name.chomp
     # Split the variable to the array title[*]
@@ -254,11 +254,7 @@ module PublicanCreatorsChange
       file.puts nachname
     }
     text = File.read(agroup)
-    if environment == 'Work'
-      email = text.gsub('Enter your email address here.', "#{email_business}")
-    else
-      email = text.gsub('Enter your email address here.', "#{email}")
-    end
+    email = text.gsub('Enter your email address here.', "#{email_business}")
     puts email
     File.open(agroup, 'w') { |file|
       file.puts email
@@ -270,21 +266,64 @@ module PublicanCreatorsChange
       file.puts member
     }
     text = File.read(agroup)
-    if environment == 'Work'
-      org = text.gsub('Enter your organisation\'s name here.', "#{company_name}")
-    else
-      org = text.gsub('Enter your organisation\'s name here.', '')
-    end
+
+    org = text.gsub('Enter your organisation\'s name here.', "#{company_name}")
     puts org
     File.open(agroup, 'w') { |file|
       file.puts org
     }
     text = File.read(agroup)
-    if environment == 'Work'
-      div = text.gsub('Enter your organisational division here.', "#{company_division}")
-    else
-      div = text.gsub('Enter your organisational division here.', '')
-    end
+    div = text.gsub('Enter your organisational division here.', "#{company_division}")
+    puts div
+    File.open(agroup, 'w') { |file|
+      file.puts div
+    }
+  end
+
+  def self.fix_authorgroup_private(name, email)
+    agroup = "#{title}/de-DE/Author_Group.xml"
+    namechomp = name.chomp
+    # Split the variable to the array title[*]
+    name = namechomp.split(' ')
+    firstname = name[0]
+    surname = name[1]
+    # Author Group: Change the default stuff to the present user
+    puts 'Replace the default content with the new content from the user (Authors_Group)'
+    text = File.read(agroup)
+    vorname = text.gsub('Enter your first name here.', "#{firstname}")
+    puts vorname
+    File.open(agroup, 'w') { |file|
+      file.puts vorname
+    }
+    text = File.read(agroup)
+    nachname = text.gsub('Enter your surname here.', "#{surname}")
+    puts nachname
+    File.open(agroup, 'w') { |file|
+      file.puts nachname
+    }
+    text = File.read(agroup)
+    email = text.gsub('Enter your email address here.', "#{email}")
+
+    puts email
+    File.open(agroup, 'w') { |file|
+      file.puts email
+    }
+    text = File.read(agroup)
+    member = text.gsub('Initial creation by publican', 'Initial creation')
+    puts member
+    File.open(agroup, 'w') { |file|
+      file.puts member
+    }
+    text = File.read(agroup)
+    org = text.gsub('Enter your organisation\'s name here.', '')
+
+    puts org
+    File.open(agroup, 'w') { |file|
+      file.puts org
+    }
+    text = File.read(agroup)
+    div = text.gsub('Enter your organisational division here.', '')
+
     puts div
     File.open(agroup, 'w') { |file|
       file.puts div

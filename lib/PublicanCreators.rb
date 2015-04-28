@@ -182,7 +182,11 @@ class PublicanCreators
 
     PublicanCreatorsChange.fix_revhist(environment, name, email_business, email)
 
-    PublicanCreatorsChange.fix_authorgroup(environment, name, email, email_business, company_name, company_division)
+    if environment == 'Work'
+      PublicanCreatorsChange.fix_authorgroup_work(title, name, email_business, company_name, company_division)
+    else
+      PublicanCreatorsChange.fix_authorgroup_private(name, email)
+    end
 
     PublicanCreatorsExport.export_buildscript(title, builds, language)
 
