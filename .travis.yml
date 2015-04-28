@@ -15,11 +15,12 @@ env:
     - LC_ALL=en_US.UTF-8
 
 before_install:
-    - sudo apt-get install publican yad
+    - sudo apt-get install publican
     - sudo add-apt-repository ppa:sascha-manns-h/publican -y
+    - sudo add-apt-repository ppa:webupd8team/y-ppa-manager -y
     - sudo apt-get update
     - sudo apt-get install --only-upgrade publican
-    - sudo apt-get install publican-xcom
+    - sudo apt-get install publican-xcom yad
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose

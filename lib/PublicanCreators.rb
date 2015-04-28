@@ -27,6 +27,7 @@ require 'PublicanCreators/checker'
 require 'PublicanCreators/get'
 require 'PublicanCreators/change'
 require 'PublicanCreators/export'
+require 'PublicanCreators/prepare'
 require 'fileutils'
 require 'nokogiri'
 require 'bundler/setup'
@@ -41,19 +42,26 @@ class PublicanCreators
   puts 'Copyright (C) 2015 Sascha Manns <Sascha.Manns@xcom.de>'
   puts 'Description: This script creates a article or book set with'
   puts 'Publican. Then it modifies it for our needs.'
-  puts 'License: GPL-3'
+  puts 'License: MIT'
   puts ''
-  puts 'This program is free software: you can redistribute it and/or modify'
-  puts 'it under the terms of the GNU General Public License as published by'
-  puts 'the Free Software Foundation, either version 3 of the License, or'
-  puts '(at your option) any later version.'
+  puts 'Permission is hereby granted, free of charge, to any person obtaining a copy'
+  puts 'of this software and associated documentation files (the "Software"), to deal'
+  puts 'in the Software without restriction, including without limitation the rights'
+  puts 'to use, copy, modify, merge, publish, distribute, sublicense, and/or sell'
+  puts 'copies of the Software, and to permit persons to whom the Software is'
+  puts 'furnished to do so, subject to the following conditions:'
   puts ''
-  puts 'This program is distributed in the hope that it will be useful,'
-  puts 'but WITHOUT ANY WARRANTY; without even the implied warranty of'
-  puts 'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the'
-  puts 'GNU General Public License for more details.'
-  puts 'You should have received a copy of the GNU General Public License'
-  puts 'along with this program.  If not, see <http://www.gnu.org/licenses/>.'
+  puts 'The above copyright notice and this permission notice shall be included in'
+  puts 'all copies or substantial portions of the Software.'
+  puts ''
+  puts 'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR'
+  puts 'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,'
+  puts 'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE'
+  puts 'AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER'
+  puts 'LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,'
+  puts 'OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN'
+  puts 'THE SOFTWARE.'
+
   home = Dir.home
   if File.exist?("#{home}/.publicancreators.cfg")
     puts 'Found configuration file and using it...'
@@ -136,23 +144,6 @@ class PublicanCreators
     homework = 'FALSE'
   end
 
-  home = Dir.home
-  if environment == 'Work'
-    if report == 'TRUE'
-      articles_dir = "#{home}/#{reports_dir_business}"
-    else
-      articles_dir = "#{home}/#{articles_dir_business}"
-    end
-    books_dir = "#{home}/#{books_dir_business}"
-  else
-    if homework == 'FALSE'
-      articles_dir = "#{home}/#{articles_dir_private}"
-    else
-      articles_dir = "#{home}/#{homework_dir_private}"
-    end
-    books_dir = "#{home}/#{books_dir_private}"
-  end
-
   artinfo = "#{title}/de-DE/Article_Info.xml"
   bookinfo = "#{title}/de-DE/Book_Info.xml"
   revhist = "#{title}/de-DE/Revision_History.xml"
@@ -160,10 +151,10 @@ class PublicanCreators
   builds = "#{title}/de-DE/build.sh"
   ent = "#{title}/de-DE/#{title}.ent"
 
-  if type == 'Article'
-    todo = "#{articles_dir}"
+  if environment == 'Work'
+    todo = PublicanCreatorsPrepare.prepare_work(reports_dir_business, articles_dir_business, report, books_dir_business)
   else
-    todo = "#{books_dir}"
+    todo = PublicanCreatorsPrepare.prepare_private(homework, articles_dir_private, homework_dir_private, books_dir_private)
   end
 
 # Checks if the needed directory is available. Otherwise it creates one.
