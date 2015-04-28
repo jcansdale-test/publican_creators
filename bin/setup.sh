@@ -7,7 +7,7 @@ echo "#                  PublicanCreators Setup                                 
 echo "##################################################################################"
 bundle install
 sudo apt-get install publican yad
-sudo add-apt-repository ppa:sascha-manns-h/publican -v
+sudo add-apt-repository ppa:sascha-manns-h/publican -y
 sudo apt-get update
 sudo apt-get install --only-upgrade publican
 if [ -e $HOME/.publicancreators.cfg ]
@@ -32,12 +32,12 @@ else
     then
         EDITOR="jedit"
     fi
-    $EDITOR $HOME/.publicancreators
+    ${EDITOR} $HOME/.publicancreators
 fi
 
 echo "Linking binary"
 FROM="$(pwd)"
-sudo ln -s $FROM/PublicanCreators.rb /usr/bin/publicancreators
+sudo ln -s ${FROM}/PublicanCreators.rb /usr/bin/publicancreators
 
 echo "Creating Desktop file"
 sudo cat <<EOF > $HOME/.local/share/applications/publicancreators.desktop
@@ -46,7 +46,7 @@ Version=1.0
 Type=Application
 Name=PublicanCreators
 Exec=/usr/bin/publicancreators
-Icon=$FROM/publican.png
+Icon=${FROM}/publican.png
 EOF
 
 

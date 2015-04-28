@@ -15,7 +15,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 #Test environment
 title = 'The_holy_Bible'
 home = Dir.home
-dir = "#{home}/Dokumente/Textdokumente/publican_test/articles"
+#dir = "#{home}/Dokumente/Textdokumente/publican_test/articles"
 environment = 'Dienstlich'
 type = 'Article'
 homework = 'FALSE'

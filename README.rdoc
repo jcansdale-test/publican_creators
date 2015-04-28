@@ -34,7 +34,7 @@ If you are updated to a newer gem just run:
 
 == Hard dependencies
 * yad
-* publican
+* publican (a 4.x version is needed)
 
 == Soft dependencies
 I'm using:

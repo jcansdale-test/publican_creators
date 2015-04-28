@@ -37,6 +37,7 @@ module PublicanCreatorsGet
     titlechomp = titlein.chomp
     # Split the variable to the array title[*]
     title = titlechomp.split(' ')
+    return title
   end
 
   # get configuration

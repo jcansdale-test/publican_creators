@@ -28,20 +28,20 @@ module PublicanCreatorsPrepare
 
   def self.prepare_work(reports_dir_business, articles_dir_bus, report, books_dir_business)
     if type == 'Article'
-      PublicanCreatorsPrepare.prepare_target_work_article(reports_dir_business, articles_dir_bus, report)
+      articles_dir = PublicanCreatorsPrepare.prepare_target_work_article(reports_dir_business, articles_dir_bus, report)
       return articles_dir
     else
-      PublicanCreatorsPrepare.prepare_target_work_book(books_dir_business)
+      books_dir = PublicanCreatorsPrepare.prepare_target_work_book(books_dir_business)
       return books_dir
     end
   end
 
   def self.prepare_private(homework, articles_dir_private, homework_dir_private, books_dir_private)
     if type == 'Article'
-      PublicanCreatorsPrepare.prepare_target_private_article(homework, articles_dir_private, homework_dir_private)
+      articles_dir = PublicanCreatorsPrepare.prepare_target_private_article(homework, articles_dir_private, homework_dir_private)
       return articles_dir
     else
-      PublicanCreatorsPrepare.prepare_target_private_book(books_dir_private)
+      books_dir = PublicanCreatorsPrepare.prepare_target_private_book(books_dir_private)
       return books_dir
     end
   end
@@ -57,6 +57,7 @@ module PublicanCreatorsPrepare
   end
 
   def self.prepare_target_work_book(books_dir_business)
+    home = Dir.home
     books_dir = "#{home}/#{books_dir_business}"
     return books_dir
   end
@@ -73,7 +74,9 @@ module PublicanCreatorsPrepare
   end
 
   def self.prepare_target_private_book(books_dir_private)
+    home = Dir.home
     books_dir = "#{home}/#{books_dir_private}"
+    return books_dir
   end
 
 end

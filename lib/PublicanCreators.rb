@@ -33,7 +33,7 @@ require 'nokogiri'
 require 'bundler/setup'
 
 class PublicanCreators
-  my_name = 'PublicanCreators.rb'
+  my_name = File.basename($0)
   version = PublicanCreatorsVersion::VERSION
 
   puts "Script: #{my_name}"
@@ -146,10 +146,7 @@ class PublicanCreators
 
   artinfo = "#{title}/de-DE/Article_Info.xml"
   bookinfo = "#{title}/de-DE/Book_Info.xml"
-  revhist = "#{title}/de-DE/Revision_History.xml"
-  agroup = "#{title}/de-DE/Author_Group.xml"
   builds = "#{title}/de-DE/build.sh"
-  ent = "#{title}/de-DE/#{title}.ent"
 
   if environment == 'Work'
     todo = PublicanCreatorsPrepare.prepare_work(reports_dir_business, articles_dir_business, report, books_dir_business)
@@ -165,13 +162,17 @@ class PublicanCreators
   puts 'Change to this directory'
   FileUtils.cd(todo) do
 
-    PublicanCreatorsChange.init_docu(title, environment, type, homework, language, brand, brand_homework, brand_private, db5)
+    if environment == 'Work'
+      PublicanCreatorsChange.init_docu_work(title, type, language, brand, db5)
+    else
+      PublicanCreatorsChange.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
+    end
 
-    PublicanCreatorsChange.add_entity(ent, environment, global_entities, brand)
+    PublicanCreatorsChange.add_entity(environment, global_entities, brand)
 
-    PublicanCreatorsChange.change_holder(title, ent, environment, name, company_name)
+    PublicanCreatorsChange.change_holder(title, environment, name, company_name)
 
-    PublicanCreatorsChange.remove_legal(artinfo, environment, type, legal)
+    PublicanCreatorsChange.remove_legal(environment, type, legal)
 
     if type == 'Article'
       PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo)
@@ -179,9 +180,9 @@ class PublicanCreators
       PublicanCreatorsChange.remove_orgname(bookinfo, environment, title_logo)
     end
 
-    PublicanCreatorsChange.fix_revhist(revhist, environment, name, email_business, email)
+    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email)
 
-    PublicanCreatorsChange.fix_authorgroup(agroup, environment, name, email, email_business, company_name, company_division)
+    PublicanCreatorsChange.fix_authorgroup(environment, name, email, email_business, company_name, company_division)
 
     PublicanCreatorsExport.export_buildscript(title, builds, language)
 

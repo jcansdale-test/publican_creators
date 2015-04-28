@@ -29,68 +29,44 @@ require 'PublicanCreators/checker'
 
 module PublicanCreatorsChange
 
-  def self.init_docu(title, environment, type, homework, language, brand, brand_homework, brand_private, db5)
-    if environment == 'Work'
-      if type == 'Article'
-        # Initial creation of documentation with publican
+  def self.init_docu_work(title, type, language, brand, db5)
+    if type == 'Article'
+      # Initial creation of documentation with publican
+      puts 'Creating initial documentation ...'
+      string = "--type Article --lang #{language} --name #{title}"
+      if brand == ''
+        # do nothing
+      else
+        string << " --brand #{brand}"
+      end
+      if db5 == 'true'
+        string << ' --dtdver 5.0'
+      end
+      system("publican create #{string}")
+    else
+      # Initial creation of documentation with publican
+      puts 'Creating initial documentation ...'
+      string = "--lang #{language} --name #{title}"
+      if brand == ''
+        # do nothing
+      else
+        string << " --brand #{brand}"
+      end
+      if db5 == 'true'
+        string << ' --dtdver 5.0'
+      end
+      system("publican create #{string}")
+    end
+    PublicanCreatorsChange.check_result(title)
+  end
+
+  def self.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
+    if type == 'Article'
+      # Initial creation of documentation with publican
+      if homework == 'FALSE'
         puts 'Creating initial documentation ...'
         string = "--type Article --lang #{language} --name #{title}"
-        if brand == ''
-          # do nothing
-        else
-          string << " --brand #{brand}"
-        end
-        if db5 == 'true'
-          string << ' --dtdver 5.0'
-        end
-        system("publican create #{string}")
-      else
-        # Initial creation of documentation with publican
-        puts 'Creating initial documentation ...'
-        string = "--lang #{language} --name #{title}"
-        if brand == ''
-          # do nothing
-        else
-          string << " --brand #{brand}"
-        end
-        if db5 == 'true'
-          string << ' --dtdver 5.0'
-        end
-        system("publican create #{string}")
-      end
-    else
-      if type == 'Article'
-        # Initial creation of documentation with publican
-        if homework == 'FALSE'
-          puts 'Creating initial documentation ...'
-          string = "--type Article --lang #{language} --name #{title}"
-          if brand == ''
-            # do nothing
-          else
-            string << " --brand #{brand_private}"
-          end
-          if db5 == 'true'
-            string << ' --dtdver 5.0'
-          end
-          system("publican create #{string}")
-        else
-          puts 'Creating initial documentation ...'
-          string = "--type Article --lang #{language} --name #{title}"
-          if brand == ''
-            # do nothing
-          else
-            string << " --brand #{brand_homework}"
-          end
-          if db5 == 'true'
-            string << ' --dtdver 5.0'
-          end
-          system("publican create #{string}")
-        end
-      else
-        # Initial creation of documentation with publican
-        puts 'Creating initial documentation ...'
-        string = "--lang #{language} --name #{title}"
-        if brand == ''
+        if brand_private == ''
           # do nothing
         else
           string << " --brand #{brand_private}"
@@ -99,8 +75,37 @@ module PublicanCreatorsChange
           string << ' --dtdver 5.0'
         end
         system("publican create #{string}")
+      else
+        puts 'Creating initial documentation ...'
+        string = "--type Article --lang #{language} --name #{title}"
+        if brand_private == ''
+          # do nothing
+        else
+          string << " --brand #{brand_homework}"
+        end
+        if db5 == 'true'
+          string << ' --dtdver 5.0'
+        end
+        system("publican create #{string}")
       end
+    else
+      # Initial creation of documentation with publican
+      puts 'Creating initial documentation ...'
+      string = "--lang #{language} --name #{title}"
+      if brand == ''
+        # do nothing
+      else
+        string << " --brand #{brand_private}"
+      end
+      if db5 == 'true'
+        string << ' --dtdver 5.0'
+      end
+      system("publican create #{string}")
     end
+    PublicanCreatorsChange.check_result(title)
+  end
+
+  def self.check_result(title)
     # checking if new documentation directory exists
     if Dir.exist?(title)
       puts 'Creating documentation was a success...'
@@ -109,7 +114,8 @@ module PublicanCreatorsChange
     end
   end
 
-  def self.add_entity(ent, environment, global_entities, brand)
+  def self.add_entity(environment, global_entities, brand)
+    ent = "#{title}/de-DE/#{title}.ent"
     if environment == 'Work'
       if brand == 'XCOM'
         puts 'Adding global entities...'
@@ -119,7 +125,7 @@ module PublicanCreatorsChange
           f << "<!-- COMMON ENTITIES -->\n"
         }
         input = File.open(global_entities)
-        data_to_copy = input.read()
+        data_to_copy = input.read
         output = File.open(ent, 'a')
         output.write(data_to_copy)
         input.close
@@ -130,7 +136,8 @@ module PublicanCreatorsChange
     end
   end
 
-  def self.change_holder(title, ent, environment, name, company_name)
+  def self.change_holder(title, environment, name, company_name)
+    ent = "#{title}/de-DE/#{title}.ent"
     # Replace the Holder with the real one
     puts 'Replace holder field with the present user'
     if environment == 'Work'
@@ -165,7 +172,8 @@ module PublicanCreatorsChange
     end
   end
 
-  def self.remove_legal(artinfo, environment, type, legal)
+  def self.remove_legal(environment, type, legal)
+    artinfo = "#{title}/de-DE/Article_Info.xml"
     if environment == 'Work'
       if type == 'Article'
         if legal == 'true'
@@ -185,7 +193,8 @@ module PublicanCreatorsChange
 
   end
 
-  def self.fix_revhist(revhist, environment, name, email_business, email)
+  def self.fix_revhist(environment, name, email_business, email)
+    revhist = "#{title}/de-DE/Revision_History.xml"
     namechomp = name.chomp
     # Split the variable to the array title[*]
     name = namechomp.split(' ')
@@ -223,7 +232,8 @@ module PublicanCreatorsChange
     }
   end
 
-  def self.fix_authorgroup(agroup, environment, name, email, email_business, company_name, company_division)
+  def self.fix_authorgroup(environment, name, email, email_business, company_name, company_division)
+    agroup = "#{title}/de-DE/Author_Group.xml"
     namechomp = name.chomp
     # Split the variable to the array title[*]
     name = namechomp.split(' ')
