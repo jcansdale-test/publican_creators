@@ -19,7 +19,19 @@
 # THE SOFTWARE.
 
 # Method for versioning the gem
-module PublicanCreatorsVersion
-  # Just the version
-  VERSION = '0.2.0'
+class PublicanCreatorsVersion
+  module Version
+    MAJOR = 0
+    MINOR = 1
+    PATCH = 1
+    BUILD = 0
+
+    STRING = [MAJOR, MINOR, PATCH].compact.join('.')
+  end
 end
+
+
+#module PublicanCreatorsVersion
+  # Just the version
+#  VERSION = '0.2.0'
+#end

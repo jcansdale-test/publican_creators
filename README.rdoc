@@ -6,12 +6,12 @@ version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="versio
 continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/PublicanCreators]
 continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master" alt="integration state">}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators/]
 test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/PublicanCreators?branch=master]
-code quality codeclimate:: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators.png" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
-code quality scrutinizer:: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators/]
+code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators.png" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
+code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators/]
 dependency check :: {<img src="https://gemnasium.com/saigkill/PublicanCreators.png" alt="Dependency Status" />}[https://gemnasium.com/saigkill/PublicanCreators]
 still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/PublicanCreators]
-documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master]
+documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
 bugs :: https://github.com/saigkill/PublicanCreators/issues
 authors blog :: http://saigkill.ddns.net/wordpress/
 ohloh :: https://www.ohloh.net/p/PublicanCreators

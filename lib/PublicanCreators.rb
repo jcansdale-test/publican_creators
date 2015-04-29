@@ -35,7 +35,7 @@ require 'bundler/setup'
 # Main Class of PublicanCreators
 class PublicanCreators
   my_name = File.basename($0)
-  version = PublicanCreatorsVersion::VERSION
+  version = PublicanCreatorsVersion::Version::STRING
 
   puts "Script: #{my_name}"
   puts "Version: #{version}"
