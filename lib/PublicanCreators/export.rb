@@ -26,6 +26,7 @@
 require 'PublicanCreators/change'
 require 'fileutils'
 
+# Module for running exports to a file
 module PublicanCreatorsExport
 
   # Exports a predefined Shellscript to the target directory.

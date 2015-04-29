@@ -41,7 +41,7 @@ global_entities = "#{brand_dir}/de-DE/entitiesxcom.ent"
 
 describe 'Documentation Creator Work' do
   it 'should change to an directory and creates there an initial documentation' do
-    PublicanCreatorsChange.init_docu(title, environment, type, homework, language, brand, brand_homework, brand_private, db5)
+    PublicanCreatorsChange.init_docu_work(title, type, language, brand, db5)
     Dir.exist?(title)
     :should == true
   end
@@ -62,7 +62,7 @@ end
 
 describe 'Orgname Remover' do
   it 'should remove the Orgname node from the XML file' do
-    PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo)
+    PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo, type)
     f = File.new(artinfo)
     text = f.read
     true
@@ -88,7 +88,7 @@ end
 
 describe 'Fix Revision History' do
   it 'should change names and emailaddresses to the present user' do
-    PublicanCreatorsChange.fix_revhist(revhist, environment, name, email_business, email)
+    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email, title)
     f = File.new(revhist)
     text = f.read
     true
@@ -101,7 +101,7 @@ end
 
 describe 'Fix Authorgroup' do
   it 'should change the names and emailaaddresses to the present user' do
-    PublicanCreatorsChange.fix_authorgroup(agroup, environment, name, email, email_business, company_name, company_division)
+    PublicanCreatorsChange.fix_authorgroup_work(title, name, email_business, company_name, company_division)
     f = File.new(agroup)
     text = f.read
     true

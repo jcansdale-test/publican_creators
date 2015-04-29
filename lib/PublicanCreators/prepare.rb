@@ -23,10 +23,11 @@
 
 # Dependencies
 
-# The module Prepare contains some methods for preparing the work
+# The module Prepare contains some methods for preparing the directories. They will be used in the make directory function
 module PublicanCreatorsPrepare
 
-  def self.prepare_work(reports_dir_business, articles_dir_bus, report, books_dir_business)
+  # In case of environment == Work this tests will be launched.
+  def self.prepare_work(type, reports_dir_business, articles_dir_bus, report, books_dir_business)
     if type == 'Article'
       articles_dir = PublicanCreatorsPrepare.prepare_target_work_article(reports_dir_business, articles_dir_bus, report)
       return articles_dir
@@ -36,7 +37,8 @@ module PublicanCreatorsPrepare
     end
   end
 
-  def self.prepare_private(homework, articles_dir_private, homework_dir_private, books_dir_private)
+  # In case of environment == Private this tests will be launched.
+  def self.prepare_private(type, homework, articles_dir_private, homework_dir_private, books_dir_private)
     if type == 'Article'
       articles_dir = PublicanCreatorsPrepare.prepare_target_private_article(homework, articles_dir_private, homework_dir_private)
       return articles_dir
@@ -46,6 +48,7 @@ module PublicanCreatorsPrepare
     end
   end
 
+  # In case of type == Article this tests will be launched
   def self.prepare_target_work_article(reports_dir_business, articles_dir_bus, report)
     home = Dir.home
     if report == 'TRUE'
@@ -56,13 +59,14 @@ module PublicanCreatorsPrepare
     return articles_dir
   end
 
+  # In case of type == Book this tests will be launched
   def self.prepare_target_work_book(books_dir_business)
     home = Dir.home
     books_dir = "#{home}/#{books_dir_business}"
     return books_dir
   end
 
-  # This method prepares the target directory
+  # This method prepares the target directory for a private article
   def self.prepare_target_private_article(homework, articles_dir_private, homework_dir_private)
     home = Dir.home
     if homework == 'FALSE'
@@ -73,6 +77,7 @@ module PublicanCreatorsPrepare
     return articles_dir
   end
 
+  # This method prepares the target directory for a private book
   def self.prepare_target_private_book(books_dir_private)
     home = Dir.home
     books_dir = "#{home}/#{books_dir_private}"

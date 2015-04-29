@@ -27,8 +27,10 @@ require 'nokogiri'
 require 'dir'
 require 'PublicanCreators/checker'
 
+# Module what contains all methods who are doing changes in files
 module PublicanCreatorsChange
 
+  # Method for creating initial documentation for work. It asks for title, type, language, brand and db5 variable, creates a launch-string from them and launches publican.
   def self.init_docu_work(title, type, language, brand, db5)
     if type == 'Article'
       # Initial creation of documentation with publican
@@ -60,6 +62,8 @@ module PublicanCreatorsChange
     PublicanCreatorsChange.check_result(title)
   end
 
+  # Method for creating initial documentation for private. It asks for title, type, language, homework, brand_homework, brand_private
+  # and db5 variable, creates a launch-string from them and launches publican.
   def self.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
     if type == 'Article'
       # Initial creation of documentation with publican
@@ -105,6 +109,7 @@ module PublicanCreatorsChange
     PublicanCreatorsChange.check_result(title)
   end
 
+  # This method will be launched from the init_docu_* methods. It gives back a success or not
   def self.check_result(title)
     # checking if new documentation directory exists
     if Dir.exist?(title)
@@ -114,7 +119,9 @@ module PublicanCreatorsChange
     end
   end
 
-  def self.add_entity(environment, global_entities, brand)
+  # By working for my employer i'm creating publications which refers to a global entity file.
+  # This method adds the entities from that file into the local one.
+  def self.add_entity(title, environment, global_entities, brand)
     ent = "#{title}/de-DE/#{title}.ent"
     if environment == 'Work'
       if brand == 'XCOM'
@@ -136,6 +143,7 @@ module PublicanCreatorsChange
     end
   end
 
+  # In this method the standart-holder from the local entity-file will be replaced with the company_name or if it is a private work the name of the present user
   def self.change_holder(title, environment, name, company_name)
     ent = "#{title}/de-DE/#{title}.ent"
     # Replace the Holder with the real one
@@ -153,8 +161,8 @@ module PublicanCreatorsChange
     end
   end
 
-  def self.remove_orgname(artinfo, environment, title_logo)
-    # Remove titlepage logo because of doing this with the publican branding files
+  # This method removes the <orgname> node from the XML file. Remove titlepage logo because of doing this with the publican branding files
+  def self.remove_orgname(artinfo, environment, title_logo, type)
     if environment == 'Work'
       if type == 'Article'
         if title_logo == 'false'
@@ -172,7 +180,8 @@ module PublicanCreatorsChange
     end
   end
 
-  def self.remove_legal(environment, type, legal)
+  # This method removes the XI-Includes for the legal notice
+  def self.remove_legal(title, environment, type, legal)
     artinfo = "#{title}/de-DE/Article_Info.xml"
     if environment == 'Work'
       if type == 'Article'
@@ -193,7 +202,8 @@ module PublicanCreatorsChange
 
   end
 
-  def self.fix_revhist(environment, name, email_business, email)
+  # This method uses the variables environment, name, email_business, email and title for replacing the standard values with the present user.
+  def self.fix_revhist(environment, name, email_business, email, title)
     revhist = "#{title}/de-DE/Revision_History.xml"
     namechomp = name.chomp
     # Split the variable to the array title[*]
@@ -232,6 +242,7 @@ module PublicanCreatorsChange
     }
   end
 
+  # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Work environment.
   def self.fix_authorgroup_work(title, name, email_business, company_name, company_division)
     agroup = "#{title}/de-DE/Author_Group.xml"
     namechomp = name.chomp
@@ -280,7 +291,8 @@ module PublicanCreatorsChange
     }
   end
 
-  def self.fix_authorgroup_private(name, email)
+  # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Private environment.
+  def self.fix_authorgroup_private(name, email, title)
     agroup = "#{title}/de-DE/Author_Group.xml"
     namechomp = name.chomp
     # Split the variable to the array title[*]
@@ -330,8 +342,8 @@ module PublicanCreatorsChange
     }
   end
 
+  # Make the buildscript executable
   def self.make_buildscript_exe(builds)
-    # Make the buildscript executable
     puts 'Making the buildscript executable ...'
     FileUtils.chmod 'u=rwx,go=rwx', "#{builds}"
   end

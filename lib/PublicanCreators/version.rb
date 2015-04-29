@@ -18,6 +18,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+# Method for versioning the gem
 module PublicanCreatorsVersion
-  VERSION = '0.1.0'
+  # Just the version
+  VERSION = '0.2.0'
 end

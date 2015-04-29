@@ -32,6 +32,7 @@ require 'fileutils'
 require 'nokogiri'
 require 'bundler/setup'
 
+# Main Class of PublicanCreators
 class PublicanCreators
   my_name = File.basename($0)
   version = PublicanCreatorsVersion::VERSION
@@ -133,6 +134,7 @@ class PublicanCreators
   puts "Optional: #{opt}"
   puts "Title: #{title}"
 
+  # Set default values
   if opt == 'Report'
     report = 'TRUE'
   else
@@ -144,21 +146,23 @@ class PublicanCreators
     homework = 'FALSE'
   end
 
+  # Hardcoded variables
   artinfo = "#{title}/de-DE/Article_Info.xml"
   bookinfo = "#{title}/de-DE/Book_Info.xml"
   builds = "#{title}/de-DE/build.sh"
 
+  # Run one of the both methods to get the variable todo
   if environment == 'Work'
-    todo = PublicanCreatorsPrepare.prepare_work(reports_dir_business, articles_dir_business, report, books_dir_business)
+    todo = PublicanCreatorsPrepare.prepare_work(type, reports_dir_business, articles_dir_business, report, books_dir_business)
   else
-    todo = PublicanCreatorsPrepare.prepare_private(homework, articles_dir_private, homework_dir_private, books_dir_private)
+    todo = PublicanCreatorsPrepare.prepare_private(type, homework, articles_dir_private, homework_dir_private, books_dir_private)
   end
 
-# Checks if the needed directory is available. Otherwise it creates one.
+  # Checks if the needed directory todo is available. Otherwise it creates one.
   puts "Creating directory #{todo}"
   Checker.check_dir(todo)
 
-# Change to target directory
+  # Change to target directory
   puts 'Change to this directory'
   FileUtils.cd(todo) do
 
@@ -168,24 +172,24 @@ class PublicanCreators
       PublicanCreatorsChange.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
     end
 
-    PublicanCreatorsChange.add_entity(environment, global_entities, brand)
+    PublicanCreatorsChange.add_entity(title, environment, global_entities, brand)
 
     PublicanCreatorsChange.change_holder(title, environment, name, company_name)
 
-    PublicanCreatorsChange.remove_legal(environment, type, legal)
+    PublicanCreatorsChange.remove_legal(title, environment, type, legal)#
 
     if type == 'Article'
-      PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo)
+      PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo, type)#
     else
-      PublicanCreatorsChange.remove_orgname(bookinfo, environment, title_logo)
+      PublicanCreatorsChange.remove_orgname(bookinfo, environment, title_logo, type)#
     end
 
-    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email)
+    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email, title)
 
     if environment == 'Work'
       PublicanCreatorsChange.fix_authorgroup_work(title, name, email_business, company_name, company_division)
     else
-      PublicanCreatorsChange.fix_authorgroup_private(name, email)
+      PublicanCreatorsChange.fix_authorgroup_private(name, email, title)
     end
 
     PublicanCreatorsExport.export_buildscript(title, builds, language)

@@ -26,9 +26,10 @@
 require 'parseconfig'
 require 'dir'
 
+# This method provides methods for user inputs
 module PublicanCreatorsGet
 
-  # ask for the title
+  # THis method ask for the title, environment, type and optional settings
   def self.title
     # Put the yad input as variable titlein
     titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator=" "  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`
@@ -40,9 +41,8 @@ module PublicanCreatorsGet
     return title
   end
 
-  # get configuration
+  # The method gets configuration from a config file
   def self.config
-    #config = ParseConfig.new(File.join(File.dirname(__FILE__), '.publicancreators.cfg'))
     home = Dir.home
     config = ParseConfig.new("#{home}/.publicancreators.cfg")
     name = config['name']
