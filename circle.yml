@@ -7,4 +7,16 @@ machine:
   # Version of ruby to use
   ruby:
     version:
-      2.2.2p95
+      2.2.0
+      2.2.1
+
+dependencies:
+  pre:
+    - gem uninstall bundler
+    - gem install bundler --pre
+    - sudo apt-get update
+    - sudo apt-get install publican
+    - sudo add-apt-repository ppa:sascha-manns-h/publican -y
+    - sudo apt-get update
+    - sudo apt-get install --only-upgrade publican
+    - sudo apt-get install publican-xcom

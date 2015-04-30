@@ -14,7 +14,7 @@ documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanC
 documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
 bugs :: https://github.com/saigkill/PublicanCreators/issues
 authors blog :: http://saigkill.ddns.net/wordpress/
-ohloh :: https://www.ohloh.net/p/PublicanCreators
+openhub :: https://www.openhub.net/p/PublicanCreators
 openhatch :: http://openhatch.org/projects/PublicanCreators
 
 == Description
