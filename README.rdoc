@@ -12,7 +12,7 @@ dependency check :: {<img src="https://gemnasium.com/saigkill/PublicanCreators.p
 still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/PublicanCreators]
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master]
 documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
-bugs :: https://github.com/saigkill/PublicanCreators/issues
+bugs :: http://saigkill.ddns.net:8112/dashboard
 authors blog :: http://saigkill.ddns.net/wordpress/
 openhub :: https://www.openhub.net/p/PublicanCreators
 openhatch :: http://openhatch.org/projects/PublicanCreators
@@ -55,7 +55,7 @@ Bundler should solve the dependencies by itself.
 Or just use the Launcher.
 
 == Feature Requests & Bug Reports
-You can file Requests and Reports on the Github Repository: https://github.com/saigkill/PublicanCreators/issues
+You can file Requests and Reports on the my bugtracker: [http://saigkill.ddns.net:8112/dashboard]
 
 == Contributing
 
