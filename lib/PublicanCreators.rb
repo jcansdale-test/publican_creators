@@ -42,8 +42,9 @@ class PublicanCreators
   puts
   puts 'Copyright (C) 2015 Sascha Manns <Sascha.Manns@xcom.de>'
   puts 'Description: This script creates a article or book set with'
-  puts 'Publican. Then it modifies it for our needs.'
+  puts 'Publican. Then it modifies it for your needs.'
   puts 'License: MIT'
+  puts 'Bugs: Please file bugs on http://saigkill.ddns.net:8112/dashboard'
   puts ''
   puts 'Permission is hereby granted, free of charge, to any person obtaining a copy'
   puts 'of this software and associated documentation files (the "Software"), to deal'

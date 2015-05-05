@@ -26,7 +26,7 @@ class PublicanCreatorsVersion
     PATCH = 1
     BUILD = 0
 
-    STRING = [MAJOR, MINOR, PATCH].compact.join('.')
+    STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join('.')
   end
 end
 

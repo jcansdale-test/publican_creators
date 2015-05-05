@@ -2,7 +2,7 @@
 
 home :: https://github.com/saigkill/PublicanCreators
 license :: http://opensource.org/licenses/MIT
-version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="version">}[http://rubygems.org/gems/PublicanCreators]
+last public version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="version">}[http://rubygems.org/gems/PublicanCreators]
 continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/PublicanCreators]
 continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master" alt="integration state">}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators/]
 test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/PublicanCreators?branch=master]
@@ -13,6 +13,7 @@ still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCrea
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master]
 documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
 bugs :: http://saigkill.ddns.net:8112/dashboard
+review code :: http://saigkill.ddns.net:8080/publicancreators/view
 authors blog :: http://saigkill.ddns.net/wordpress/
 openhub :: https://www.openhub.net/p/PublicanCreators
 openhatch :: http://openhatch.org/projects/PublicanCreators
@@ -29,11 +30,11 @@ You can write your own settings in the Configurations file.
 The installation is very easy.
 
     gem install PublicanCreators
-    bin/setup.sh
+    /path/to/gem/bin/setup.sh
 
 If you are updated to a newer gem just run:
 
-    bin/update.sh
+    /path/to/gem/bin/update.sh
 
 == Hard dependencies
 * yad
@@ -50,7 +51,7 @@ Bundler should solve the dependencies by itself.
 
 == Usage
 
-    bin/PublicanCreators.rb
+    /path/to/gem/bin/PublicanCreators.rb
 
 Or just use the Launcher.
 
