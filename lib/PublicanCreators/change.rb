@@ -31,6 +31,15 @@ require 'PublicanCreators/checker'
 module PublicanCreatorsChange
 
   # Method for creating initial documentation for work. It asks for title, type, language, brand and db5 variable, creates a launch-string from them and launches publican.
+  # It returns a sucess or fail.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # Parameter "type" represents the Document-Type like Article or Book.
+  # Parameter "language" is just the ISO Code of your target language like: de-DE, en-GB or such things.
+  # Parameter "brand" can be a special customized brand for your company to fit the Styleguide.
+  # Parameter "db5" just sets your preferences. If you like to have DocBook 5.x as default you can set it there.
+  # That method returns just a success or a fail. After the main part of the method it starts another method "PublicanCreatorsChange.check_result". This method checks
+  # if the directory with the content of the parameter "title" is available.
   def self.init_docu_work(title, type, language, brand, db5)
     if type == 'Article'
       # Initial creation of documentation with publican
@@ -64,6 +73,16 @@ module PublicanCreatorsChange
 
   # Method for creating initial documentation for private. It asks for title, type, language, homework, brand_homework, brand_private
   # and db5 variable, creates a launch-string from them and launches publican.
+  # It returns a sucess or fail.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # Parameter "type" represents the Document-Type like Article or Book.
+  # Parameter "brand_private" is used in all methods with a "private" in the name. If this brand is set it will be used instead of the original publican brand.
+  # Parameter "language" is just the ISO Code of your target language like: de-DE, en-GB or such things.
+  # Parameter "brand_homework" can be a special customized brand for distance learning schools.
+  # Parameter "db5" just sets your preferences. If you like to have DocBook 5.x as default you can set it there.
+  # That method returns just a success or a fail. After the main part of the method it starts another method "PublicanCreatorsChange.check_result". This method checks
+  # if the directory with the content of the parameter "title" is available.
   def self.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
     if type == 'Article'
       # Initial creation of documentation with publican
@@ -109,7 +128,9 @@ module PublicanCreatorsChange
     PublicanCreatorsChange.check_result(title)
   end
 
-  # This method will be launched from the init_docu_* methods. It gives back a success or not
+  # This method will be launched from the init_docu_* methods. It returns a success, otherwise it raises with a error.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
   def self.check_result(title)
     # checking if new documentation directory exists
     if Dir.exist?(title)
@@ -120,7 +141,12 @@ module PublicanCreatorsChange
   end
 
   # By working for my employer i'm creating publications which refers to a global entity file.
-  # This method adds the entities from that file into the local one.
+  # This method adds the entities from that file into the local one. It returns a success or fail.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # Parameter "environment" shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # Parameter "global_entities" is just the path to the global entity file.
+  # Parameter "brand" can be a special customized brand for your company to fit the Styleguide.
   def self.add_entity(title, environment, global_entities, brand)
     ent = "#{title}/de-DE/#{title}.ent"
     if environment == 'Work'
@@ -143,7 +169,15 @@ module PublicanCreatorsChange
     end
   end
 
-  # In this method the standart-holder from the local entity-file will be replaced with the company_name or if it is a private work the name of the present user
+  # In this method the standart-holder from the local entity-file will be replaced with the company_name or if it is a private work the name of the present user.
+  # It returns a sucess or fail.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # Parameter "environment" shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # Parameter "name" is your name.
+  # Parameter "company_name" is the name of your company
+  # Parameter "ent" is hardcoded because it doesn't change.
+  # If the environment "Work" is given the entity file will be set as HOLDER otherwise it sets your name.
   def self.change_holder(title, environment, name, company_name)
     ent = "#{title}/de-DE/#{title}.ent"
     # Replace the Holder with the real one
@@ -161,7 +195,14 @@ module PublicanCreatorsChange
     end
   end
 
-  # This method removes the <orgname> node from the XML file. Remove titlepage logo because of doing this with the publican branding files
+  # This method removes the <orgname> node from the XML file. Remove titlepage logo because of doing this with the publican branding files. This method will applied if
+  # "environment" is Work, "type" is Article and title_logo is "false".
+  # It returns a sucess or fail.
+  # Descriptions:
+  # Parameter "artinfo" can be other than the parameter name says a path to the Article_Info or Book_Info. Which is used there depends on the Parameter "type".
+  # Parameter "environment" shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # Parameter "title_logo" means that you can set if you want to use Publican's Title Logo or use your own Title Logo with your Stylesheets.
+  # Parameter "type" represents the Document-Type like Article or Book.
   def self.remove_orgname(artinfo, environment, title_logo, type)
     if environment == 'Work'
       if type == 'Article'
@@ -181,6 +222,13 @@ module PublicanCreatorsChange
   end
 
   # This method removes the XI-Includes for the legal notice
+  # It returns a sucess or fail.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # Parameter "environment" shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # Parameter "type" represents the Document-Type like Article or Book.
+  # Parameter "legal" means if you don't like to have a Legal Notice on Publican's default place you can define it there. Actually it just works with Articles. In my case i'm
+  # using the Legal Notice inside the Article's Structure.
   def self.remove_legal(title, environment, type, legal)
     artinfo = "#{title}/de-DE/Article_Info.xml"
     if environment == 'Work'
@@ -202,7 +250,15 @@ module PublicanCreatorsChange
 
   end
 
-  # This method uses the variables environment, name, email_business, email and title for replacing the standard values with the present user.
+  # This method splits the name variable into firstname and surname. These variables are setted into the Revision_History. If the environment is "Work" your email_business
+  # will be used, otherwise your private email_address.
+  # It returns a sucess or fail.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # Parameter "environment" shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # Parameter "name" is your name.
+  # Parameter "email_business" is your business email address.
+  # Parameter "email" is your private email address.
   def self.fix_revhist(environment, name, email_business, email, title)
     revhist = "#{title}/de-DE/Revision_History.xml"
     namechomp = name.chomp
@@ -243,6 +299,14 @@ module PublicanCreatorsChange
   end
 
   # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Work environment.
+  # It returns a sucess or fail.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # Parameter "environment" shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # Parameter "name" is your name.
+  # Parameter "email_business" is your business email address.
+  # Parameter "company_name" is just your companies name
+  # Parameter "company_division" is your companies part/division like "Software Engeneering"
   def self.fix_authorgroup_work(title, name, email_business, company_name, company_division)
     agroup = "#{title}/de-DE/Author_Group.xml"
     namechomp = name.chomp
@@ -291,7 +355,11 @@ module PublicanCreatorsChange
     }
   end
 
-  # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Private environment.
+  # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Private environment. It returns a success or fail.
+  # Descriptions:
+  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # Parameter "name" is your name.
+  # Parameter "email" is your private email address.
   def self.fix_authorgroup_private(name, email, title)
     agroup = "#{title}/de-DE/Author_Group.xml"
     namechomp = name.chomp
@@ -343,6 +411,9 @@ module PublicanCreatorsChange
   end
 
   # Make the buildscript executable
+  # It returns a sucess or fail.
+  # Description:
+  # Parameter "builds" is the path to your buildscript
   def self.make_buildscript_exe(builds)
     puts 'Making the buildscript executable ...'
     FileUtils.chmod 'u=rwx,go=rwx', "#{builds}"

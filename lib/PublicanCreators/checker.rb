@@ -29,7 +29,7 @@ require 'fileutils'
 # Module for directory doings
 module Checker
 
-  # Checks if the targetdirectory are present. If not, it creates one
+  # Checks if the targetdirectory are present. If not, it creates one. It returns a success or fail.
   def self.check_dir(todo)
     # Checking if dir exists
     if Dir.exist?(todo)

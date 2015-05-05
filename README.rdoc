@@ -10,7 +10,7 @@ code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreat
 code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators/]
 dependency check :: {<img src="https://gemnasium.com/saigkill/PublicanCreators.png" alt="Dependency Status" />}[https://gemnasium.com/saigkill/PublicanCreators]
 still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/PublicanCreators]
-documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master]
+documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
 documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
 bugs :: http://saigkill.ddns.net:8112/dashboard
 review code :: http://saigkill.ddns.net:8080/publicancreators/view
