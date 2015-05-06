@@ -8,6 +8,7 @@
 
 === Bugfixes
 * PC-3: Extend documentation B-Type
+* PC-2: Extend documentation A-Type
 
 == 0.1.0
 === Features

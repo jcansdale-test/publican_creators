@@ -34,6 +34,7 @@ module PublicanCreatorsGet
   # @param titlein [String] will be got from the yad input.
   # @param titlechomp [String] is the cleaned title.
   # @param title [String] is the splitted input from yad.
+  # @return title [String]
   def self.title
     # Put the yad input as variable titlein
     titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator=" "  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`
@@ -45,7 +46,28 @@ module PublicanCreatorsGet
     return title
   end
 
-  # The method gets configuration from a config file
+  # The method gets configuration from a config file.
+  # @return name [String]
+  # @return email_private [String]
+  # @return language [String]
+  # @return use_brand [String]
+  # @return title_logo [String]
+  # @return legal [String]
+  # @return brand [String]
+  # @return company_name [String]
+  # @return company_divison [String]
+  # @return email_business [String]
+  # @return brand_dir [String]
+  # @return globalentities [String]
+  # @return articles_dir [String]
+  # @return reports_dir [String]
+  # @return books_dir [String]
+  # @return articles_dir_priv [String]
+  # @return homework_priv [String]
+  # @return books_dir_priv [String]
+  # @return brand_private [String]
+  # @return brand_homework [String]
+  # @return db5 [String]
   def self.config
     home = Dir.home
     config = ParseConfig.new("#{home}/.publicancreators.cfg")

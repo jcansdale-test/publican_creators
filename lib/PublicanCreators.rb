@@ -33,6 +33,7 @@ require 'nokogiri'
 require 'bundler/setup'
 
 # Main Class of PublicanCreators
+# @return [bool] true or false
 class PublicanCreators
   my_name = File.basename($0)
   version = PublicanCreatorsVersion::Version::STRING
@@ -177,12 +178,12 @@ class PublicanCreators
 
     PublicanCreatorsChange.change_holder(title, environment, name, company_name)
 
-    PublicanCreatorsChange.remove_legal(title, environment, type, legal)#
+    PublicanCreatorsChange.remove_legal(title, environment, type, legal) #
 
     if type == 'Article'
-      PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo, type)#
+      PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo, type) #
     else
-      PublicanCreatorsChange.remove_orgname(bookinfo, environment, title_logo, type)#
+      PublicanCreatorsChange.remove_orgname(bookinfo, environment, title_logo, type) #
     end
 
     PublicanCreatorsChange.fix_revhist(environment, name, email_business, email, title)

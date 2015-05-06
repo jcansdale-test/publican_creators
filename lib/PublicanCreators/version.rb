@@ -21,6 +21,7 @@
 # Method for versioning the gem
 class PublicanCreatorsVersion
   # human readable Version
+  # @return STRING [String] (Version)
   module Version
     MAJOR = 0
     MINOR = 1
@@ -30,9 +31,3 @@ class PublicanCreatorsVersion
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join('.')
   end
 end
-
-
-#module PublicanCreatorsVersion
-# Just the version
-#  VERSION = '0.2.0'
-#end

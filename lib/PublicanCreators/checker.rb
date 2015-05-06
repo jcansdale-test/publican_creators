@@ -32,6 +32,7 @@ module Checker
   # Checks if the targetdirectory are present. If not, it creates one. It returns a success or fail.
   # Description:
   # @param todos [String] contains the target directory
+  # @return [bool] true or false
   def self.check_dir(todos)
     # Checking if dir exists
     if Dir.exist?(todos)
