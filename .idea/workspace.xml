@@ -49,13 +49,13 @@
     </treeState>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="fixed bug tracker" />
-    <list id="713f91fa-105d-49cc-b4e3-a98b2e5f6059" name="PC-2 Extend documentation A-Type" comment="PC-2 Extend documentation A-Type">
+    <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="added topics to changelog">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PublicanCreators.iml" afterPath="$PROJECT_DIR$/.idea/PublicanCreators.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PublicanCreators.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +68,7 @@
     <SUITE FILE_PATH="coverage/PublicanCreators@yard__PublicanCreators.coverage" NAME="yard: PublicanCreators Coverage Results" MODIFIED="1430331376552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
     <SUITE FILE_PATH="coverage/PublicanCreators@spec__PublicanCreators.coverage" NAME="spec: PublicanCreators Coverage Results" MODIFIED="1430332596630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
     <SUITE FILE_PATH="coverage/PublicanCreators@coveralls_push__PublicanCreators.coverage" NAME="coveralls:push: PublicanCreators Coverage Results" MODIFIED="1430337079469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
+    <SUITE FILE_PATH="coverage/PublicanCreators@release__PublicanCreators.coverage" NAME="release: PublicanCreators Coverage Results" MODIFIED="1430939438436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -113,7 +114,6 @@
         <option value="$PROJECT_DIR$/PublicanCreators.gemspec" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.rdoc" />
-        <option value="$PROJECT_DIR$/CHANGELOG.rdoc" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/checker.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/export.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators.rb" />
@@ -121,6 +121,7 @@
         <option value="$PROJECT_DIR$/lib/PublicanCreators/get.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/prepare.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
+        <option value="$PROJECT_DIR$/CHANGELOG.rdoc" />
       </list>
     </option>
   </component>
@@ -204,6 +205,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="pkg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -240,7 +255,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Ruby.PublicanCreators">
+  <component name="RunManager" selected="Rake.release: PublicanCreators">
     <configuration default="false" name="PublicanCreators" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="PublicanCreators" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -332,6 +347,32 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="coveralls:push" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="release: PublicanCreators" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="PublicanCreators" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="release" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
@@ -494,18 +535,20 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Ruby.PublicanCreators" />
       <item index="1" class="java.lang.String" itemvalue="Rake.yard: PublicanCreators" />
       <item index="2" class="java.lang.String" itemvalue="Rake.spec: PublicanCreators" />
       <item index="3" class="java.lang.String" itemvalue="Rake.coveralls:push: PublicanCreators" />
+      <item index="4" class="java.lang.String" itemvalue="Rake.release: PublicanCreators" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Rake.coveralls:push: PublicanCreators" />
-        <item index="1" class="java.lang.String" itemvalue="Rake.spec: PublicanCreators" />
-        <item index="2" class="java.lang.String" itemvalue="Rake.yard: PublicanCreators" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.PublicanCreators" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Rake.release: PublicanCreators" />
+        <item index="1" class="java.lang.String" itemvalue="Rake.coveralls:push: PublicanCreators" />
+        <item index="2" class="java.lang.String" itemvalue="Rake.spec: PublicanCreators" />
+        <item index="3" class="java.lang.String" itemvalue="Rake.yard: PublicanCreators" />
+        <item index="4" class="java.lang.String" itemvalue="Ruby.PublicanCreators" />
       </list>
     </recent_temporary>
   </component>
@@ -552,15 +595,11 @@
       <created>1430428510014</created>
       <updated>1430428510014</updated>
     </task>
-    <task id="PC-2" summary="Extend documentation A-Type">
-      <branch name="master" repository="$PROJECT_DIR$" original="true" />
-      <branch name="PC-2" repository="$PROJECT_DIR$" />
-      <changelist id="713f91fa-105d-49cc-b4e3-a98b2e5f6059" name="PC-2 Extend documentation A-Type" comment="PC-2 Extend documentation A-Type" />
-      <created>1430428153460</created>
-      <option name="issue" value="true" />
-      <updated>1430936262121</updated>
+    <task id="LOCAL-00009" summary="added topics to changelog">
+      <created>1430939351217</created>
+      <updated>1430939351217</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="10" />
     <servers>
       <YouTrack shared="false" url="http://saigkill.ddns.net:8112">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -585,6 +624,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Geek &amp; Poke" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TagMyCode" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32985386" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Code Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -604,7 +644,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -630,7 +669,8 @@
     <MESSAGE value="fixed circle.yml" />
     <MESSAGE value="fixed bug tracker" />
     <MESSAGE value="PC-2 Extend documentation A-Type" />
-    <option name="LAST_COMMIT_MESSAGE" value="PC-2 Extend documentation A-Type" />
+    <MESSAGE value="added topics to changelog" />
+    <option name="LAST_COMMIT_MESSAGE" value="added topics to changelog" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -875,13 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.rdoc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.038793102" vertical-offset="0" max-vertical-offset="928">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.8330551" vertical-offset="715" max-vertical-offset="1314">
@@ -905,26 +938,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5294118" vertical-offset="90" max-vertical-offset="702">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0294118" vertical-offset="0" max-vertical-offset="3780">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/change.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.487479" vertical-offset="6367" max-vertical-offset="7776">
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/get.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6260434" vertical-offset="867" max-vertical-offset="1836">
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -937,10 +962,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/get.rb">
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6260434" vertical-offset="867" max-vertical-offset="1836">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.5294118" vertical-offset="90" max-vertical-offset="702">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="3798">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.rdoc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29411766" vertical-offset="0" max-vertical-offset="612">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding />
         </state>
       </provider>
