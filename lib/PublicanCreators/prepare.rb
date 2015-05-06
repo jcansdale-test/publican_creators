@@ -33,7 +33,7 @@ module PublicanCreatorsPrepare
   # @param articles_dir_bus [String] represents the directory for your articles
   # @param report [String] contains a true or false. There you can set if the new Publication is a Report or not.
   # @param books_dir_business [String] contains the directory for your business books
-  # @return [String] books_dir (Work)
+  # @return books_dir [String] (Work)
   def self.prepare_work(type, reports_dir_business, articles_dir_bus, report, books_dir_business)
     if type == 'Article'
       articles_dir = PublicanCreatorsPrepare.prepare_target_work_article(reports_dir_business, articles_dir_bus, report)
@@ -52,7 +52,7 @@ module PublicanCreatorsPrepare
   # @param articles_dir_private [String] contains the path to your private articles_dir
   # @param homework_dir_private [String] contains the path to your homework dir.
   # @param books_dir_private [String] contains the path to your private books_dir
-  # @return [String] books_dir (private)
+  # @return books_dir [String] (private)
   def self.prepare_private(type, homework, articles_dir_private, homework_dir_private, books_dir_private)
     if type == 'Article'
       articles_dir = PublicanCreatorsPrepare.prepare_target_private_article(homework, articles_dir_private, homework_dir_private)
@@ -68,7 +68,7 @@ module PublicanCreatorsPrepare
   # @param reports_dir_business [String] reports_dir_business contains the directory to your reports
   # @param articles_dir_bus [String] represents the directory for your articles
   # @param report [String] contains a true or false. There you can set if the new Publication is a Report or not.
-  # @return [String] articles_dir (Work)
+  # @return articles_dir [String] (Work)
   def self.prepare_target_work_article(reports_dir_business, articles_dir_bus, report)
     home = Dir.home
     if report == 'TRUE'
@@ -82,7 +82,7 @@ module PublicanCreatorsPrepare
   # In case of type == Book this tests will be launched. It returns the books_dir variable
   # Description:
   # @param books_dir_business [String] contains the directory for your business books
-  # @return [String] books_dir (Work)
+  # @return books_dir [String] (Work)
   def self.prepare_target_work_book(books_dir_business)
     home = Dir.home
     books_dir = "#{home}/#{books_dir_business}"
@@ -94,7 +94,7 @@ module PublicanCreatorsPrepare
   # @param homework [String] contains true or false. If your present Publication is a homework you can set it there.
   # @param articles_dir_private [String] contains the path to your private articles dir
   # @param homework_dir_private [String] contains the path to your homeworks.
-  # @return [String] articles_dir (Private)
+  # @return articles_dir [String] (Private)
   def self.prepare_target_private_article(homework, articles_dir_private, homework_dir_private)
     home = Dir.home
     if homework == 'FALSE'
@@ -107,7 +107,7 @@ module PublicanCreatorsPrepare
 
   # This method prepares the target directory for a private book
   # @param books_dir_private [String] contains the private books dir.
-  # @return [String] books_dir (Private)
+  # @return books_dir [String] (Private)
   def self.prepare_target_private_book(books_dir_private)
     home = Dir.home
     books_dir = "#{home}/#{books_dir_private}"

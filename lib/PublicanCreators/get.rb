@@ -34,7 +34,7 @@ module PublicanCreatorsGet
   # @param titlein [String] will be got from the yad input.
   # @param titlechomp [String] is the cleaned title.
   # @param title [String] is the splitted input from yad.
-  # @return [String] title
+  # @return title [String]
   def self.title
     # Put the yad input as variable titlein
     titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator=" "  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`
@@ -47,27 +47,27 @@ module PublicanCreatorsGet
   end
 
   # The method gets configuration from a config file.
-  # @return [String] name
-  # @return [String] email_private
-  # @return [String] language
-  # @return [String] use_brand
-  # @return [String] title_logo
-  # @return [String] legal
-  # @return [String] brand
-  # @return [String] company_name
-  # @return [String] company_divison
-  # @return [String] email_business
-  # @return [String] brand_dir
-  # @return [String] globalentities
-  # @return [String] articles_dir
-  # @return [String] reports_dir
-  # @return [String] books_dir
-  # @return [String] articles_dir_priv
-  # @return [String] homework_priv
-  # @return [String] books_dir_priv
-  # @return [String] brand_private
-  # @return [String] brand_homework
-  # @return [String] db5
+  # @return name [String]
+  # @return email_private [String]
+  # @return language [String]
+  # @return use_brand [String]
+  # @return title_logo [String]
+  # @return legal [String]
+  # @return brand [String]
+  # @return company_name [String]
+  # @return company_divison [String]
+  # @return email_business [String]
+  # @return brand_dir [String]
+  # @return globalentities [String]
+  # @return articles_dir [String]
+  # @return reports_dir [String]
+  # @return books_dir [String]
+  # @return articles_dir_priv [String]
+  # @return homework_priv [String]
+  # @return books_dir_priv [String]
+  # @return brand_private [String]
+  # @return brand_homework [String]
+  # @return db5 [String]
   def self.config
     home = Dir.home
     config = ParseConfig.new("#{home}/.publicancreators.cfg")

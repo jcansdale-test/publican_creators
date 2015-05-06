@@ -21,7 +21,7 @@
 # Method for versioning the gem
 class PublicanCreatorsVersion
   # human readable Version
-  # @return [String] STRING (Version)
+  # @return STRING [String] (Version)
   module Version
     MAJOR = 0
     MINOR = 1
