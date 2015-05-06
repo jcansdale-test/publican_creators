@@ -31,9 +31,9 @@ module PublicanCreatorsGet
 
   # THis method ask for the title, environment, type and optional settings. It returns the title variable.
   # Description:
-  # Parameter "titlein" will be got from the yad input.
-  # Parameter "titlechomp" is the cleaned title.
-  # Parameter "title" is the splitted input from yad.
+  # @param titlein [String] will be got from the yad input.
+  # @param titlechomp [String] is the cleaned title.
+  # @param title [String] is the splitted input from yad.
   def self.title
     # Put the yad input as variable titlein
     titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator=" "  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`

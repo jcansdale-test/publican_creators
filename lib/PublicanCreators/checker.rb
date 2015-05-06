@@ -31,16 +31,16 @@ module Checker
 
   # Checks if the targetdirectory are present. If not, it creates one. It returns a success or fail.
   # Description:
-  # @param todo [String] contains the target directory
-  def self.check_dir(todo)
+  # @param todos [String] contains the target directory
+  def self.check_dir(todos)
     # Checking if dir exists
-    if Dir.exist?(todo)
+    if Dir.exist?(todos)
       puts 'Found directory. Im using it.'
     else
       puts 'No directory found. Im creating it.'
       # Creates the new directory
-      FileUtils.mkdir_p(todo)
-      if Dir.exist?(todo)
+      FileUtils.mkdir_p(todos)
+      if Dir.exist?(todos)
         puts 'Created new directory...'
       else
         raise('Cant create directory')
