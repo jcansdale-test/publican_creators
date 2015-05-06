@@ -50,7 +50,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="added topics to changelog">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PublicanCreators.iml" afterPath="$PROJECT_DIR$/.idea/PublicanCreators.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/version.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
     </list>
     <ignored path="PublicanCreators.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +66,7 @@
     <SUITE FILE_PATH="coverage/PublicanCreators@yard__PublicanCreators.coverage" NAME="yard: PublicanCreators Coverage Results" MODIFIED="1430331376552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
     <SUITE FILE_PATH="coverage/PublicanCreators@spec__PublicanCreators.coverage" NAME="spec: PublicanCreators Coverage Results" MODIFIED="1430332596630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
     <SUITE FILE_PATH="coverage/PublicanCreators@coveralls_push__PublicanCreators.coverage" NAME="coveralls:push: PublicanCreators Coverage Results" MODIFIED="1430337079469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
-    <SUITE FILE_PATH="coverage/PublicanCreators@release__PublicanCreators.coverage" NAME="release: PublicanCreators Coverage Results" MODIFIED="1430941042542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
+    <SUITE FILE_PATH="coverage/PublicanCreators@release__PublicanCreators.coverage" NAME="release: PublicanCreators Coverage Results" MODIFIED="1430941165111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PublicanCreators" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -77,6 +77,9 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="PublicanCreators" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -115,8 +118,8 @@
         <option value="$PROJECT_DIR$/lib/PublicanCreators/change.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/get.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/prepare.rb" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
         <option value="$PROJECT_DIR$/CHANGELOG.rdoc" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
       </list>
     </option>
   </component>
@@ -925,13 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5294118" vertical-offset="90" max-vertical-offset="702">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="3798">
@@ -943,6 +939,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29411766" vertical-offset="0" max-vertical-offset="612">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6769984" vertical-offset="89" max-vertical-offset="702">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
