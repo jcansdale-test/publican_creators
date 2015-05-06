@@ -32,9 +32,9 @@ module PublicanCreatorsExport
   # Exports a predefined Shellscript to the target directory.
   # It returns a sucess or fail.
   # Description:
-  # Parameter "title" comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
-  # Parameter "builds" is the path to your buildscript
-  # Parameter "language" is just the ISO Code of your target language like: de-DE, en-GB or such things.
+  # @param title [String] comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # @param builds [String] is the path to your buildscript
+  # @param language [String] is just the ISO Code of your target language like: de-DE, en-GB or such things.
   def self.export_buildscript(title, builds, language)
     puts 'Export the buildscript into new directory...'
     FileUtils.touch "#{builds}"

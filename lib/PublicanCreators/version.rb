@@ -20,6 +20,7 @@
 
 # Method for versioning the gem
 class PublicanCreatorsVersion
+  # human readable Version
   module Version
     MAJOR = 0
     MINOR = 1
@@ -32,6 +33,6 @@ end
 
 
 #module PublicanCreatorsVersion
-  # Just the version
+# Just the version
 #  VERSION = '0.2.0'
 #end

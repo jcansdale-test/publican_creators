@@ -30,6 +30,8 @@ require 'fileutils'
 module Checker
 
   # Checks if the targetdirectory are present. If not, it creates one. It returns a success or fail.
+  # Description:
+  # @param todo [String] contains the target directory
   def self.check_dir(todo)
     # Checking if dir exists
     if Dir.exist?(todo)
