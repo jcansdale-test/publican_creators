@@ -49,10 +49,16 @@
     </treeState>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="fixed bug tracker">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CHANGELOG.rdoc" afterPath="$PROJECT_DIR$/CHANGELOG.rdoc" />
+    <list id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="fixed bug tracker" />
+    <list default="true" id="713f91fa-105d-49cc-b4e3-a98b2e5f6059" name="PC-2 Extend documentation A-Type" comment="PC-2 Extend documentation A-Type">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/change.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/change.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/checker.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/checker.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/export.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/export.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/get.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/get.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/prepare.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/prepare.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/version.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PublicanCreators.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,78 +86,7 @@
     <favorites_list name="PublicanCreators" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="PublicanCreators.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3780">
-              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="change.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/change.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6699" max-vertical-offset="7614">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CHANGELOG.rdoc" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CHANGELOG.rdoc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checker.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/checker.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1008">
-              <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="export.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/export.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="3240">
-              <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="get.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/get.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35081968" vertical-offset="525" max-vertical-offset="1440">
-              <caret line="47" column="52" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="prepare.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/prepare.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1836" max-vertical-offset="2070">
-              <caret line="102" column="69" selection-start-line="102" selection-start-column="69" selection-end-line="102" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -166,6 +101,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -178,15 +118,15 @@
         <option value="$PROJECT_DIR$/circle.yml" />
         <option value="$PROJECT_DIR$/PublicanCreators.gemspec" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators.rb" />
         <option value="$PROJECT_DIR$/README.rdoc" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators/change.rb" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators/export.rb" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators/prepare.rb" />
         <option value="$PROJECT_DIR$/CHANGELOG.rdoc" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators/change.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/checker.rb" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators/export.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/get.rb" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators/prepare.rb" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators.rb" />
       </list>
     </option>
   </component>
@@ -569,10 +509,11 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
+      <branch name="master" repository="$PROJECT_DIR$" />
       <changelist id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="" />
       <created>1430250437307</created>
-      <updated>1430250437307</updated>
+      <updated>1430931353364</updated>
     </task>
     <task id="LOCAL-00001" summary="v0.2.0pre">
       <created>1430332820440</created>
@@ -606,6 +547,14 @@
       <created>1430428510014</created>
       <updated>1430428510014</updated>
     </task>
+    <task active="true" id="PC-2" summary="Extend documentation A-Type">
+      <branch name="master" repository="$PROJECT_DIR$" original="true" />
+      <branch name="PC-2" repository="$PROJECT_DIR$" />
+      <changelist id="713f91fa-105d-49cc-b4e3-a98b2e5f6059" name="PC-2 Extend documentation A-Type" comment="PC-2 Extend documentation A-Type" />
+      <created>1430428153460</created>
+      <option name="issue" value="true" />
+      <updated>1430931353485</updated>
+    </task>
     <option name="localTasksCounter" value="9" />
     <servers>
       <YouTrack shared="false" url="http://saigkill.ddns.net:8112">
@@ -626,7 +575,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="24" width="1877" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -638,7 +587,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Pomodoro CD" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19497542" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19497542" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -919,66 +868,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42672414" vertical-offset="0" max-vertical-offset="928">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/prepare.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
-          <caret line="102" column="69" selection-start-line="102" selection-start-column="69" selection-end-line="102" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CHANGELOG.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+        <state vertical-scroll-proportion="0.038793102" vertical-offset="0" max-vertical-offset="928">
           <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3780">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/change.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="7614">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        <state vertical-scroll-proportion="2.1016393" vertical-offset="5655" max-vertical-offset="7776">
+          <caret line="421" column="32" selection-start-line="421" selection-start-column="32" selection-end-line="421" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/checker.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="1008">
-          <caret line="33" column="55" selection-start-line="33" selection-start-column="55" selection-end-line="33" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.57327586" vertical-offset="80" max-vertical-offset="1026">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/export.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="3240">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.42672414" vertical-offset="270" max-vertical-offset="3258">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/get.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35081968" vertical-offset="525" max-vertical-offset="1440">
-          <caret line="47" column="52" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+        <state vertical-scroll-proportion="1.295082" vertical-offset="57" max-vertical-offset="1836">
+          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/prepare.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51508623" vertical-offset="1250" max-vertical-offset="2196">
+          <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62068963" vertical-offset="0" max-vertical-offset="928">
+          <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35560346" vertical-offset="300" max-vertical-offset="3798">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding />
         </state>
       </provider>
