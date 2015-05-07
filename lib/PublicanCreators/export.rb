@@ -41,130 +41,130 @@ module PublicanCreatorsExport
     FileUtils.touch "#{builds}"
     File.write "#{builds}", <<EOF
 #!/bin/bash
-# Description: This script builds PDF, DOCX, ODT, RTF and WML
-# Usage: build.sh [-docx] [-odt] [-rtf] [-wml] [-pdf]
+# Description: This script builds PDF, DOCX, ODT, RTF, HTML, MAN, TXT, EPUB and WML
+# Usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub]
 # Version:
 # 0.1 initial version
 # Functions
 usage() {
-echo "usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html]..."
+echo "usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub]"
 echo
-echo "Optionen: "
-echo "-docx : Export der Docbook Source nach DOCX"
-echo " Beispiel: $0 -docx"
-echo "-odt : Export der Docbook Source nach ODT"
-echo " Beispiel: $0 -odt"
-echo "-rtf : Export der Docbook Source nach RTF"
-echo " Beispiel: $0 -rtf"
-echo "-wml: Export der Docbook Source nach WML"
-echo " Beispiel: $0 -wml"
-echo "-pdf: Export der Docbook Source nach PDF"
-echo " Beispiel: $0 -pdf"
-echo "-html: Export der Docbook Source nach HTML"
-echo " Beispiel: $0 -html"
-echo "-man: Export der Docbook Source nach MAN"
-echo " Beispiel: $0 -man"
-echo "-txt: Export der Docbook Source nach TXT"
-echo " Beispiel: $0 -txt"
-echo "-epub: Export der Docbook Source nach EPUB"
-echo " Beispiel: $0 -epub"
+echo "Options: "
+echo "-docx : Export DocBook source to DOCX"
+echo " Example: $0 -docx"
+echo "-odt : Export DocBook source to ODT"
+echo " Example: $0 -odt"
+echo "-rtf : Export DocBook source to RTF"
+echo " Example: $0 -rtf"
+echo "-wml: Export DocBook source to WML"
+echo " Example: $0 -wml"
+echo "-pdf: Export Docbook source to PDF"
+echo " Example: $0 -pdf"
+echo "-html: Export DocBook source to HTML"
+echo " Example: $0 -html"
+echo "-man: Export DocBook source to MAN"
+echo " Example: $0 -man"
+echo "-txt: Export DocBook source to TXT"
+echo " Example: $0 -txt"
+echo "-epub: Export DocBook source to EPUB"
+echo " Example: $0 -epub"
 exit 1
 }
 
 # main
 case "$1" in
     -docx)
-        echo "Auflösung aller XML-Entities und XI-XIncludes"
+        echo "Solve all XML-Entities and XI-Includes"
         xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
-        echo "Formatiere XML nach XSL-FO"
+        echo "Formatting XML to XSL-FO"
         saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
         rm #{title}-resolved.xml
-        echo "Führe Transformation nach DOCX durch"
+        echo "Transforming to DOCX"
         fo2docx #{title}.fo > #{title}.docx
-        echo "Starte LibreOffice Writer zur Ansicht"
+        echo "Launching LibreOffice Writer"
         lowriter #{title}.docx &
         ;;
     -odt)
-        echo "Auflösung aller XML-Entities und XI-XIncludes"
+        echo "Solve all XML-Entities and XI-Includes"
         xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
-        echo "Formatiere XML nach XSL-FO"
+        echo "Formatting XML to XSL-FO"
         saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
         rm #{title}-resolved.xml
-        echo "Führe Transformation nach ODT durch"
+        echo "Transforming to ODT"
         fo2odt #{title}.fo > #{title}.odt
-        echo "Starte LibreOffice Writer zur Ansicht"
+        echo "Starting LibreOffice Writer"
         lowriter #{title}.odt &
         ;;
     -rtf)
-        echo "Auflösung aller XML-Entities und XI-XIncludes"
+        echo "Solve all XML-Entities and XI-Includes"
         xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
-        echo "Formatiere XML nach XSL-FO"
+        echo "Formatting XML to XSL-FO"
         saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
         rm #{title}-resolved.xml
-        echo "Führe Transformation nach RTF durch"
+        echo "Transforming to RTF"
         fo2rtf #{title}.fo > #{title}.rtf
-        echo "Starte LibreOffice Writer zur Ansicht"
+        echo "Launching LibreOffice Writer"
         lowriter #{title}.rtf &
         ;;
     -wml)
-        echo "Auflösung aller XML-Entities und XI-XIncludes"
+        echo "Solve all XML-Entities and XI-Includes"
         xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
-        echo "Formatiere XML nach XSL-FO"
+        echo "Formatting XML to XSL-FO"
         saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
         rm #{title}-resolved.xml
-        echo "Führe Transformation nach WML durch"
+        echo "Transforming to WML"
         fo2wml #{title}.fo > #{title}.wml
-        echo "Starte LibreOffice Writer zur Ansicht"
+        echo "Launching LibreOffice Writer"
         lowriter #{title}.wml &
         ;;
     -pdf)
         cd ..
-        echo "Räume temporäres Verzeichnis auf"
+        echo "Cleanup temp directory"
         publican clean
-        echo "Formatiere Docbook Dokument und rendere es nach PDF"
+        echo "Formatting DocBook dokument and rendering to PDF"
         publican build --langs=#{language} --formats=pdf --allow_network
-        echo "Starte PDF-Betrachter"
+        echo "Launching PDF-Viewer"
         /opt/cxoffice/bin/wine --bottle "PDF-XChange Viewer 2.x" --cx-app PDFXCview.exe tmp/de-DE/pdf/*.pdf &
         ;;
     -html)
         cd ..
-        echo "Räume temporäres Verzeichnis auf"
+        echo "Cleanup temp directory"
         publican clean
-        echo "Formatiere Docbook Dokument und rendere es nach HTML"
+        echo "Formatting DocBook dokument and rendering to HTML"
         publican build --langs=#{language} --formats=html --allow_network
-        echo "Starte Browser"
+        echo "Launching Browser"
         firefox tmp/de-DE/html/index.html &
         ;;
     -man)
         cd ..
-        echo "Räume temporäres Verzeichnis auf"
+        echo "Cleanup temp directory"
         publican clean
-        echo "Formatiere Docbook Dokument und rendere es nach MAN"
+        echo "Formatting DocBook document to MAN"
         publican build --langs=#{language} --formats=man --allow_network
         ;;
-     -txt)
+    -txt)
         cd ..
-        echo "Räume temporäres Verzeichnis auf"
+        echo "Cleanup temp directory"
         publican clean
-        echo "Formatiere Docbook Dokument und rendere es nach HTML"
+        echo "Formatting DocBook document to TXT"
         publican build --langs=#{language} --formats=txt --allow_network
-        echo "Starte Texteditor"
+        echo "Launching Texteditor"
         gedit tmp/de-DE/txt/*.txt &
         ;;
-     -epub)
+    -epub)
         cd ..
-        echo "Räume temporäres Verzeichnis auf"
+        echo "Cleanup temp directory"
         publican clean
-        echo "Formatiere Docbook Dokument und rendere es nach EPUB"
+        echo "Formatting and rendering DocBook document to EPUB"
         publican build --langs=#{language} --formats=epub --allow_network
-        echo "Starte EPUB-Betrachter"
+        echo "Launching EPUB-Viewer"
         ebook-viewer tmp/de-DE/*.epub &
         ;;
-      -eclipse)
+    -eclipse)
         cd ..
-        echo "Räume temporäres Verzeichnis auf"
+        echo "Cleanup temp directory"
         publican clean
-        echo "Formatiere Docbook Dokument und rendere es nach HTML"
+        echo "Formatting to HTML"
         publican build --langs=#{language} --formats=eclipse --allow_network
         ;;
     *)

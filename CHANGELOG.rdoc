@@ -17,6 +17,6 @@
 * PC-2: Extend documentation A-Type
 * PC-3: Extend documentation B-Type
 
-== 0.1.0
+== 0.1.0 (2015-04-25)
 === Features
 * Build the base functions
