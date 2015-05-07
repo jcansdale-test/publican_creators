@@ -50,10 +50,6 @@ module PublicanCreatorsChange
       else
         string << " --brand #{brand}"
       end
-      if db5 == 'true'
-        string << ' --dtdver 5.0'
-      end
-      system("publican create #{string}")
     else
       # Initial creation of documentation with publican
       puts 'Creating initial documentation ...'
@@ -63,11 +59,11 @@ module PublicanCreatorsChange
       else
         string << " --brand #{brand}"
       end
-      if db5 == 'true'
-        string << ' --dtdver 5.0'
-      end
-      system("publican create #{string}")
     end
+    if db5 == 'true'
+      string << ' --dtdver 5.0'
+    end
+    system("publican create #{string}")
     PublicanCreatorsChange.check_result(title)
   end
 
@@ -94,10 +90,6 @@ module PublicanCreatorsChange
         else
           string << " --brand #{brand_private}"
         end
-        if db5 == 'true'
-          string << ' --dtdver 5.0'
-        end
-        system("publican create #{string}")
       else
         puts 'Creating initial documentation ...'
         string = "--type Article --lang #{language} --name #{title}"
@@ -106,10 +98,6 @@ module PublicanCreatorsChange
         else
           string << " --brand #{brand_homework}"
         end
-        if db5 == 'true'
-          string << ' --dtdver 5.0'
-        end
-        system("publican create #{string}")
       end
     else
       # Initial creation of documentation with publican
@@ -120,11 +108,11 @@ module PublicanCreatorsChange
       else
         string << " --brand #{brand_private}"
       end
-      if db5 == 'true'
-        string << ' --dtdver 5.0'
-      end
-      system("publican create #{string}")
     end
+    if db5 == 'true'
+      string << ' --dtdver 5.0'
+    end
+    system("publican create #{string}")
     PublicanCreatorsChange.check_result(title)
   end
 
