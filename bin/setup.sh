@@ -8,22 +8,48 @@ echo "##########################################################################
 echo "Install Bundle"
 bundle install
 
+# Fix for PC-6
 echo  "Checking where i am"
-YUM=`which yum`
-if [ "$YUM" ]
+if [ -f /etc/fedora-release ]
 then
-echo "found yum"
-sudo yum install publican*
+    echo "found Fedora"
+    sudo yum install publican*
 fi
 
-APT=`which apt-get`
-if [ "$APT" ]
+if [ -f /etc/redhat-release ]
 then
-echo "Found apt-get"
-sudo apt-get install publican yad
-sudo add-apt-repository ppa:sascha-manns-h/publican -y
-sudo apt-get update
-sudo apt-get install --only-upgrade publican
+    echo "found Redhat"
+    sudo yum install publican*
+fi
+
+distro=`lsb_release -is`
+distver=`lsb_release -rs`
+if [ "$distro" == 'Ubuntu' ]
+then
+    echo "Found Ubuntu"
+    if [ "$distver" -lt "14.04" ]
+    then
+        echo "You need a Ubuntu version 14.04 or newer to use PublicanCreators"
+    else
+        sudo apt-get install publican yad
+        sudo add-apt-repository ppa:sascha-manns-h/publican -y
+        sudo apt-get update
+        sudo apt-get install --only-upgrade publican
+    fi
+fi
+
+if [ "$distro" == 'Debian' ]
+then
+    echo "Found Debian"
+    echo "Can't prepare publican for Debian. Maybe i'm preparing a setup routine later."
+    echo "You can try to install publican with this Howto: http://bit.ly/1dQtGLa"
+fi
+
+if [ -f /etc/SuSE-release ]
+then
+    echo "Found openSUSE"
+    echo "Can't prepare publican for openSUSE because there are no packages."
+    echo "You can try to install publican with this Howto: http://bit.ly/1dQtGLa"
 fi
 
 if [ -e $HOME/.publicancreators.cfg ]
@@ -48,7 +74,7 @@ else
     then
         EDITOR="jedit"
     fi
-    ${EDITOR} $HOME/.publicancreators
+    ${EDITOR} $HOME/.publicancreators.cfg
 fi
 
 echo "Linking binary"

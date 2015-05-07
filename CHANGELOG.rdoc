@@ -1,14 +1,22 @@
 = \CHANGELOG
 
-== 0.1.1
+== 0.2.0 (2015-05-17)
+=== Features
 
+=== Bugfixes
+* PC-6: Create rules for setup Fedora
+* PC-7: Fix setup.sh
+* PC-8: Add URL to Bugtracker into UI
+* PC-10: Config versioning
+
+== 0.1.1 (2015-05-16)
 === Features
 * Fetches the titlename, type and environment from a yad dialogbox
 * Creates the initial documentation by using publican with using your titlename, your choosen type and environment
 
 === Bugfixes
-* PC-3: Extend documentation B-Type
 * PC-2: Extend documentation A-Type
+* PC-3: Extend documentation B-Type
 
 == 0.1.0
 === Features

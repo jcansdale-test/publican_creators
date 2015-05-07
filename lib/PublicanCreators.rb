@@ -76,7 +76,7 @@ class PublicanCreators
   puts 'Reading the config file in ~/.publicancreators.cfg'
   # Run config method who reads in the config file and puts the variables in an array
   PublicanCreatorsGet.config
-  a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u = PublicanCreatorsGet.config
+  a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v = PublicanCreatorsGet.config
   name = "#{a}"
   email = "#{b}"
   language = "#{c}"
@@ -98,6 +98,7 @@ class PublicanCreators
   brand_private = "#{s}"
   brand_homework = "#{t}"
   db5 = "#{u}"
+  conf_ver = "#{v}"
 
   puts 'Your configuration is:'
   puts "Your Name: #{name}"
@@ -121,6 +122,7 @@ class PublicanCreators
   puts "Your private brand: #{brand_private}"
   puts "Your homework brand: #{brand_homework}"
   puts "DocBook5 as default: #{db5}"
+  puts "Config version: #{conf_ver}"
 
   global_entities = "#{brand_dir}/#{glob_entities}"
 

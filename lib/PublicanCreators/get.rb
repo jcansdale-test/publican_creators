@@ -37,7 +37,7 @@ module PublicanCreatorsGet
   # @return title [String]
   def self.title
     # Put the yad input as variable titlein
-    titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator=" "  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`
+    titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator=" "  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --field="Please file bugs or feature requests on http://saigkill.ddns.net:8112/dashboard:LBL" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`
     # Format: Work/Privat!Article/Buch!title!Normal/Report/Homework
     # Cleanup the array
     titlechomp = titlein.chomp
@@ -68,9 +68,11 @@ module PublicanCreatorsGet
   # @return brand_private [String]
   # @return brand_homework [String]
   # @return db5 [String]
+  # @return conf_ver [String]
   def self.config
     home = Dir.home
     config = ParseConfig.new("#{home}/.publicancreators.cfg")
+    conf_ver = config['conf_ver']
     name = config['name']
     email_private = config['email_private']
     language = config['language']
@@ -92,6 +94,6 @@ module PublicanCreatorsGet
     brand_private = config['brand_private']
     brand_homework = config['brand_homework']
     db5 = config['db5']
-    [name, email_private, language, use_brand, title_logo, legal, brand, company_name, company_division, email_business, brand_dir, globalentities, articles_dir, reports_dir, books_dir, articles_dir_priv, homework_dir, books_dir_priv, brand_private, brand_homework, db5]
+    [name, email_private, language, use_brand, title_logo, legal, brand, company_name, company_division, email_business, brand_dir, globalentities, articles_dir, reports_dir, books_dir, articles_dir_priv, homework_dir, books_dir_priv, brand_private, brand_homework, db5, conf_ver]
   end
 end
