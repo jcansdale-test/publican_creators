@@ -5,11 +5,27 @@ IFS=$'\n\t'
 echo "##################################################################################"
 echo "#                  PublicanCreators Setup                                        #"
 echo "##################################################################################"
+echo "Install Bundle"
 bundle install
+
+echo  "Checking where i am"
+YUM=`which yum`
+if [ "$YUM" ]
+then
+echo "found yum"
+sudo yum install publican*
+fi
+
+APT=`which apt-get`
+if [ "$APT" ]
+then
+echo "Found apt-get"
 sudo apt-get install publican yad
 sudo add-apt-repository ppa:sascha-manns-h/publican -y
 sudo apt-get update
 sudo apt-get install --only-upgrade publican
+fi
+
 if [ -e $HOME/.publicancreators.cfg ]
 then
     echo "Found Config file"
