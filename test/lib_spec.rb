@@ -38,6 +38,8 @@ agroup = "#{title}/de-DE/Author_Group.xml"
 builds = "#{title}/de-DE/build.sh"
 brand_dir = '/usr/share/publican/Common_Content/XCOM'
 global_entities = "#{brand_dir}/de-DE/entitiesxcom.ent"
+xfc_brand_dir = '/opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl'
+pdfview = '/opt/cxoffice/bin/wine --bottle "PDF-XChange Viewer 2.x" --cx-app PDFXCview.exe'
 
 describe 'Documentation Creator Work' do
   it 'should change to an directory and creates there an initial documentation' do
@@ -114,7 +116,7 @@ end
 
 describe 'Export Buildscript' do
   it 'should export a shellscript with resolved title entity' do
-    PublicanCreatorsExport.export_buildscript(title, builds, language)
+    PublicanCreatorsExport.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
     File.exist?(builds)
     :should == true
   end

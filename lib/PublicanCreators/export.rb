@@ -1,7 +1,8 @@
-# Export-Module for PublicanCreators
-# It produces a shell script for simplify the build process
+# PublicanCreatorsExport
+# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @abstract Class for exporting bash scripts
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@xcom.de>
+# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -32,11 +33,13 @@ module PublicanCreatorsExport
   # Exports a predefined Shellscript to the target directory.
   # It returns a sucess or fail.
   # Description:
-  # @param title [String] comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
-  # @param builds [String] is the path to your buildscript
-  # @param language [String] is just the ISO Code of your target language like: de-DE, en-GB or such things.
-  # @return [bool] true or false
-  def self.export_buildscript(title, builds, language)
+  # @param [String] title comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # @param [String] builds is the path to your buildscript
+  # @param [String] language is just the ISO Code of your target language like: de-DE, en-GB or such things.
+  # @param [String] xfc_brand_dir if present the path to your branded xfc stylesheets (config file)
+  # @param [String] pdfview your prefered PDF-Viewer (config file)
+  # @return [String] true or false
+  def self.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
     puts 'Export the buildscript into new directory...'
     FileUtils.touch "#{builds}"
     File.write "#{builds}", <<EOF
@@ -77,45 +80,69 @@ case "$1" in
         echo "Solve all XML-Entities and XI-Includes"
         xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
         echo "Formatting XML to XSL-FO"
-        saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
+        if [ -d ../tmp/#{language}/docx ]
+        then
+          echo "Found tempdir"
+        else
+          mkdir ../tmp/#{language}/docx
+        end
+        saxon-xslt -o ../tmp/#{language}/docx/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
         rm #{title}-resolved.xml
         echo "Transforming to DOCX"
-        fo2docx #{title}.fo > #{title}.docx
+        fo2docx ../tmp/#{language}/docx/#{title}.fo > ../tmp/#{language}/docx/#{title}.docx
         echo "Launching LibreOffice Writer"
-        lowriter #{title}.docx &
+        lowriter ../tmp/#{language}/docx/#{title}.docx &
         ;;
     -odt)
         echo "Solve all XML-Entities and XI-Includes"
         xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
         echo "Formatting XML to XSL-FO"
-        saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
+        if [ -d ../tmp/#{language}/odt ]
+        then
+          echo "Found tempdir"
+        else
+          mkdir ../tmp/#{language}/odt
+        end
+        saxon-xslt -o ../tmp/#{language}/odt/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
         rm #{title}-resolved.xml
         echo "Transforming to ODT"
-        fo2odt #{title}.fo > #{title}.odt
+        fo2odt ../tmp/#{language}/odt/#{title}.fo > ../tmp/#{language}/odt/#{title}.odt
         echo "Starting LibreOffice Writer"
-        lowriter #{title}.odt &
+        lowriter ../tmp/#{language}/odt/#{title}.odt &
         ;;
     -rtf)
         echo "Solve all XML-Entities and XI-Includes"
         xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
         echo "Formatting XML to XSL-FO"
-        saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
+        if [ -d ../tmp/#{language}/rtf ]
+        then
+          echo "Found tempdir"
+        else
+          mkdir ../tmp/#{language}/rtf
+        end
+        saxon-xslt -o ../tmp/#{language}/rtf/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
         rm #{title}-resolved.xml
         echo "Transforming to RTF"
-        fo2rtf #{title}.fo > #{title}.rtf
+        fo2rtf ../tmp/#{language}/rtf/#{title}.fo > ../tmp/#{language}/rtf/#{title}.rtf
         echo "Launching LibreOffice Writer"
-        lowriter #{title}.rtf &
+        lowriter ../tmp/#{language}/rtf/#{title}.rtf &
         ;;
     -wml)
         echo "Solve all XML-Entities and XI-Includes"
         xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
         echo "Formatting XML to XSL-FO"
-        saxon-xslt -o #{title}.fo #{title}-resolved.xml /opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl
+        if [ -d ../tmp/#{language}/wml ]
+        then
+          echo "Found tempdir"
+        else
+          mkdir ../tmp/#{language}/wml
+        end
+        saxon-xslt -o ../tmp/#{language}/wml/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
         rm #{title}-resolved.xml
         echo "Transforming to WML"
-        fo2wml #{title}.fo > #{title}.wml
+        fo2wml ../tmp/#{language}/wml/#{title}.fo > ../tmp/#{language}/wml/#{title}.wml
         echo "Launching LibreOffice Writer"
-        lowriter #{title}.wml &
+        lowriter ../tmp/#{language}/wml/#{title}.wml &
         ;;
     -pdf)
         cd ..
@@ -124,7 +151,7 @@ case "$1" in
         echo "Formatting DocBook dokument and rendering to PDF"
         publican build --langs=#{language} --formats=pdf --allow_network
         echo "Launching PDF-Viewer"
-        /opt/cxoffice/bin/wine --bottle "PDF-XChange Viewer 2.x" --cx-app PDFXCview.exe tmp/de-DE/pdf/*.pdf &
+        #{pdfview} tmp/de-DE/pdf/*.pdf &
         ;;
     -html)
         cd ..
@@ -158,13 +185,18 @@ case "$1" in
         echo "Formatting and rendering DocBook document to EPUB"
         publican build --langs=#{language} --formats=epub --allow_network
         echo "Launching EPUB-Viewer"
-        ebook-viewer tmp/de-DE/*.epub &
+        ev=`which ebook-viewer`
+        if [ "$ev"]
+          ebook-viewer tmp/de-DE/*.epub &
+        else
+          echo "You need to install calibre for preview the result!"
+        fi
         ;;
     -eclipse)
         cd ..
         echo "Cleanup temp directory"
         publican clean
-        echo "Formatting to HTML"
+        echo "Formatting to ECLIPSE"
         publican build --langs=#{language} --formats=eclipse --allow_network
         ;;
     *)

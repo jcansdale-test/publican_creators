@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name = 'PublicanCreators'
   spec.version = PublicanCreatorsVersion::Version::STRING
   spec.authors = ['Sascha Manns']
-  spec.email = ['Sascha.Manns@xcom.de']
+  spec.email = ['Sascha.Manns@bdvb.de']
 
   spec.summary = %q{A short program to fix the publican documentation}
   spec.description = %q{PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [fedorahosted.org/publican/]. PublicanCreators asks after launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. So it adds the users information in the Article_Info, Revision_History and so on. You can write your own settings in the Configurations file.}

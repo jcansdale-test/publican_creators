@@ -1,4 +1,8 @@
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@xcom.de>
+# PublicanCreatorsVersion
+# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @abstract Class for maintaining the version number
+#
+# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,14 +24,18 @@
 
 # Method for versioning the gem
 class PublicanCreatorsVersion
-  # human readable Version
-  # @return STRING [String] (Version)
+  # @note human readable Version
+  # @return [String] STRING (Version)
   module Version
+    # Major version. Maybe never reached
     MAJOR = 0
+    # Minor version.
     MINOR = 2
+    # Patchlevel
     PATCH = 0
+    # Buildversion. Mostly 0
     BUILD = 0
-
+    # @note This will be shown by PublicanCreatorsVersion::Version::STRING
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join('.')
   end
 end

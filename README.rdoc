@@ -1,3 +1,7 @@
+# @markup rdoc
+# @title Readme
+# @author Sascha Manns <Sascha.Manns@bdvb.de>
+
 = \PublicanCreators
 
 home :: https://github.com/saigkill/PublicanCreators
@@ -31,10 +35,6 @@ The installation is very easy.
 
     gem install PublicanCreators
     /path/to/gem/bin/setup.sh
-
-If you are updated to a newer gem just run:
-
-    /path/to/gem/bin/update.sh
 
 == Hard dependencies
 * yad

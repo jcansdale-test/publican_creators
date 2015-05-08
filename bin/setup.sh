@@ -27,7 +27,7 @@ distver=`lsb_release -rs`
 if [ "$distro" == 'Ubuntu' ]
 then
     echo "Found Ubuntu"
-    if [ "$distver" -lt "14.04" ]
+    if [ "$distver" -lt "14" ]
     then
         echo "You need a Ubuntu version 14.04 or newer to use PublicanCreators"
     else
@@ -79,6 +79,10 @@ fi
 
 echo "Linking binary"
 FROM="$(pwd)"
+if [ -e /usr/bin/publicancreators ]
+then
+    rm /usr/bin/publicancreators
+fi
 sudo ln -s ${FROM}/PublicanCreators.rb /usr/bin/publicancreators
 
 echo "Creating Desktop file"

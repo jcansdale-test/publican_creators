@@ -1,7 +1,8 @@
-# Checker Module for PublicanCreators
-# It checks if a directory is present. Otherwise it creates one.
+# PublicanCreatorsChecker
+# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @abstract Class for checking directories and creating them
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@xcom.de>
+# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,20 +27,20 @@
 require 'dir'
 require 'fileutils'
 
-# Module for directory doings
+# @note Module for directory doings
 module Checker
 
   # Checks if the targetdirectory are present. If not, it creates one. It returns a success or fail.
   # Description:
-  # @param todos [String] contains the target directory
-  # @return [bool] true or false
+  # @param [String] todos contains the target directory
+  # @return [String] true or false
   def self.check_dir(todos)
-    # Checking if dir exists
+    # @note Checking if dir exists
     if Dir.exist?(todos)
       puts 'Found directory. Im using it.'
     else
       puts 'No directory found. Im creating it.'
-      # Creates the new directory
+      # @note Creates the new directory
       FileUtils.mkdir_p(todos)
       if Dir.exist?(todos)
         puts 'Created new directory...'

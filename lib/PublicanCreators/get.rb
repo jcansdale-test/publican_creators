@@ -1,7 +1,8 @@
-# Get-Module for PublicanCreators
-# It gets the title and the informations from the configuration file
+# PublicanCreatorsGet
+# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @abstract Class for gathering information from config file and user input
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@xcom.de>
+# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -29,46 +30,45 @@ require 'dir'
 # This method provides methods for user inputs
 module PublicanCreatorsGet
 
-  # THis method ask for the title, environment, type and optional settings. It returns the title variable.
+  # This method ask for the title, environment, type and optional settings. It returns the title variable.
   # Description:
-  # @param titlein [String] will be got from the yad input.
-  # @param titlechomp [String] is the cleaned title.
-  # @param title [String] is the splitted input from yad.
-  # @return title [String]
+  # @return [String] title
   def self.title
-    # Put the yad input as variable titlein
+    # @note Put the yad input as variable titlein
     titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator=" "  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --field="Please file bugs or feature requests on http://saigkill.ddns.net:8112/dashboard:LBL" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`
-    # Format: Work/Privat!Article/Buch!title!Normal/Report/Homework
-    # Cleanup the array
+    # @note Format: Work/Private!Article/Book!title!Normal/Report/Homework
+    # @note Cleanup the array
     titlechomp = titlein.chomp
-    # Split the variable to the array title[*]
+    # @note Split the variable to the array title[*]
     title = titlechomp.split(' ')
     return title
   end
 
   # The method gets configuration from a config file.
-  # @return name [String]
-  # @return email_private [String]
-  # @return language [String]
-  # @return use_brand [String]
-  # @return title_logo [String]
-  # @return legal [String]
-  # @return brand [String]
-  # @return company_name [String]
-  # @return company_divison [String]
-  # @return email_business [String]
-  # @return brand_dir [String]
-  # @return globalentities [String]
-  # @return articles_dir [String]
-  # @return reports_dir [String]
-  # @return books_dir [String]
-  # @return articles_dir_priv [String]
-  # @return homework_priv [String]
-  # @return books_dir_priv [String]
-  # @return brand_private [String]
-  # @return brand_homework [String]
-  # @return db5 [String]
-  # @return conf_ver [String]
+  # @return [String] name
+  # @return [String] email_private
+  # @return [String] language
+  # @return [String] use_brand
+  # @return [String] title_logo
+  # @return [String] legal
+  # @return [String] brand
+  # @return [String] company_name
+  # @return [String] company_divison
+  # @return [String] email_business
+  # @return [String] brand_dir
+  # @return [String] globalentities
+  # @return [String] articles_dir
+  # @return [String] reports_dir
+  # @return [String] books_dir
+  # @return [String] articles_dir_priv
+  # @return [String] homework_priv
+  # @return [String] books_dir_priv
+  # @return [String] brand_private
+  # @return [String] brand_homework
+  # @return [String] db5
+  # @return [String] conf_ver
+  # @return [String] xfc_brand_dir
+  # @return [String] pdfview
   def self.config
     home = Dir.home
     config = ParseConfig.new("#{home}/.publicancreators.cfg")
@@ -94,6 +94,8 @@ module PublicanCreatorsGet
     brand_private = config['brand_private']
     brand_homework = config['brand_homework']
     db5 = config['db5']
-    [name, email_private, language, use_brand, title_logo, legal, brand, company_name, company_division, email_business, brand_dir, globalentities, articles_dir, reports_dir, books_dir, articles_dir_priv, homework_dir, books_dir_priv, brand_private, brand_homework, db5, conf_ver]
+    xfc_brand_dir = config['xfc_brand_dir']
+    pdfview = config['pdfview']
+    [name, email_private, language, use_brand, title_logo, legal, brand, company_name, company_division, email_business, brand_dir, globalentities, articles_dir, reports_dir, books_dir, articles_dir_priv, homework_dir, books_dir_priv, brand_private, brand_homework, db5, conf_ver, xfc_brand_dir, pdfview]
   end
 end

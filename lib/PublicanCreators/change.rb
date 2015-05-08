@@ -1,7 +1,9 @@
 # Changer Module for PublicanCreators
-# It mades all changes in the files
+# PublicanCreatorsChange
+# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @abstract Class for all file changes
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@xcom.de>
+# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -27,31 +29,31 @@ require 'nokogiri'
 require 'dir'
 require 'PublicanCreators/checker'
 
-# Module what contains all methods who are doing changes in files
+# @note Module what contains all methods who are doing changes in files
 module PublicanCreatorsChange
 
   # Method for creating initial documentation for work. It asks for title, type, language, brand and db5 variable, creates a launch-string from them and launches publican.
   # Descriptions:
-  # @param title [String] comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @param type [String] represents the Document-Type like Article or Book.
-  # @param language [String] is just the ISO Code of your target language like: de-DE, en-GB or such things.
-  # @param brand [String] can be a special customized brand for your company to fit the Styleguide.
-  # @param db5 [String] just sets your preferences. If you like to have DocBook 5.x as default you can set it there.
-  # @return [bool] true or false
-  # That method returns just a success or a fail. After the main part of the method it starts another method "PublicanCreatorsChange.check_result". This method checks
-  # if the directory with the content of the @param title [String] is available.
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  # @param [String] type represents the Document-Type like Article or Book.
+  # @param [String] language is just the ISO Code of your target language like: de-DE, en-GB or such things.
+  # @param [String] brand can be a special customized brand for your company to fit the Styleguide.
+  # @param [String] db5 just sets your preferences. If you like to have DocBook 5.x as default you can set it there.
+  # @return [String] true or false
+  # @note That method returns just a success or a fail. After the main part of the method it starts another method "PublicanCreatorsChange.check_result". This method checks
+  #  if the directory with the content of the @param title [String] is available.
   def self.init_docu_work(title, type, language, brand, db5)
     if type == 'Article'
-      # Initial creation of documentation with publican
+      # @note Initial creation of documentation with publican
       puts 'Creating initial documentation ...'
       string = "--type Article --lang #{language} --name #{title}"
       if brand == ''
-        # do nothing
+        # @note do nothing
       else
         string << " --brand #{brand}"
       end
     else
-      # Initial creation of documentation with publican
+      # @note Initial creation of documentation with publican
       puts 'Creating initial documentation ...'
       string = "--lang #{language} --name #{title}"
       if brand == ''
@@ -60,33 +62,35 @@ module PublicanCreatorsChange
         string << " --brand #{brand}"
       end
     end
+    # @note Check if DocBook 5 wished as default, if yes it adds the @param dtdver 5.0 to string
     if db5 == 'true'
       string << ' --dtdver 5.0'
     end
     system("publican create #{string}")
+    # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
     PublicanCreatorsChange.check_result(title)
   end
 
   # Method for creating initial documentation for private. It asks for title, type, language, homework, brand_homework, brand_private
   # and db5 variable, creates a launch-string from them and launches publican.
   # Descriptions:
-  # @param title [String] comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @param type [String] represents the Document-Type like Article or Book.
-  # @param brand_private [String] is used in all methods with a "private" in the name. If this brand is set it will be used instead of the original publican brand.
-  # @param language [String] is just the ISO Code of your target language like: de-DE, en-GB or such things.
-  # @param brand_homework [String] can be a special customized brand for distance learning schools.
-  # @param db5 [String] just sets your preferences. If you like to have DocBook 5.x as default you can set it there.
-  # @return [bool] true or false
-  # That method returns just a success or a fail. After the main part of the method it starts another method "PublicanCreatorsChange.check_result". This method checks
-  # if the directory with the content of the @param title [String] is available.
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  # @param [String] type represents the Document-Type like Article or Book.
+  # @param [String] brand_private is used in all methods with a "private" in the name. If this brand is set it will be used instead of the original publican brand.
+  # @param [String] language is just the ISO Code of your target language like: de-DE, en-GB or such things.
+  # @param [String] brand_homework can be a special customized brand for distance learning schools.
+  # @param [String] db5 just sets your preferences. If you like to have DocBook 5.x as default you can set it there.
+  # @return [String] true or false
+  # @note That method returns just a success or a fail. After the main part of the method it starts another method "PublicanCreatorsChange.check_result". This method checks
+  #  if the directory with the content of the @param title [String] is available.
   def self.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
     if type == 'Article'
-      # Initial creation of documentation with publican
+      # @note Initial creation of documentation with publican
       if homework == 'FALSE'
         puts 'Creating initial documentation ...'
         string = "--type Article --lang #{language} --name #{title}"
         if brand_private == ''
-          # do nothing
+          # @note do nothing
         else
           string << " --brand #{brand_private}"
         end
@@ -100,11 +104,11 @@ module PublicanCreatorsChange
         end
       end
     else
-      # Initial creation of documentation with publican
+      # @note Initial creation of documentation with publican
       puts 'Creating initial documentation ...'
       string = "--lang #{language} --name #{title}"
-      if brand == ''
-        # do nothing
+      if brand_private == ''
+        # @note do nothing
       else
         string << " --brand #{brand_private}"
       end
@@ -113,15 +117,16 @@ module PublicanCreatorsChange
       string << ' --dtdver 5.0'
     end
     system("publican create #{string}")
+    # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
     PublicanCreatorsChange.check_result(title)
   end
 
   # This method will be launched from the init_docu_* methods. It returns a success, otherwise it raises with a error.
   # Descriptions:
-  # @param title [String] comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @return [bool] true or false
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  # @return [String] true or false
   def self.check_result(title)
-    # checking if new documentation directory exists
+    # @note checking if new documentation directory exists
     if Dir.exist?(title)
       puts 'Creating documentation was a success...'
     else
@@ -132,17 +137,17 @@ module PublicanCreatorsChange
   # By working for my employer i'm creating publications which refers to a global entity file.
   # This method adds the entities from that file into the local one. It returns a success or fail.
   # Descriptions:
-  # @param title [String] comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @param environment [String] shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
-  # @param global_entities [String] is just the path to the global entity file.
-  # @param brand [String] can be a special customized brand for your company to fit the Styleguide.
-  # @return [bool] true or false
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # @param [String] global_entities is just the path to the global entity file.
+  # @param [String] brand can be a special customized brand for your company to fit the Styleguide.
+  # @return [String] true or false
   def self.add_entity(title, environment, global_entities, brand)
     ent = "#{title}/de-DE/#{title}.ent"
     if environment == 'Work'
       if brand == 'XCOM'
         puts 'Adding global entities...'
-        # Adding global entities
+        # @note Adding global entities
         open(ent, 'a') { |f|
           f << "\n"
           f << "<!-- COMMON ENTITIES -->\n"
@@ -161,15 +166,15 @@ module PublicanCreatorsChange
 
   # In this method the standard-holder from the local entity-file will be replaced with the company_name or if it is a private work the name of the present user. It returns a sucess or fail.
   # Descriptions:
-  # @param title [String] comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @param environment [String] shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
-  # @param name [String] is your name.
-  # @param company_name [String] is the name of your company
-  # @return [bool] true or false
-  # If the environment "Work" is given the entity file will be set as HOLDER otherwise it sets your name.
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # @param [String] name is your name.
+  # @param [String] company_name is the name of your company
+  # @return [String] true or false
+  # @note If the environment "Work" is given the entity file will be set as HOLDER otherwise it sets your name.
   def self.change_holder(title, environment, name, company_name)
     ent = "#{title}/de-DE/#{title}.ent"
-    # Replace the Holder with the real one
+    # @note Replace the Holder with the real one
     puts 'Replace holder field with the present user'
     if environment == 'Work'
       text = File.read(ent)
@@ -188,11 +193,11 @@ module PublicanCreatorsChange
   # environment [String] is Work, "type" is Article and title_logo is "false".
   # It returns a sucess or fail.
   # Descriptions:
-  # @param artinfo [String] can be other than the @param name says a path to the Article_Info or Book_Info. Which is used there depends on the @param "type".
-  # @param environment [String] shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
-  # @param title_logo [String] means that you can set if you want to use Publican's Title Logo or use your own Title Logo with your Stylesheets.
-  # @param type [String] represents the Document-Type like Article or Book.
-  # @return [bool] true or false
+  # @param [String] artinfo can be other than the @param name says a path to the Article_Info or Book_Info. Which is used there depends on the @param "type".
+  # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # @param [String] title_logo means that you can set if you want to use Publican's Title Logo or use your own Title Logo with your Stylesheets.
+  # @param [String] type represents the Document-Type like Article or Book.
+  # @return [String] true or false
   def self.remove_orgname(artinfo, environment, title_logo, type)
     if environment == 'Work'
       if type == 'Article'
@@ -214,18 +219,18 @@ module PublicanCreatorsChange
   # This method removes the XI-Includes for the legal notice
   # It returns a sucess or fail.
   # Descriptions:
-  # @param title [String] comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @param environment [String] shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
-  # @param type [String] represents the Document-Type like Article or Book.
-  # @param legal [String] means if you don't like to have a Legal Notice on Publican's default place you can define it there. Actually it just works with Articles. In my case i'm
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # @param [String] type represents the Document-Type like Article or Book.
+  # @param [String] legal means if you don't like to have a Legal Notice on Publican's default place you can define it there. Actually it just works with Articles. In my case i'm
   # using the Legal Notice inside the Article's Structure.
-  # @return [bool] true or false
+  # @return [String] true or false
   def self.remove_legal(title, environment, type, legal)
     artinfo = "#{title}/de-DE/Article_Info.xml"
     if environment == 'Work'
       if type == 'Article'
         if legal == 'true'
-          # Remove the Legal Notice XI-Include in case it is an article. XCOM articles using another way to add them.
+          # @note Remove the Legal Notice XI-Include in case it is an article. XCOM articles using another way to add them.
           puts 'Remove XI-Includes for Legal Notice...'
           text = File.read(artinfo)
           new_contents = text.gsub('<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />', '<!-- removed legal -->')
@@ -245,20 +250,20 @@ module PublicanCreatorsChange
   # will be used, otherwise your private email_address.
   # It returns a sucess or fail.
   # Descriptions:
-  # @param title [String] comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @param environment [String] shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
-  # @param name [String] is your name.
-  # @param email_business [String] is your business email address.
-  # @param email  [String] is your private email address.
-  # @return [bool] true or false
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
+  # @param [String] name is your name.
+  # @param [String] email_business is your business email address.
+  # @param [String] email is your private email address.
+  # @return [String] true or false
   def self.fix_revhist(environment, name, email_business, email, title)
     revhist = "#{title}/de-DE/Revision_History.xml"
     namechomp = name.chomp
-    # Split the variable to the array title[*]
+    # @note Split the variable to the array title[*]
     name = namechomp.split(' ')
     firstname = name[0]
     surname = name[1]
-    # Revision_History: Change default stuff to the present user
+    # @note Revision_History: Change default stuff to the present user
     puts 'Replace the default content with the new content from the user (Revision History)'
     text = File.read(revhist)
     vorname = text.gsub('Enter your first name here.', "#{firstname}")
@@ -292,21 +297,20 @@ module PublicanCreatorsChange
 
   # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Work environment. It returns a sucess or fail.
   # Descriptions:
-  # @param title [String] comes from the get method. This variable contains the name or title of your work. It is used in all important code places.
-  # @param environment [String] shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
-  # @param name [String] is your name.
-  # @param email_business [String] is your business email address.
-  # @param company_name [String] is just your companies name.
-  # @param company_division [String] is your companies part/division.
-  # @return [bool] true or false
+  # @param [String] title comes from the get method. This variable contains the name or title of your work. It is used in all important code places.
+  # @param [String] name is your name.
+  # @param [String] email_business is your business email address.
+  # @param [String] company_name is just your companies name.
+  # @param [String] company_division is your companies part/division.
+  # @return [String] true or false
   def self.fix_authorgroup_work(title, name, email_business, company_name, company_division)
     agroup = "#{title}/de-DE/Author_Group.xml"
     namechomp = name.chomp
-    # Split the variable to the array title[*]
+    # @note Split the variable to the array title[*]
     name = namechomp.split(' ')
     firstname = name[0]
     surname = name[1]
-    # Author Group: Change the default stuff to the present user
+    # @note Author Group: Change the default stuff to the present user
     puts 'Replace the default content with the new content from the user (Authors_Group)'
     text = File.read(agroup)
     vorname = text.gsub('Enter your first name here.', "#{firstname}")
@@ -349,18 +353,18 @@ module PublicanCreatorsChange
 
   # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Private environment. It returns a success or fail.
   # Descriptions:
-  # @param title [String] comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @param name [String] is your name.
-  # @param email  [String] is your private email address.
-  # @return [bool] true or false
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  # @param [String] name is your name.
+  # @param [String] email is your private email address.
+  # @return [String] true or false
   def self.fix_authorgroup_private(name, email, title)
     agroup = "#{title}/de-DE/Author_Group.xml"
     namechomp = name.chomp
-    # Split the variable to the array title[*]
+    # @note Split the variable to the array title[*]
     name = namechomp.split(' ')
     firstname = name[0]
     surname = name[1]
-    # Author Group: Change the default stuff to the present user
+    # @note Author Group: Change the default stuff to the present user
     puts 'Replace the default content with the new content from the user (Authors_Group)'
     text = File.read(agroup)
     vorname = text.gsub('Enter your first name here.', "#{firstname}")
@@ -406,8 +410,8 @@ module PublicanCreatorsChange
   # Make the buildscript executable
   # It returns a sucess or fail.
   # Description:
-  # @param builds  [String] is the path to your buildscript
-  # @return [bool] true or false
+  # @param [String] builds is the path to your buildscript
+  # @return [String] true or false
   def self.make_buildscript_exe(builds)
     puts 'Making the buildscript executable ...'
     FileUtils.chmod 'u=rwx,go=rwx', "#{builds}"
