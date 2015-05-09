@@ -1,1 +1,9 @@
+bin/PublicanCreators.rb
+bin/RevisionCreator.rb
+bin/setup.sh
 lib/**/*.rb
+-
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+LICENSE.txt
+README.rdoc
