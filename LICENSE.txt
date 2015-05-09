@@ -1,6 +1,6 @@
 # @markup text
 # @title MIT License unmodified
-# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @author Sascha Manns
 
 The MIT License (MIT)
 

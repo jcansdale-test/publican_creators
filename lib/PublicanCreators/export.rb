@@ -1,5 +1,5 @@
 # PublicanCreatorsExport
-# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @author Sascha Manns
 # @abstract Class for exporting bash scripts
 #
 # Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>

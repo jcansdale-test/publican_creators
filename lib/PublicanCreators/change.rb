@@ -1,6 +1,6 @@
 # Changer Module for PublicanCreators
 # PublicanCreatorsChange
-# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @author Sascha Manns
 # @abstract Class for all file changes
 #
 # Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
@@ -37,7 +37,7 @@ module PublicanCreatorsChange
   # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
   # @param [String] type represents the Document-Type like Article or Book.
   # @param [String] language is just the ISO Code of your target language like: de-DE, en-GB or such things.
-  # @param [String] brand can be a special customized brand for your company to fit the Styleguide.
+  # @param [String] brand can be a special customized brand for your company to fit the styleguide.
   # @param [String] db5 just sets your preferences. If you like to have DocBook 5.x as default you can set it there.
   # @return [String] true or false
   # @note That method returns just a success or a fail. After the main part of the method it starts another method "PublicanCreatorsChange.check_result". This method checks

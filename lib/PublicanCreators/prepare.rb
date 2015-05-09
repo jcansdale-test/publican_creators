@@ -1,5 +1,5 @@
 # PublicanCreatorsPrepare
-# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @author Sascha Manns
 # @abstract Class for preparing the configuration
 #
 # Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>

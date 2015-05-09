@@ -1,6 +1,6 @@
 # @markup markdown
 # @title Code of Conduct
-# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @author Sascha Manns
 
 # Contributor Code of Conduct
 

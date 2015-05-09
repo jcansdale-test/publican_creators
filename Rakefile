@@ -38,7 +38,7 @@ task :test_with_coveralls => [:spec, 'coveralls:push']
 require 'yard'
 desc 'Run yarddoc for the source'
 YARD::Rake::YardocTask.new do |t|
-  t.files = %w('lib/**/*.rb', 'bin/PublicanCreators.rb', '-', 'CHANGELOG.rdoc', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
+  t.files = %w('lib/**/*.rb', 'bin/PublicanCreators.rb', 'bin/RevisionCreator.rb', 'bin/setup.sh', '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
 end
 
 # vim: syntax=ruby

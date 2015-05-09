@@ -1,5 +1,5 @@
 # PublicanCreatorsVersion
-# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @author Sascha Manns
 # @abstract Class for maintaining the version number
 #
 # Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>

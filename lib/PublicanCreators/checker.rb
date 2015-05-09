@@ -1,5 +1,5 @@
 # PublicanCreatorsChecker
-# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @author Sascha Manns
 # @abstract Class for checking directories and creating them
 #
 # Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>

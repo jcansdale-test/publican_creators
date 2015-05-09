@@ -55,6 +55,9 @@ fi
 if [ -e $HOME/.publicancreators.cfg ]
 then
     echo "Found Config file"
+    cp ../lib/PublicanCreators/.publicancreators.cfg $HOME/.publicancreators.cfg.new
+    echo "The actual config file was placed in $HOME/.publicancreators.cfg.new"
+    echo "Please check if new parameters are shipped. If any are missed in your old config please add them into your file. Then remove $HOME/.publicancretors.cfg.new"
 else
     echo "Creating Config file"
     cp ../lib/PublicanCreators/.publicancreators.cfg $HOME
@@ -85,8 +88,19 @@ then
 fi
 sudo ln -s ${FROM}/PublicanCreators.rb /usr/bin/publicancreators
 
+if [ -e /usr/bin/publicancreators-rev ]
+then
+    rm /usr/bin/publicancreators-rev
+fi
+sudo ln -s ${FROM}/RevisionCreator.rb /usr/bin/publicancreators-rev
+
 echo "Creating Desktop file"
-sudo cat <<EOF > $HOME/.local/share/applications/publicancreators.desktop
+if [ -e $HOME/.local/share/applications/publicancreators.desktop ]
+then
+    # @todo In earlier version i used sudo cat for creating the desktop file. Its not needed because its in user dir. Remove sudo later.
+    sudo rm $HOME/.local/share/applications/publicancreators.desktop
+fi
+cat <<EOF > $HOME/.local/share/applications/publicancreators.desktop
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -94,7 +108,18 @@ Name=PublicanCreators
 Exec=/usr/bin/publicancreators
 Icon=${FROM}/publican.png
 EOF
-
+if [ -e $HOME/.local/share/applications/publicancreators-rev.desktop ]
+then
+    rm $HOME/.local/share/applications/publicancreators-rev.desktop
+fi
+sudo cat <<EOF > $HOME/.local/share/applications/publicancreators-rev.desktop
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PublicanCreatorsRevision
+Exec=/usr/bin/publicancreators-rev
+Icon=${FROM}/publican-revision.png
+EOF
 
 
 # Do any other automated setup that you need to do here

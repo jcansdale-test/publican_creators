@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# @author Sascha Manns <Sascha.Manns@bdvb.de>
+# @author Sascha Manns
 # @abstract Main Class for PublicanCreators
 #
 # Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
