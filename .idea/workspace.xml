@@ -49,9 +49,8 @@
     </treeState>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="fixed PC-1">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.yardopts" afterPath="$PROJECT_DIR$/.yardopts" />
+    <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="updated .yardopts">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/version.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PublicanCreators.iws" />
@@ -118,7 +117,6 @@
         <option value="$PROJECT_DIR$/lib/PublicanCreators/checker.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/export.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/prepare.rb" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
         <option value="$PROJECT_DIR$/CODE_OF_CONDUCT.md" />
         <option value="$PROJECT_DIR$/LICENSE.txt" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/change.rb" />
@@ -132,6 +130,7 @@
         <option value="$PROJECT_DIR$/bin/setup.sh" />
         <option value="$PROJECT_DIR$/.yardopts" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
       </list>
     </option>
   </component>
@@ -215,6 +214,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -602,7 +619,11 @@
       <option name="type" value="FEATURE" />
       <updated>1431175910966</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="updated .yardopts">
+      <created>1431191463783</created>
+      <updated>1431191463783</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers>
       <YouTrack shared="false" url="http://saigkill.ddns.net:8112">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -698,7 +719,8 @@
     <MESSAGE value="Changed build.sh to english" />
     <MESSAGE value="updated documentation" />
     <MESSAGE value="fixed PC-1" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed PC-1" />
+    <MESSAGE value="updated .yardopts" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated .yardopts" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -709,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1062" max-vertical-offset="2358">
           <caret line="59" column="166" selection-start-line="59" selection-start-column="166" selection-end-line="59" selection-end-column="166" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,13 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7349043" vertical-offset="167" max-vertical-offset="846">
-          <caret line="37" column="74" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/prepare.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65537554" vertical-offset="1535" max-vertical-offset="2214">
@@ -1065,7 +1079,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1443965" vertical-offset="0" max-vertical-offset="2358">
           <caret line="59" column="166" selection-start-line="59" selection-start-column="166" selection-end-line="59" selection-end-column="166" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1081,6 +1094,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09698276" vertical-offset="0" max-vertical-offset="928">
           <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36853448" vertical-offset="0" max-vertical-offset="928">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
           <folding />
         </state>
       </provider>
