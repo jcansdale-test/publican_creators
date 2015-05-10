@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!ENTITY % sgml.features "IGNORE">
+        <!ENTITY % xml.features "INCLUDE">
+        <!ENTITY % BOOK_ENTS SYSTEM "PublicanCreators.ent">
+        %BOOK_ENTS;
+        <!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
+        %DOCBOOK_ENTS;
+        ]>
+<?xml-model href="/usr/share/xml/docbook/schema/rng/5.0/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <title>The config file</title>
+  </info>
+  <para>The config file gives you many options to customize it to your needs. First let me
+    introduce my background.
+  </para>
+  <para>I'm a technical writer who writes on work and private too. So i have two publican brands
+    for business and private. On work i have three classes of documents: a normal article, a
+    report (it's a smaller version of a article but whithout a full legal notice. Using a
+    smaller version as code template.) and a book. Private i also have three sorts of documents:
+    a article, a homework (distance learning school) and a book. For homework i'm using also a
+    third publican brand.
+  </para>
+  <para>So i need to produce 6 sorts of documents in 2 environments (work and private) with 3
+    different brands. So i wrote this little program to simplifiy the process.
+  </para>
+  <section>
+    <info>
+      <title>Global settings</title>
+    </info>
+    <para>The global settings part means that kind of values who are not depending on the
+      <quote>work</quote>
+      or
+      <quote>private</quote>
+      environment.
+    </para>
+    <para>
+      <table frame="all">
+        <title>Global variables</title>
+        <tgroup cols="3">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Variable name</entry>
+              <entry>Default value</entry>
+              <entry>Explaining</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>name</entry>
+              <entry>Sascha Manns</entry>
+              <entry>Your Name e.g. Ada Lovelace</entry>
+            </row>
+            <row>
+              <entry>email_private</entry>
+              <entry>Sascha.Manns@bdvb.de</entry>
+              <entry>Your private email address</entry>
+            </row>
+            <row>
+              <entry>language</entry>
+              <entry>de-DE</entry>
+              <entry>Your default language</entry>
+            </row>
+            <row>
+              <entry>db5</entry>
+              <entry>true</entry>
+              <entry>Use DocBook5 as default? (true or false)</entry>
+            </row>
+            <row>
+              <entry>use_brand</entry>
+              <entry>true</entry>
+              <entry>Use own brand or publicans default? (True or false)</entry>
+            </row>
+            <row>
+              <entry>title_logo</entry>
+              <entry>false</entry>
+              <entry>
+                <para>Use the title logo? (true or false)
+                  <footnote>
+                    <para>Publican uses the following to add a title
+                      logo:
+                    </para>
+                    <para>&lt;orgname> &lt;inlinemediaobject> &lt;imageobject>
+                      &lt;imagedata
+                      fileref="Common_Content/images/title_logo.svg"
+                      format="SVG"/> &lt;/imageobject> &lt;/inlinemediaobject>
+                      &lt;/orgname>
+                    </para>
+                    <para>If you have defined your own title logo in your brand,
+                      you can set this parameter to false.
+                    </para>
+                  </footnote>
+                </para>
+              </entry>
+            </row>
+            <row>
+              <entry>legal</entry>
+              <entry>true</entry>
+              <entry>If you chosen Work/Article you can remove the legalnotice there.
+                (true or false)
+              </entry>
+            </row>
+            <row>
+              <entry>xfc_brand_dir</entry>
+              <entry>/opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl</entry>
+              <entry>If you use
+                <link xlink:href="http://www.xmlmind.com/foconverter/"
+                        >XFC
+                </link>
+                you can set there your default brand. This will be
+                used in the build.sh script.
+              </entry>
+            </row>
+            <row>
+              <entry>pdfview</entry>
+              <entry>/opt/cxoffice/bin/wine --bottle "PDF-XChange Viewer 2.x" --cx-app
+                PDFXCview.exe
+              </entry>
+              <entry>There you can set your prefered PDF-Viewer e.g. evince. This also
+                will be used in the build script.
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+  </section>
+
+  <section>
+    <info>
+      <title>Work settings</title>
+    </info>
+    <para>Now we set the work parameters.</para>
+    <para>
+      <table frame="all">
+        <title>Work variables</title>
+        <tgroup cols="3">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Variable name</entry>
+              <entry>Default value</entry>
+              <entry>Explaining</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>brand</entry>
+              <entry>XCOM</entry>
+              <entry>This will set your companies brand. The name should be the same
+                as installed in
+                <filename>/usr/share/publican/Common_Content</filename>. So the
+                default value is installed in
+                <filename>/usr/share/publican/Common_Content/XCOM</filename>.
+              </entry>
+            </row>
+            <row>
+              <entry>company_name</entry>
+              <entry>XCOM AG</entry>
+              <entry>Your companies name</entry>
+            </row>
+            <row>
+              <entry>company_division</entry>
+              <entry>SWE7 (Sascha Bochartz)</entry>
+              <entry>Your companies division e.g. Software Development</entry>
+            </row>
+            <row>
+              <entry>email_business</entry>
+              <entry>Sascha.Manns@xcom.de</entry>
+              <entry>Your business email address</entry>
+            </row>
+            <row>
+              <entry>brand_dir</entry>
+              <entry>/usr/share/publican/Common_Content/XCOM</entry>
+              <entry>The path to your brand. Actually it is just used in combination
+                with globalentities.
+              </entry>
+            </row>
+            <row>
+              <entry>globalentities</entry>
+              <entry>de-DE/entitiesxcom.ent</entry>
+              <entry>If you have a entities file with some business related entities
+                you can set it there. The full path is then
+                brand_dir/globalentities
+              </entry>
+            </row>
+            <row>
+              <entry>articles_dir</entry>
+              <entry>Dokumente/Textdokumente/publican-documentation/articles/Projekte/GSBUHA/Dokumentation/</entry>
+              <entry>The path where your articles will be saved.</entry>
+            </row>
+            <row>
+              <entry>reports_dir</entry>
+              <entry>Dokumente/Textdokumente/publican-documentation/articles/Projekte/GSBUHA/Dokumentation/Reports
+              </entry>
+              <entry>The path to your Reports or short Handouts.</entry>
+            </row>
+            <row>
+              <entry>books_dir</entry>
+              <entry>Dokumente/Textdokumente/publican-documentation/books</entry>
+              <entry>The path to your books directory.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+  </section>
+
+  <section>
+    <info>
+      <title>Private settings</title>
+    </info>
+    <para>Last but not least now following the private settings.</para>
+    <para>
+      <table frame="all">
+        <title>Private variables</title>
+        <tgroup cols="3">
+          <colspec colname="c1" colnum="1" colwidth="1.0*"/>
+          <colspec colname="c2" colnum="2" colwidth="1.0*"/>
+          <colspec colname="c3" colnum="3" colwidth="1.0*"/>
+          <thead>
+            <row>
+              <entry>Variable name</entry>
+              <entry>Default value</entry>
+              <entry>Explaining</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>brand_private</entry>
+              <entry>manns</entry>
+              <entry>This will set your private brand. The name should be the same as
+                installed in
+                <filename>/usr/share/publican/Common_Content</filename>. So the
+                default value is installed in
+                <filename>/usr/share/publican/Common_Content/manns</filename>.
+              </entry>
+            </row>
+            <row>
+              <entry>brand_homework</entry>
+              <entry>ils</entry>
+              <entry>This will set your homework brand. The name should be the same as
+                installed in
+                <filename>/usr/share/publican/Common_Content</filename>. So the
+                default value is installed in
+                <filename>/usr/share/publican/Common_Content/ils</filename>.
+              </entry>
+            </row>
+            <row>
+              <entry>articles_dir_priv</entry>
+              <entry>Dokumente/Textdokumente/publican-manns/articles</entry>
+              <entry>Path where your private articles will be created.</entry>
+            </row>
+            <row>
+              <entry>homework_dir</entry>
+              <entry>Dokumente/Textdokumente/publican-manns/articles/homework</entry>
+              <entry>Path where your homeworks will be created.</entry>
+            </row>
+            <row>
+              <entry>books_dir_priv</entry>
+              <entry>Dokumente/Textdokumente/publican-manns/books</entry>
+              <entry>Path where your books will be created.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+  </section>
+
+</chapter>

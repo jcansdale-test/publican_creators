@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!ENTITY % sgml.features "IGNORE">
+        <!ENTITY % xml.features "INCLUDE">
+        <!ENTITY % BOOK_ENTS SYSTEM "PublicanCreators.ent">
+        %BOOK_ENTS;
+        <!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
+        %DOCBOOK_ENTS;
+        ]>
+<?xml-model href="/usr/share/xml/docbook/schema/rng/5.0/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <title>Using PublicanCreators</title>
+  </info>
+
+  <section>
+    <info>
+      <title>Launching PublicanCreators</title>
+    </info>
+    <para>For launching PublicanCreators you have to click on your
+      <menuchoice>
+        <guibutton>program-launcher</guibutton>
+        <guibutton>PublicanCreators</guibutton>
+      </menuchoice>
+      .
+    </para>
+    <para>Now you see a graphical interface (the look and feel depends on your chosen theme):</para>
+    <para>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/PublicanCreators.png"/>
+        </imageobject>
+      </inlinemediaobject>
+    </para>
+    <para>Now you can choose one of that options:
+      <itemizedlist>
+        <listitem>
+          <para>Environment: Work or Private</para>
+        </listitem>
+        <listitem>
+          <para>Type: Article or Book</para>
+        </listitem>
+        <listitem>
+          <para>Optional: Normal, Report, Homework</para>
+        </listitem>
+        <listitem>
+          <para>Title: Your Title. Use underscores instead of blanks.</para>
+        </listitem>
+      </itemizedlist>
+    </para>
+    <para>After clicking on
+      <guibutton>Go!</guibutton>
+      the documentation will be created by
+      publican.
+    </para>
+  </section>
+
+  <section>
+    <info>
+      <title>Add a revision</title>
+    </info>
+    <para>PublicanCreators also ships a graphical revision adder. Just click
+      <menuchoice>
+        <guibutton>program-launcher</guibutton>
+        <guibutton>PublicanCreatorsRevision</guibutton>
+      </menuchoice>
+      .
+    </para>
+    <para>Now you see a graphical interface (the look and feel depends on your chosen
+      theme):
+    </para>
+    <para>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/RevisionCreator.png"/>
+        </imageobject>
+      </inlinemediaobject>
+    </para>
+    <para>There you have three important tweaks:</para>
+    <para>
+      <itemizedlist>
+        <listitem>
+          <para>Projectdir: Use that to move to your target directory (That directory
+            where your projects publican.cfg is)
+          </para>
+        </listitem>
+        <listitem>
+          <para>Commits: There you can place one to five revision texts. If you need more
+            than 5 regularly so file a bug report.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Revision number: There you can place your revision number.</para>
+        </listitem>
+      </itemizedlist>
+    </para>
+  </section>
+</chapter>

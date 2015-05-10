@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE preface [
+        <!ENTITY % sgml.features "IGNORE">
+        <!ENTITY % xml.features "INCLUDE">
+        <!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
+        %DOCBOOK_ENTS;
+        ]>
+<?xml-model href="/usr/share/xml/docbook/schema/rng/5.0/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<preface version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Preface</title>
+  <para>Welcome to the guide for PublicanCreators. In this documentation you will find how to get,
+    setup and use PublicanCreators.
+  </para>
+  <para>This guide does not contain a guide for
+    <quote>Publican</quote>
+    itself. For using that
+    please look at this<link xlink:href="https://fedorahosted.org/publican/">link</link>. For
+    reference how DocBook5 works you can follow this<link
+            xlink:href="http://www.docbook.org/tdg5/en/html/docbook.html">link</link>.
+  </para>
+  <para>PublicanCreators was launched because to help people who working daily with Publican and
+    DocBook in different formats and environments. So i would like to thank the Publican people
+    for building this great tool. Also i'm thanking the Ruby guys in special the Nokogiri and
+    Parseconfig teams.
+  </para>
+  <xi:include href="Common_Content/Conventions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="Feedback.xml" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:fallback xmlns:xi="http://www.w3.org/2001/XInclude">
+      <xi:include href="Common_Content/Feedback.xml"
+                  xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </xi:fallback>
+  </xi:include>
+</preface>

@@ -1,7 +1,3 @@
-# @markup markdown
-# @title Changelog
-# @author Sascha Manns
-
 # CHANGELOG
 
 # 0.3.0 (2015-05-09)

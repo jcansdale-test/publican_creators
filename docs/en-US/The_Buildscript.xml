@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!ENTITY % sgml.features "IGNORE">
+        <!ENTITY % xml.features "INCLUDE">
+        <!ENTITY % BOOK_ENTS SYSTEM "PublicanCreators.ent">
+        %BOOK_ENTS;
+        <!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
+        %DOCBOOK_ENTS;
+        ]>
+<?xml-model href="/usr/share/xml/docbook/schema/rng/5.0/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+  <info>
+    <title xml:id="buildscript">The build.sh script</title>
+  </info>
+
+  <para>The small
+    <filename>build.sh</filename>
+    script will be placed in each new documentation
+    project, directly under title/language/. The buildscript matches the most common
+    documentation targets like: docx, odt, rtf, wml, pdf, html, man, txt, epub and
+    eclipse.
+  </para>
+  <para>
+    <warning>
+      <para>The export to docx, odt, rtf and wml only working if the
+        <link
+                xlink:href="http://www.xmlmind.com/foconverter/">XMLMind Foconverter
+          (XFC)
+        </link>
+        is installed and a brand (a own brand or the default brand) is
+        installed. Also the
+        <quote>fo2*</quote>
+        scripts should be soft linked to /usr/bin or
+        the path is placed in $PATH.
+      </para>
+    </warning>
+  </para>
+  <para>All other targets like pdf, html, man, txt, epub and eclipse are publican's own
+    targets.
+  </para>
+  <para>The targets will be built into tmp/language/format (e.g. tmp/de-DE/docx). The placeholders
+    (like language) will be solved by producing a new documentation.,
+  </para>
+  <tip>
+    <para>You can integrate the build script in some XML-IDE's. In case of Oxygen XML you can
+      add a external tool with the parameters:
+      <example>
+        <title>Settings for a external pdf tool</title>
+        <itemizedlist>
+          <listitem>
+            <para>Workdir: {cfd}</para>
+          </listitem>
+          <listitem>
+            <para>Command line: ${cfd}/build.sh -pdf</para>
+          </listitem>
+        </itemizedlist>
+      </example>
+      Because the build script is named in each project with the same name it is
+      usable from the IDE. In the same way you can add the two shipped binaries
+      <filename>/usr/bin/publicancreators</filename>
+      and
+      <filename>/usr/bin/publicancreators-dev</filename>.
+    </para>
+  </tip>
+  <para>The
+    <filename>build.sh</filename>
+    looks like:
+  </para>
+  <para>
+    <screen>#!/bin/bash
+      # Description: This script builds PDF, DOCX, ODT, RTF, HTML, MAN, TXT, EPUB and WML
+      # Usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub] [-eclipse]
+      # Version:
+      # 0.1 initial version
+      # Functions
+      usage() {
+      echo "usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub] [-eclipse]"
+      echo
+      echo "Options: "
+      echo "-docx : Export DocBook source to DOCX"
+      echo " Example: $0 -docx"
+      echo "-odt : Export DocBook source to ODT"
+      echo " Example: $0 -odt"
+      echo "-rtf : Export DocBook source to RTF"
+      echo " Example: $0 -rtf"
+      echo "-wml: Export DocBook source to WML"
+      echo " Example: $0 -wml"
+      echo "-pdf: Export Docbook source to PDF"
+      echo " Example: $0 -pdf"
+      echo "-html: Export DocBook source to HTML"
+      echo " Example: $0 -html"
+      echo "-man: Export DocBook source to MAN"
+      echo " Example: $0 -man"
+      echo "-txt: Export DocBook source to TXT"
+      echo " Example: $0 -txt"
+      echo "-epub: Export DocBook source to EPUB"
+      echo " Example: $0 -epub"
+      echo " -eclipse: Export DocBook source to Eclipse"
+      echo " Example: $0 -eclipse
+      exit 1
+      }
+
+      # main
+      case "$1" in
+      -docx)
+      echo "Solve all XML-Entities and XI-Includes"
+      xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
+      echo "Formatting XML to XSL-FO"
+      if [ -d ../tmp/#{language}/docx ]
+      then
+      echo "Found tempdir"
+      else
+      mkdir ../tmp/#{language}/docx
+      end
+      saxon-xslt -o ../tmp/#{language}/docx/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
+      rm #{title}-resolved.xml
+      echo "Transforming to DOCX"
+      fo2docx ../tmp/#{language}/docx/#{title}.fo > ../tmp/#{language}/docx/#{title}.docx
+      echo "Launching LibreOffice Writer"
+      lowriter ../tmp/#{language}/docx/#{title}.docx &amp;
+      ;;
+      -odt)
+      echo "Solve all XML-Entities and XI-Includes"
+      xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
+      echo "Formatting XML to XSL-FO"
+      if [ -d ../tmp/#{language}/odt ]
+      then
+      echo "Found tempdir"
+      else
+      mkdir ../tmp/#{language}/odt
+      end
+      saxon-xslt -o ../tmp/#{language}/odt/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
+      rm #{title}-resolved.xml
+      echo "Transforming to ODT"
+      fo2odt ../tmp/#{language}/odt/#{title}.fo > ../tmp/#{language}/odt/#{title}.odt
+      echo "Starting LibreOffice Writer"
+      lowriter ../tmp/#{language}/odt/#{title}.odt &amp;
+      ;;
+      -rtf)
+      echo "Solve all XML-Entities and XI-Includes"
+      xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
+      echo "Formatting XML to XSL-FO"
+      if [ -d ../tmp/#{language}/rtf ]
+      then
+      echo "Found tempdir"
+      else
+      mkdir ../tmp/#{language}/rtf
+      end
+      saxon-xslt -o ../tmp/#{language}/rtf/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
+      rm #{title}-resolved.xml
+      echo "Transforming to RTF"
+      fo2rtf ../tmp/#{language}/rtf/#{title}.fo > ../tmp/#{language}/rtf/#{title}.rtf
+      echo "Launching LibreOffice Writer"
+      lowriter ../tmp/#{language}/rtf/#{title}.rtf &amp;
+      ;;
+      -wml)
+      echo "Solve all XML-Entities and XI-Includes"
+      xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
+      echo "Formatting XML to XSL-FO"
+      if [ -d ../tmp/#{language}/wml ]
+      then
+      echo "Found tempdir"
+      else
+      mkdir ../tmp/#{language}/wml
+      end
+      saxon-xslt -o ../tmp/#{language}/wml/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
+      rm #{title}-resolved.xml
+      echo "Transforming to WML"
+      fo2wml ../tmp/#{language}/wml/#{title}.fo > ../tmp/#{language}/wml/#{title}.wml
+      echo "Launching LibreOffice Writer"
+      lowriter ../tmp/#{language}/wml/#{title}.wml &amp;
+      ;;
+      -pdf)
+      cd ..
+      echo "Cleanup temp directory"
+      publican clean
+      echo "Formatting DocBook dokument and rendering to PDF"
+      publican build --langs=#{language} --formats=pdf --allow_network
+      echo "Launching PDF-Viewer"
+      #{pdfview} tmp/de-DE/pdf/*.pdf &amp;
+      ;;
+      -html)
+      cd ..
+      echo "Cleanup temp directory"
+      publican clean
+      echo "Formatting DocBook dokument and rendering to HTML"
+      publican build --langs=#{language} --formats=html --allow_network
+      echo "Launching Browser"
+      firefox tmp/de-DE/html/index.html &amp;
+      ;;
+      -man)
+      cd ..
+      echo "Cleanup temp directory"
+      publican clean
+      echo "Formatting DocBook document to MAN"
+      publican build --langs=#{language} --formats=man --allow_network
+      ;;
+      -txt)
+      cd ..
+      echo "Cleanup temp directory"
+      publican clean
+      echo "Formatting DocBook document to TXT"
+      publican build --langs=#{language} --formats=txt --allow_network
+      echo "Launching Texteditor"
+      gedit tmp/de-DE/txt/*.txt &amp;
+      ;;
+      -epub)
+      cd ..
+      echo "Cleanup temp directory"
+      publican clean
+      echo "Formatting and rendering DocBook document to EPUB"
+      publican build --langs=#{language} --formats=epub --allow_network
+      echo "Launching EPUB-Viewer"
+      ev=`which ebook-viewer`
+      if [ "$ev"]
+      ebook-viewer tmp/de-DE/*.epub &amp;
+      else
+      echo "You need to install calibre for preview the result!"
+      fi
+      ;;
+      -eclipse)
+      cd ..
+      echo "Cleanup temp directory"
+      publican clean
+      echo "Formatting to ECLIPSE"
+      publican build --langs=#{language} --formats=eclipse --allow_network
+      ;;
+      *)
+      usage
+      esac
+      exit 0
+    </screen>
+  </para>
+</chapter>

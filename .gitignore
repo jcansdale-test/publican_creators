@@ -3,5 +3,7 @@
 /Gemfile.lock
 /coverage/
 /doc/
-/docs/
+/docs/tmp
+/docs/en-US/build.sh
+/docs/PublicanCreators.xpr
 /pkg/

@@ -6,6 +6,7 @@ echo "##########################################################################
 echo "#                  PublicanCreators Setup                                        #"
 echo "##################################################################################"
 echo "Install Bundle"
+gem install bundler
 bundle install
 
 # Fix for PC-6
@@ -23,7 +24,7 @@ then
 fi
 
 distro=`lsb_release -is`
-distver=`lsb_release -rs`
+distver=`lsb_release -rs | cut -c1-2`
 if [ "$distro" == 'Ubuntu' ]
 then
     echo "Found Ubuntu"

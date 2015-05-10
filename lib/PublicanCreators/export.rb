@@ -44,13 +44,13 @@ module PublicanCreatorsExport
     FileUtils.touch "#{builds}"
     File.write "#{builds}", <<EOF
 #!/bin/bash
-# Description: This script builds PDF, DOCX, ODT, RTF, HTML, MAN, TXT, EPUB and WML
-# Usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub]
+# Description: This script builds PDF, DOCX, ODT, RTF, HTML, MAN, TXT, EPUB, ECLIPSE and WML
+# Usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub] [-eclipse]
 # Version:
 # 0.1 initial version
 # Functions
 usage() {
-echo "usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub]"
+echo "usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub] [-eclipse]"
 echo
 echo "Options: "
 echo "-docx : Export DocBook source to DOCX"
@@ -71,6 +71,8 @@ echo "-txt: Export DocBook source to TXT"
 echo " Example: $0 -txt"
 echo "-epub: Export DocBook source to EPUB"
 echo " Example: $0 -epub"
+echo "-eclipse: Export DocBook source to Eclipse Help"
+echp "Example: $0 -eclipse"
 exit 1
 }
 
