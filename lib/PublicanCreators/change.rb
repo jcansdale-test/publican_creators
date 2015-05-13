@@ -194,25 +194,17 @@ module PublicanCreatorsChange
   # It returns a sucess or fail.
   # Descriptions:
   # @param [String] artinfo can be other than the @param name says a path to the Article_Info or Book_Info. Which is used there depends on the @param "type".
-  # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
   # @param [String] title_logo means that you can set if you want to use Publican's Title Logo or use your own Title Logo with your Stylesheets.
-  # @param [String] type represents the Document-Type like Article or Book.
   # @return [String] true or false
-  def self.remove_orgname(artinfo, environment, title_logo, type)
-    if environment == 'Work'
-      if type == 'Article'
-        if title_logo == 'false'
-          puts 'Remove title logo from Article_Info'
-          doc = Nokogiri::XML(IO.read(artinfo))
-          doc.search('orgname').each do |node|
-            node.remove
-            node.content = 'Children removed'
-          end
-          IO.write(artinfo, doc.to_xml)
-        end
-      else
-        puts 'Nothing to do'
+  def self.remove_orgname(info, title_logo)
+    if title_logo == 'false'
+      puts 'Remove title logo from Article_Info or Books_Info'
+      doc = Nokogiri::XML(IO.read(info))
+      doc.search('orgname').each do |node|
+        node.remove
+        node.content = 'Children removed'
       end
+      IO.write(info, doc.to_xml)
     end
   end
 

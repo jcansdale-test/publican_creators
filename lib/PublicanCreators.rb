@@ -224,9 +224,9 @@ class PublicanCreators
     # @param [String] title_logo remove titlelogo from articlepage (config file)
     # @param [String] type Book or Article
     if type == 'Article'
-      PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo, type) #
+      PublicanCreatorsChange.remove_orgname(artinfo, title_logo)
     else
-      PublicanCreatorsChange.remove_orgname(bookinfo, environment, title_logo, type) #
+      PublicanCreatorsChange.remove_orgname(bookinfo, title_logo)
     end
 
     # @param [String] environment Work or Private
