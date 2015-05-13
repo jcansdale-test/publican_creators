@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter [
+        <!ENTITY % sgml.features "IGNORE">
+        <!ENTITY % xml.features "INCLUDE">
+        <!ENTITY % BOOK_ENTS SYSTEM "PublicanCreators.ent">
+        %BOOK_ENTS;
+        <!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
+        %DOCBOOK_ENTS;
+        ]>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Release Notes</title>
+  <section>
+    <title>0.3.0 (2015-05-09)</title>
+    <section>
+      <title>Bugfixes</title>
+      <itemizedlist>
+        <listitem>
+          <para>PC-1: Create UI for add_revision</para>
+        </listitem>
+        <listitem>
+          <para>PC-4: Create UI (Task)</para>
+        </listitem>
+        <listitem>
+          <para>PC-5: Create/Update Documentation (Task)</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </section>
+  <section>
+    <title>0.2.0 (2015-05-07)</title>
+    <section>
+      <title>Bugfixes</title>
+      <itemizedlist>
+        <listitem>
+          <para>PC-6: Create rules for setup Fedora</para>
+        </listitem>
+        <listitem>
+          <para>PC-7: Fix setup.sh</para>
+        </listitem>
+        <listitem>
+          <para>PC-8: Add URL to Bugtracker into UI</para>
+        </listitem>
+        <listitem>
+          <para>PC-9: Split methods from module PublicanCreatorsChange</para>
+        </listitem>
+        <listitem>
+          <para>PC-10: Config versioning</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </section>
+  <section>
+    <title>0.1.1 (2015-05-06)</title>
+    <section>
+      <title>Features</title>
+      <itemizedlist>
+        <listitem>
+          <para>Fetches the titlename, type and environment from a yad dialogbox</para>
+        </listitem>
+        <listitem>
+          <para>Creates the initial documentation by using publican with using your titlename,
+            your chosen type and environment
+          </para>
+        </listitem>
+      </itemizedlist>
+    </section>
+    <section>
+      <title>Bugfixes</title>
+      <itemizedlist>
+        <listitem>
+          <para>PC-2: Extend documentation A-Type</para>
+        </listitem>
+        <listitem>
+          <para>PC-3: Extend documentation B-Type</para>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </section>
+  <section>
+    <title>0.1.0 (2015-04-25)</title>
+    <para>Features</para>
+    <itemizedlist>
+      <listitem>
+        <para>Build the base functions</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+</chapter>

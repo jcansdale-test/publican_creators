@@ -3,7 +3,9 @@
 /Gemfile.lock
 /coverage/
 /doc/
+/docs/pot/
+/docs/trans_drop
 /docs/tmp
-/docs/en-US/build.sh
 /docs/PublicanCreators.xpr
+/PublicanCreators
 /pkg/

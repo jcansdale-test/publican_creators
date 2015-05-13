@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2015-05-12 20:15+0200\n"
+"PO-Revision-Date: 2015-05-12 20:15+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.2.6\n"
+
+msgid "Release Notes"
+msgstr ""
+
+msgid "0.3.0 (2015-05-09)"
+msgstr ""
+
+msgid "Bugfixes"
+msgstr ""
+
+msgid "PC-1: Create UI for add_revision"
+msgstr ""
+
+msgid "PC-4: Create UI (Task)"
+msgstr ""
+
+msgid "PC-5: Create/Update Documentation (Task)"
+msgstr ""
+
+msgid "0.2.0 (2015-05-07)"
+msgstr ""
+
+msgid "PC-6: Create rules for setup Fedora"
+msgstr ""
+
+msgid "PC-7: Fix setup.sh"
+msgstr ""
+
+msgid "PC-8: Add URL to Bugtracker into UI"
+msgstr ""
+
+msgid "PC-9: Split methods from module PublicanCreatorsChange"
+msgstr ""
+
+msgid "PC-10: Config versioning"
+msgstr ""
+
+msgid "0.1.1 (2015-05-06)"
+msgstr ""
+
+msgid "Features"
+msgstr ""
+
+msgid "Fetches the titlename, type and environment from a yad dialogbox"
+msgstr ""
+
+msgid "Creates the initial documentation by using publican with using your titlename, your chosen type and environment"
+msgstr ""
+
+msgid "PC-2: Extend documentation A-Type"
+msgstr ""
+
+msgid "PC-3: Extend documentation B-Type"
+msgstr ""
+
+msgid "0.1.0 (2015-04-25)"
+msgstr ""
+
+msgid "Build the base functions"
+msgstr ""
+

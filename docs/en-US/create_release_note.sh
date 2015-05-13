@@ -1,2 +1,0 @@
-#!/bin/bash
-java  -jar /opt/saxon/saxon9he.jar -it:{http://www.markdown2docbook.com/ns/md2doc}main -xsl:/opt/markdown2docbook-1.0.4/src/md2doc.xsl input=/home/sascha/RubmineProjects/PublicanCreators/CHANGELOG.md encoding=utf-8 root-element=book headline-element=chapter savepath=Changelog.xml

@@ -114,5 +114,4 @@ module PublicanCreatorsPrepare
     books_dir = "#{home}/#{books_dir_private}"
     return books_dir
   end
-
 end

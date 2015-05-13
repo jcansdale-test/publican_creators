@@ -34,7 +34,9 @@ You can write your own settings in the Configurations file.
 The installation is very easy.
 
     gem install PublicanCreators
-    /path/to/gem/bin/setup.sh
+    gem install rake
+    cd /path/to/gem
+    rake setup
 
 You have to run the setup after each gem update.
 

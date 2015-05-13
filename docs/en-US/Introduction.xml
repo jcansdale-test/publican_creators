@@ -7,7 +7,6 @@
         <!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
         %DOCBOOK_ENTS;
         ]>
-<?xml-model href="/usr/share/xml/docbook/schema/rng/5.0/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <chapter version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Introduction</title>
   <para>Before you can start you must check if you have installed Ruby. To do this you can type in
@@ -35,13 +34,12 @@
         </step>
         <step>
           <para>Type now:
-            <command>\curl -sSL https://get.rvm.io | bash -s
+            <command>curl -sSL https://get.rvm.io | bash -s
               stable
             </command>
           </para>
-          <para>The output should like similar to that
-            one:
-            <screen>sascha@sascha-desktop:~$ \curl -sSL https://get.rvm.io | bash -s stable
+          <para>The output should like similar to that one:
+            <screen>sascha@sascha-desktop:~$ curl -sSL https://get.rvm.io | bash -s stable
               Downloading https://github.com/rvm/rvm/archive/1.26.11.tar.gz
               Downloading https://github.com/rvm/rvm/releases/download/1.26.11/1.26.11.tar.gz.asc
               gpg: Signatur vom Mo 30 Mär 2015 23:52:13 CEST mittels RSA-Schlüssel ID BF04FF17
@@ -102,8 +100,7 @@
             If any later ruby than you can replace the 2.2.1 with the newer
             version.
           </para>
-          <para>
-            The output shows similar that:
+          <para>The output shows similar that:
             <screen>sascha@sascha-desktop:~$ rvm install 2.2.1
               Searching for binary rubies, this might take some time.
               No binary rubies available for: ubuntu/15.04/x86_64/ruby-2.2.1.
@@ -113,8 +110,7 @@
               Installing Ruby from source to: /home/sascha/.rvm/rubies/ruby-2.2.1, this may take a while depending on
               your cpu(s)...
               ruby-2.2.1 - #downloading ruby-2.2.1, this may take a while depending on your connection...
-              % Total % Received % Xferd Average Speed Time Time Time Current
-              Dload Upload Total Spent Left Speed
+              % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed
               100 12.7M 100 12.7M 0 0 2234k 0 0:00:05 0:00:05 --:--:-- 3018k
               ruby-2.2.1 - #extracting ruby-2.2.1 to /home/sascha/.rvm/src/ruby-2.2.1....
               ruby-2.2.1 - #applying patch /home/sascha/.rvm/patches/ruby/2.2.1/fix_installing_bundled_gems.patch.
@@ -124,8 +120,7 @@
               ruby-2.2.1 - #installing..................
               ruby-2.2.1 - #making binaries executable..
               ruby-2.2.1 - #downloading rubygems-2.4.6
-              % Total % Received % Xferd Average Speed Time Time Time Current
-              Dload Upload Total Spent Left Speed
+              % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed
               100 437k 100 437k 0 0 601k 0 --:--:-- --:--:-- --:--:-- 602k
               No checksum for downloaded archive, recording checksum in user configuration.
               ruby-2.2.1 - #extracting rubygems-2.4.6....
@@ -155,10 +150,9 @@
   </section>
   <section xml:id="install-pubcre">
     <title>Installing PublicanCreators</title>
-    <para>For installing PublicanCreators you now have to type in the console:<command>gem
-      install PublicanCreators</command>. This command solves the soft-dependencies of the
-      program. The output looks similar that
-      one:
+    <para>For installing PublicanCreators you now have to type in the console:<command>gem install
+      PublicanCreators</command>. This command solves the soft-dependencies of the program. The
+      output looks similar that one:
       <screen>sascha@sascha-desktop:~$ ruby --version
         ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-linux]
         sascha@sascha-desktop:~$ gem install PublicanCreators
@@ -310,12 +304,6 @@
           yad ist schon die neueste Version.
           yad wurde als manuell installiert festgelegt.
           publican ist schon die neueste Version.
-          Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-          frostwire-data greybird-gtk-theme libgdbm-dev libncurses5-dev libreadline6-dev libtinfo-dev libyaml-dev
-          orion-gtk-theme ruby2.0-dev shimmer-themes wine-compholio-amd64 wine-compholio-i386:i386 xubuntu-icon-theme
-          xubuntu-wallpapers
-          Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-          0 aktualisiert, 0 neu installiert, 0 zu entfernen und 1 nicht aktualisiert.
           gpg: Schlüsselbund `/tmp/tmpw1jsu7k8/secring.gpg' erstellt
           gpg: Schlüsselbund `/tmp/tmpw1jsu7k8/pubring.gpg' erstellt
           gpg: Schlüssel 2A2896C8 von hkp-Server keyserver.ubuntu.com anfordern
@@ -331,12 +319,6 @@
           Abhängigkeitsbaum wird aufgebaut.
           Statusinformationen werden eingelesen.... Fertig
           publican ist schon die neueste Version.
-          Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-          frostwire-data greybird-gtk-theme libgdbm-dev libncurses5-dev libreadline6-dev libtinfo-dev libyaml-dev
-          orion-gtk-theme ruby2.0-dev shimmer-themes wine-compholio-amd64 wine-compholio-i386:i386 xubuntu-icon-theme
-          xubuntu-wallpapers
-          Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-          0 aktualisiert, 0 neu installiert, 0 zu entfernen und 1 nicht aktualisiert.
           Found Config file
           The actual config file was placed in /home/sascha/.publicancreators.cfg.new
           Please check if new parameters are shipped. If any are missed in your old config please add them into your

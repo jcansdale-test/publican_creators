@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2015-05-12 20:15+0200\n"
+"PO-Revision-Date: 2015-05-12 22:37+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+
+msgid "Using PublicanCreators"
+msgstr "PublicanCreators benutzen"
+
+msgid "Launching PublicanCreators"
+msgstr "PublicanCreators starten"
+
+msgid "For launching PublicanCreators you have to click on your <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreators</guibutton> </menuchoice> ."
+msgstr "Um PublicanCreators zu starten, klicken Sie auf: <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreators</guibutton> </menuchoice> ."
+
+msgid "Now you see a graphical interface (the look and feel depends on your chosen theme):"
+msgstr "Jetzt sehen Sie ein grafisches Interface (das Aussehen kann je nach eingestelltem Theme variieren)."
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/PublicanCreators.png\" /> </imageobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "Now you can choose one of that options:"
+msgstr "Jetzt können Sie die Optionen auswählen:"
+
+msgid "Environment: Work or Private"
+msgstr "Environment: Work oder Private (Arbeit oder Private)"
+
+msgid "Type: Article or Book"
+msgstr ""
+
+msgid "Optional: Normal, Report, Homework"
+msgstr ""
+
+msgid "Title: Your Title. Use underscores instead of blanks."
+msgstr "Titel: Ihr gewünschter Titel (mit Unterstrichen statt Leerzeichen)"
+
+msgid "After clicking on <guibutton>Go!</guibutton> the documentation will be created by publican."
+msgstr "Nach dem Klick auf <guibutton>Go!</guibutton> wird die Dokumentation mit Publican erstellt."
+
+msgid "Add a revision"
+msgstr "Eine Revision hinzufügen"
+
+msgid "PublicanCreators also ships a graphical revision adder. Just click <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreatorsRevision</guibutton> </menuchoice> ."
+msgstr "PublicanCreators bietet auch eine grafische Oberfläche zum hinzufügen einer Revision an. Klicken Sie dazu auf: <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreatorsRevision</guibutton> </menuchoice> ."
+
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/RevisionCreator.png\" /> </imageobject> </inlinemediaobject>"
+msgstr ""
+
+msgid "There you have three important tweaks:"
+msgstr "Jetzt haben Sie drei wichtige Möglichkeiten:"
+
+msgid "Projectdir: Use that to move to your target directory (That directory where your projects publican.cfg is)"
+msgstr "Projectdir: Wechseln Sie mit dem Auswahlwerkzeug in Ihr Zielverzeichnis (das, indem auch Ihre Dokumentations publican.cfg steckt)"
+
+msgid "Commits: There you can place one to five revision texts. If you need more than 5 regularly so file a bug report."
+msgstr "Commits: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie regelmäßig mehr als 5 benötigen, eröffnen Sie einen Bugreport."
+
+msgid "Revision number: There you can place your revision number."
+msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."

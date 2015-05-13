@@ -27,7 +27,7 @@
 require 'dir'
 require 'fileutils'
 
-# @note Module for directory doings
+# @note Module for different checks
 module Checker
 
   # Checks if the targetdirectory are present. If not, it creates one. It returns a success or fail.
@@ -49,5 +49,4 @@ module Checker
       end
     end
   end
-
 end

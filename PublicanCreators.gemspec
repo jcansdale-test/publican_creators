@@ -19,18 +19,20 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^sh/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 1.9'
+  spec.add_development_dependency 'bundler', '~> 1.9', '>= 1.9.6'
   spec.add_development_dependency 'rake', '~> 10.4', '>= 10.4.2'
   spec.add_development_dependency 'rdoc', '~> 4.2', '>= 4.2.0'
-  spec.add_development_dependency 'yard', '~> 0.8.7.6'
-  spec.add_development_dependency 'gem-release', '~> 0.7.3'
-  spec.add_development_dependency 'coveralls', '0.8.1'
-  spec.add_development_dependency 'rspec', '3.2.0'
-  spec.add_development_dependency 'shoulda', '3.5.0'
-  spec.add_development_dependency 'simplecov', '0.10.0'
+  spec.add_development_dependency 'yard', '~> 0.8', '>= 0.8.7.6'
+  spec.add_development_dependency 'gem-release', '~> 0.7', '>= 0.7.3'
+  spec.add_development_dependency 'coveralls', '~> 0.8', '>= 0.8.1'
+  spec.add_development_dependency 'rspec', '~> 3.2', '>= 3.2.0'
+  spec.add_development_dependency 'shoulda', '~> 3.5', '>= 3.5.0'
+  spec.add_development_dependency 'simplecov', '~> 0.10', '>= 0.10.0'
+  spec.add_development_dependency 'cucumber', '~> 2.0', '>= 2.0.0'
 
-  spec.add_runtime_dependency 'dir', '~> 0.1.2'
+  spec.add_runtime_dependency 'dir', '~> 0.1', '>= 0.1.2'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0', '>= 1.0.6'
+  spec.add_runtime_dependency 'escort', '~> 0.4', '>= 0.4.0'
 end
 

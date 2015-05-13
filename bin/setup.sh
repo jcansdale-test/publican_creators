@@ -84,14 +84,14 @@ fi
 echo "Linking binary"
 FROM="$(pwd)"
 if [ -e /usr/bin/publicancreators ]
-then
-    rm /usr/bin/publicancreators
+the
+    sudo rm /usr/bin/publicancreators
 fi
 sudo ln -s ${FROM}/PublicanCreators.rb /usr/bin/publicancreators
 
 if [ -e /usr/bin/publicancreators-rev ]
 then
-    rm /usr/bin/publicancreators-rev
+    sudo rm /usr/bin/publicancreators-rev
 fi
 sudo ln -s ${FROM}/RevisionCreator.rb /usr/bin/publicancreators-rev
 
