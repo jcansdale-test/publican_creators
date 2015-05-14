@@ -8,16 +8,16 @@ home :: https://github.com/saigkill/PublicanCreators
 license :: http://opensource.org/licenses/MIT
 last public version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="version">}[http://rubygems.org/gems/PublicanCreators]
 continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/PublicanCreators]
-continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master" alt="integration state">}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators/]
+continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master" alt="integration state">}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators]
 test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/PublicanCreators?branch=master]
 code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators.png" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
-code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators/]
+code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators]
 dependency check :: {<img src="https://gemnasium.com/saigkill/PublicanCreators.png" alt="Dependency Status" />}[https://gemnasium.com/saigkill/PublicanCreators]
 still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/PublicanCreators]
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
-documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
-user documentation (en) :: [http://saigkill.github.io/docs/publicancreators/en-US/html/]
-user documentation (de) :: [http://saigkill.github.io/docs/publicancreators/de-DE/html/]
+documentation :: http://www.rubydoc.info/gems/PublicanCreators/0.3.2.0
+user documentation (en) :: http://saigkill.github.io/docs/publicancreators/en-US/html
+user documentation (de) :: http://saigkill.github.io/docs/publicancreators/de-DE/html
 bugs :: http://saigkill.ddns.net:8112/dashboard
 review code :: http://saigkill.ddns.net:8080/publicancreators/view
 authors blog :: http://saigkill.ddns.net/wordpress/
