@@ -16,6 +16,8 @@ dependency check :: {<img src="https://gemnasium.com/saigkill/PublicanCreators.p
 still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/PublicanCreators]
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
 documentation :: http://rubydoc.info/github/saigkill/PublicanCreators/master/frames
+user documentation (en) :: [http://saigkill.github.io/docs/publicancreators/en-US/html/]
+user documentation (de) :: [http://saigkill.github.io/docs/publicancreators/de-DE/html/]
 bugs :: http://saigkill.ddns.net:8112/dashboard
 review code :: http://saigkill.ddns.net:8080/publicancreators/view
 authors blog :: http://saigkill.ddns.net/wordpress/
