@@ -64,7 +64,7 @@ end
 
 describe 'Orgname Remover' do
   it 'should remove the Orgname node from the XML file' do
-    PublicanCreatorsChange.remove_orgname(artinfo, environment, title_logo, type)
+    PublicanCreatorsChange.remove_orgname(artinfo, title_logo)
     f = File.new(artinfo)
     text = f.read
     true
