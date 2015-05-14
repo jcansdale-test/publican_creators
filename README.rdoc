@@ -20,7 +20,7 @@ user documentation (en) :: http://saigkill.github.io/docs/publicancreators/en-US
 user documentation (de) :: http://saigkill.github.io/docs/publicancreators/de-DE/html
 bugs :: http://saigkill.ddns.net:8112/dashboard
 review code :: http://saigkill.ddns.net:8080/publicancreators/view
-authors blog :: http://saigkill.ddns.net/wordpress/
+authors blog :: http://saigkill.github.io
 openhub :: https://www.openhub.net/p/PublicanCreators
 openhatch :: http://openhatch.org/projects/PublicanCreators
 
