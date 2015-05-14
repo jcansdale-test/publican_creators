@@ -30,11 +30,11 @@ class PublicanCreatorsVersion
     # Major version. Maybe never reached
     MAJOR = 0
     # Minor version.
-    MINOR = 2
+    MINOR = 3
     # Patchlevel
-    PATCH = 9
+    PATCH = 0
     # Buildversion. Mostly 0
-    BUILD = 1
+    BUILD = 0
     # @note This will be shown by PublicanCreatorsVersion::Version::STRING
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join('.')
   end

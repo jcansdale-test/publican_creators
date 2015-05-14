@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'PublicanCreators'
+require File.expand_path(File.join(File.dirname(__FILE__), '../lib', 'PublicanCreators.rb'))
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
@@ -10,5 +10,4 @@ require 'PublicanCreators'
 # require "pry"
 # Pry.start
 
-require 'irb'
-IRB.start
+PublicanCreators
