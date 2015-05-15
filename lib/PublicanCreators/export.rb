@@ -77,10 +77,28 @@ require 'dir'
 require 'fileutils'
 desc 'Checks if temp dir is available. Otherwise it creates it'
 task :checker do
-  tmp = '../tmp/#{language}/'
-  formats = ["docx", "odt", "rtf", "wml"]
-  formats.each do |i|
-    todos = "#{tmp}/#{i}"
+    todos = "../tmp/#{language}/docx"
+    if Dir.exist?(todos)
+      puts 'Found directory. Im using it.'
+    else
+      puts 'No directory found. Im creating it.'
+      FileUtils.mkdir_p(todos)
+    end
+    todos = "../tmp/#{language}/odt"
+    if Dir.exist?(todos)
+      puts 'Found directory. Im using it.'
+    else
+      puts 'No directory found. Im creating it.'
+      FileUtils.mkdir_p(todos)
+    end
+    todos = "../tmp/#{language}/rtf"
+    if Dir.exist?(todos)
+      puts 'Found directory. Im using it.'
+    else
+      puts 'No directory found. Im creating it.'
+      FileUtils.mkdir_p(todos)
+    end
+    todos = "../tmp/#{language}/wml"
     if Dir.exist?(todos)
       puts 'Found directory. Im using it.'
     else
@@ -93,7 +111,6 @@ end
 
 desc 'Convert to DOCX'
 task :export_docx => [:checker] do
-  tmp = '../tmp/#{language}/docx'
   puts 'Resolving all XML-Entities and XI-Includes'
   system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
   puts 'Formatting XML to XSL-FO'
@@ -101,14 +118,13 @@ task :export_docx => [:checker] do
   puts 'Removing temporary resolved file'
   FileUtils.rm('#{title}-resolved.xml')
   puts 'Transforming to DOCX'
-  system("fo2docx #{title}.fo > #{tmp}/#{title}.docx")
+  system("fo2docx #{title}.fo > ../tmp/#{language}/docx/#{title}.docx")
   puts 'Launching LibreOffice Writer for Preview'
-  system("lowriter #{tmp}/#{title}.docx &")
+  system("lowriter ../tmp/#{language}/docx/#{title}.docx &")
 end
 
 desc 'Convert to ODT'
 task :export_odt => [:checker] do
-  tmp = '../tmp/#{language}/odt'
   puts 'Resolving all XML-Entities and XI-Includes'
   system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
   puts 'Formatting XML to XSL-FO'
@@ -116,14 +132,13 @@ task :export_odt => [:checker] do
   puts 'Removing temporary resolved file'
   FileUtils.rm('#{title}-resolved.xml')
   puts 'Transforming to ODT'
-  system("fo2odt #{title}.fo > #{tmp}/#{title}.odt")
+  system("fo2odt #{title}.fo > ../tmp/#{language}/odt/#{title}.odt")
   puts 'Launching LibreOffice Writer for Preview'
-  system("lowriter #{tmp}/#{title}.odt &")
+  system("lowriter ../tmp/#{language}/odt/#{title}.odt &")
 end
 
 desc 'Convert to RTF'
 task :export_rtf => [:checker] do
-  tmp = '../tmp/#{language}/rtf'
   puts 'Resolving all XML-Entities and XI-Includes'
   system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
   puts 'Formatting XML to XSL-FO'
@@ -131,14 +146,13 @@ task :export_rtf => [:checker] do
   puts 'Removing temporary resolved file'
   FileUtils.rm('#{title}-resolved.xml')
   puts 'Transforming to RTF'
-  system("fo2rtf #{title}.fo > #{tmp}/#{title}.rtf")
+  system("fo2rtf #{title}.fo > ../tmp/#{language}/rtf/#{title}.rtf")
   puts 'Launching LibreOffice Writer for Preview'
-  system("lowriter #{tmp}/#{title}.rtf &")
+  system("lowriter ../tmp/#{language}/rtf/#{title}.rtf &")
 end
 
 desc 'Convert to WML'
 task :export_wml => [:checker] do
-  tmp = '../tmp/#{language}/wml'
   puts 'Resolving all XML-Entities and XI-Includes'
   system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
   puts 'Formatting XML to XSL-FO'
@@ -146,7 +160,7 @@ task :export_wml => [:checker] do
   puts 'Removing temporary resolved file'
   FileUtils.rm('#{title}-resolved.xml')
   puts 'Transforming to WML'
-  system("fo2wml #{title}.fo > #{tmp}/#{title}.wml")
+  system("fo2wml #{title}.fo > ../tmp/#{language}/wml/#{title}.wml")
 end
 
 desc 'Convert to PDF'

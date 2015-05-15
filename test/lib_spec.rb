@@ -122,12 +122,12 @@ describe 'Export Buildscript' do
   end
 end
 
-describe 'Make executable Buildscript' do
-  it 'should make the script executable' do
-    File.executable?(builds)
-    :should == true
-  end
-end
+#describe 'Make executable Buildscript' do
+#  it 'should make the script executable' do
+#    File.executable?(builds)
+#    :should == true
+#  end
+#end
 
 describe 'Cleanup' do
   it 'should remove the test directory' do

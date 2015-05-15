@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.6 (2015-05-15)
+### Bugfix
+* Fixed Rakefile buildscript issue
+
 ## 0.3.3 - 0.3.5 (2015-05-15)
 ### Bugfixes
 * fixed link_binary_rev (The variable for checker aren't resolved

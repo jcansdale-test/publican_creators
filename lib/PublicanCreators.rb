@@ -159,7 +159,7 @@ class PublicanCreators
   # @note Hardcoded variables
   artinfo = "#{title}/de-DE/Article_Info.xml"
   bookinfo = "#{title}/de-DE/Book_Info.xml"
-  builds = "#{title}/de-DE/build.sh"
+  builds = "#{title}/de-DE/Rakefile"
 
   # @note Run one of the both methods to get the variable targetdir
   # @param [String] type Book or Article
@@ -255,7 +255,7 @@ class PublicanCreators
     PublicanCreatorsExport.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
 
     # @param [String] builds path to buildscript build.sh (hardcoded)
-    PublicanCreatorsChange.make_buildscript_exe(builds)
+    #PublicanCreatorsChange.make_buildscript_exe(builds)
 
     puts "Now you can find your documentation there: #{targetdir}/#{title}"
 
