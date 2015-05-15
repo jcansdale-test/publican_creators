@@ -14,6 +14,9 @@ msgstr ""
 msgid "The config file"
 msgstr "Die Konfigurationsdatei"
 
+msgid "<primary>The config file</primary>"
+msgstr ""
+
 msgid "The config file gives you many options to customize it to your needs. First let me introduce my background."
 msgstr "Die Konfigurationsdatei bietet Ihnen viele Möglichkeiten für eigene Anpassungen. Gestatten Sie mir meinen Hintergrund zu erläutern."
 
@@ -25,6 +28,9 @@ msgstr "Daher arbeite ich mit 6 Dokumentensorten in zwei Umgebungen (Arbeit und 
 
 msgid "Global settings"
 msgstr "Globale Einstellungen"
+
+msgid "<primary>The config file</primary> <secondary>Global settings</secondary>"
+msgstr ""
 
 msgid "The global settings part means that kind of values who are not depending on the <quote>work</quote> or <quote>private</quote> environment."
 msgstr "Mit globalen Einstellungen sind hier die Art Einstellungen gemeint, die zum einen projektunabhängig sind, und immer wiederkehren."
@@ -113,7 +119,7 @@ msgstr ""
 msgid "/opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl"
 msgstr ""
 
-msgid "If you use <link xlink:href=\"http://www.xmlmind.com/foconverter/\">XFC </link> you can set there your default brand. This will be used in the build.sh script."
+msgid "If you use <link xlink:href=\"http://www.xmlmind.com/foconverter/\">XFC</link> you can set there your default brand. This will be used in the build.sh script."
 msgstr "Wenn Sie den <link xlink:href=\"http://www.xmlmind.com/foconverter/\">XFC </link> Fo-Konverter nutzen, können Sie hier entweder den Pfad zu Ihrem XFC-Brand eintragen, oder den Pfad zur Standard fo/docbook.xsl. Dieser Wert wird im Buildscript benutzt."
 
 msgid "pdfview"
@@ -128,6 +134,9 @@ msgstr "Hier können Sie Ihren Lieblings-PDF-Betrachter (z.B. evince) eintragen.
 msgid "Work settings"
 msgstr "Einstellungen für die Arbeit"
 
+msgid "<primary>The config file</primary> <secondary>Work settings</secondary>"
+msgstr ""
+
 msgid "Now we set the work parameters."
 msgstr "Jetzt setzen wir die Parameter für die Arbeit."
 
@@ -140,7 +149,7 @@ msgstr ""
 msgid "XCOM"
 msgstr ""
 
-msgid "This will set your companies brand. The name should be the same as installed in <filename>/usr/share/publican/Common_Content</filename>. So the default value is installed in <filename>/usr/share/publican/Common_Content/XCOM</filename>."
+msgid "This will set your companies brand. The name should be the same as installed in <filename>/usr/share/publican/Common_Content</filename>. So the default value is installed in<filename>/usr/share/publican/Common_Content/XCOM</filename>."
 msgstr "Hier können Sie (falls vorhanden) Ihren Betriebs-Brand so eintragen, wie er unter <filename>/usr/share/publican/Common_Content</filename> erscheint. Mein XCOM Brand wäre somit unter <filename>/usr/share/publican/Common_Content/XCOM</filename> zu finden. Ist kein Firmen-Brand vorhanden sollte die Variable leer gelassen werden. Also brand = ''."
 
 msgid "company_name"
@@ -155,7 +164,7 @@ msgstr "Der Name Ihrer Firma"
 msgid "company_division"
 msgstr ""
 
-msgid "SWE7 (Sascha Bochartz)"
+msgid "SWE7"
 msgstr ""
 
 msgid "Your companies division e.g. Software Development"
@@ -218,6 +227,9 @@ msgstr "Der Pfad zu Ihren beruflichen Büchern"
 msgid "Private settings"
 msgstr "Private Einstellungen"
 
+msgid "<primary>The config file</primary> <secondary>Private settings</secondary>"
+msgstr ""
+
 msgid "Last but not least now following the private settings."
 msgstr "Zuletzt beschäftigen wir uns mit den privaten Einstellungen."
 
@@ -230,7 +242,7 @@ msgstr ""
 msgid "manns"
 msgstr ""
 
-msgid "This will set your private brand. The name should be the same as installed in <filename>/usr/share/publican/Common_Content</filename>. So the default value is installed in <filename>/usr/share/publican/Common_Content/manns</filename>."
+msgid "This will set your private brand. The name should be the same as installed in <filename>/usr/share/publican/Common_Content</filename>. So the default value is installed in<filename>/usr/share/publican/Common_Content/manns</filename>."
 msgstr "Hier können Sie (falls vorhanden) Ihren privaten Brand so eintragen, wie er unter <filename>/usr/share/publican/Common_Content</filename> erscheint. Mein manns Brand wäre somit unter <filename>/usr/share/publican/Common_Content/manns</filename> zu finden. Ist kein privater Brand vorhanden sollte die Variable leer gelassen werden. Also brand_private = ''."
 
 msgid "brand_homework"
@@ -239,7 +251,7 @@ msgstr ""
 msgid "ils"
 msgstr ""
 
-msgid "This will set your homework brand. The name should be the same as installed in <filename>/usr/share/publican/Common_Content</filename>. So the default value is installed in <filename>/usr/share/publican/Common_Content/ils</filename>."
+msgid "This will set your homework brand. The name should be the same as installed in <filename>/usr/share/publican/Common_Content</filename>. So the default value is installed in<filename>/usr/share/publican/Common_Content/ils</filename>."
 msgstr "Hier können Sie einen dritten (privaten) Brand eintragen. Ich nutze diesen für meine Hausaufgaben. Wie oben bereits eingestellt, muss hier der Name des Brands eingetragen werden. Mein \"ils\" Brand wäre also unter <filename>/usr/share/publican/Common_Content/ils</filename> zu finden."
 
 msgid "articles_dir_priv"
@@ -268,4 +280,7 @@ msgstr ""
 
 msgid "Path where your books will be created."
 msgstr "Der Pfad zu Ihren privaten Büchern"
+
+#~ msgid "SWE7 (Sascha Bochartz)"
+#~ msgstr ""
 

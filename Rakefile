@@ -39,7 +39,7 @@ task :test_with_coveralls => [:spec, 'coveralls:push']
 require 'yard'
 desc 'Run yarddoc for the source'
 YARD::Rake::YardocTask.new do |t|
-  t.files = %w('lib/**/*.rb', 'bin/PublicanCreators.rb', 'bin/RevisionCreator.rb', 'bin/setup.sh', '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
+  t.files = %w('lib/**/*.rb', 'bin/PublicanCreators.rb', 'bin/RevisionCreator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
 end
 
 # Setup procedure
@@ -56,7 +56,6 @@ task :check_distro do
     system('sudo yum install publican*')
     @distcheck = 'fedora'
   else
-    #puts 'Fedora/Redhat not found'
     @distcheck = ''
   end
   if File.exist?('/etc/SuSE-release')
@@ -65,7 +64,6 @@ task :check_distro do
     puts 'You can try to install publican with this Howto: http://bit.ly/1dQtGLa'
     @distcheck = 'opensuse'
   else
-    #puts 'openSUSE not found'
     @distcheck = ''
   end
   if distro == 'Debian'
@@ -74,7 +72,6 @@ task :check_distro do
     puts 'You can try to install publican with this Howto: http://bit.ly/1dQtGLa'
     @distcheck = 'debian'
   else
-    #puts 'Debian not found'
     @distcheck = ''
   end
   if distro == 'Ubuntu'
@@ -91,7 +88,6 @@ task :check_distro do
       @distcheck = 'ubuntu'
     end
   else
-    #puts 'Ubuntu not found'
     @distcheck = ''
   end
   if @distcheck == ''
@@ -148,7 +144,7 @@ desc 'Link binary RevisionCreator.rb'
 task :link_binary_rev do
   publicanrev = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'RevisionCreator.rb'))
   publicanrevbin = '/usr/bin/publicancreators-rev'
-  if File.exist?('#{publicanrevbin}')
+  if File.exist?("#{publicanrevbin}")
     puts "File #{publicanrevbin} exists. Removing it"
     system("sudo rm #{publicanrevbin}")
     puts 'Removed'
@@ -166,26 +162,17 @@ task :create_desktop_cre do
   home = Dir.home
   publicancre = "#{home}/.local/share/applications/publicancreators.desktop"
   publicancreico = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican.png'))
-  if File.exist?(publicancre)
-    puts 'Found old publicancreators.desktop file. Renew it now'
-    uid = File.stat(publicancre).uid
-    owner = Etc.getpwuid(uid).name
-    if owner == 'root'
-      system("sudo rm #{publicancre}")
-    else
-      FileUtils.rm(publicancre)
-    end
-  else
-    FileUtils.touch "#{publicancre}"
-    File.write "#{publicancre}", <<EOF
+  publicancrebin = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'PublicanCreators.rb'))
+  FileUtils.rm(publicancre)
+  FileUtils.touch "#{publicancre}"
+  File.write "#{publicancre}", <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
 Name=PublicanCreators
-Exec=/usr/bin/publicancreators
+Exec=#{publicancrebin}
 Icon=#{publicancreico}
 EOF
-  end
 end
 
 require 'etc'
@@ -193,28 +180,19 @@ require 'fileutils'
 desc 'Create publicancreators-rev.desktop'
 task :create_desktop_rev do
   home = Dir.home
-  publicanrev = "#{home}/.local/share/applications/publicancreators-rev.desktop'"
+  publicanrev = "#{home}/.local/share/applications/publicancreators-rev.desktop"
   publicanrevico = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican-revision.png'))
-  if File.exist?(publicanrev)
-    puts 'Found old publicancreators-rev.desktop. Renew it now.'
-    uid = File.stat(publicanrev).uid
-    owner = Etc.getpwuid(uid).name
-    if owner == 'root'
-      system("sudo rm #{publicanrev}")
-    else
-      FileUtils.rm(publicanrev)
-    end
-  else
-    FileUtils.touch "#{publicanrev}"
-    File.write "#{publicanrev}", <<EOF
+  publicanrevbin = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'RevisionCreator.rb'))
+  FileUtils.rm(publicanrev)
+  FileUtils.touch "#{publicanrev}"
+  File.write "#{publicanrev}", <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
 Name=PublicanCreators
-Exec=/usr/bin/publicancreators-rev
+Exec=#{publicanrevbin}
 Icon=#{publicanrevico}
 EOF
-  end
 end
 
 desc 'Run setup'
@@ -230,12 +208,11 @@ task :publish_doc do
   srcde = 'docs/tmp/de-DE/html'
   srcen = 'docs/tmp/en-US/html'
   target = "#{home}/RubymineProjects/saigkill.github.com"
-  targetde = "#{home}/RubymineProjects/saigkill.github.com/publicancreators/de-DE/html"
-  targeten = "#{home}/RubymineProjects/saigkill.github.com/publicancreators/en-US/html"
-  Checker.check_dir(targetde)
-  Checker.check_dir(targeten)
-  FileUtils.cp_r("#{srcde}/.", "#{targetde}")
-  FileUtils.cp_r("#{srcen}/.", "#{targeten}")
+  targetde = "#{home}/RubymineProjects/saigkill.github.com/docs/publicancreators/de-DE/html"
+  targeten = "#{home}/RubymineProjects/saigkill.github.com/docs/publicancreators/en-US/html"
+
+  FileUtils.cp_r(Dir["#{srcde}/*"], "#{targetde}")
+  FileUtils.cp_r(Dir["#{srcen}/*"], "#{targeten}")
 
   FileUtils.cd(target) do
     puts 'Adding missing files'

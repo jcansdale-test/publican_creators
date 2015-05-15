@@ -10,7 +10,64 @@
 <chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Release Notes</title>
   <section>
+    <info>
+      <title>0.3.3 - 0.3.5 (2015-05-15)</title>
+    </info>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.3.3-0.3.5</secondary>
+    </indexterm>
+    <section>
+      <info>
+        <title>Bugfixes</title>
+      </info>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>fixed link_binary_rev (The variable for checker aren't resolved</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </section>
+    <section>
+      <info>
+        <title>Features</title>
+      </info>
+      <para>Changed the buildscript from shellscript to Rakefile. A little bit more
+        comfortable.
+      </para>
+    </section>
+  </section>
+  <section>
+    <info>
+      <title>0.3.1 - 0.3.2 (2015-05-15)</title>
+    </info>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.3.1-0.3.2</secondary>
+    </indexterm>
+    <section>
+      <info>
+        <title>Bugfixes</title>
+      </info>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Readded IRB to binary. Otherwise it doesn't start from /usr/bin (Hotfix)</para>
+          </listitem>
+          <listitem>
+            <para>Hotfix for test file</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </section>
+  </section>
+  <section>
     <title>0.3.0 (2015-05-09)</title>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.3.0</secondary>
+    </indexterm>
     <section>
       <title>Bugfixes</title>
       <itemizedlist>
@@ -28,6 +85,10 @@
   </section>
   <section>
     <title>0.2.0 (2015-05-07)</title>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.2.0</secondary>
+    </indexterm>
     <section>
       <title>Bugfixes</title>
       <itemizedlist>
@@ -51,6 +112,10 @@
   </section>
   <section>
     <title>0.1.1 (2015-05-06)</title>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.1.1</secondary>
+    </indexterm>
     <section>
       <title>Features</title>
       <itemizedlist>
@@ -78,6 +143,10 @@
   </section>
   <section>
     <title>0.1.0 (2015-04-25)</title>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.1.0</secondary>
+    </indexterm>
     <para>Features</para>
     <itemizedlist>
       <listitem>

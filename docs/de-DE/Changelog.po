@@ -14,10 +14,40 @@ msgstr ""
 msgid "Release Notes"
 msgstr ""
 
-msgid "0.3.0 (2015-05-09)"
+msgid "0.3.3 - 0.3.5 (2015-05-15)"
+msgstr ""
+
+msgid "<primary>Release Notes</primary> <secondary>0.3.3-0.3.5</secondary>"
 msgstr ""
 
 msgid "Bugfixes"
+msgstr ""
+
+msgid "fixed link_binary_rev (The variable for checker aren't resolved"
+msgstr ""
+
+msgid "Features"
+msgstr ""
+
+msgid "Changed the buildscript from shellscript to Rakefile. A little bit more comfortable."
+msgstr ""
+
+msgid "0.3.1 - 0.3.2 (2015-05-15)"
+msgstr ""
+
+msgid "<primary>Release Notes</primary> <secondary>0.3.1-0.3.2</secondary>"
+msgstr ""
+
+msgid "Readded IRB to binary. Otherwise it doesn't start from /usr/bin (Hotfix)"
+msgstr ""
+
+msgid "Hotfix for test file"
+msgstr ""
+
+msgid "0.3.0 (2015-05-09)"
+msgstr ""
+
+msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
 msgstr ""
 
 msgid "PC-1: Create UI for add_revision"
@@ -30,6 +60,9 @@ msgid "PC-5: Create/Update Documentation (Task)"
 msgstr ""
 
 msgid "0.2.0 (2015-05-07)"
+msgstr ""
+
+msgid "<primary>Release Notes</primary> <secondary>0.2.0</secondary>"
 msgstr ""
 
 msgid "PC-6: Create rules for setup Fedora"
@@ -50,7 +83,7 @@ msgstr ""
 msgid "0.1.1 (2015-05-06)"
 msgstr ""
 
-msgid "Features"
+msgid "<primary>Release Notes</primary> <secondary>0.1.1</secondary>"
 msgstr ""
 
 msgid "Fetches the titlename, type and environment from a yad dialogbox"
@@ -66,6 +99,9 @@ msgid "PC-3: Extend documentation B-Type"
 msgstr ""
 
 msgid "0.1.0 (2015-04-25)"
+msgstr ""
+
+msgid "<primary>Release Notes</primary> <secondary>0.1.0</secondary>"
 msgstr ""
 
 msgid "Build the base functions"

@@ -12,36 +12,39 @@
   <info>
     <title>Feedback</title>
   </info>
+  <indexterm>
+    <primary>Feedback</primary>
+  </indexterm>
   <para>You can give me feedback in different ways:</para>
   <para>
     <itemizedlist>
       <listitem>
         <para><emphasis role="bold">Bugtracker</emphasis>:<link
                 xlink:href="http://saigkill.ddns.net:8112/dashboard"
-                >http://saigkill.ddns.net:8112/dashboard</link>. There you can place bug
-          reports and feature requests.
+                >http://saigkill.ddns.net:8112/dashboard</link>. There you can place bug reports and
+          feature requests.
         </para>
       </listitem>
       <listitem>
         <para><emphasis role="bold">Review board</emphasis>:<link
                 xlink:href="http://saigkill.ddns.net:8080/publicancreators/view"
-                >http://saigkill.ddns.net:8080/publicancreators/view</link>. If you are an
-          programmer you can help with reviewing my code. If you know ways to make it
-          better, just let me know. So i can learn from it.
+                >http://saigkill.ddns.net:8080/publicancreators/view</link>. If you are an programmer
+          you can help with reviewing my code. If you know ways to make it better, just let me know.
+          So i can learn from it.
         </para>
       </listitem>
       <listitem>
         <para><emphasis role="bold">OpenHub</emphasis>:<link
                 xlink:href="https://www.openhub.net/p/PublicanCreators"
-                >https://www.openhub.net/p/PublicanCreators</link>. OpenHub is a statistics
-          provider for open source projects. There you can set yourself as user.
+                >https://www.openhub.net/p/PublicanCreators</link>. OpenHub is a statistics provider for
+          open source projects. There you can set yourself as user.
         </para>
       </listitem>
       <listitem>
         <para><emphasis role="bold">Openhatch</emphasis>:<link
                 xlink:href="http://openhatch.org/projects/PublicanCreators"
-                >http://openhatch.org/projects/PublicanCreators</link>. Its a community
-          builder tool. Just browse to it.
+                >http://openhatch.org/projects/PublicanCreators</link>. Its a community builder tool.
+          Just browse to it.
         </para>
       </listitem>
     </itemizedlist>

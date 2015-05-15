@@ -35,7 +35,7 @@ module PublicanCreatorsExport
   # Description:
   # @param [String] title comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
   # @param [String] builds is the path to your buildscript
-  # @param [String] language is just the ISO Code of your target language like: de-DE, en-GB or such things.
+  # @param [String] language is just the ISO Code of your target language like: #{language}, en-GB or such things.
   # @param [String] xfc_brand_dir if present the path to your branded xfc stylesheets (config file)
   # @param [String] pdfview your prefered PDF-Viewer (config file)
   # @return [String] true or false
@@ -43,168 +43,187 @@ module PublicanCreatorsExport
     puts 'Export the buildscript into new directory...'
     FileUtils.touch "#{builds}"
     File.write "#{builds}", <<EOF
-#!/bin/bash
-# Description: This script builds PDF, DOCX, ODT, RTF, HTML, MAN, TXT, EPUB, ECLIPSE and WML
-# Usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub] [-eclipse]
-# Version:
-# 0.1 initial version
-# Functions
-usage() {
-echo "usage: $0 [-docx] [-odt] [-rtf] [-wml] [-pdf] [-html] [-man] [-txt] [-epub] [-eclipse]"
-echo
-echo "Options: "
-echo "-docx : Export DocBook source to DOCX"
-echo " Example: $0 -docx"
-echo "-odt : Export DocBook source to ODT"
-echo " Example: $0 -odt"
-echo "-rtf : Export DocBook source to RTF"
-echo " Example: $0 -rtf"
-echo "-wml: Export DocBook source to WML"
-echo " Example: $0 -wml"
-echo "-pdf: Export Docbook source to PDF"
-echo " Example: $0 -pdf"
-echo "-html: Export DocBook source to HTML"
-echo " Example: $0 -html"
-echo "-man: Export DocBook source to MAN"
-echo " Example: $0 -man"
-echo "-txt: Export DocBook source to TXT"
-echo " Example: $0 -txt"
-echo "-epub: Export DocBook source to EPUB"
-echo " Example: $0 -epub"
-echo "-eclipse: Export DocBook source to Eclipse Help"
-echp "Example: $0 -eclipse"
-exit 1
-}
+# -*- ruby -*-
+# encoding: utf-8
+require 'fileutils'
 
-# main
-case "$1" in
-    -docx)
-        echo "Solve all XML-Entities and XI-Includes"
-        xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
-        echo "Formatting XML to XSL-FO"
-        if [ -d ../tmp/#{language}/docx ]
-        then
-          echo "Found tempdir"
-        else
-          mkdir ../tmp/#{language}/docx
-        end
-        saxon-xslt -o ../tmp/#{language}/docx/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
-        rm #{title}-resolved.xml
-        echo "Transforming to DOCX"
-        fo2docx ../tmp/#{language}/docx/#{title}.fo > ../tmp/#{language}/docx/#{title}.docx
-        echo "Launching LibreOffice Writer"
-        lowriter ../tmp/#{language}/docx/#{title}.docx &
-        ;;
-    -odt)
-        echo "Solve all XML-Entities and XI-Includes"
-        xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
-        echo "Formatting XML to XSL-FO"
-        if [ -d ../tmp/#{language}/odt ]
-        then
-          echo "Found tempdir"
-        else
-          mkdir ../tmp/#{language}/odt
-        end
-        saxon-xslt -o ../tmp/#{language}/odt/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
-        rm #{title}-resolved.xml
-        echo "Transforming to ODT"
-        fo2odt ../tmp/#{language}/odt/#{title}.fo > ../tmp/#{language}/odt/#{title}.odt
-        echo "Starting LibreOffice Writer"
-        lowriter ../tmp/#{language}/odt/#{title}.odt &
-        ;;
-    -rtf)
-        echo "Solve all XML-Entities and XI-Includes"
-        xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
-        echo "Formatting XML to XSL-FO"
-        if [ -d ../tmp/#{language}/rtf ]
-        then
-          echo "Found tempdir"
-        else
-          mkdir ../tmp/#{language}/rtf
-        end
-        saxon-xslt -o ../tmp/#{language}/rtf/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
-        rm #{title}-resolved.xml
-        echo "Transforming to RTF"
-        fo2rtf ../tmp/#{language}/rtf/#{title}.fo > ../tmp/#{language}/rtf/#{title}.rtf
-        echo "Launching LibreOffice Writer"
-        lowriter ../tmp/#{language}/rtf/#{title}.rtf &
-        ;;
-    -wml)
-        echo "Solve all XML-Entities and XI-Includes"
-        xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml
-        echo "Formatting XML to XSL-FO"
-        if [ -d ../tmp/#{language}/wml ]
-        then
-          echo "Found tempdir"
-        else
-          mkdir ../tmp/#{language}/wml
-        end
-        saxon-xslt -o ../tmp/#{language}/wml/#{title}.fo #{title}-resolved.xml #{xfc_brand_dir}
-        rm #{title}-resolved.xml
-        echo "Transforming to WML"
-        fo2wml ../tmp/#{language}/wml/#{title}.fo > ../tmp/#{language}/wml/#{title}.wml
-        echo "Launching LibreOffice Writer"
-        lowriter ../tmp/#{language}/wml/#{title}.wml &
-        ;;
-    -pdf)
-        cd ..
-        echo "Cleanup temp directory"
-        publican clean
-        echo "Formatting DocBook dokument and rendering to PDF"
-        publican build --langs=#{language} --formats=pdf --allow_network
-        echo "Launching PDF-Viewer"
-        #{pdfview} tmp/de-DE/pdf/*.pdf &
-        ;;
-    -html)
-        cd ..
-        echo "Cleanup temp directory"
-        publican clean
-        echo "Formatting DocBook dokument and rendering to HTML"
-        publican build --langs=#{language} --formats=html --allow_network
-        echo "Launching Browser"
-        firefox tmp/de-DE/html/index.html &
-        ;;
-    -man)
-        cd ..
-        echo "Cleanup temp directory"
-        publican clean
-        echo "Formatting DocBook document to MAN"
-        publican build --langs=#{language} --formats=man --allow_network
-        ;;
-    -txt)
-        cd ..
-        echo "Cleanup temp directory"
-        publican clean
-        echo "Formatting DocBook document to TXT"
-        publican build --langs=#{language} --formats=txt --allow_network
-        echo "Launching Texteditor"
-        gedit tmp/de-DE/txt/*.txt &
-        ;;
-    -epub)
-        cd ..
-        echo "Cleanup temp directory"
-        publican clean
-        echo "Formatting and rendering DocBook document to EPUB"
-        publican build --langs=#{language} --formats=epub --allow_network
-        echo "Launching EPUB-Viewer"
-        ev=`which ebook-viewer`
-        if [ "$ev"]
-          ebook-viewer tmp/de-DE/*.epub &
-        else
-          echo "You need to install calibre for preview the result!"
-        fi
-        ;;
-    -eclipse)
-        cd ..
-        echo "Cleanup temp directory"
-        publican clean
-        echo "Formatting to ECLIPSE"
-        publican build --langs=#{language} --formats=eclipse --allow_network
-        ;;
-    *)
-        usage
-esac
-exit 0
+task :default do
+  puts 'usage: rake [export_docx] [export_odt] [export_rtf] [export_wml] [export_pdf] [export_html] [export_man] [export_txt] [export_txt] [export_epub]'
+  puts
+  puts 'Options:'
+  puts 'export_docx : Export DocBook source to DOCX'
+  puts ' Example: rake export_docx'
+  puts 'export_odt : Export DocBook source to ODT'
+  puts ' Example: rake export_odt'
+  puts 'export_rtf : Export DocBook source to RTF'
+  puts ' Example: rake export_rtf'
+  puts 'export_wml: Export DocBook source to WML'
+  puts ' Example: rake export_wml'
+  puts 'export_pdf: Export Docbook source to PDF'
+  puts ' Example: rake export_pdf'
+  puts 'export_html: Export DocBook source to HTML'
+  puts ' Example: rake export_html'
+  puts 'export_man: Export DocBook source to MAN'
+  puts ' Example: rake export_man'
+  puts 'export_txt: Export DocBook source to TXT'
+  puts ' Example: rake export_txt'
+  puts 'export_epub: Export DocBook source to EPUB'
+  puts ' Example: rake export_epub'
+  puts 'export_eclipse: Export DocBook source to Eclipse Help'
+  puts ' Example: rake export_eclipse'
+end
+
+require 'dir'
+require 'fileutils'
+desc 'Checks if temp dir is available. Otherwise it creates it'
+task :checker do
+  tmp = '../tmp/#{language}/'
+  formats = ["docx", "odt", "rtf", "wml"]
+  formats.each do |i|
+    todos = "#{tmp}/#{i}"
+    if Dir.exist?(todos)
+      puts 'Found directory. Im using it.'
+    else
+      puts 'No directory found. Im creating it.'
+      FileUtils.mkdir_p(todos)
+    end
+  end
+
+end
+
+desc 'Convert to DOCX'
+task :export_docx => [:checker] do
+  tmp = '../tmp/#{language}/docx'
+  puts 'Resolving all XML-Entities and XI-Includes'
+  system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
+  puts 'Formatting XML to XSL-FO'
+  system("saxon-xslt -o #{title}.fo #{title}-resolved.xml #{xfc_brand_dir}")
+  puts 'Removing temporary resolved file'
+  FileUtils.rm('#{title}-resolved.xml')
+  puts 'Transforming to DOCX'
+  system("fo2docx #{title}.fo > #{tmp}/#{title}.docx")
+  puts 'Launching LibreOffice Writer for Preview'
+  system("lowriter #{tmp}/#{title}.docx &")
+end
+
+desc 'Convert to ODT'
+task :export_odt => [:checker] do
+  tmp = '../tmp/#{language}/odt'
+  puts 'Resolving all XML-Entities and XI-Includes'
+  system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
+  puts 'Formatting XML to XSL-FO'
+  system("saxon-xslt -o #{title}.fo #{title}-resolved.xml #{xfc_brand_dir}")
+  puts 'Removing temporary resolved file'
+  FileUtils.rm('#{title}-resolved.xml')
+  puts 'Transforming to ODT'
+  system("fo2odt #{title}.fo > #{tmp}/#{title}.odt")
+  puts 'Launching LibreOffice Writer for Preview'
+  system("lowriter #{tmp}/#{title}.odt &")
+end
+
+desc 'Convert to RTF'
+task :export_rtf => [:checker] do
+  tmp = '../tmp/#{language}/rtf'
+  puts 'Resolving all XML-Entities and XI-Includes'
+  system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
+  puts 'Formatting XML to XSL-FO'
+  system("saxon-xslt -o #{title}.fo #{title}-resolved.xml #{xfc_brand_dir}")
+  puts 'Removing temporary resolved file'
+  FileUtils.rm('#{title}-resolved.xml')
+  puts 'Transforming to RTF'
+  system("fo2rtf #{title}.fo > #{tmp}/#{title}.rtf")
+  puts 'Launching LibreOffice Writer for Preview'
+  system("lowriter #{tmp}/#{title}.rtf &")
+end
+
+desc 'Convert to WML'
+task :export_wml => [:checker] do
+  tmp = '../tmp/#{language}/wml'
+  puts 'Resolving all XML-Entities and XI-Includes'
+  system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
+  puts 'Formatting XML to XSL-FO'
+  system("saxon-xslt -o #{title}.fo #{title}-resolved.xml #{xfc_brand_dir}")
+  puts 'Removing temporary resolved file'
+  FileUtils.rm('#{title}-resolved.xml')
+  puts 'Transforming to WML'
+  system("fo2wml #{title}.fo > #{tmp}/#{title}.wml")
+end
+
+desc 'Convert to PDF'
+task :export_pdf do
+  FileUtils.cd('..')
+  puts 'Cleaning up temp directory'
+  system('publican clean')
+  puts 'Formatting to PDF'
+  system('publican build --langs=#{language} --formats=pdf --allow_network')
+  puts 'Launching PDF-Viewer'
+  system('#{pdfview} tmp/#{language}/pdf/*.pdf &')
+end
+
+desc 'Convert to HTML'
+task :export_html do
+  FileUtils.cd('..')
+  puts 'Cleaning up temp directory'
+  system('publican clean')
+  puts 'Formatting to PDF'
+  system('publican build --langs=#{language} --formats=html --allow_network')
+  puts 'Launching Browser'
+  system('firefox tmp/#{language}/html/index.html &')
+end
+
+desc 'Convert to MAN'
+task :export_man do
+  FileUtils.cd('..')
+  puts 'Cleaning up temp directory'
+  system('publican clean')
+  puts 'Formatting to MAN'
+  system('publican build --langs=#{language} --formats=man --allow_network')
+end
+
+desc 'Convert to TXT'
+task :export_txt do
+  FileUtils.cd('..')
+  puts 'Cleaning up temp directory'
+  system('publican clean')
+  puts 'Formatting to TXT'
+  system('publican build --langs=#{language} --formats=txt --allow_network')
+  puts 'Launching Texteditor'
+  system('gedit tmp/#{language}/txt/*.txt &')
+end
+
+desc 'Convert to EPUB'
+task :export_epub do
+  FileUtils.cd('..')
+  puts 'Cleaning up temp directory'
+  system('publican clean')
+  puts 'Formatting to EPUB'
+  system('publican build --langs=#{language} --formats=epub --allow_network')
+  if File.exist?('/usr/bin/ebook-viewer')
+    puts 'Launching EPUB-Viewer'
+    system('ebook-viewer /tmp/#{language}/*.epub &')
+  else
+    puts 'You have to install calibre for using ebook-viewer for preview'
+  end
+end
+
+desc 'Convert to ECLIPSE'
+task :export_eclipse do
+  FileUtils.cd('..')
+  puts 'Cleaning up temp directory'
+  system('publican clean')
+  puts 'Formatting to ECLIPSE'
+  system('publican build --langs=#{language} --formats=eclipse --allow_network')
+end
+
+desc 'Run convert to most used formats'
+task :export_most => [:export_docx, :export_odt, :export_rtf, :export_html, :export_pdf] do
+  puts 'Successful exported to DOCX, ODT, RTF, HTML and PDF'
+end
+
+desc 'Run convert to all formats'
+task :export_all => [:export_most, :export_wml, :export_man, :export_txt, :export_epub, :export_eclipse] do
+  puts 'Successfull exported to all formats'
+end
 EOF
   end
 end

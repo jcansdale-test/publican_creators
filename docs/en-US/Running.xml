@@ -12,11 +12,17 @@
   <info>
     <title>Using PublicanCreators</title>
   </info>
-
+  <indexterm>
+    <primary>Using PublicanCreators</primary>
+  </indexterm>
   <section>
     <info>
       <title>Launching PublicanCreators</title>
     </info>
+    <indexterm>
+      <primary>Using PublicanCreators</primary>
+      <secondary>Launching PublicanCreators</secondary>
+    </indexterm>
     <para>For launching PublicanCreators you have to click on your
       <menuchoice>
         <guibutton>program-launcher</guibutton>
@@ -59,6 +65,10 @@
     <info>
       <title>Add a revision</title>
     </info>
+    <indexterm>
+      <primary>Using PublicanCreators</primary>
+      <secondary>Add a revision</secondary>
+    </indexterm>
     <para>PublicanCreators also ships a graphical revision adder. Just click
       <menuchoice>
         <guibutton>program-launcher</guibutton>

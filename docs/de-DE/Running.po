@@ -14,8 +14,14 @@ msgstr ""
 msgid "Using PublicanCreators"
 msgstr "PublicanCreators benutzen"
 
+msgid "<primary>Using PublicanCreators</primary>"
+msgstr ""
+
 msgid "Launching PublicanCreators"
 msgstr "PublicanCreators starten"
+
+msgid "<primary>Using PublicanCreators</primary> <secondary>Launching PublicanCreators</secondary>"
+msgstr ""
 
 msgid "For launching PublicanCreators you have to click on your <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreators</guibutton> </menuchoice> ."
 msgstr "Um PublicanCreators zu starten, klicken Sie auf: <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreators</guibutton> </menuchoice> ."
@@ -47,6 +53,9 @@ msgstr "Nach dem Klick auf <guibutton>Go!</guibutton> wird die Dokumentation mit
 msgid "Add a revision"
 msgstr "Eine Revision hinzufügen"
 
+msgid "<primary>Using PublicanCreators</primary> <secondary>Add a revision</secondary>"
+msgstr ""
+
 msgid "PublicanCreators also ships a graphical revision adder. Just click <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreatorsRevision</guibutton> </menuchoice> ."
 msgstr "PublicanCreators bietet auch eine grafische Oberfläche zum hinzufügen einer Revision an. Klicken Sie dazu auf: <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreatorsRevision</guibutton> </menuchoice> ."
 
@@ -64,3 +73,4 @@ msgstr "Commits: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie 
 
 msgid "Revision number: There you can place your revision number."
 msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."
+

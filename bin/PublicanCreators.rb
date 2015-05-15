@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby
-
-require 'bundler/setup'
-require 'PublicanCreators'
+begin
+  require 'PublicanCreators'
+rescue LoadError
+  require 'rubygems'
+  require 'PublicanCreators'
+  require 'bundler/setup'
+end
 #require File.expand_path(File.join(File.dirname(__FILE__), '../lib', 'PublicanCreators.rb'))
 
 # You can add fixtures and/or initialization code here to make experimenting

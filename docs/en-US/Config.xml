@@ -11,6 +11,9 @@
   <info>
     <title>The config file</title>
   </info>
+  <indexterm>
+    <primary>The config file</primary>
+  </indexterm>
   <para>The config file gives you many options to customize it to your needs. First let me introduce
     my background.
   </para>
@@ -28,6 +31,10 @@
     <info>
       <title>Global settings</title>
     </info>
+    <indexterm>
+      <primary>The config file</primary>
+      <secondary>Global settings</secondary>
+    </indexterm>
     <para>The global settings part means that kind of values who are not depending on the
       <quote>work</quote>
       or
@@ -121,6 +128,10 @@
     <info>
       <title>Work settings</title>
     </info>
+    <indexterm>
+      <primary>The config file</primary>
+      <secondary>Work settings</secondary>
+    </indexterm>
     <para>Now we set the work parameters.</para>
     <para>
       <table frame="all">
@@ -152,7 +163,7 @@
             </row>
             <row>
               <entry>company_division</entry>
-              <entry>SWE7 (Sascha Bochartz)</entry>
+              <entry>SWE7</entry>
               <entry>Your companies division e.g. Software Development</entry>
             </row>
             <row>
@@ -200,6 +211,10 @@
     <info>
       <title>Private settings</title>
     </info>
+    <indexterm>
+      <primary>The config file</primary>
+      <secondary>Private settings</secondary>
+    </indexterm>
     <para>Last but not least now following the private settings.</para>
     <para>
       <table frame="all">

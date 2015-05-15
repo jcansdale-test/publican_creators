@@ -71,7 +71,7 @@ class PublicanCreators
     puts 'Found configuration file and using it...'
   else
     # @raise
-    puts 'Please run bin/setup.sh'
+    puts 'Please run rake setup'
     raise('Exiting now..')
   end
 

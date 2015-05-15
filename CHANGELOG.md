@@ -1,6 +1,17 @@
 # CHANGELOG
 
-# 0.3.0 (2015-05-09)
+## 0.3.3 - 0.3.5 (2015-05-15)
+### Bugfixes
+* fixed link_binary_rev (The variable for checker aren't resolved
+### Features
+* Changed the buildscript from shellscript to Rakefile. A little bit more comfortable.
+
+## 0.3.1 - 0.3.2 (2015-05-15)
+### Bugfixes
+* Readded IRB to binary. Otherwise it doesn't start from /usr/bin (Hotfix)
+* Hotfix for test file
+
+## 0.3.0 (2015-05-09)
 ### Bugfixes
 * PC-1: Create UI for add_revision
 > PC-4: Create UI (Task)
