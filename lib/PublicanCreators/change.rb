@@ -67,7 +67,7 @@ module PublicanCreatorsChange
     if db5 == 'true'
       string << ' --dtdver 5.0'
     end
-    system("publican create #{string}").color(:yellow)
+    system("publican create #{string}")
     # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
     PublicanCreatorsChange.check_result(title)
   end

@@ -9,6 +9,7 @@ require 'tempfile'
 require 'nokogiri'
 require 'dir'
 require 'bundler/setup'
+require 'rainbow/ext/string'
 require File.dirname(__FILE__) + '/spec_helper'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
