@@ -10,6 +10,71 @@
   <simpara>
     <revhistory>
       <revision>
+        <revnumber>0.4.0-0.1</revnumber>
+        <date>Sat May 16 2015</date>
+        <author>
+          <firstname>Sascha</firstname>
+          <surname>Manns</surname>
+          <email>Sascha.Manns@bdvb.de</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Translation files synchronised with XML sources 0.4.0-0</member>
+          </simplelist>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.3.0-0.9</revnumber>
+        <date>Sat May 16 2015</date>
+        <author>
+          <firstname>Sascha</firstname>
+          <surname>Manns</surname>
+          <email>Sascha.Manns@bdvb.de</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Translation files synchronised with XML sources 0.3.0-0</member>
+
+          </simplelist>
+
+        </revdescription>
+
+      </revision>
+      <revision>
+        <revnumber>0.3.0-0.8</revnumber>
+        <date>Sat May 16 2015</date>
+        <author>
+          <firstname>Sascha</firstname>
+          <surname>Manns</surname>
+          <email>Sascha.Manns@bdvb.de</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Translation files synchronised with XML sources 0.3.0-0</member>
+
+          </simplelist>
+
+        </revdescription>
+
+      </revision>
+      <revision>
+        <revnumber>0.3.0-0.7</revnumber>
+        <date>Sat May 16 2015</date>
+        <author>
+          <firstname>Sascha</firstname>
+          <surname>Manns</surname>
+          <email>Sascha.Manns@bdvb.de</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Translation files synchronised with XML sources 0.3.0-0</member>
+
+          </simplelist>
+
+        </revdescription>
+
+      </revision>
+      <revision>
         <revnumber>0.3.0-0.6</revnumber>
         <date>Fri May 15 2015</date>
         <author>
@@ -20,8 +85,11 @@
         <revdescription>
           <simplelist>
             <member>Translation files synchronised with XML sources 0.3.0-0</member>
+
           </simplelist>
+
         </revdescription>
+
       </revision>
       <revision>
         <revnumber>0.3.0-0.5</revnumber>

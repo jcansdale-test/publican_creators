@@ -27,6 +27,7 @@
 
 require 'nokogiri'
 require 'dir'
+require 'rainbow/ext/string'
 require 'PublicanCreators/checker'
 
 # @note Module what contains all methods who are doing changes in files
@@ -45,7 +46,7 @@ module PublicanCreatorsChange
   def self.init_docu_work(title, type, language, brand, db5)
     if type == 'Article'
       # @note Initial creation of documentation with publican
-      puts 'Creating initial documentation ...'
+      puts 'Creating initial documentation ...'.color(:yellow)
       string = "--type Article --lang #{language} --name #{title}"
       if brand == ''
         # @note do nothing
@@ -54,7 +55,7 @@ module PublicanCreatorsChange
       end
     else
       # @note Initial creation of documentation with publican
-      puts 'Creating initial documentation ...'
+      puts 'Creating initial documentation ...'.color(:yellow)
       string = "--lang #{language} --name #{title}"
       if brand == ''
         # do nothing
@@ -66,7 +67,7 @@ module PublicanCreatorsChange
     if db5 == 'true'
       string << ' --dtdver 5.0'
     end
-    system("publican create #{string}")
+    system("publican create #{string}").color(:yellow)
     # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
     PublicanCreatorsChange.check_result(title)
   end
@@ -87,7 +88,7 @@ module PublicanCreatorsChange
     if type == 'Article'
       # @note Initial creation of documentation with publican
       if homework == 'FALSE'
-        puts 'Creating initial documentation ...'
+        puts 'Creating initial documentation ...'.color(:yellow)
         string = "--type Article --lang #{language} --name #{title}"
         if brand_private == ''
           # @note do nothing
@@ -95,7 +96,7 @@ module PublicanCreatorsChange
           string << " --brand #{brand_private}"
         end
       else
-        puts 'Creating initial documentation ...'
+        puts 'Creating initial documentation ...'.color(:yellow)
         string = "--type Article --lang #{language} --name #{title}"
         if brand_private == ''
           # do nothing
@@ -105,7 +106,7 @@ module PublicanCreatorsChange
       end
     else
       # @note Initial creation of documentation with publican
-      puts 'Creating initial documentation ...'
+      puts 'Creating initial documentation ...'.color(:yellow)
       string = "--lang #{language} --name #{title}"
       if brand_private == ''
         # @note do nothing
@@ -116,7 +117,7 @@ module PublicanCreatorsChange
     if db5 == 'true'
       string << ' --dtdver 5.0'
     end
-    system("publican create #{string}")
+    system("publican create #{string}").color(:yellow)
     # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
     PublicanCreatorsChange.check_result(title)
   end
@@ -128,9 +129,9 @@ module PublicanCreatorsChange
   def self.check_result(title)
     # @note checking if new documentation directory exists
     if Dir.exist?(title)
-      puts 'Creating documentation was a success...'
+      puts 'Creating documentation was a success...'.color(:yellow)
     else
-      raise('Cant create documentation. Please try it manual with publican...')
+      raise('Cant create documentation. Please try it manual with publican...').color(:red)
     end
   end
 
@@ -146,7 +147,7 @@ module PublicanCreatorsChange
     ent = "#{title}/de-DE/#{title}.ent"
     if environment == 'Work'
       if brand == 'XCOM'
-        puts 'Adding global entities...'
+        puts 'Adding global entities...'.color(:yellow)
         # @note Adding global entities
         open(ent, 'a') { |f|
           f << "\n"
@@ -160,7 +161,7 @@ module PublicanCreatorsChange
         output.close
       end
     else
-      puts 'Nothing to do'
+      puts 'Nothing to do'.color(:yellow)
     end
   end
 
@@ -175,7 +176,7 @@ module PublicanCreatorsChange
   def self.change_holder(title, environment, name, company_name)
     ent = "#{title}/de-DE/#{title}.ent"
     # @note Replace the Holder with the real one
-    puts 'Replace holder field with the present user'
+    puts 'Replace holder field with the present user'.color(:yellow)
     if environment == 'Work'
       text = File.read(ent)
       new_contents = text.gsub("| You need to change the HOLDER entity in the de-DE/#{title}.ent file |", "#{company_name}")
@@ -198,7 +199,7 @@ module PublicanCreatorsChange
   # @return [String] true or false
   def self.remove_orgname(info, title_logo)
     if title_logo == 'false'
-      puts 'Remove title logo from Article_Info or Books_Info'
+      puts 'Remove title logo from Article_Info or Books_Info'.color(:yellow)
       doc = Nokogiri::XML(IO.read(info))
       doc.search('orgname').each do |node|
         node.remove
@@ -223,17 +224,17 @@ module PublicanCreatorsChange
       if type == 'Article'
         if legal == 'true'
           # @note Remove the Legal Notice XI-Include in case it is an article. XCOM articles using another way to add them.
-          puts 'Remove XI-Includes for Legal Notice...'
+          puts 'Remove XI-Includes for Legal Notice...'.color(:yellow)
           text = File.read(artinfo)
           new_contents = text.gsub('<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />', '<!-- removed legal -->')
           puts new_contents
           File.open(artinfo, 'w') { |file| file.puts new_contents }
         end
       else
-        puts 'Nothing to do'
+        puts 'Nothing to do'.color(:yellow)
       end
     else
-      puts 'Nothing to do'
+      puts 'Nothing to do'.color(:yellow)
     end
 
   end
@@ -256,7 +257,7 @@ module PublicanCreatorsChange
     firstname = name[0]
     surname = name[1]
     # @note Revision_History: Change default stuff to the present user
-    puts 'Replace the default content with the new content from the user (Revision History)'
+    puts 'Replace the default content with the new content from the user (Revision History)'.color(:yellow)
     text = File.read(revhist)
     vorname = text.gsub('Enter your first name here.', "#{firstname}")
     puts vorname
@@ -303,7 +304,7 @@ module PublicanCreatorsChange
     firstname = name[0]
     surname = name[1]
     # @note Author Group: Change the default stuff to the present user
-    puts 'Replace the default content with the new content from the user (Authors_Group)'
+    puts 'Replace the default content with the new content from the user (Authors_Group)'.color(:yellow)
     text = File.read(agroup)
     vorname = text.gsub('Enter your first name here.', "#{firstname}")
     puts vorname
@@ -357,7 +358,7 @@ module PublicanCreatorsChange
     firstname = name[0]
     surname = name[1]
     # @note Author Group: Change the default stuff to the present user
-    puts 'Replace the default content with the new content from the user (Authors_Group)'
+    puts 'Replace the default content with the new content from the user (Authors_Group)'.color(:yellow)
     text = File.read(agroup)
     vorname = text.gsub('Enter your first name here.', "#{firstname}")
     puts vorname
@@ -405,7 +406,7 @@ module PublicanCreatorsChange
   # @param [String] builds is the path to your buildscript
   # @return [String] true or false
   def self.make_buildscript_exe(builds)
-    puts 'Making the buildscript executable ...'
+    puts 'Making the buildscript executable ...'.color(:yellow)
     FileUtils.chmod 'u=rwx,go=rwx', "#{builds}"
   end
 end

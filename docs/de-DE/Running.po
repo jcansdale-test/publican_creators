@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-05-12 22:37+0100\n"
+"PO-Revision-Date: 2015-05-16 19:26+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: en_US\n"
@@ -15,13 +15,13 @@ msgid "Using PublicanCreators"
 msgstr "PublicanCreators benutzen"
 
 msgid "<primary>Using PublicanCreators</primary>"
-msgstr ""
+msgstr "<primary>PublicanCreators benutzen</primary>"
 
 msgid "Launching PublicanCreators"
 msgstr "PublicanCreators starten"
 
 msgid "<primary>Using PublicanCreators</primary> <secondary>Launching PublicanCreators</secondary>"
-msgstr ""
+msgstr "<primary>PublicanCreators benutzen</primary> <secondary>PublicanCreators starten</secondary>"
 
 msgid "For launching PublicanCreators you have to click on your <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreators</guibutton> </menuchoice> ."
 msgstr "Um PublicanCreators zu starten, klicken Sie auf: <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreators</guibutton> </menuchoice> ."
@@ -29,23 +29,23 @@ msgstr "Um PublicanCreators zu starten, klicken Sie auf: <menuchoice> <guibutton
 msgid "Now you see a graphical interface (the look and feel depends on your chosen theme):"
 msgstr "Jetzt sehen Sie ein grafisches Interface (das Aussehen kann je nach eingestelltem Theme variieren)."
 
-msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/PublicanCreators.png\" /> </imageobject> </inlinemediaobject>"
+msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/PublicanCreators.png\" width=\"80%\" /> </imageobject> </inlinemediaobject>"
 msgstr ""
 
 msgid "Now you can choose one of that options:"
 msgstr "Jetzt können Sie die Optionen auswählen:"
 
-msgid "Environment: Work or Private"
-msgstr "Environment: Work oder Private (Arbeit oder Private)"
+msgid "<emphasis role=\"bold\">Environment</emphasis>: Work or Private"
+msgstr "<emphasis role=\"bold\">Environment</emphasis>: Work oder Private (Arbeit oder Privat)"
 
-msgid "Type: Article or Book"
-msgstr ""
+msgid "<emphasis role=\"bold\">Type</emphasis>: Article or Book"
+msgstr "<emphasis role=\"bold\">Type</emphasis>: Article or Book (Artikel oder Buch)"
 
-msgid "Optional: Normal, Report, Homework"
-msgstr ""
+msgid "<emphasis role=\"bold\">Optional</emphasis>: Normal, Report, Homework"
+msgstr "<emphasis role=\"bold\">Optional</emphasis>: Normal, Report, Homework"
 
-msgid "Title: Your Title. Use underscores instead of blanks."
-msgstr "Titel: Ihr gewünschter Titel (mit Unterstrichen statt Leerzeichen)"
+msgid "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Your Title</emphasis>. Use underscores instead of blanks."
+msgstr "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Ihr Title</emphasis>. Benutzen Sie Unterstriche statt Leerzeichen."
 
 msgid "After clicking on <guibutton>Go!</guibutton> the documentation will be created by publican."
 msgstr "Nach dem Klick auf <guibutton>Go!</guibutton> wird die Dokumentation mit Publican erstellt."
@@ -54,7 +54,7 @@ msgid "Add a revision"
 msgstr "Eine Revision hinzufügen"
 
 msgid "<primary>Using PublicanCreators</primary> <secondary>Add a revision</secondary>"
-msgstr ""
+msgstr "<primary>PublicanCreators benutzen</primary> <secondary>Eine Revision hinzufügen</secondary>"
 
 msgid "PublicanCreators also ships a graphical revision adder. Just click <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreatorsRevision</guibutton> </menuchoice> ."
 msgstr "PublicanCreators bietet auch eine grafische Oberfläche zum hinzufügen einer Revision an. Klicken Sie dazu auf: <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreatorsRevision</guibutton> </menuchoice> ."
@@ -65,12 +65,23 @@ msgstr ""
 msgid "There you have three important tweaks:"
 msgstr "Jetzt haben Sie drei wichtige Möglichkeiten:"
 
-msgid "Projectdir: Use that to move to your target directory (That directory where your projects publican.cfg is)"
-msgstr "Projectdir: Wechseln Sie mit dem Auswahlwerkzeug in Ihr Zielverzeichnis (das, indem auch Ihre Dokumentations publican.cfg steckt)"
+msgid "<emphasis role=\"bold\">Projectdir</emphasis>: Use that to move to your <emphasis>target directory</emphasis> (That directory where your projects publican.cfg is)"
+msgstr "<emphasis role=\"bold\">Projectdir</emphasis>: Nutzen Sie diesen Wähler um zum <emphasis>Zielverzeichnis</emphasis> (Dort wo Ihre Projektbezogene publican.cfg steckt) zu manövrrieren."
 
-msgid "Commits: There you can place one to five revision texts. If you need more than 5 regularly so file a bug report."
-msgstr "Commits: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie regelmäßig mehr als 5 benötigen, eröffnen Sie einen Bugreport."
+msgid "<emphasis role=\"bold\">Commits</emphasis>: There you can place one to five <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug report."
+msgstr "<emphasis role=\"bold\">Commits</emphasis>: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie regelmäßig mehr als 5 benötigen, eröffnen Sie einen Bugreport."
 
-msgid "Revision number: There you can place your revision number."
-msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."
+msgid "<emphasis role=\"bold\">Revision number</emphasis>: There you can place your <emphasis>revision number</emphasis>."
+msgstr "<emphasis role=\"bold\">Revision number</emphasis>: Hier tragen Sie Ihre <emphasis>Revisionsnummer</emphasis> ein."
 
+#~ msgid "Environment: Work or Private"
+#~ msgstr "Environment: Work oder Private (Arbeit oder Private)"
+
+#~ msgid "Projectdir: Use that to move to your target directory (That directory where your projects publican.cfg is)"
+#~ msgstr "Projectdir: Wechseln Sie mit dem Auswahlwerkzeug in Ihr Zielverzeichnis (das, indem auch Ihre Dokumentations publican.cfg steckt)"
+
+#~ msgid "Revision number: There you can place your revision number."
+#~ msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."
+
+#~ msgid "Title: Your Title. Use underscores instead of blanks."
+#~ msgstr "Titel: Ihr gewünschter Titel (mit Unterstrichen statt Leerzeichen)"

@@ -20,6 +20,9 @@ msgstr ""
 msgid "Manns"
 msgstr ""
 
+msgid "Updated for Version 0.4.0"
+msgstr ""
+
 msgid "Initial creation by publican"
 msgstr ""
 

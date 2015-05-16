@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter [
+<!DOCTYPE appendix [
         <!ENTITY % sgml.features "IGNORE">
         <!ENTITY % xml.features "INCLUDE">
         <!ENTITY % BOOK_ENTS SYSTEM "PublicanCreators.ent">
@@ -7,11 +7,68 @@
         <!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
         %DOCBOOK_ENTS;
         ]>
-<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+<appendix xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Release Notes</title>
   <section>
     <info>
-      <title>0.3.3 - 0.3.5 (2015-05-15)</title>
+      <title>Release 0.4.0 (2015-05-16)</title>
+    </info>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.4.0</secondary>
+    </indexterm>
+    <section>
+      <info>
+        <title>Bugfixes</title>
+      </info>
+      <para>Both desktop files from PublicanCreators and RevisionCreators having just the name
+        PublicanCreators. Now PublicanCreators uses its name and RevisionCreators its name.
+      </para>
+    </section>
+    <section>
+      <info>
+        <title>Cosmetic</title>
+      </info>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Made the shell output more colorful. Used yellow as standard color, red for fails,
+              green for successes and blue for to check things.
+            </para>
+          </listitem>
+          <listitem>
+            <para>Extended Rakefile for preparing, building and publishing this gems docs.</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </section>
+    <section>
+      <info>
+        <title>Note</title>
+      </info>
+      <para>So far all things implemented what i wanted. If no new bugreports or feature requests
+        are coming in, it's all for now.
+      </para>
+    </section>
+  </section>
+  <section>
+    <info>
+      <title>Release 0.3.6 (2015-05-15)</title>
+    </info>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.3.6</secondary>
+    </indexterm>
+    <section>
+      <info>
+        <title>Bugfixes</title>
+      </info>
+      <para>Fixed Rakefile buildscript issue</para>
+    </section>
+  </section>
+  <section>
+    <info>
+      <title>Release 0.3.3 to 0.3.5 (2015-05-15)</title>
     </info>
     <indexterm>
       <primary>Release Notes</primary>
@@ -24,7 +81,7 @@
       <para>
         <itemizedlist>
           <listitem>
-            <para>fixed link_binary_rev (The variable for checker aren't resolved</para>
+            <para>fixed link_binary_rev (The variable for checker aren't resolved)</para>
           </listitem>
         </itemizedlist>
       </para>
@@ -40,7 +97,7 @@
   </section>
   <section>
     <info>
-      <title>0.3.1 - 0.3.2 (2015-05-15)</title>
+      <title>Release 0.3.1 to 0.3.2 (2015-05-15)</title>
     </info>
     <indexterm>
       <primary>Release Notes</primary>
@@ -63,7 +120,9 @@
     </section>
   </section>
   <section>
-    <title>0.3.0 (2015-05-09)</title>
+    <info>
+      <title>Release 0.3.0 (2015-05-09)</title>
+    </info>
     <indexterm>
       <primary>Release Notes</primary>
       <secondary>0.3.0</secondary>
@@ -84,7 +143,9 @@
     </section>
   </section>
   <section>
-    <title>0.2.0 (2015-05-07)</title>
+    <info>
+      <title>Release 0.2.0 (2015-05-07)</title>
+    </info>
     <indexterm>
       <primary>Release Notes</primary>
       <secondary>0.2.0</secondary>
@@ -111,7 +172,9 @@
     </section>
   </section>
   <section>
-    <title>0.1.1 (2015-05-06)</title>
+    <info>
+      <title>Release 0.1.1 (2015-05-06)</title>
+    </info>
     <indexterm>
       <primary>Release Notes</primary>
       <secondary>0.1.1</secondary>
@@ -142,7 +205,9 @@
     </section>
   </section>
   <section>
-    <title>0.1.0 (2015-04-25)</title>
+    <info>
+      <title>Release 0.1.0 (2015-04-25)</title>
+    </info>
     <indexterm>
       <primary>Release Notes</primary>
       <secondary>0.1.0</secondary>
@@ -154,4 +219,4 @@
       </listitem>
     </itemizedlist>
   </section>
-</chapter>
+</appendix>

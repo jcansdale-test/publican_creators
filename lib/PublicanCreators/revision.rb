@@ -24,6 +24,7 @@
 # Fix for PC-1
 # Dependencies
 require 'fileutils'
+require 'rainbow/ext/string'
 require File.expand_path(File.join(File.dirname(__FILE__), 'get.rb'))
 
 class RevisionCreator
@@ -37,13 +38,13 @@ class RevisionCreator
   member5 = revisionget[6]
   revnumber = revisionget[7]
 
-  puts "Directory: #{directory}"
-  puts "Member1: #{member1}"
-  puts "Member2: #{member2}"
-  puts "Member3: #{member3}"
-  puts "Member4: #{member4}"
-  puts "Member5: #{member5}"
-  puts "Revnumber: #{revnumber}"
+  puts "Directory: #{directory}".color(:yellow)
+  puts "Member1: #{member1}".color(:yellow)
+  puts "Member2: #{member2}".color(:yellow)
+  puts "Member3: #{member3}".color(:yellow)
+  puts "Member4: #{member4}".color(:yellow)
+  puts "Member5: #{member5}".color(:yellow)
+  puts "Revnumber: #{revnumber}".color(:yellow)
 
   # @param [String] directory The directory where the projects publican.cfg is
   FileUtils.cd(directory) do

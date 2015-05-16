@@ -9,6 +9,22 @@
   <title>Revision History</title>
   <revhistory>
     <revision>
+      <revnumber>0.4.0-0</revnumber>
+      <date>Sun May 16 2015</date>
+      <author>
+        <personname>
+          <firstname>Sascha</firstname>
+          <surname>Manns</surname>
+        </personname>
+        <email>Sascha.Manns@bdvb.de</email>
+      </author>
+      <revdescription>
+        <simplelist>
+          <member>Updated for Version 0.4.0</member>
+        </simplelist>
+      </revdescription>
+    </revision>
+    <revision>
       <revnumber>0.3.0-0</revnumber>
       <date>Sat May 9 2015</date>
       <author>

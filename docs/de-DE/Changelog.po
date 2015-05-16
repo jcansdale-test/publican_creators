@@ -2,28 +2,63 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-05-12 20:15+0200\n"
+"PO-Revision-Date: 2015-05-16 15:40+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
-"Language: en-US \n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Publican v4.2.6\n"
+"X-Generator: Poedit 1.7.5\n"
 
 msgid "Release Notes"
+msgstr "Veröffentlichungshinweise"
+
+msgid "Release 0.4.0 (2015-05-16)"
 msgstr ""
 
-msgid "0.3.3 - 0.3.5 (2015-05-15)"
-msgstr ""
-
-msgid "<primary>Release Notes</primary> <secondary>0.3.3-0.3.5</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.4.0</secondary>"
 msgstr ""
 
 msgid "Bugfixes"
 msgstr ""
 
-msgid "fixed link_binary_rev (The variable for checker aren't resolved"
+msgid "Both desktop files from PublicanCreators and RevisionCreators having just the name PublicanCreators. Now PublicanCreators uses its name and RevisionCreators its name."
+msgstr ""
+
+msgid "Cosmetic"
+msgstr ""
+
+msgid "Made the shell output more colorful. Used yellow as standard color, red for fails, green for successes and blue for to check things."
+msgstr ""
+
+msgid "Extended Rakefile for preparing, building and publishing this gems docs."
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "So far all things implemented what i wanted. If no new bugreports or feature requests are coming in, it's all for now."
+msgstr ""
+
+#, fuzzy
+msgid "Release 0.3.6 (2015-05-15)"
+msgstr ""
+
+msgid "<primary>Release Notes</primary> <secondary>0.3.6</secondary>"
+msgstr ""
+
+msgid "Fixed Rakefile buildscript issue"
+msgstr ""
+
+#, fuzzy
+msgid "Release 0.3.3 to 0.3.5 (2015-05-15)"
+msgstr ""
+
+msgid "<primary>Release Notes</primary> <secondary>0.3.3-0.3.5</secondary>"
+msgstr ""
+
+msgid "fixed link_binary_rev (The variable for checker aren't resolved)"
 msgstr ""
 
 msgid "Features"
@@ -32,7 +67,8 @@ msgstr ""
 msgid "Changed the buildscript from shellscript to Rakefile. A little bit more comfortable."
 msgstr ""
 
-msgid "0.3.1 - 0.3.2 (2015-05-15)"
+#, fuzzy
+msgid "Release 0.3.1 to 0.3.2 (2015-05-15)"
 msgstr ""
 
 msgid "<primary>Release Notes</primary> <secondary>0.3.1-0.3.2</secondary>"
@@ -44,10 +80,11 @@ msgstr ""
 msgid "Hotfix for test file"
 msgstr ""
 
-msgid "0.3.0 (2015-05-09)"
+#, fuzzy
+msgid "Release 0.3.0 (2015-05-09)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.3.6</secondary>"
 msgstr ""
 
 msgid "PC-1: Create UI for add_revision"
@@ -59,7 +96,7 @@ msgstr ""
 msgid "PC-5: Create/Update Documentation (Task)"
 msgstr ""
 
-msgid "0.2.0 (2015-05-07)"
+msgid "Release 0.2.0 (2015-05-07)"
 msgstr ""
 
 msgid "<primary>Release Notes</primary> <secondary>0.2.0</secondary>"
@@ -80,7 +117,8 @@ msgstr ""
 msgid "PC-10: Config versioning"
 msgstr ""
 
-msgid "0.1.1 (2015-05-06)"
+#, fuzzy
+msgid "Release 0.1.1 (2015-05-06)"
 msgstr ""
 
 msgid "<primary>Release Notes</primary> <secondary>0.1.1</secondary>"
@@ -98,10 +136,11 @@ msgstr ""
 msgid "PC-3: Extend documentation B-Type"
 msgstr ""
 
-msgid "0.1.0 (2015-04-25)"
+#, fuzzy
+msgid "Release 0.1.0 (2015-04-25)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.1.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.4.0</secondary>"
 msgstr ""
 
 msgid "Build the base functions"

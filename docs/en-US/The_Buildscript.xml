@@ -11,13 +11,13 @@
 <chapter version="5.0" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink">
   <info>
-    <title xml:id="buildscript">The build.sh script</title>
+    <title xml:id="buildscript">The buildscript</title>
   </info>
   <indexterm>
     <primary>The Buildscript</primary>
   </indexterm>
   <para>The small
-    <filename>build.sh</filename>
+    <filename>Rakefile</filename>
     script will be placed in each new documentation
     project, directly under title/language/. The buildscript matches the most common
     documentation targets like: docx, odt, rtf, wml, pdf, html, man, txt, epub and
@@ -27,14 +27,13 @@
     <warning>
       <para>The export to docx, odt, rtf and wml only working if the
         <link
-                xlink:href="http://www.xmlmind.com/foconverter/">XMLMind Foconverter
-          (XFC)
+                xlink:href="http://www.xmlmind.com/foconverter/">XMLMind Foconverter (XFC)
         </link>
-        is installed and a brand (a own brand or the default brand) is
-        installed. Also the
+        is
+        installed and a brand (a own brand or the default brand) is installed. Also the
         <quote>fo2*</quote>
-        scripts should be soft linked to /usr/bin or
-        the path is placed in $PATH.
+        scripts should be soft linked to /usr/bin or the path is placed in
+        $PATH.
       </para>
     </warning>
   </para>
@@ -45,28 +44,30 @@
     (like language) will be solved by producing a new documentation.,
   </para>
   <tip>
-    <para>You can integrate the build script in some XML-IDE's. In case of Oxygen XML you can
-      add a external tool with the parameters:
+    <para>You can integrate the build script in some XML-IDE's. In case of Oxygen XML you can add a
+      external tool with the parameters:
       <example>
         <title>Settings for a external pdf tool</title>
         <itemizedlist>
           <listitem>
-            <para>Workdir: {cfd}</para>
+            <para><emphasis role="bold">Workdir</emphasis>: {cfd}
+            </para>
           </listitem>
           <listitem>
-            <para>Command line: rake export_pdf</para>
+            <para><emphasis role="bold">Command line</emphasis>: rake export_pdf
+            </para>
           </listitem>
         </itemizedlist>
       </example>
-      Because the build script is named in each project with the same name it is
-      usable from the IDE. In the same way you can add the two shipped binaries
+      Because the build script is named in each project with the same name it is usable
+      from the IDE. In the same way you can add the two shipped binaries
       <filename>/usr/bin/publicancreators</filename>
       and
       <filename>/usr/bin/publicancreators-dev</filename>.
     </para>
   </tip>
   <para>The
-    <filename>build.sh</filename>
+    <filename>Rakefile</filename>
     looks like:
   </para>
   <para>
@@ -105,10 +106,28 @@
       require 'fileutils'
       desc 'Checks if temp dir is available. Otherwise it creates it'
       task :checker do
-      tmp = '../tmp/#{language}/'
-      formats = ["docx", "odt", "rtf", "wml"]
-      formats.each do |i|
-      todos = "#{tmp}/#{i}"
+      todos = "../tmp/#{language}/docx"
+      if Dir.exist?(todos)
+      puts 'Found directory. Im using it.'
+      else
+      puts 'No directory found. Im creating it.'
+      FileUtils.mkdir_p(todos)
+      end
+      todos = "../tmp/#{language}/odt"
+      if Dir.exist?(todos)
+      puts 'Found directory. Im using it.'
+      else
+      puts 'No directory found. Im creating it.'
+      FileUtils.mkdir_p(todos)
+      end
+      todos = "../tmp/#{language}/rtf"
+      if Dir.exist?(todos)
+      puts 'Found directory. Im using it.'
+      else
+      puts 'No directory found. Im creating it.'
+      FileUtils.mkdir_p(todos)
+      end
+      todos = "../tmp/#{language}/wml"
       if Dir.exist?(todos)
       puts 'Found directory. Im using it.'
       else
@@ -121,7 +140,6 @@
 
       desc 'Convert to DOCX'
       task :export_docx => [:checker] do
-      tmp = '../tmp/#{language}/docx'
       puts 'Resolving all XML-Entities and XI-Includes'
       system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
       puts 'Formatting XML to XSL-FO'
@@ -129,14 +147,13 @@
       puts 'Removing temporary resolved file'
       FileUtils.rm('#{title}-resolved.xml')
       puts 'Transforming to DOCX'
-      system("fo2docx #{title}.fo > #{tmp}/#{title}.docx")
+      system("fo2docx #{title}.fo > ../tmp/#{language}/docx/#{title}.docx")
       puts 'Launching LibreOffice Writer for Preview'
-      system("lowriter #{tmp}/#{title}.docx &amp;")
+      system("lowriter ../tmp/#{language}/docx/#{title}.docx &amp;")
       end
 
       desc 'Convert to ODT'
       task :export_odt => [:checker] do
-      tmp = '../tmp/#{language}/odt'
       puts 'Resolving all XML-Entities and XI-Includes'
       system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
       puts 'Formatting XML to XSL-FO'
@@ -144,14 +161,13 @@
       puts 'Removing temporary resolved file'
       FileUtils.rm('#{title}-resolved.xml')
       puts 'Transforming to ODT'
-      system("fo2odt #{title}.fo > #{tmp}/#{title}.odt")
+      system("fo2odt #{title}.fo > ../tmp/#{language}/odt/#{title}.odt")
       puts 'Launching LibreOffice Writer for Preview'
-      system("lowriter #{tmp}/#{title}.odt &amp;")
+      system("lowriter ../tmp/#{language}/odt/#{title}.odt &amp;")
       end
 
       desc 'Convert to RTF'
       task :export_rtf => [:checker] do
-      tmp = '../tmp/#{language}/rtf'
       puts 'Resolving all XML-Entities and XI-Includes'
       system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
       puts 'Formatting XML to XSL-FO'
@@ -159,14 +175,13 @@
       puts 'Removing temporary resolved file'
       FileUtils.rm('#{title}-resolved.xml')
       puts 'Transforming to RTF'
-      system("fo2rtf #{title}.fo > #{tmp}/#{title}.rtf")
+      system("fo2rtf #{title}.fo > ../tmp/#{language}/rtf/#{title}.rtf")
       puts 'Launching LibreOffice Writer for Preview'
-      system("lowriter #{tmp}/#{title}.rtf &amp;")
+      system("lowriter ../tmp/#{language}/rtf/#{title}.rtf &amp;")
       end
 
       desc 'Convert to WML'
       task :export_wml => [:checker] do
-      tmp = '../tmp/#{language}/wml'
       puts 'Resolving all XML-Entities and XI-Includes'
       system("xmllint --noent --dropdtd --xinclude #{title}.xml -o #{title}-resolved.xml")
       puts 'Formatting XML to XSL-FO'
@@ -174,7 +189,7 @@
       puts 'Removing temporary resolved file'
       FileUtils.rm('#{title}-resolved.xml')
       puts 'Transforming to WML'
-      system("fo2wml #{title}.fo > #{tmp}/#{title}.wml")
+      system("fo2wml #{title}.fo > ../tmp/#{language}/wml/#{title}.wml")
       end
 
       desc 'Convert to PDF'

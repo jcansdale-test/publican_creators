@@ -26,6 +26,7 @@
 
 require 'dir'
 require 'fileutils'
+require 'rainbow/ext/string'
 
 # @note Module for different checks
 module Checker
@@ -37,15 +38,15 @@ module Checker
   def self.check_dir(todos)
     # @note Checking if dir exists
     if Dir.exist?(todos)
-      puts 'Found directory. Im using it.'
+      puts 'Found directory. Im using it.'.color(:green)
     else
-      puts 'No directory found. Im creating it.'
+      puts 'No directory found. Im creating it.'.color(:red)
       # @note Creates the new directory
       FileUtils.mkdir_p(todos)
       if Dir.exist?(todos)
-        puts 'Created new directory...'
+        puts 'Created new directory...'.color(:green)
       else
-        raise('Cant create directory')
+        raise('Cant create directory').color(:red)
       end
     end
   end

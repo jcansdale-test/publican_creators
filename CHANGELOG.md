@@ -1,7 +1,16 @@
 # CHANGELOG
 
+## 0.3.7 (2015-05-16)
+### Bugfixes
+* Both desktop files from PublicanCreators and RevisionCreators having just the name PublicanCreators. Now PublicanCreators uses its name and RevisionCreators its name.
+### Cosmetic
+* Made the shell output more colorful. Used yellow as standard color, red for fails, green for successes and blue for to check things.
+* Extended Rakefile for preparing, building and publishing this gems docs.
+### Note
+* So far all things implemented what i wanted. If no new bugreports or feature requests are coming in, it's all for now.
+
 ## 0.3.6 (2015-05-15)
-### Bugfix
+### Bugfixes
 * Fixed Rakefile buildscript issue
 
 ## 0.3.3 - 0.3.5 (2015-05-15)

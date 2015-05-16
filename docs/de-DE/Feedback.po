@@ -25,7 +25,7 @@ msgid "<emphasis role=\"bold\">Bugtracker</emphasis>: <link xlink:href=\"http://
 msgstr "<emphasis role=\"bold\">Bugtracker</emphasis>: <link xlink:href=\"http://saigkill.ddns.net:8112/dashboard\">http://saigkill.ddns.net:8112/dashboard</link>. Hier können Sie Bugreports und Feature Requests einreichen."
 
 #, fuzzy
-msgid "<emphasis role=\"bold\">Review board</emphasis>: <link xlink:href=\"http://saigkill.ddns.net:8080/publicancreators/view\">http://saigkill.ddns.net:8080/publicancreators/view</link>. If you are an programmer you can help with reviewing my code. If you know ways to make it better, just let me know. So i can learn from it."
+msgid "<emphasis role=\"bold\">Review board</emphasis> :<link xlink:href=\"http://saigkill.ddns.net:8080/publicancreators/view\">http://saigkill.ddns.net:8080/publicancreators/view</link>. If you are an programmer you can help with reviewing my code. If you know ways to make it better, just let me know. So i can learn from it."
 msgstr "<emphasis role=\"bold\">Review board</emphasis>: <link xlink:href=\"http://saigkill.ddns.net:8080/publicancreators/view\">http://saigkill.ddns.net:8080/publicancreators/view</link>. Wenn Sie ein Entwickler sind, können Sie auch ein Code-Review vornehmen. Wenn Sie Möglichkeiten finden, etwas besser zu lösen, sind Sie herzlich zu einem Review eingeladen. So kann ich davon lernen."
 
 #, fuzzy
@@ -36,7 +36,6 @@ msgstr "<emphasis role=\"bold\">OpenHub</emphasis>: <link xlink:href=\"https://w
 msgid "<emphasis role=\"bold\">Openhatch</emphasis>: <link xlink:href=\"http://openhatch.org/projects/PublicanCreators\">http://openhatch.org/projects/PublicanCreators</link>. Its a community builder tool. Just browse to it."
 msgstr "<emphasis role=\"bold\">Openhatch</emphasis>: <link xlink:href=\"http://openhatch.org/projects/PublicanCreators\">http://openhatch.org/projects/PublicanCreators</link>. Openhatch hilft dabei, neue Projektmitarbeiter zu finden. Schauen Sie einmal hinein."
 
-#, fuzzy
-msgid "Also you are invited to visit my blog on <link xlink:href=\"http://saigkill.github.io\">http://saigkill.github.io</link>."
+msgid "Also you are invited to visit my blog on<link xlink:href=\"http://saigkill.github.io\">http://saigkill.github.io</link>."
 msgstr "Ausserdem sind Sie eingeladen, meinen Blog auf <link xlink:href=\"http://saigkill.github.io\">http://saigkill.github.io</link> zu besuchen."
 

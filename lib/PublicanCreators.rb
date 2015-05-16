@@ -31,6 +31,7 @@ require 'PublicanCreators/export'
 require 'PublicanCreators/prepare'
 require 'fileutils'
 require 'nokogiri'
+require 'rainbow/ext/string'
 require 'bundler/setup'
 
 # Main Class of PublicanCreators
@@ -39,40 +40,40 @@ class PublicanCreators
   my_name = File.basename($0)
   version = PublicanCreatorsVersion::Version::STRING
 
-  puts "Script: #{my_name}"
-  puts "Version: #{version}"
+  puts "Script: #{my_name}".color(:yellow)
+  puts "Version: #{version}".color(:yellow)
   puts
-  puts 'Copyright (C) 2015 Sascha Manns <Sascha.Manns@bdvb.de>'
-  puts 'Description: This script creates a article or book set with'
-  puts 'Publican. Then it modifies it for your needs.'
-  puts 'License: MIT'
-  puts 'Bugs: Please file bugs on http://saigkill.ddns.net:8112/dashboard'
+  puts 'Copyright (C) 2015 Sascha Manns <Sascha.Manns@bdvb.de>'.color(:yellow)
+  puts 'Description: This script creates a article or book set with'.color(:yellow)
+  puts 'Publican. Then it modifies it for your needs.'.color(:yellow)
+  puts 'License: MIT'.color(:yellow)
+  puts 'Bugs: Please file bugs on http://saigkill.ddns.net:8112/dashboard'.color(:yellow)
   puts ''
-  puts 'Permission is hereby granted, free of charge, to any person obtaining a copy'
-  puts 'of this software and associated documentation files (the "Software"), to deal'
-  puts 'in the Software without restriction, including without limitation the rights'
-  puts 'to use, copy, modify, merge, publish, distribute, sublicense, and/or sell'
-  puts 'copies of the Software, and to permit persons to whom the Software is'
-  puts 'furnished to do so, subject to the following conditions:'
+  puts 'Permission is hereby granted, free of charge, to any person obtaining a copy'.color(:yellow)
+  puts 'of this software and associated documentation files (the "Software"), to deal'.color(:yellow)
+  puts 'in the Software without restriction, including without limitation the rights'.color(:yellow)
+  puts 'to use, copy, modify, merge, publish, distribute, sublicense, and/or sell'.color(:yellow)
+  puts 'copies of the Software, and to permit persons to whom the Software is'.color(:yellow)
+  puts 'furnished to do so, subject to the following conditions:'.color(:yellow)
   puts ''
-  puts 'The above copyright notice and this permission notice shall be included in'
-  puts 'all copies or substantial portions of the Software.'
+  puts 'The above copyright notice and this permission notice shall be included in'.color(:yellow)
+  puts 'all copies or substantial portions of the Software.'.color(:yellow)
   puts ''
-  puts 'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR'
-  puts 'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,'
-  puts 'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE'
-  puts 'AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER'
-  puts 'LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,'
-  puts 'OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN'
-  puts 'THE SOFTWARE.'
+  puts 'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR'.color(:yellow)
+  puts 'IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,'.color(:yellow)
+  puts 'FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE'.color(:yellow)
+  puts 'AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER'.color(:yellow)
+  puts 'LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,'.color(:yellow)
+  puts 'OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN'.color(:yellow)
+  puts 'THE SOFTWARE.'.color(:yellow)
 
   home = Dir.home
   if File.exist?("#{home}/.publicancreators.cfg")
-    puts 'Found configuration file and using it...'
+    puts 'Found configuration file and using it...'.color(:yellow)
   else
     # @raise
-    puts 'Please run rake setup'
-    raise('Exiting now..')
+    puts 'Please run rake setup'.color(:red)
+    raise('Exiting now..').color(:red)
   end
 
   puts 'Reading the config file in ~/.publicancreators.cfg'
@@ -104,31 +105,31 @@ class PublicanCreators
   xfc_brand_dir = "#{w}"
   pdfview = "#{x}"
 
-  puts 'Your configuration is:'
-  puts "Your Name: #{name}"
-  puts "Your private emailaddress: #{email}"
-  puts "Your choosen language: #{language}"
-  puts "Using an own brand: #{use_brand}"
-  puts "Leave title_logo: #{title_logo}"
-  puts "Leave legalnotice in article: #{legal}"
-  puts "Choosen brand: #{brand}"
-  puts "Your company name: #{company_name}"
-  puts "Your company division: #{company_division}"
-  puts "Your business email address: #{email_business}"
-  puts "Your brand dir: #{brand_dir}"
-  puts "Your global entities: #{glob_entities}"
-  puts "Your business articles dir: #{articles_dir_business}"
-  puts "Your business reports dir: #{reports_dir_business}"
-  puts "Your business books dir: #{books_dir_business}"
-  puts "Your private articles dir: #{articles_dir_private}"
-  puts "Your homework dir: #{homework_dir_private}"
-  puts "Your private books dir: #{books_dir_private}"
-  puts "Your private brand: #{brand_private}"
-  puts "Your homework brand: #{brand_homework}"
-  puts "DocBook5 as default: #{db5}"
-  puts "Config version: #{conf_ver}"
-  puts "XFC brand dir: #{xfc_brand_dir}"
-  puts "Your prefered PDF-Viewer: #{pdfview}"
+  puts 'Your configuration is:'.color(:yellow)
+  puts "Your Name: #{name}".color(:yellow)
+  puts "Your private emailaddress: #{email}".color(:yellow)
+  puts "Your choosen language: #{language}".color(:yellow)
+  puts "Using an own brand: #{use_brand}".color(:yellow)
+  puts "Leave title_logo: #{title_logo}".color(:yellow)
+  puts "Leave legalnotice in article: #{legal}".color(:yellow)
+  puts "Choosen brand: #{brand}".color(:yellow)
+  puts "Your company name: #{company_name}".color(:yellow)
+  puts "Your company division: #{company_division}".color(:yellow)
+  puts "Your business email address: #{email_business}".color(:yellow)
+  puts "Your brand dir: #{brand_dir}".color(:yellow)
+  puts "Your global entities: #{glob_entities}".color(:yellow)
+  puts "Your business articles dir: #{articles_dir_business}".color(:yellow)
+  puts "Your business reports dir: #{reports_dir_business}".color(:yellow)
+  puts "Your business books dir: #{books_dir_business}".color(:yellow)
+  puts "Your private articles dir: #{articles_dir_private}".color(:yellow)
+  puts "Your homework dir: #{homework_dir_private}".color(:yellow)
+  puts "Your private books dir: #{books_dir_private}".color(:yellow)
+  puts "Your private brand: #{brand_private}".color(:yellow)
+  puts "Your homework brand: #{brand_homework}".color(:yellow)
+  puts "DocBook5 as default: #{db5}".color(:yellow)
+  puts "Config version: #{conf_ver}".color(:yellow)
+  puts "XFC brand dir: #{xfc_brand_dir}".color(:yellow)
+  puts "Your prefered PDF-Viewer: #{pdfview}".color(:yellow)
 
   global_entities = "#{brand_dir}/#{glob_entities}"
 
@@ -139,10 +140,10 @@ class PublicanCreators
   opt = titleget[2] # @note Report or homework
   title = titleget[3] # @note title
 
-  puts "Environment: #{environment}"
-  puts "Type: #{type}"
-  puts "Optional: #{opt}"
-  puts "Title: #{title}"
+  puts "Environment: #{environment}".color(:yellow)
+  puts "Type: #{type}".color(:yellow)
+  puts "Optional: #{opt}".color(:yellow)
+  puts "Title: #{title}".color(:yellow)
 
   # @note Set default values
   if opt == 'Report'
@@ -178,12 +179,12 @@ class PublicanCreators
   end
 
   # @note Checks if the needed directory targetdir is available. Otherwise it creates one.
-  puts "Creating directory #{targetdir}"
+  puts "Creating directory #{targetdir}".color(:yellow)
   # @param [String] targetdir comes from PublicanCreatorsPrepare.prepare_work or .prepare_private
   Checker.check_dir(targetdir)
 
   # @note Change to target directory
-  puts 'Change to this directory'
+  puts 'Change to this directory'.color(:yellow)
   # @param [String] targetdir comes from PublicanCreatorsPrepare.prepare_work or .prepare_private
   FileUtils.cd(targetdir) do
 
@@ -257,8 +258,8 @@ class PublicanCreators
     # @param [String] builds path to buildscript build.sh (hardcoded)
     #PublicanCreatorsChange.make_buildscript_exe(builds)
 
-    puts "Now you can find your documentation there: #{targetdir}/#{title}"
+    puts "Now you can find your documentation there: #{targetdir}/#{title}".color(:yellow)
 
-    puts "Thanks for using: #{my_name} #{version}"
+    puts "Thanks for using: #{my_name} #{version}".color(:yellow)
   end
 end

@@ -30,9 +30,9 @@ class PublicanCreatorsVersion
     # Major version. Maybe never reached
     MAJOR = 0
     # Minor version.
-    MINOR = 3
+    MINOR = 4
     # Patchlevel
-    PATCH = 6
+    PATCH = 0
     # Buildversion. Mostly 0
     BUILD = 0
     # @note This will be shown by PublicanCreatorsVersion::Version::STRING

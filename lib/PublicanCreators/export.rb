@@ -26,6 +26,7 @@
 
 require 'PublicanCreators/change'
 require 'fileutils'
+require 'rainbow/ext/string'
 
 # Module for running exports to a file
 module PublicanCreatorsExport
@@ -40,7 +41,7 @@ module PublicanCreatorsExport
   # @param [String] pdfview your prefered PDF-Viewer (config file)
   # @return [String] true or false
   def self.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
-    puts 'Export the buildscript into new directory...'
+    puts 'Export the buildscript into new directory...'.color(:yellow)
     FileUtils.touch "#{builds}"
     File.write "#{builds}", <<EOF
 # -*- ruby -*-

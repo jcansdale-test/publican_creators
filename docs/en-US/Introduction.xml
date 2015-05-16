@@ -83,13 +83,12 @@
           </para>
         </step>
         <step>
-          <para>To use RVM you have two options. First you can logout yourself and login
-            again. The other option is just to type:
+          <para>To use RVM you have two options. First you can logout yourself and login again. The
+            other option is just to type:
             <command>source
               /home/<replaceable>sascha</replaceable>/.rvm/scripts/rvm
             </command>
-            .
-            Instead of
+            . Instead of
             <quote>sascha</quote>
             you have to place your username.
           </para>
@@ -147,8 +146,8 @@
         </step>
       </procedure>
     </para>
-    <para>You installed now Ruby (hopefully) without troubles. For further information about RVM
-      you can visit this<link xlink:href="https://rvm.io/">link</link>.
+    <para>You installed now Ruby (hopefully) without troubles. For further information about RVM you
+      can visit this<link xlink:href="https://rvm.io/">link</link>.
     </para>
   </section>
   <section xml:id="install-pubcre">
@@ -203,8 +202,7 @@
         <command>.rvm/gems/ruby-<replaceable>2.2.1</replaceable>/gems/PublicanCreators-
           <replaceable>&pcver;</replaceable>
         </command>
-        . Then just type<command>rake
-          setup</command>.
+        . Then just type<command>rake setup</command>.
         <note>
           <para>Keep in mind, that the 2.2.1 from ruby-2.2.1 must match your chosen version. Also
             you have to replace
@@ -220,21 +218,23 @@
             <para>It checks on which host os (Linux) it runs. Then it reacts to that and
               tried to install the hard dependencies yad and publican.
             </para>
-            <para>PublicanCreators needs a 4.x version of publican because it uses the
-              parameter<quote>--dtdver</quote>. In case of a Ubuntu host os the setup
-              adds a Launchpad PPA which provides backported versions of publican 4.x
-              for Trusty (14.04) and Utopic (14.10). Vivid Velvet ships a usable
-              publican 4.x version. For other Distributions you have to check if a 4.x
-              version is available for your os. Otherwise PublicanCreators will NOT
-              work.
+            <para>PublicanCreators needs a 4.x version of publican because it uses the parameter
+              <quote>--dtdver</quote>. In case of a Ubuntu host os the setup adds a Launchpad PPA
+              which provides backported versions of publican 4.x for Trusty (14.04) and Utopic
+              (14.10). Vivid Velvet ships a usable publican 4.x version. For other Distributions you
+              have to check if a 4.x version is available for your os. Otherwise PublicanCreators
+              will NOT work.
             </para>
           </listitem>
           <listitem>
-            <para>If you have already a .publicancreators.cfg in your Homedirectory it
-              will add the actual shipped .publicancreators.cfg as
-              .publicancreators.cfg.new in your Homedirectory. You have to check, if
-              new parameters are added or depreached one are there. So modify your old
-              .publicancreators to match the new one.
+            <para>If you have already a
+              <filename>.publicancreators.cfg</filename>
+              in your
+              Homedirectory it will add the actual shipped
+              <filename>.publicancreators.cfg</filename>
+              as .publicancreators.cfg.new in your
+              Homedirectory. You have to check, if new parameters are added or depreached one are
+              there. So modify your old .publicancreators to match the new one.
             </para>
           </listitem>
           <listitem>

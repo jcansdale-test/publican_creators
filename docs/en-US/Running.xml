@@ -34,23 +34,28 @@
     <para>
       <inlinemediaobject>
         <imageobject>
-          <imagedata fileref="images/PublicanCreators.png"/>
+          <imagedata fileref="images/PublicanCreators.png" width="80%"/>
         </imageobject>
       </inlinemediaobject>
     </para>
     <para>Now you can choose one of that options:
       <itemizedlist>
         <listitem>
-          <para>Environment: Work or Private</para>
+          <para><emphasis role="bold">Environment</emphasis>: Work or Private
+          </para>
         </listitem>
         <listitem>
-          <para>Type: Article or Book</para>
+          <para><emphasis role="bold">Type</emphasis>: Article or Book
+          </para>
         </listitem>
         <listitem>
-          <para>Optional: Normal, Report, Homework</para>
+          <para><emphasis role="bold">Optional</emphasis>: Normal, Report, Homework
+          </para>
         </listitem>
         <listitem>
-          <para>Title: Your Title. Use underscores instead of blanks.</para>
+          <para><emphasis role="bold">Title</emphasis>:<emphasis>Your Title</emphasis>. Use
+            underscores instead of blanks.
+          </para>
         </listitem>
       </itemizedlist>
     </para>
@@ -90,17 +95,22 @@
     <para>
       <itemizedlist>
         <listitem>
-          <para>Projectdir: Use that to move to your target directory (That directory
-            where your projects publican.cfg is)
+          <para><emphasis role="bold">Projectdir</emphasis>: Use that to move to your
+            <emphasis>target directory</emphasis>
+            (That directory where your projects publican.cfg
+            is)
           </para>
         </listitem>
         <listitem>
-          <para>Commits: There you can place one to five revision texts. If you need more
-            than 5 regularly so file a bug report.
+          <para><emphasis role="bold">Commits</emphasis>: There you can place one to five
+            <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug
+            report.
           </para>
         </listitem>
         <listitem>
-          <para>Revision number: There you can place your revision number.</para>
+          <para><emphasis role="bold">Revision number</emphasis>: There you can place your
+            <emphasis>revision number</emphasis>.
+          </para>
         </listitem>
       </itemizedlist>
     </para>

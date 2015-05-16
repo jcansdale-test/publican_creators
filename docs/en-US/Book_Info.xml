@@ -9,7 +9,7 @@
   <title>PublicanCreators</title>
   <subtitle>A GUI helper for RedHat's publican</subtitle>
   <productname>Documentation</productname>
-  <productnumber>0.3.0</productnumber>
+  <productnumber>0.4.0</productnumber>
   <edition>0</edition>
   <abstract>
     <para>Publican is a generator for DocBook projects. Because of publican is shipped as command

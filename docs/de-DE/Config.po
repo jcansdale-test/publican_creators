@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-05-12 21:17+0100\n"
+"PO-Revision-Date: 2015-05-16 19:10+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: en_US\n"
@@ -15,7 +15,7 @@ msgid "The config file"
 msgstr "Die Konfigurationsdatei"
 
 msgid "<primary>The config file</primary>"
-msgstr ""
+msgstr "<primary>Das Konfigurationsfile</primary>"
 
 msgid "The config file gives you many options to customize it to your needs. First let me introduce my background."
 msgstr "Die Konfigurationsdatei bietet Ihnen viele Möglichkeiten für eigene Anpassungen. Gestatten Sie mir meinen Hintergrund zu erläutern."
@@ -30,7 +30,7 @@ msgid "Global settings"
 msgstr "Globale Einstellungen"
 
 msgid "<primary>The config file</primary> <secondary>Global settings</secondary>"
-msgstr ""
+msgstr "<primary>Das Konfigurationsfile</primary> <secondary>Globale Einstellungen</secondary>"
 
 msgid "The global settings part means that kind of values who are not depending on the <quote>work</quote> or <quote>private</quote> environment."
 msgstr "Mit globalen Einstellungen sind hier die Art Einstellungen gemeint, die zum einen projektunabhängig sind, und immer wiederkehren."
@@ -135,7 +135,7 @@ msgid "Work settings"
 msgstr "Einstellungen für die Arbeit"
 
 msgid "<primary>The config file</primary> <secondary>Work settings</secondary>"
-msgstr ""
+msgstr "<primary>Das Konfigurationsfile</primary> <secondary>Einstellungen für die Arbeit</secondary>"
 
 msgid "Now we set the work parameters."
 msgstr "Jetzt setzen wir die Parameter für die Arbeit."
@@ -228,7 +228,7 @@ msgid "Private settings"
 msgstr "Private Einstellungen"
 
 msgid "<primary>The config file</primary> <secondary>Private settings</secondary>"
-msgstr ""
+msgstr "<primary>Das Konfigurationsfile</primary> <secondary>Private Einstellungen</secondary>"
 
 msgid "Last but not least now following the private settings."
 msgstr "Zuletzt beschäftigen wir uns mit den privaten Einstellungen."
@@ -280,7 +280,3 @@ msgstr ""
 
 msgid "Path where your books will be created."
 msgstr "Der Pfad zu Ihren privaten Büchern"
-
-#~ msgid "SWE7 (Sascha Bochartz)"
-#~ msgstr ""
-
