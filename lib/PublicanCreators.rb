@@ -249,13 +249,13 @@ class PublicanCreators
     end
 
     # @param [String] title comes from titleget[3]
-    # @param [String] builds path to buildscript build.sh (hardcoded)
+    # @param [String] builds path to buildscript (hardcoded)
     # @param [String] language comes from config file in format de-DE
     # @param [String] xfc_brand_dir if present the path to your branded xfc stylesheets (config file)
     # @param [String] pdfview your prefered PDF-Viewer (config file)
     PublicanCreatorsExport.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
 
-    # @param [String] builds path to buildscript build.sh (hardcoded)
+    # @param [String] builds path to buildscript (hardcoded)
     #PublicanCreatorsChange.make_buildscript_exe(builds)
 
     puts "Now you can find your documentation there: #{targetdir}/#{title}".color(:yellow)

@@ -15,7 +15,7 @@ code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreator
 dependency check :: {<img src="https://gemnasium.com/saigkill/PublicanCreators.png" alt="Dependency Status" />}[https://gemnasium.com/saigkill/PublicanCreators]
 still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/PublicanCreators]
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
-code documentation :: http://www.rubydoc.info/gems/PublicanCreators/0.3.6.0
+code documentation :: http://www.rubydoc.info/gems/PublicanCreators/0.4.0.0
 user documentation (en) :: http://saigkill.github.io/docs/publicancreators/en-US/html
 user documentation (de) :: http://saigkill.github.io/docs/publicancreators/de-DE/html
 user documentation PDF (en) :: http://saigkill.github.io/docs/publicancreators/en-US/pdf/Documentation-0.4.0-PublicanCreators-en-US.pdf
