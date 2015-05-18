@@ -135,10 +135,11 @@ class PublicanCreators
 
   # @note Ask for the title and other settings via yad and put them into a array
   titleget = PublicanCreatorsGet.title
-  environment = titleget[0] # @note Work or Private
-  type = titleget[1] # @note Article or Book
-  opt = titleget[2] # @note Report or homework
-  title = titleget[3] # @note title
+
+  environment = titleget[0]
+  type = titleget[1]
+  opt = titleget[2]
+  title = titleget[3]
 
   puts "Environment: #{environment}".color(:yellow)
   puts "Type: #{type}".color(:yellow)

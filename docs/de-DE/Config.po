@@ -280,3 +280,4 @@ msgstr ""
 
 msgid "Path where your books will be created."
 msgstr "Der Pfad zu Ihren privaten Büchern"
+

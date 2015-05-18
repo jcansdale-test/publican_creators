@@ -35,13 +35,23 @@ module PublicanCreatorsGet
   # @return [String] title
   def self.title
     # @note Put the yad input as variable titlein
-    titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator=" "  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --field="Please file bugs or feature requests on http://saigkill.ddns.net:8112/dashboard:LBL" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`
+    titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator="|"  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --field="Please file bugs or feature requests on http://saigkill.ddns.net:8112/dashboard:LBL" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`
     # @note Format: Work/Private Article/Book title!Normal Report Homework
     # @note Cleanup the array
     titlechomp = titlein.chomp
     # @note Split the variable to the array title[*]
-    title = titlechomp.split(' ')
-    return title
+    titlesplit = titlechomp.split('|')
+
+    environment = titlesplit[0] # @note Work or Private
+    type = titlesplit[1] # @note Article or Book
+    opt = titlesplit[2] # @note Report or homework
+    titlefix = titlesplit[3] # @note title
+    if titlefix.include?(' ')
+      title = titlefix.gsub(/ /, '_')
+    else
+      title = titlefix
+    end
+    [environment, type, opt, title]
   end
 
   # This method ask for revision information
@@ -49,7 +59,7 @@ module PublicanCreatorsGet
   # @return [String] revision
   def self.revision
     # @note Put the yad input as variable revhistin
-    revhistin = `yad --title="Create Revision" --center --on-top --form --item-separator=, --separator="|" --field="Choose the directory where your project publican.cfg is:LBL" --field="Projectdir:DIR" --field="Enter your first revision text:TEXT" --field="Enter your second revision text:TEXT" --field="Enter your third revision text:TEXT" --field="Enter your fourth revision text:TEXT" --field="Enter your fifth revision text:TEXT" --field="Enter Revision number:TEXT" --button="Go!"`
+    revhistin = `yad --title="Create Revision" --center --on-top --form --item-separator=, --separator="|" --field="Choose the directory where your project publican.cfg is:LBL" --field="Projectdir:DIR" --field="Enter your first revision text:TEXT" --field="Enter your second revision text:TEXT" --field="Enter your third revision text:TEXT" --field="Enter your fourth revision text:TEXT" --field="Enter your fifth revision text:TEXT" --field="Enter Revision number:TEXT" --field="You can use backslashes for entering Revision textes with blanks.:LBL" --button="Go!"`
     # @note Format: Directory|One|Two|Three|Four|Five|Revision
     # @note Cleanup the array
     revhistchomp = revhistin.chomp

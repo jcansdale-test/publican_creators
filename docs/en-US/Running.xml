@@ -53,8 +53,25 @@
           </para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">Title</emphasis>:<emphasis>Your Title</emphasis>. Use
-            underscores instead of blanks.
+          <para><emphasis role="bold">Title</emphasis>:<emphasis>Your Title</emphasis>. You can use
+            a normal entry with blanks, or you can use underscores instead of blanks (Version:
+            0.4.2.0). But don't use umlauts like "Ä", "Ö", "Ü" or "ß". Publican just understand
+            ASCII chars.
+          </para>
+          <para>
+            <tip>
+              <para>You can use the publican.cfg to fix this. If your document is named "Sören und
+                die Ägäis" you can type as title "Soren und die Agais". After the documentation
+                creation is finished, you can add to the
+                publican.cfg
+                <screen>docname = Soren_und_die_Agais"</screen>
+              </para>
+              <para>Der gewählte Name sollte mit dem Root-Dokument unter Ihrer gewählten Sprache
+                übereinstimmen. So würde das Rootdokument wie folgt lauten: Soren_und_die_Agais.xml.
+                Anschließend können Sie in der Article_Info.xml den richtigen Titel "Sören und die
+                Ägäis" eintragen.
+              </para>
+            </tip>
           </para>
         </listitem>
       </itemizedlist>
@@ -104,7 +121,8 @@
         <listitem>
           <para><emphasis role="bold">Commits</emphasis>: There you can place one to five
             <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug
-            report.
+            report. You can use a normal entry with blanks, or you can use underscores instead of
+            blanks (Version: 0.4.2.0). There you can use Umlauts.
           </para>
         </listitem>
         <listitem>

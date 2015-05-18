@@ -14,13 +14,25 @@ msgstr ""
 msgid "Release Notes"
 msgstr "Veröffentlichungshinweise"
 
+msgid "Release 0.4.1 to 0.4.2 (2015-05-18)"
+msgstr ""
+
+msgid "Bugfixes"
+msgstr ""
+
+msgid "Removed require PublicanCreators from RevisonCreator, because otherwise starts PublicanCreators."
+msgstr ""
+
+msgid "Fixed get class. Now it's possible to use blanks instead of underscores."
+msgstr ""
+
+msgid "Also possible to use blanks instead of underscores in RevisionCreator."
+msgstr ""
+
 msgid "Release 0.4.0 (2015-05-16)"
 msgstr ""
 
 msgid "<primary>Release Notes</primary> <secondary>0.4.0</secondary>"
-msgstr ""
-
-msgid "Bugfixes"
 msgstr ""
 
 msgid "Both desktop files from PublicanCreators and RevisionCreators having just the name PublicanCreators. Now PublicanCreators uses its name and RevisionCreators its name."
@@ -41,17 +53,16 @@ msgstr ""
 msgid "So far all things implemented what i wanted. If no new bugreports or feature requests are coming in, it's all for now."
 msgstr ""
 
-#, fuzzy
 msgid "Release 0.3.6 (2015-05-15)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.3.6</secondary>"
+#, fuzzy
+msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
 msgstr ""
 
 msgid "Fixed Rakefile buildscript issue"
 msgstr ""
 
-#, fuzzy
 msgid "Release 0.3.3 to 0.3.5 (2015-05-15)"
 msgstr ""
 
@@ -67,8 +78,7 @@ msgstr ""
 msgid "Changed the buildscript from shellscript to Rakefile. A little bit more comfortable."
 msgstr ""
 
-#, fuzzy
-msgid "Release 0.3.1 to 0.3.2 (2015-05-15)"
+msgid "Release 0.4.1 to 0.4.2 (2015-05-18)"
 msgstr ""
 
 msgid "<primary>Release Notes</primary> <secondary>0.3.1-0.3.2</secondary>"
@@ -80,11 +90,11 @@ msgstr ""
 msgid "Hotfix for test file"
 msgstr ""
 
-#, fuzzy
 msgid "Release 0.3.0 (2015-05-09)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.3.6</secondary>"
+#, fuzzy
+msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
 msgstr ""
 
 msgid "PC-1: Create UI for add_revision"
@@ -99,7 +109,7 @@ msgstr ""
 msgid "Release 0.2.0 (2015-05-07)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.2.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.4.0</secondary>"
 msgstr ""
 
 msgid "PC-6: Create rules for setup Fedora"
@@ -117,7 +127,6 @@ msgstr ""
 msgid "PC-10: Config versioning"
 msgstr ""
 
-#, fuzzy
 msgid "Release 0.1.1 (2015-05-06)"
 msgstr ""
 
@@ -136,11 +145,10 @@ msgstr ""
 msgid "PC-3: Extend documentation B-Type"
 msgstr ""
 
-#, fuzzy
 msgid "Release 0.1.0 (2015-04-25)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.4.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.1.0</secondary>"
 msgstr ""
 
 msgid "Build the base functions"

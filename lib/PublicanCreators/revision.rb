@@ -48,28 +48,28 @@ class RevisionCreator
 
   # @param [String] directory The directory where the projects publican.cfg is
   FileUtils.cd(directory) do
-    string = "--member #{member1}"
+    string = "--member \"#{member1}\""
     if member2 == ''
       puts 'Do nothing'
     else
-      string << " --member #{member2}"
+      string << " --member \"#{member2}\""
     end
     if member3 == ''
       puts 'Do nothing'
     else
-      string << " --member #{member3}"
+      string << " --member \"#{member3}\""
     end
     if member4 == ''
       puts 'Do nothing'
     else
-      string << " --member #{member4}"
+      string << " --member \"#{member4}\""
     end
     if member5 == ''
       puts 'Do nothing'
     else
-      string << " --member #{member5}"
+      string << " --member \"#{member5}\""
     end
-    string << " --revnumber #{revnumber}"
+    string << " --revnumber \"#{revnumber}\""
     system("publican add_revision #{string}")
   end
 end

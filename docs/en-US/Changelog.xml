@@ -11,6 +11,31 @@
   <title>Release Notes</title>
   <section>
     <info>
+      <title>Release 0.4.1 to 0.4.2 (2015-05-18)</title>
+    </info>
+    <section>
+      <info>
+        <title>Bugfixes</title>
+      </info>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Removed require PublicanCreators from RevisonCreator, because otherwise starts
+              PublicanCreators.
+            </para>
+          </listitem>
+          <listitem>
+            <para>Fixed get class. Now it's possible to use blanks instead of underscores.</para>
+          </listitem>
+          <listitem>
+            <para>Also possible to use blanks instead of underscores in RevisionCreator.</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </section>
+  </section>
+  <section>
+    <info>
       <title>Release 0.4.0 (2015-05-16)</title>
     </info>
     <indexterm>

@@ -1,11 +1,4 @@
 #!/usr/bin/env ruby
-begin
-  require 'PublicanCreators'
-rescue LoadError
-  require 'rubygems'
-  require 'PublicanCreators'
-  require 'bundler/setup'
-end
 # @author Sascha Manns
 # @abstract Class RevisionCreator for PublicanCreator
 #

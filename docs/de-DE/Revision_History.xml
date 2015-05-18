@@ -10,8 +10,8 @@
   <simpara>
     <revhistory>
       <revision>
-        <revnumber>0.4.0-0.1</revnumber>
-        <date>Sat May 16 2015</date>
+        <revnumber>0.4.0-0.4</revnumber>
+        <date>Mon May 18 2015</date>
         <author>
           <firstname>Sascha</firstname>
           <surname>Manns</surname>
@@ -22,6 +22,57 @@
             <member>Translation files synchronised with XML sources 0.4.0-0</member>
           </simplelist>
         </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.4.0-0.3</revnumber>
+        <date>Mon May 18 2015</date>
+        <author>
+          <firstname>Sascha</firstname>
+          <surname>Manns</surname>
+          <email>Sascha.Manns@bdvb.de</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Translation files synchronised with XML sources 0.4.0-0</member>
+
+          </simplelist>
+
+        </revdescription>
+
+      </revision>
+      <revision>
+        <revnumber>0.4.0-0.2</revnumber>
+        <date>Mon May 18 2015</date>
+        <author>
+          <firstname>Sascha</firstname>
+          <surname>Manns</surname>
+          <email>Sascha.Manns@bdvb.de</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Translation files synchronised with XML sources 0.4.0-0</member>
+
+          </simplelist>
+
+        </revdescription>
+
+      </revision>
+      <revision>
+        <revnumber>0.4.0-0.1</revnumber>
+        <date>Sat May 16 2015</date>
+        <author>
+          <firstname>Sascha</firstname>
+          <surname>Manns</surname>
+          <email>Sascha.Manns@bdvb.de</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Translation files synchronised with XML sources 0.4.0-0</member>
+
+          </simplelist>
+
+        </revdescription>
+
       </revision>
       <revision>
         <revnumber>0.3.0-0.9</revnumber>

@@ -1,6 +1,12 @@
 # CHANGELOG
 
-## 0.3.7 (2015-05-16)
+## 0.4.1 - 0.4.2 (2015-05-16)
+### Bugfixes
+* Removed require PublicanCreators from RevisonCreator, because otherwise starts PublicanCreators.
+* Fixed get class. Now it's possible to use blanks instead of underscores.
+* Also possible to use blanks instead of underscores in RevisionCreator.
+
+## 0.4.0 (2015-05-16)
 ### Bugfixes
 * Both desktop files from PublicanCreators and RevisionCreators having just the name PublicanCreators. Now PublicanCreators uses its name and RevisionCreators its name.
 ### Cosmetic

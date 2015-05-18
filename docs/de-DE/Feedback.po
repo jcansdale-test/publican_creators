@@ -20,20 +20,16 @@ msgstr ""
 msgid "You can give me feedback in different ways:"
 msgstr "Sie können auf verschiedene Weise Feedback einreichen:"
 
-#, fuzzy
-msgid "<emphasis role=\"bold\">Bugtracker</emphasis>: <link xlink:href=\"http://saigkill.ddns.net:8112/dashboard\">http://saigkill.ddns.net:8112/dashboard</link>. There you can place bug reports and feature requests."
+msgid "<emphasis role=\"bold\">Bugtracker</emphasis>:<link xlink:href=\"http://saigkill.ddns.net:8112/dashboard\">http://saigkill.ddns.net:8112/dashboard</link>. There you can place bug reports and feature requests."
 msgstr "<emphasis role=\"bold\">Bugtracker</emphasis>: <link xlink:href=\"http://saigkill.ddns.net:8112/dashboard\">http://saigkill.ddns.net:8112/dashboard</link>. Hier können Sie Bugreports und Feature Requests einreichen."
 
-#, fuzzy
 msgid "<emphasis role=\"bold\">Review board</emphasis> :<link xlink:href=\"http://saigkill.ddns.net:8080/publicancreators/view\">http://saigkill.ddns.net:8080/publicancreators/view</link>. If you are an programmer you can help with reviewing my code. If you know ways to make it better, just let me know. So i can learn from it."
 msgstr "<emphasis role=\"bold\">Review board</emphasis>: <link xlink:href=\"http://saigkill.ddns.net:8080/publicancreators/view\">http://saigkill.ddns.net:8080/publicancreators/view</link>. Wenn Sie ein Entwickler sind, können Sie auch ein Code-Review vornehmen. Wenn Sie Möglichkeiten finden, etwas besser zu lösen, sind Sie herzlich zu einem Review eingeladen. So kann ich davon lernen."
 
-#, fuzzy
-msgid "<emphasis role=\"bold\">OpenHub</emphasis>: <link xlink:href=\"https://www.openhub.net/p/PublicanCreators\">https://www.openhub.net/p/PublicanCreators</link>. OpenHub is a statistics provider for open source projects. There you can set yourself as user."
+msgid "<emphasis role=\"bold\">OpenHub</emphasis>:<link xlink:href=\"https://www.openhub.net/p/PublicanCreators\">https://www.openhub.net/p/PublicanCreators</link>. OpenHub is a statistics provider for open source projects. There you can set yourself as user."
 msgstr "<emphasis role=\"bold\">OpenHub</emphasis>: <link xlink:href=\"https://www.openhub.net/p/PublicanCreators\">https://www.openhub.net/p/PublicanCreators</link>. OpenHub bietet überwiegend Statistiken für Open Source Projekte. Wenn Ihnen die Software gefällt, outen Sie sich mit \"I use it\"."
 
-#, fuzzy
-msgid "<emphasis role=\"bold\">Openhatch</emphasis>: <link xlink:href=\"http://openhatch.org/projects/PublicanCreators\">http://openhatch.org/projects/PublicanCreators</link>. Its a community builder tool. Just browse to it."
+msgid "<emphasis role=\"bold\">Openhatch</emphasis>:<link xlink:href=\"http://openhatch.org/projects/PublicanCreators\">http://openhatch.org/projects/PublicanCreators</link>. Its a community builder tool. Just browse to it."
 msgstr "<emphasis role=\"bold\">Openhatch</emphasis>: <link xlink:href=\"http://openhatch.org/projects/PublicanCreators\">http://openhatch.org/projects/PublicanCreators</link>. Openhatch hilft dabei, neue Projektmitarbeiter zu finden. Schauen Sie einmal hinein."
 
 msgid "Also you are invited to visit my blog on<link xlink:href=\"http://saigkill.github.io\">http://saigkill.github.io</link>."

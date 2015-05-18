@@ -17,8 +17,7 @@ msgstr "Vorwort"
 msgid "Welcome to the guide for PublicanCreators. In this documentation you will find how to get, setup and use PublicanCreators."
 msgstr "Herzlich willkommen zur Dokumentation von PublicanCreators. In dieser Dokumentation finden Sie Hinweise zum Bezug, dem Setup und der Benutzung von PublicanCreators."
 
-#, fuzzy
-msgid "This guide does not contain a guide for <quote>Publican</quote> itself. For using that please look at this <link xlink:href=\"https://fedorahosted.org/publican/\">link</link>. For reference how DocBook5 works you can follow this <link xlink:href=\"http://www.docbook.org/tdg5/en/html/docbook.html\">link</link>."
+msgid "This guide does not contain a guide for <quote>Publican</quote> itself. For using that please look at this<link xlink:href=\"https://fedorahosted.org/publican/\">link</link>. For reference how DocBook5 works you can follow this<link xlink:href=\"http://www.docbook.org/tdg5/en/html/docbook.html\">link</link>."
 msgstr "Diese Dokumentation beinhaltet keine Anleitung zu <quote>Publican</quote>. Möchten Sie sich dazu weiter informieren, benutzen Sie <link xlink:href=\"https://fedorahosted.org/publican/\">link</link>. Zur Benutzung von DocBook5 benutzen Sie <link xlink:href=\"http://www.docbook.org/tdg5/en/html/docbook.html\">link</link>."
 
 msgid "PublicanCreators was launched because to help people who working daily with Publican and DocBook in different formats and environments. So i would like to thank the Publican people for building this great tool. Also i'm thanking the Ruby guys in special the Nokogiri and Parseconfig teams."
