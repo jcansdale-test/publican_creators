@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-05-18 21:38+0100\n"
+"PO-Revision-Date: 2015-05-19 12:46+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: en_US\n"
@@ -23,8 +23,8 @@ msgstr "PublicanCreators starten"
 msgid "<primary>Using PublicanCreators</primary> <secondary>Launching PublicanCreators</secondary>"
 msgstr "<primary>PublicanCreators benutzen</primary> <secondary>PublicanCreators starten</secondary>"
 
-msgid "For launching PublicanCreators you have to click on your <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreators</guibutton> </menuchoice> ."
-msgstr "Um PublicanCreators zu starten, klicken Sie auf: <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreators</guibutton> </menuchoice> ."
+msgid "For launching PublicanCreators you have to click on your <menuchoice> <guimenu>Program Launcher</guimenu> <guisubmenu>PublicanCreators</guisubmenu> </menuchoice> ."
+msgstr "Um PublicanCreators zu starten, klicken Sie auf: <menuchoice> <guimenu>program-launcher</guimenu> <guisubmenu>PublicanCreators</guisubmenu> </menuchoice> ."
 
 msgid "Now you see a graphical interface (the look and feel depends on your chosen theme):"
 msgstr "Jetzt sehen Sie ein grafisches Interface (das Aussehen kann je nach eingestelltem Theme variieren)."
@@ -44,17 +44,17 @@ msgstr "<emphasis role=\"bold\">Type</emphasis>: Article or Book (Artikel oder B
 msgid "<emphasis role=\"bold\">Optional</emphasis>: Normal, Report, Homework"
 msgstr "<emphasis role=\"bold\">Optional</emphasis>: Normal, Report, Homework"
 
-msgid "<emphasis role=\"bold\">Title</emphasis>:<emphasis>Your Title</emphasis>. You can use a normal entry with blanks, or you can use underscores instead of blanks (Version: 0.4.2.0). But don't use umlauts like \"Ä\", \"Ö\", \"Ü\" or \"ß\". Publican just understand ASCII chars."
-msgstr "<emphasis role=\"bold\">Title</emphasis>:<emphasis>Ihr Titel</emphasis>.. Sie können einen normalen Eintrag mit Leerstellen eintragen, oder Ihren Titel mit Unterstrichen versehen (Version: 0.4.2.0). Sie können aber keine Umlaute wie  \"Ä\", \"Ö\", \"Ü\" or \"ß\" benutzen.  Publican verarbeitet lediglich ASCII Zeichen."
+msgid "<emphasis role=\"bold\">Title</emphasis>:<emphasis>Your Title</emphasis>. You can use a normal entry with blanks, or you can use underscores instead of blanks (Version: 0.4.2.0). But don't use umlauts like \"Ä\", \"Ö\", \"Ü\" or \"ß\" because Publican just understand ASCII chars."
+msgstr "<emphasis role=\"bold\">Title</emphasis>:<emphasis>Ihr Titel</emphasis>.. Sie können einen normalen Eintrag mit Leerstellen eintragen, oder Ihren Titel mit Unterstrichen versehen (Version: 0.4.2.0). Sie können aber keine Umlaute wie  \"Ä\", \"Ö\", \"Ü\" or \"ß\" benutze, da Publican nur ASCII Zeichen verarbeitet."
 
 msgid "You can use the publican.cfg to fix this. If your document is named \"Sören und die Ägäis\" you can type as title \"Soren und die Agais\". After the documentation creation is finished, you can add to the publican.cfg"
 msgstr "Sie können die publican.cfg benutzen, um dies zu fixen. Lautet Ihr Dokumentitel \"Sören und die Ägäis\" können Sie als Titel \"Soren und die Agais\" eingeben. Nachdem die Dokumentationserstellung beendet ist, können Sie folgendes in Ihre publican.cfg eintragen"
 
-msgid "docname = Soren_und_die_Agais\""
+msgid "docname: Soren_und_die_Agais"
 msgstr ""
 
-msgid "Der gewählte Name sollte mit dem Root-Dokument unter Ihrer gewählten Sprache übereinstimmen. So würde das Rootdokument wie folgt lauten: Soren_und_die_Agais.xml. Anschließend können Sie in der Article_Info.xml den richtigen Titel \"Sören und die Ägäis\" eintragen."
-msgstr ""
+msgid "The chosen name should be the same as your root document. The root document of the example would be named: <filename>Soren_und_die_Agais.xml</filename>. Then you can change the title in the <filename>Article_Info.xml</filename> or <filename>Book_Info.xml</filename> to your needs like <quote>Sören und die Ägäis</quote>. Also it's possible to use <quote>AE</quote> instead of <quote>'Ä</quote> and so on."
+msgstr "Der gewählte Name solle der des Rootdokumentes sein. Im obigen Beispiel hieße das Roordokument <filename>Soren_und_die_Agais.xml</filename>. Jetzt können Sie in der <filename>Article_Info</filename> oder der <filename>Book_Info.xml</filename> den richtigen Titel <quote>Sören und die Ägäis</quote> eintragen. Ebenso ist es möglich, \"AE\" statt \"Ä\" zu benutzen, und so weiter."
 
 msgid "After clicking on <guibutton>Go!</guibutton> the documentation will be created by publican."
 msgstr "Nach dem Klick auf <guibutton>Go!</guibutton> wird die Dokumentation mit Publican erstellt."
@@ -65,8 +65,8 @@ msgstr "Eine Revision hinzufügen"
 msgid "<primary>Using PublicanCreators</primary> <secondary>Add a revision</secondary>"
 msgstr "<primary>PublicanCreators benutzen</primary> <secondary>Eine Revision hinzufügen</secondary>"
 
-msgid "PublicanCreators also ships a graphical revision adder. Just click <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreatorsRevision</guibutton> </menuchoice> ."
-msgstr "PublicanCreators bietet auch eine grafische Oberfläche zum hinzufügen einer Revision an. Klicken Sie dazu auf: <menuchoice> <guibutton>program-launcher</guibutton> <guibutton>PublicanCreatorsRevision</guibutton> </menuchoice> ."
+msgid "PublicanCreators also ships a graphical revision adder. Just click <menuchoice> <guimenu>program-launcher</guimenu> <guisubmenu>PublicanCreatorsRevision</guisubmenu> </menuchoice> ."
+msgstr "PublicanCreators bietet auch eine grafische Oberfläche zum hinzufügen einer Revision an. Klicken Sie dazu auf: <menuchoice> <guimenu>program-launcher</guimenu><guisubmenu>PublicanCreatorsRevision</guisubmenu> </menuchoice> ."
 
 msgid "<inlinemediaobject> <imageobject> <imagedata fileref=\"images/RevisionCreator.png\" /> </imageobject> </inlinemediaobject>"
 msgstr ""
@@ -75,10 +75,10 @@ msgid "There you have three important tweaks:"
 msgstr "Jetzt haben Sie drei wichtige Möglichkeiten:"
 
 msgid "<emphasis role=\"bold\">Projectdir</emphasis>: Use that to move to your <emphasis>target directory</emphasis> (That directory where your projects publican.cfg is)"
-msgstr "<emphasis role=\"bold\">Projectdir</emphasis>: Nutzen Sie diesen Wähler um zum <emphasis>Zielverzeichnis</emphasis> (Dort wo Ihre Projektbezogene publican.cfg steckt) zu manövrrieren."
+msgstr "<emphasis role=\"bold\">Projectdir</emphasis>: Nutzen Sie diesen Wähler um Ihr <emphasis>Zielverzeichnis</emphasis> (Dort wo Ihre Projektbezogene publican.cfg steckt) auszuwählen."
 
 msgid "<emphasis role=\"bold\">Commits</emphasis>: There you can place one to five <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug report. You can use a normal entry with blanks, or you can use underscores instead of blanks (Version: 0.4.2.0). There you can use Umlauts."
-msgstr ""
+msgstr "<emphasis role=\"bold\">Commits</emphasis>: Hier können SIe bis zu fünf Commit Texte eintragen. Sollten Sie regelmäßg mehr benötigen, tragen Sie bitte einen Bugreport ein. In die Textfelder kann der Text entweder normal, mit Leerzeichen eingetragen werden, oder mit Unterstichen (Version: 0.4.2.0)."
 
 msgid "<emphasis role=\"bold\">Revision number</emphasis>: There you can place your <emphasis>revision number</emphasis>."
 msgstr "<emphasis role=\"bold\">Revision number</emphasis>: Hier tragen Sie Ihre <emphasis>Revisionsnummer</emphasis> ein."
@@ -86,17 +86,17 @@ msgstr "<emphasis role=\"bold\">Revision number</emphasis>: Hier tragen Sie Ihre
 #~ msgid "<emphasis role=\"bold\">Commits</emphasis>: There you can place one to five <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug report."
 #~ msgstr "<emphasis role=\"bold\">Commits</emphasis>: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie regelmäßig mehr als 5 benötigen, eröffnen Sie einen Bugreport."
 
-#~ msgid "Revision number: There you can place your revision number."
-#~ msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."
-
-#~ msgid "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Your Title</emphasis>. Use underscores instead of blanks."
-#~ msgstr "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Ihr Title</emphasis>. Benutzen Sie Unterstriche statt Leerzeichen."
+#~ msgid "Title: Your Title. Use underscores instead of blanks."
+#~ msgstr "Titel: Ihr gewünschter Titel (mit Unterstrichen statt Leerzeichen)"
 
 #~ msgid "Projectdir: Use that to move to your target directory (That directory where your projects publican.cfg is)"
 #~ msgstr "Projectdir: Wechseln Sie mit dem Auswahlwerkzeug in Ihr Zielverzeichnis (das, indem auch Ihre Dokumentations publican.cfg steckt)"
 
-#~ msgid "Title: Your Title. Use underscores instead of blanks."
-#~ msgstr "Titel: Ihr gewünschter Titel (mit Unterstrichen statt Leerzeichen)"
-
 #~ msgid "Environment: Work or Private"
 #~ msgstr "Environment: Work oder Private (Arbeit oder Private)"
+
+#~ msgid "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Your Title</emphasis>. Use underscores instead of blanks."
+#~ msgstr "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Ihr Title</emphasis>. Benutzen Sie Unterstriche statt Leerzeichen."
+
+#~ msgid "Revision number: There you can place your revision number."
+#~ msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."

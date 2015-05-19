@@ -13,6 +13,10 @@
     <info>
       <title>Release 0.4.1 to 0.4.2 (2015-05-18)</title>
     </info>
+    <indexterm>
+      <primary>Release Notes</primary>
+      <secondary>0.4.1</secondary>
+    </indexterm>
     <section>
       <info>
         <title>Bugfixes</title>

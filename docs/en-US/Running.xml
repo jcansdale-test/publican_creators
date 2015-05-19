@@ -25,8 +25,8 @@
     </indexterm>
     <para>For launching PublicanCreators you have to click on your
       <menuchoice>
-        <guibutton>program-launcher</guibutton>
-        <guibutton>PublicanCreators</guibutton>
+        <guimenu>Program Launcher</guimenu>
+        <guisubmenu>PublicanCreators</guisubmenu>
       </menuchoice>
       .
     </para>
@@ -55,22 +55,21 @@
         <listitem>
           <para><emphasis role="bold">Title</emphasis>:<emphasis>Your Title</emphasis>. You can use
             a normal entry with blanks, or you can use underscores instead of blanks (Version:
-            0.4.2.0). But don't use umlauts like "Ä", "Ö", "Ü" or "ß". Publican just understand
-            ASCII chars.
-          </para>
+            0.4.2.0). But don't use umlauts like "Ä", "Ö", "Ü" or "ß" because Publican just
+            understand ASCII chars. </para>
           <para>
             <tip>
               <para>You can use the publican.cfg to fix this. If your document is named "Sören und
                 die Ägäis" you can type as title "Soren und die Agais". After the documentation
-                creation is finished, you can add to the
-                publican.cfg
-                <screen>docname = Soren_und_die_Agais"</screen>
+                creation is finished, you can add to the publican.cfg
+                <screen>docname: Soren_und_die_Agais</screen>
               </para>
-              <para>Der gewählte Name sollte mit dem Root-Dokument unter Ihrer gewählten Sprache
-                übereinstimmen. So würde das Rootdokument wie folgt lauten: Soren_und_die_Agais.xml.
-                Anschließend können Sie in der Article_Info.xml den richtigen Titel "Sören und die
-                Ägäis" eintragen.
-              </para>
+              <para>The chosen name should be the same as your root document. The root document of
+                the example would be named: <filename>Soren_und_die_Agais.xml</filename>. Then you
+                can change the title in the <filename>Article_Info.xml</filename> or
+                  <filename>Book_Info.xml</filename> to your needs like <quote>Sören und die
+                  Ägäis</quote>. Also it's possible to use <quote>AE</quote> instead of
+                  <quote>'Ä</quote> and so on.</para>
             </tip>
           </para>
         </listitem>
@@ -93,8 +92,8 @@
     </indexterm>
     <para>PublicanCreators also ships a graphical revision adder. Just click
       <menuchoice>
-        <guibutton>program-launcher</guibutton>
-        <guibutton>PublicanCreatorsRevision</guibutton>
+        <guimenu>program-launcher</guimenu>
+        <guisubmenu>PublicanCreatorsRevision</guisubmenu>
       </menuchoice>
       .
     </para>

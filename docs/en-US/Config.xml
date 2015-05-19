@@ -152,9 +152,8 @@
               <entry>brand</entry>
               <entry>XCOM</entry>
               <entry>This will set your companies brand. The name should be the same as installed in
-                <filename>/usr/share/publican/Common_Content</filename>. So the default value is
-                installed in<filename>/usr/share/publican/Common_Content/XCOM</filename>.
-              </entry>
+                  <filename>/usr/share/publican/Common_Content</filename>. So the default value is
+                installed in <filename>/usr/share/publican/Common_Content/XCOM</filename>. </entry>
             </row>
             <row>
               <entry>company_name</entry>
@@ -235,17 +234,15 @@
               <entry>brand_private</entry>
               <entry>manns</entry>
               <entry>This will set your private brand. The name should be the same as installed in
-                <filename>/usr/share/publican/Common_Content</filename>. So the default value is
-                installed in<filename>/usr/share/publican/Common_Content/manns</filename>.
-              </entry>
+                  <filename>/usr/share/publican/Common_Content</filename>. So the default value is
+                installed in <filename>/usr/share/publican/Common_Content/manns</filename>. </entry>
             </row>
             <row>
               <entry>brand_homework</entry>
               <entry>ils</entry>
               <entry>This will set your homework brand. The name should be the same as installed in
-                <filename>/usr/share/publican/Common_Content</filename>. So the default value is
-                installed in<filename>/usr/share/publican/Common_Content/ils</filename>.
-              </entry>
+                  <filename>/usr/share/publican/Common_Content</filename>. So the default value is
+                installed in <filename>/usr/share/publican/Common_Content/ils</filename>. </entry>
             </row>
             <row>
               <entry>articles_dir_priv</entry>

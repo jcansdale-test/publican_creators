@@ -17,6 +17,10 @@ msgstr "Veröffentlichungshinweise"
 msgid "Release 0.4.1 to 0.4.2 (2015-05-18)"
 msgstr ""
 
+#, fuzzy
+msgid "<primary>Release Notes</primary> <secondary>0.1.1</secondary>"
+msgstr ""
+
 msgid "Bugfixes"
 msgstr ""
 
@@ -56,8 +60,7 @@ msgstr ""
 msgid "Release 0.3.6 (2015-05-15)"
 msgstr ""
 
-#, fuzzy
-msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.3.6</secondary>"
 msgstr ""
 
 msgid "Fixed Rakefile buildscript issue"
@@ -78,7 +81,7 @@ msgstr ""
 msgid "Changed the buildscript from shellscript to Rakefile. A little bit more comfortable."
 msgstr ""
 
-msgid "Release 0.4.1 to 0.4.2 (2015-05-18)"
+msgid "Release 0.3.3 to 0.3.5 (2015-05-15)"
 msgstr ""
 
 msgid "<primary>Release Notes</primary> <secondary>0.3.1-0.3.2</secondary>"
@@ -94,7 +97,7 @@ msgid "Release 0.3.0 (2015-05-09)"
 msgstr ""
 
 #, fuzzy
-msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.1.0</secondary>"
 msgstr ""
 
 msgid "PC-1: Create UI for add_revision"
@@ -109,7 +112,8 @@ msgstr ""
 msgid "Release 0.2.0 (2015-05-07)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.4.0</secondary>"
+#, fuzzy
+msgid "<primary>Release Notes</primary> <secondary>0.1.0</secondary>"
 msgstr ""
 
 msgid "PC-6: Create rules for setup Fedora"
@@ -130,6 +134,7 @@ msgstr ""
 msgid "Release 0.1.1 (2015-05-06)"
 msgstr ""
 
+#, fuzzy
 msgid "<primary>Release Notes</primary> <secondary>0.1.1</secondary>"
 msgstr ""
 
@@ -148,6 +153,7 @@ msgstr ""
 msgid "Release 0.1.0 (2015-04-25)"
 msgstr ""
 
+#, fuzzy
 msgid "<primary>Release Notes</primary> <secondary>0.1.0</secondary>"
 msgstr ""
 

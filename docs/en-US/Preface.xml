@@ -13,8 +13,8 @@
   <para>This guide does not contain a guide for
     <quote>Publican</quote>
     itself. For using that
-    please look at this<link xlink:href="https://fedorahosted.org/publican/">link</link>. For
-    reference how DocBook5 works you can follow this<link
+    please look at this <link xlink:href="https://fedorahosted.org/publican/">link</link>. For
+    reference how DocBook5 works you can follow this <link
             xlink:href="http://www.docbook.org/tdg5/en/html/docbook.html">link</link>.
   </para>
   <para>PublicanCreators was launched because to help people who working daily with Publican and
