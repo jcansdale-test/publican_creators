@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-05-19 12:37+0100\n"
+"PO-Revision-Date: 2015-05-19 18:31+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: en_US\n"
@@ -17,16 +17,14 @@ msgstr "Einführung"
 msgid "<primary>Introduction</primary>"
 msgstr "<primary>Einleitung</primary>"
 
-#, fuzzy
 msgid "Before you can start you must check if you have installed Ruby. To do this you can type in a console: <command>ruby --version</command>. The output can be similar to that one:"
 msgstr "Bevor es losgeht, müssen Sie herausfinden, ob Sie Ruby bereits installiert haben. Dazu schreiben Sie in der Konsole: <command>ruby --version</command>. Der Output sollte in etwa so aussehen:"
 
 msgid "ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-linux]"
 msgstr ""
 
-#, fuzzy
-msgid "If there are no ruby inside the output you have to go to <xref linkend=\"install-ruby\" />. Otherwise you can skip that step and go to <xref linkend=\"install-pubcre\" />."
-msgstr "Falls das Ergebis fehlschlägt, können Sie hier weitermachen: <xref linkend=\"install-ruby\" />. Andernfalls können Sie hierhin springen: <xref linkend=\"install-pubcre\" />."
+msgid "If there are no ruby inside the output you have to go to <xref linkend=\"install-ruby\" />. Otherwise you can skip that step and go to <xref linkend=\"install-pubcre\" />.<emphasis></emphasis>"
+msgstr "Falls das Ergebis fehlschlägt, können Sie hier weitermachen: <xref linkend=\"install-ruby\" />. Andernfalls können Sie hierhin springen: <xref linkend=\"install-pubcre\" />.<emphasis></emphasis>"
 
 msgid "Installing Ruby"
 msgstr "Ruby installieren"
@@ -125,7 +123,6 @@ msgstr ""
 msgid "A <command>ruby --version</command> should output your version:"
 msgstr "Ein <command>ruby --version</command> sollte jetzt eine Version ausgeben."
 
-#, fuzzy
 msgid "You installed now Ruby (hopefully) without troubles. For further information about RVM you can visit this <link xlink:href=\"https://rvm.io/\">link</link>."
 msgstr "Jetzt haben Sie (hoffentlich) ohne Probleme Ruby installiert. Für weitere Informationen zu RVM besuchen Sie <link xlink:href=\"https://rvm.io/\">link</link>."
 
@@ -176,8 +173,8 @@ msgstr "Das Setup"
 msgid "<primary>Introduction</primary> <secondary>Running the setup</secondary>"
 msgstr "<primary>Einleitung</primary> <secondary>Das Setup</secondary>"
 
-msgid "For running the setup go to the gem's directory with <command>.rvm/gems/ruby-<replaceable>2.2.1</replaceable>/gems/PublicanCreators-<replaceable>&pcver;</replaceable></command>. Then just type <command>rake setup</command>."
-msgstr "Um das Setup auszuführen, wechseln Sie in das Verzeichnis des Gems mit <command>.rvm/gems/ruby-<replaceable>2.2.1</replaceable>/gems/PublicanCreators- <replaceable>&pcver;</replaceable>/bin</command>. Hier geben Sie <command>rake setup</command> ein."
+msgid "For running the setup go to the gem's directory with <command>.rvm/gems/ruby-<replaceable>2.2.1</replaceable>/gems/PublicanCreators-<replaceable>&pcver;</replaceable></command>. Then just type <command>rake setup_start</command>."
+msgstr "Um das Setup auszuführen, wechseln Sie in das Verzeichnis des Gems mit <command>.rvm/gems/ruby-<replaceable>2.2.1</replaceable>/gems/PublicanCreators-<replaceable>&pcver;</replaceable>/bin</command>. Hier geben Sie <command>rake setup_start</command> ein."
 
 msgid "Keep in mind, that the 2.2.1 from ruby-2.2.1 must match your chosen version. Also you have to replace <replaceable>&pcver;</replaceable> with the installed version of PublicanCreators."
 msgstr "Bedenken Sie, das die 2.2.1 aus ruby-2.2.1 mit Ihrer Ruby-Version übereinstimmen muss."
@@ -246,6 +243,21 @@ msgid ""
 "Found old publicancreators.desktop file. Renew it now\n"
 "Finished Setup"
 msgstr ""
+
+msgid "Update from a older version"
+msgstr "Aktualisierung von einer früheren Version"
+
+msgid "If you have an older version of PublicanCreators, you can run the full <command>rake setup_start</command> or you can just use the following steps:"
+msgstr "Wenn Sie bereits eine ältere Version von PublicanCreators installiert haben, können SIe ein vollständiges <command>rake setup_start</command> starten, oder Sie kürzen es durch die nächsten Schritte ab:"
+
+msgid "<command>rake check_config</command>: It adds the present <command>.publicancreators.cfg.new</command>."
+msgstr "<command>rake check_config</command>: Dies installiert eine neue <command>.publicancreators.cfg.new</command>."
+
+msgid "<command>rake create_desktop_cre</command> and <command>rake create_desktop_rev</command>: It updates your old desktop files to the new path."
+msgstr "<command>rake create_desktop_cre</command> and <command>rake create_desktop_rev</command>: Dies aktualisier den Pfad Ihrer Desktop Files."
+
+msgid "<command>rake link_binary_cre</command> and <command>rake link_binary_rev</command>: That is not regular needed. You can launch this, if you use the binaries from /usr/bin."
+msgstr "<command>rake link_binary_cre</command> and <command>rake link_binary_rev</command>: Wenn Sie die Links nach /usr/bin nutzen, dann können Sie diese hiermit aktualisieren."
 
 #~ msgid "It installs the bundle"
 #~ msgstr "Es installiert das Bundle (falls etwas fehlt)"

@@ -28,7 +28,7 @@ require 'dir'
 require 'fileutils'
 require 'rainbow/ext/string'
 
-# @note Module for different checks
+# Module for different checks
 module Checker
 
   # Checks if the targetdirectory are present. If not, it creates one. It returns a success or fail.

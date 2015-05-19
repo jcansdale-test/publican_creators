@@ -30,7 +30,7 @@ require 'dir'
 require 'rainbow/ext/string'
 require 'PublicanCreators/checker'
 
-# @note Module what contains all methods who are doing changes in files
+# Module what contains all methods who are doing changes in files
 module PublicanCreatorsChange
 
   # Method for creating initial documentation for work. It asks for title, type, language, brand and db5 variable, creates a launch-string from them and launches publican.
@@ -194,7 +194,7 @@ module PublicanCreatorsChange
   # environment [String] is Work, "type" is Article and title_logo is "false".
   # It returns a sucess or fail.
   # Descriptions:
-  # @param [String] artinfo can be other than the @param name says a path to the Article_Info or Book_Info. Which is used there depends on the @param "type".
+  # @param [String] info can be the Article_Info or Book_Info. Which is used there depends on the @param "type".
   # @param [String] title_logo means that you can set if you want to use Publican's Title Logo or use your own Title Logo with your Stylesheets.
   # @return [String] true or false
   def self.remove_orgname(info, title_logo)

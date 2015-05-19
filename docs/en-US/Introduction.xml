@@ -17,7 +17,7 @@
     <screen>ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-linux]</screen>
   </para>
   <para>If there are no ruby inside the output you have to go to <xref linkend="install-ruby"/>.
-    Otherwise you can skip that step and go to <xref linkend="install-pubcre"/>.</para>
+    Otherwise you can skip that step and go to <xref linkend="install-pubcre"/>.<emphasis/></para>
   <section xml:id="install-ruby">
     <title>Installing Ruby</title>
     <indexterm>
@@ -174,7 +174,7 @@ Done installing documentation for parseconfig, mini_portile, nokogiri, dir, Publ
       </indexterm>
       <para>For running the setup go to the gem's directory with
             <command>.rvm/gems/ruby-<replaceable>2.2.1</replaceable>/gems/PublicanCreators-<replaceable>&pcver;</replaceable></command>.
-        Then just type <command>rake setup</command>. <note>
+        Then just type <command>rake setup_start</command>. <note>
           <para>Keep in mind, that the 2.2.1 from ruby-2.2.1 must match your chosen version. Also
             you have to replace <replaceable>&pcver;</replaceable> with the installed version of
             PublicanCreators. </para>
@@ -264,6 +264,31 @@ File /usr/bin/publicancreators-rev exists. Removing it
 Removed
 Found old publicancreators.desktop file. Renew it now
 Finished Setup</screen>
+      </para>
+    </section>
+    <section>
+      <info>
+        <title>Update from a older version</title>
+      </info>
+      <para>If you have an older version of PublicanCreators, you can run the full <command>rake
+          setup_start</command> or you can just use the following steps:</para>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para><command>rake check_config</command>: It adds the present
+                <command>.publicancreators.cfg.new</command>.</para>
+          </listitem>
+          <listitem>
+            <para><command>rake create_desktop_cre</command> and  <command>rake
+                create_desktop_rev</command>: It updates your old desktop files to the new
+              path.</para>
+          </listitem>
+          <listitem>
+            <para><command>rake link_binary_cre</command> and <command>rake
+                link_binary_rev</command>: That is not regular needed. You can launch this, if you
+              use the binaries from /usr/bin.</para>
+          </listitem>
+        </itemizedlist>
       </para>
     </section>
   </section>

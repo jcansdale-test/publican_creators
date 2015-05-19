@@ -41,7 +41,7 @@ The installation is very easy.
     gem install PublicanCreators
     gem install rake
     cd /path/to/gem
-    rake setup
+    rake setup_start
 
 You have to run the setup after each gem update.
 

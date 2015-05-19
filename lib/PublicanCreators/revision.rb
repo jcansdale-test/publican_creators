@@ -27,6 +27,7 @@ require 'fileutils'
 require 'rainbow/ext/string'
 require File.expand_path(File.join(File.dirname(__FILE__), 'get.rb'))
 
+# A class for creating a revison to a publican project
 class RevisionCreator
   # @note Ask for the revision information
   revisionget = PublicanCreatorsGet.revision
