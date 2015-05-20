@@ -1,7 +1,3 @@
-# @markup rdoc
-# @title Readme
-# @author Sascha Manns
-
 = \PublicanCreators
 
 home :: https://github.com/saigkill/PublicanCreators
@@ -23,6 +19,7 @@ user documentation PDF (de) :: http://saigkill.github.io/docs/publicancreators/d
 bugs :: http://saigkill.ddns.net:8112/dashboard
 review code :: http://saigkill.ddns.net:8080/publicancreators/view
 authors blog :: http://saigkill.github.io
+authors twitter :: @saigkill
 openhub :: https://www.openhub.net/p/PublicanCreators
 openhatch :: http://openhatch.org/projects/PublicanCreators
 donations :: {<img src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" />}[http://saigkill.github.io/pages/donate/index.html] Donations are welcome :-)
