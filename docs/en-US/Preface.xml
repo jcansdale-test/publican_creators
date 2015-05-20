@@ -20,7 +20,7 @@
   <para>PublicanCreators was launched because to help people who working daily with Publican and
     DocBook in different formats and environments. So i would like to thank the Publican people
     for building this great tool. Also i'm thanking the Ruby guys in special the Nokogiri and
-    Parseconfig teams.
+    Parseconfig teams. A special thank goes to the guys on stackoverflow who helped me a lot of times.
   </para>
   <xi:include href="Common_Content/Conventions.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="Feedback.xml" xmlns:xi="http://www.w3.org/2001/XInclude">

@@ -130,6 +130,13 @@
           </para>
         </listitem>
       </itemizedlist>
+      <important>
+        <para>From Version 0.4.4.0 PublicanCreators ships a new feature. The entered Revision number
+          will be splitted internal. If you enter a number like <quote>0.4.1-0</quote> the program
+          splits it into a revision number 0.4.1 and a edition number 0. So the productversion tag
+          in Article_Info.xml or Book_Info.xml will be replaced with the revision number, and the
+          edition field will become the edition value.</para>
+      </important>
     </para>
   </section>
 </chapter>

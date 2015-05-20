@@ -17,8 +17,7 @@ msgstr "Veröffentlichungshinweise"
 msgid "Release 0.4.1 to 0.4.2 (2015-05-18)"
 msgstr ""
 
-#, fuzzy
-msgid "<primary>Release Notes</primary> <secondary>0.2.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.4.1</secondary>"
 msgstr ""
 
 msgid "Bugfixes"
@@ -36,8 +35,7 @@ msgstr ""
 msgid "Release 0.4.0 (2015-05-16)"
 msgstr ""
 
-#, fuzzy
-msgid "<primary>Release Notes</primary> <secondary>0.2.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
 msgstr ""
 
 msgid "Both desktop files from PublicanCreators and RevisionCreators having just the name PublicanCreators. Now PublicanCreators uses its name and RevisionCreators its name."
@@ -67,8 +65,7 @@ msgstr ""
 msgid "Fixed Rakefile buildscript issue"
 msgstr ""
 
-#, fuzzy
-msgid "Release 0.3.1 to 0.3.2 (2015-05-15)"
+msgid "Release 0.3.3 to 0.3.5 (2015-05-15)"
 msgstr ""
 
 msgid "<primary>Release Notes</primary> <secondary>0.3.3-0.3.5</secondary>"
@@ -83,8 +80,7 @@ msgstr ""
 msgid "Changed the buildscript from shellscript to Rakefile. A little bit more comfortable."
 msgstr ""
 
-#, fuzzy
-msgid "Release 0.3.1 to 0.3.2 (2015-05-15)"
+msgid "Release 0.3.3 to 0.3.5 (2015-05-15)"
 msgstr ""
 
 msgid "<primary>Release Notes</primary> <secondary>0.3.1-0.3.2</secondary>"
@@ -99,8 +95,7 @@ msgstr ""
 msgid "Release 0.3.0 (2015-05-09)"
 msgstr ""
 
-#, fuzzy
-msgid "<primary>Release Notes</primary> <secondary>0.2.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
 msgstr ""
 
 msgid "PC-1: Create UI for add_revision"
@@ -115,8 +110,7 @@ msgstr ""
 msgid "Release 0.2.0 (2015-05-07)"
 msgstr ""
 
-#, fuzzy
-msgid "<primary>Release Notes</primary> <secondary>0.2.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
 msgstr ""
 
 msgid "PC-6: Create rules for setup Fedora"
@@ -137,7 +131,7 @@ msgstr ""
 msgid "Release 0.1.1 (2015-05-06)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.1.1</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.4.1</secondary>"
 msgstr ""
 
 msgid "Fetches the titlename, type and environment from a yad dialogbox"
