@@ -124,4 +124,13 @@ module PublicanCreatorsGet
     pdfview = config['pdfview']
     [name, email_private, language, use_brand, title_logo, legal, brand, company_name, company_division, email_business, brand_dir, globalentities, articles_dir, reports_dir, books_dir, articles_dir_priv, homework_dir, books_dir_priv, brand_private, brand_homework, db5, conf_ver, xfc_brand_dir, pdfview]
   end
+
+  # This method gets the language from the config file for using in RevisionCreator
+  # @return [String] language
+  def self.config_revision
+    home = Dir.home
+    config = ParseConfig.new("#{home}/.publicancreators.cfg")
+    language = config['language']
+    return language
+  end
 end

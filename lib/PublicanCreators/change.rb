@@ -209,6 +209,27 @@ module PublicanCreatorsChange
     end
   end
 
+  # This method replaces the old productversion to the new revision
+  # @param [String] language The default language from the config file
+  # @param [String] revision The new revision number
+  # @param [String] edition The new edition number
+  def self.replace_productnumber(revision, edition, language)
+    puts 'Replacing the productnumber'.color(:yellow)
+    if File.exist?("#{language}/Article_Info.xml")
+      info = "#{language}/Article_Info.xml"
+    else
+      info = "#{language}/Book_Info.xml"
+    end
+    doc = Nokogiri::XML(IO.read(info))
+    doc.search('productnumber').each do |node|
+      node.content = "#{revision}"
+    end
+    doc.search('edition').each do |node|
+      node.content = "#{edition}"
+    end
+    IO.write(info, doc.to_xml)
+  end
+
   # This method removes the XI-Includes for the legal notice
   # It returns a sucess or fail.
   # Descriptions:

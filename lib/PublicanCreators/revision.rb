@@ -25,12 +25,14 @@
 # Dependencies
 require 'fileutils'
 require 'rainbow/ext/string'
+require File.expand_path(File.join(File.dirname(__FILE__), 'change.rb'))
 require File.expand_path(File.join(File.dirname(__FILE__), 'get.rb'))
 
 # A class for creating a revison to a publican project
 class RevisionCreator
   # @note Ask for the revision information
   revisionget = PublicanCreatorsGet.revision
+  language = PublicanCreatorsGet.config_revision
   directory = revisionget[1]
   member1 = revisionget[2]
   member2 = revisionget[3]
@@ -39,13 +41,20 @@ class RevisionCreator
   member5 = revisionget[6]
   revnumber = revisionget[7]
 
+  revisionsplit = revnumber.split('-')
+  revision = revisionsplit[0]
+  edition = revisionsplit[1]
+
   puts "Directory: #{directory}".color(:yellow)
   puts "Member1: #{member1}".color(:yellow)
   puts "Member2: #{member2}".color(:yellow)
   puts "Member3: #{member3}".color(:yellow)
   puts "Member4: #{member4}".color(:yellow)
   puts "Member5: #{member5}".color(:yellow)
+  puts "Language: #{language}".color(:yellow)
   puts "Revnumber: #{revnumber}".color(:yellow)
+  puts "Revision: #{revision}".color(:yellow)
+  puts "Edition: #{edition}".color(:yellow)
 
   # @param [String] directory The directory where the projects publican.cfg is
   FileUtils.cd(directory) do
@@ -71,6 +80,8 @@ class RevisionCreator
       string << " --member \"#{member5}\""
     end
     string << " --revnumber \"#{revnumber}\""
+    string << " --lang \"#{language}\""
+    PublicanCreatorsChange.replace_productnumber(revision, edition, language)
     system("publican add_revision #{string}")
   end
 end
