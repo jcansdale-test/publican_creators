@@ -159,9 +159,12 @@ class PublicanCreators
   end
 
   # @note Hardcoded variables
-  artinfo = "#{title}/de-DE/Article_Info.xml"
-  bookinfo = "#{title}/de-DE/Book_Info.xml"
-  builds = "#{title}/de-DE/Rakefile"
+  artinfo = "#{title}/#{language}/Article_Info.xml"
+  bookinfo = "#{title}/#{language}/Book_Info.xml"
+  revhist = "#{title}/#{language}/Revision_History.xml"
+  agroup = "#{title}/#{language}/Author_Group.xml"
+  ent = "#{title}/#{language}/#{title}.ent"
+  builds = "#{title}/#{language}/Rakefile"
 
   # @note Run one of the both methods to get the variable targetdir
   # @param [String] type Book or Article
@@ -207,19 +210,19 @@ class PublicanCreators
     # @param [String] environment Work or Private
     # @param [String] global_entities path to a global entities file (config file)
     # @param [String] brand e.g. Debian or nothing for using publicans default brand (config file)
-    PublicanCreatorsChange.add_entity(title, environment, global_entities, brand)
+    PublicanCreatorsChange.add_entity(title, environment, global_entities, brand, ent)
 
     # @param [String] title comes from titleget[3]
     # @param [String] environment Work or Private
     # @param [String] name your name (config file)
     # @param [String] company_name (config file)
-    PublicanCreatorsChange.change_holder(title, environment, name, company_name)
+    PublicanCreatorsChange.change_holder(title, environment, name, company_name, ent)
 
     # @param [String] title comes from titleget[3]
     # @param [String] environment Work or Private
     # @param [String] type Book or Article
     # @param [String] legal remove legalnotice from article? (config file)
-    PublicanCreatorsChange.remove_legal(title, environment, type, legal) #
+    PublicanCreatorsChange.remove_legal(title, environment, type, legal, artinfo) #
 
     # @param [String] artinfo path to Article_Info (hardcoded)
     # @param [String] bookinfo path to Book_Info (hardcoded)
@@ -235,7 +238,7 @@ class PublicanCreators
     # @param [String] name your name (config file)
     # @param [String] email_business business email address (config file)
     # @param [String] title comes from titleget[3]
-    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email, title)
+    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email, revhist)
 
     # @param [String] title comes from titleget[3]
     # @param [String] name your name (config file)
@@ -244,9 +247,9 @@ class PublicanCreators
     # @param [String] company_division your companiy's division
     # @param [String] email your private email address
     if environment == 'Work'
-      PublicanCreatorsChange.fix_authorgroup_work(title, name, email_business, company_name, company_division)
+      PublicanCreatorsChange.fix_authorgroup_work(name, email_business, company_name, company_division, agroup)
     else
-      PublicanCreatorsChange.fix_authorgroup_private(name, email, title)
+      PublicanCreatorsChange.fix_authorgroup_private(name, email, agroup)
     end
 
     # @param [String] title comes from titleget[3]

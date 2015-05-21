@@ -52,7 +52,7 @@ end
 
 describe 'Entity Changer' do
   it 'should add the XCOM Entities' do
-    PublicanCreatorsChange.add_entity(ent, environment, global_entities, brand)
+    PublicanCreatorsChange.add_entity(title, environment, global_entities, brand, ent)
     f = File.new(ent)
     text = f.read
     true
@@ -78,7 +78,7 @@ end
 
 describe 'Remove Legalnotice' do
   it 'should remove the Legalnotice from the XML file' do
-    PublicanCreatorsChange.remove_legal(artinfo, environment, type, legal)
+    PublicanCreatorsChange.remove_legal(title, environment, type, legal, artinfo)
     f = File.new(artinfo)
     text = f.read
     true
@@ -91,7 +91,7 @@ end
 
 describe 'Fix Revision History' do
   it 'should change names and emailaddresses to the present user' do
-    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email, title)
+    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email, revhist)
     f = File.new(revhist)
     text = f.read
     true
@@ -104,7 +104,7 @@ end
 
 describe 'Fix Authorgroup' do
   it 'should change the names and emailaaddresses to the present user' do
-    PublicanCreatorsChange.fix_authorgroup_work(title, name, email_business, company_name, company_division)
+    PublicanCreatorsChange.fix_authorgroup_work(name, email_business, company_name, company_division, agroup)
     f = File.new(agroup)
     text = f.read
     true

@@ -143,8 +143,7 @@ module PublicanCreatorsChange
   # @param [String] global_entities is just the path to the global entity file.
   # @param [String] brand can be a special customized brand for your company to fit the Styleguide.
   # @return [String] true or false
-  def self.add_entity(title, environment, global_entities, brand)
-    ent = "#{title}/de-DE/#{title}.ent"
+  def self.add_entity(title, environment, global_entities, brand, ent)
     if environment == 'Work'
       if brand == 'XCOM'
         puts 'Adding global entities...'.color(:yellow)
@@ -173,8 +172,7 @@ module PublicanCreatorsChange
   # @param [String] company_name is the name of your company
   # @return [String] true or false
   # @note If the environment "Work" is given the entity file will be set as HOLDER otherwise it sets your name.
-  def self.change_holder(title, environment, name, company_name)
-    ent = "#{title}/de-DE/#{title}.ent"
+  def self.change_holder(title, environment, name, company_name, ent)
     # @note Replace the Holder with the real one
     puts 'Replace holder field with the present user'.color(:yellow)
     if environment == 'Work'
@@ -239,8 +237,7 @@ module PublicanCreatorsChange
   # @param [String] legal means if you don't like to have a Legal Notice on Publican's default place you can define it there. Actually it just works with Articles. In my case i'm
   # using the Legal Notice inside the Article's Structure.
   # @return [String] true or false
-  def self.remove_legal(title, environment, type, legal)
-    artinfo = "#{title}/de-DE/Article_Info.xml"
+  def self.remove_legal(title, environment, type, legal, artinfo)
     if environment == 'Work'
       if type == 'Article'
         if legal == 'true'
@@ -270,8 +267,7 @@ module PublicanCreatorsChange
   # @param [String] email_business is your business email address.
   # @param [String] email is your private email address.
   # @return [String] true or false
-  def self.fix_revhist(environment, name, email_business, email, title)
-    revhist = "#{title}/de-DE/Revision_History.xml"
+  def self.fix_revhist(environment, name, email_business, email, revhist)
     namechomp = name.chomp
     # @note Split the variable to the array title[*]
     name = namechomp.split(' ')
@@ -317,8 +313,7 @@ module PublicanCreatorsChange
   # @param [String] company_name is just your companies name.
   # @param [String] company_division is your companies part/division.
   # @return [String] true or false
-  def self.fix_authorgroup_work(title, name, email_business, company_name, company_division)
-    agroup = "#{title}/de-DE/Author_Group.xml"
+  def self.fix_authorgroup_work(name, email_business, company_name, company_division, agroup)
     namechomp = name.chomp
     # @note Split the variable to the array title[*]
     name = namechomp.split(' ')
@@ -371,8 +366,7 @@ module PublicanCreatorsChange
   # @param [String] name is your name.
   # @param [String] email is your private email address.
   # @return [String] true or false
-  def self.fix_authorgroup_private(name, email, title)
-    agroup = "#{title}/de-DE/Author_Group.xml"
+  def self.fix_authorgroup_private(name, email, agroup)
     namechomp = name.chomp
     # @note Split the variable to the array title[*]
     name = namechomp.split(' ')
