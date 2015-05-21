@@ -52,7 +52,7 @@ end
 
 describe 'Entity Changer' do
   it 'should add the XCOM Entities' do
-    PublicanCreatorsChange.add_entity(title, environment, global_entities, brand, ent)
+    PublicanCreatorsChange.add_entity(environment, global_entities, brand, ent)
     f = File.new(ent)
     text = f.read
     true
@@ -78,7 +78,7 @@ end
 
 describe 'Remove Legalnotice' do
   it 'should remove the Legalnotice from the XML file' do
-    PublicanCreatorsChange.remove_legal(title, environment, type, legal, artinfo)
+    PublicanCreatorsChange.remove_legal(environment, type, legal, artinfo)
     f = File.new(artinfo)
     text = f.read
     true
@@ -104,7 +104,7 @@ end
 
 describe 'Fix Authorgroup' do
   it 'should change the names and emailaaddresses to the present user' do
-    PublicanCreatorsChange.fix_authorgroup_work(name, email_business, company_name, company_division, agroup)
+    PublicanCreatorsChange.fix_authorgroup(name, email_business, company_name, company_division, email, environment, agroup)
     f = File.new(agroup)
     text = f.read
     true
@@ -122,13 +122,6 @@ describe 'Export Buildscript' do
     :should == true
   end
 end
-
-#describe 'Make executable Buildscript' do
-#  it 'should make the script executable' do
-#    File.executable?(builds)
-#    :should == true
-#  end
-#end
 
 describe 'Cleanup' do
   it 'should remove the test directory' do

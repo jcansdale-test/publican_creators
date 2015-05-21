@@ -33,6 +33,19 @@ require 'PublicanCreators/checker'
 # Module what contains all methods who are doing changes in files
 module PublicanCreatorsChange
 
+  # Method for replacing content in agroup
+  # @param [String] nice_description is the default text in the target file
+  # @param [String] value_name the replace text
+  # @param [String] file Target file like Author_Group.xml
+  def self.add_result(nice_description, value_name, file)
+    text = File.read(file)
+    new_value = text.gsub(nice_description, value_name)
+    puts new_value
+    File.open(file, 'w') { |file|
+      file.puts new_value
+    }
+  end
+
   # Method for creating initial documentation for work. It asks for title, type, language, brand and db5 variable, creates a launch-string from them and launches publican.
   # Descriptions:
   # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
@@ -48,20 +61,16 @@ module PublicanCreatorsChange
       # @note Initial creation of documentation with publican
       puts 'Creating initial documentation ...'.color(:yellow)
       string = "--type Article --lang #{language} --name #{title}"
-      if brand == ''
-        # @note do nothing
-      else
-        string << " --brand #{brand}"
-      end
     else
       # @note Initial creation of documentation with publican
       puts 'Creating initial documentation ...'.color(:yellow)
       string = "--lang #{language} --name #{title}"
-      if brand == ''
-        # do nothing
-      else
-        string << " --brand #{brand}"
-      end
+    end
+    # @note If a work brand is set it will be used. Otherwise the publican brand will be used.
+    if brand == ''
+      # @note do nothing
+    else
+      string << " --brand #{brand}"
     end
     # @note Check if DocBook 5 wished as default, if yes it adds the @param dtdver 5.0 to string
     if db5 == 'true'
@@ -143,7 +152,7 @@ module PublicanCreatorsChange
   # @param [String] global_entities is just the path to the global entity file.
   # @param [String] brand can be a special customized brand for your company to fit the Styleguide.
   # @return [String] true or false
-  def self.add_entity(title, environment, global_entities, brand, ent)
+  def self.add_entity(environment, global_entities, brand, ent)
     if environment == 'Work'
       if brand == 'XCOM'
         puts 'Adding global entities...'.color(:yellow)
@@ -237,7 +246,7 @@ module PublicanCreatorsChange
   # @param [String] legal means if you don't like to have a Legal Notice on Publican's default place you can define it there. Actually it just works with Articles. In my case i'm
   # using the Legal Notice inside the Article's Structure.
   # @return [String] true or false
-  def self.remove_legal(title, environment, type, legal, artinfo)
+  def self.remove_legal(environment, type, legal, artinfo)
     if environment == 'Work'
       if type == 'Article'
         if legal == 'true'
@@ -275,34 +284,15 @@ module PublicanCreatorsChange
     surname = name[1]
     # @note Revision_History: Change default stuff to the present user
     puts 'Replace the default content with the new content from the user (Revision History)'.color(:yellow)
-    text = File.read(revhist)
-    vorname = text.gsub('Enter your first name here.', "#{firstname}")
-    puts vorname
-    File.open(revhist, 'w') { |file|
-      file.puts vorname
-    }
-    text = File.read(revhist)
-    nachname = text.gsub('Enter your surname here.', "#{surname}")
-    puts nachname
-    File.open(revhist, 'w') { |file|
-      file.puts nachname
-    }
-    text = File.read(revhist)
+    add_result('Enter your first name here.', "#{firstname}", revhist)
+    add_result('Enter your surname here.', "#{surname}", revhist)
+    add_result('Initial creation by publican', "Initial creation", revhist)
+
     if environment == 'Work'
-      email = text.gsub('Enter your email address here.', "#{email_business}")
+      add_result('Enter your email address here.', "#{email_business}", revhist)
     else
-      email = text.gsub('Enter your email address here.', "#{email}")
+      add_result('Enter your email address here.', "#{email}", revhist)
     end
-    puts email
-    File.open(revhist, 'w') { |file|
-      file.puts email
-    }
-    text = File.read(revhist)
-    member = text.gsub('Initial creation by publican', 'Initial creation')
-    puts member
-    File.open(revhist, 'w') { |file|
-      file.puts member
-    }
   end
 
   # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Work environment. It returns a sucess or fail.
@@ -312,61 +302,10 @@ module PublicanCreatorsChange
   # @param [String] email_business is your business email address.
   # @param [String] company_name is just your companies name.
   # @param [String] company_division is your companies part/division.
-  # @return [String] true or false
-  def self.fix_authorgroup_work(name, email_business, company_name, company_division, agroup)
-    namechomp = name.chomp
-    # @note Split the variable to the array title[*]
-    name = namechomp.split(' ')
-    firstname = name[0]
-    surname = name[1]
-    # @note Author Group: Change the default stuff to the present user
-    puts 'Replace the default content with the new content from the user (Authors_Group)'.color(:yellow)
-    text = File.read(agroup)
-    vorname = text.gsub('Enter your first name here.', "#{firstname}")
-    puts vorname
-    File.open(agroup, 'w') { |file|
-      file.puts vorname
-    }
-    text = File.read(agroup)
-    nachname = text.gsub('Enter your surname here.', "#{surname}")
-    puts nachname
-    File.open(agroup, 'w') { |file|
-      file.puts nachname
-    }
-    text = File.read(agroup)
-    email = text.gsub('Enter your email address here.', "#{email_business}")
-    puts email
-    File.open(agroup, 'w') { |file|
-      file.puts email
-    }
-    text = File.read(agroup)
-    member = text.gsub('Initial creation by publican', 'Initial creation')
-    puts member
-    File.open(agroup, 'w') { |file|
-      file.puts member
-    }
-    text = File.read(agroup)
-
-    org = text.gsub('Enter your organisation\'s name here.', "#{company_name}")
-    puts org
-    File.open(agroup, 'w') { |file|
-      file.puts org
-    }
-    text = File.read(agroup)
-    div = text.gsub('Enter your organisational division here.', "#{company_division}")
-    puts div
-    File.open(agroup, 'w') { |file|
-      file.puts div
-    }
-  end
-
-  # This method replaces the standard values from Author_Group to the present user issues. It will be launched for the Private environment. It returns a success or fail.
-  # Descriptions:
-  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-  # @param [String] name is your name.
   # @param [String] email is your private email address.
+  # @param [String] agroup Path to Author_Group.xml
   # @return [String] true or false
-  def self.fix_authorgroup_private(name, email, agroup)
+  def self.fix_authorgroup(name, email_business, company_name, company_division, email, environment, agroup)
     namechomp = name.chomp
     # @note Split the variable to the array title[*]
     name = namechomp.split(' ')
@@ -374,54 +313,18 @@ module PublicanCreatorsChange
     surname = name[1]
     # @note Author Group: Change the default stuff to the present user
     puts 'Replace the default content with the new content from the user (Authors_Group)'.color(:yellow)
-    text = File.read(agroup)
-    vorname = text.gsub('Enter your first name here.', "#{firstname}")
-    puts vorname
-    File.open(agroup, 'w') { |file|
-      file.puts vorname
-    }
-    text = File.read(agroup)
-    nachname = text.gsub('Enter your surname here.', "#{surname}")
-    puts nachname
-    File.open(agroup, 'w') { |file|
-      file.puts nachname
-    }
-    text = File.read(agroup)
-    email = text.gsub('Enter your email address here.', "#{email}")
+    add_result('Enter your first name here.', "#{firstname}", agroup)
+    add_result('Enter your surname here.', "#{surname}", agroup)
+    add_result('Initial creation by publican', "Initial creation", agroup)
 
-    puts email
-    File.open(agroup, 'w') { |file|
-      file.puts email
-    }
-    text = File.read(agroup)
-    member = text.gsub('Initial creation by publican', 'Initial creation')
-    puts member
-    File.open(agroup, 'w') { |file|
-      file.puts member
-    }
-    text = File.read(agroup)
-    org = text.gsub('Enter your organisation\'s name here.', '')
-
-    puts org
-    File.open(agroup, 'w') { |file|
-      file.puts org
-    }
-    text = File.read(agroup)
-    div = text.gsub('Enter your organisational division here.', '')
-
-    puts div
-    File.open(agroup, 'w') { |file|
-      file.puts div
-    }
-  end
-
-  # Make the buildscript executable
-  # It returns a sucess or fail.
-  # Description:
-  # @param [String] builds is the path to your buildscript
-  # @return [String] true or false
-  def self.make_buildscript_exe(builds)
-    puts 'Making the buildscript executable ...'.color(:yellow)
-    FileUtils.chmod 'u=rwx,go=rwx', "#{builds}"
+    if environment == 'Work'
+      add_result('Enter your email address here.', "#{email_business}", agroup)
+      add_result('Enter your organisation\'s name here.', "#{company_name}", agroup)
+      add_result('Enter your organisational division here.', "#{company_division}", agroup)
+    else
+      add_result('Enter your email address here.', "#{email}", agroup)
+      add_result('Enter your organisation\'s name here.', '', agroup)
+      add_result('Enter your organisational division here.', '', agroup)
+    end
   end
 end

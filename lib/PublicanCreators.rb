@@ -210,7 +210,7 @@ class PublicanCreators
     # @param [String] environment Work or Private
     # @param [String] global_entities path to a global entities file (config file)
     # @param [String] brand e.g. Debian or nothing for using publicans default brand (config file)
-    PublicanCreatorsChange.add_entity(title, environment, global_entities, brand, ent)
+    PublicanCreatorsChange.add_entity(environment, global_entities, brand, ent)
 
     # @param [String] title comes from titleget[3]
     # @param [String] environment Work or Private
@@ -222,7 +222,7 @@ class PublicanCreators
     # @param [String] environment Work or Private
     # @param [String] type Book or Article
     # @param [String] legal remove legalnotice from article? (config file)
-    PublicanCreatorsChange.remove_legal(title, environment, type, legal, artinfo) #
+    PublicanCreatorsChange.remove_legal(environment, type, legal, artinfo) #
 
     # @param [String] artinfo path to Article_Info (hardcoded)
     # @param [String] bookinfo path to Book_Info (hardcoded)
@@ -246,11 +246,7 @@ class PublicanCreators
     # @param [String] company_name your company's name (config file)
     # @param [String] company_division your companiy's division
     # @param [String] email your private email address
-    if environment == 'Work'
-      PublicanCreatorsChange.fix_authorgroup_work(name, email_business, company_name, company_division, agroup)
-    else
-      PublicanCreatorsChange.fix_authorgroup_private(name, email, agroup)
-    end
+    PublicanCreatorsChange.fix_authorgroup(name, email_business, company_name, company_division, email, environment, agroup)
 
     # @param [String] title comes from titleget[3]
     # @param [String] builds path to buildscript (hardcoded)
@@ -258,9 +254,6 @@ class PublicanCreators
     # @param [String] xfc_brand_dir if present the path to your branded xfc stylesheets (config file)
     # @param [String] pdfview your prefered PDF-Viewer (config file)
     PublicanCreatorsExport.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
-
-    # @param [String] builds path to buildscript (hardcoded)
-    #PublicanCreatorsChange.make_buildscript_exe(builds)
 
     puts "Now you can find your documentation there: #{targetdir}/#{title}".color(:yellow)
 
