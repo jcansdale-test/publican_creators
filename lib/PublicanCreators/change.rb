@@ -135,7 +135,7 @@ module PublicanCreatorsChange
   end
 
 
-
+  # This method checks the environment and runs the method for
   def self.check_environment(environment, title, type, language, brand, db5, homework, brand_homework, brand_private)
     if environment == 'Work'
       init_docu_work(title, type, language, brand, db5)

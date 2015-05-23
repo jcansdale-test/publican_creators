@@ -38,7 +38,11 @@ module PublicanCreatorsPrepare
   def self.prepare_work(type, reports_dir_business, articles_dir_bus, report, books_dir_business)
     home = Dir.home
     if type == 'Article'
-      articles_dir = prepare_target_work_article(reports_dir_business, articles_dir_bus, report)
+      if report == 'TRUE'
+        articles_dir = "#{home}/#{reports_dir_business}"
+      else
+        articles_dir = "#{home}/#{articles_dir_bus}"
+      end
       return articles_dir
     else
       books_dir = "#{home}/#{books_dir_business}"
@@ -58,44 +62,16 @@ module PublicanCreatorsPrepare
   def self.prepare_private(type, homework, articles_dir_private, homework_dir_private, books_dir_private)
     home = Dir.home
     if type == 'Article'
-      articles_dir = prepare_target_private_article(homework, articles_dir_private, homework_dir_private)
+      if homework == 'FALSE'
+        articles_dir = "#{home}/#{articles_dir_private}"
+      else
+        articles_dir = "#{home}/#{homework_dir_private}"
+      end
       return articles_dir
     else
       books_dir = "#{home}/#{books_dir_private}"
       return books_dir
     end
-  end
-
-  # In case of type == Article this tests will be launched It returns a articles_dir
-  # Description:
-  # @param [String] reports_dir_business reports_dir_business contains the directory to your reports
-  # @param [String] articles_dir_bus represents the directory for your articles
-  # @param [String] report contains a true or false. There you can set if the new Publication is a Report or not.
-  # @return [String] articles_dir
-  def self.prepare_target_work_article(reports_dir_business, articles_dir_bus, report)
-    home = Dir.home
-    if report == 'TRUE'
-      articles_dir = "#{home}/#{reports_dir_business}"
-    else
-      articles_dir = "#{home}/#{articles_dir_bus}"
-    end
-    return articles_dir
-  end
-
-  # This method prepares the target directory for a private article. It returns the articles_dir.
-  # Description:
-  # @param [String] homework contains true or false. If your present Publication is a homework you can set it there.
-  # @param [String] articles_dir_private contains the path to your private articles dir
-  # @param [String] homework_dir_private contains the path to your homeworks.
-  # @return [String] articles_dir
-  def self.prepare_target_private_article(homework, articles_dir_private, homework_dir_private)
-    home = Dir.home
-    if homework == 'FALSE'
-      articles_dir = "#{home}/#{articles_dir_private}"
-    else
-      articles_dir = "#{home}/#{homework_dir_private}"
-    end
-    return articles_dir
   end
 
   def self.prepare(environment, type, reports_dir_business, articles_dir_business, report, books_dir_business,homework, articles_dir_private, homework_dir_private, books_dir_private)

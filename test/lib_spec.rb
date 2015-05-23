@@ -15,15 +15,10 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 #Test environment
 title = 'The_holy_Bible'
-home = Dir.home
-#dir = "#{home}/Dokumente/Textdokumente/publican_test/articles"
 environment = 'Dienstlich'
 type = 'Article'
-homework = 'FALSE'
 language = 'de-DE'
 brand = 'XCOM'
-brand_homework = 'ils'
-brand_private = 'manns'
 db5 = 'true'
 legal = 'true'
 title_logo = 'false'
@@ -34,6 +29,7 @@ company_name = 'XCOM AG'
 company_division = 'SWE7'
 ent = "#{title}/de-DE/#{title}.ent"
 artinfo = "#{title}/de-DE/Article_Info.xml"
+bookinfo = "#{title}/de-DE/Book_Info.xml"
 revhist = "#{title}/de-DE/Revision_History.xml"
 agroup = "#{title}/de-DE/Author_Group.xml"
 builds = "#{title}/de-DE/Rakefile"
@@ -52,7 +48,7 @@ end
 
 describe 'Entity Changer' do
   it 'should add the XCOM Entities' do
-    PublicanCreatorsChange.add_entity(environment, global_entities, brand, ent)
+    PublicanCreatorsChange.add_entity(environment, global_entities, ent)
     f = File.new(ent)
     text = f.read
     true
@@ -65,7 +61,7 @@ end
 
 describe 'Orgname Remover' do
   it 'should remove the Orgname node from the XML file' do
-    PublicanCreatorsChange.remove_orgname(artinfo, title_logo)
+    PublicanCreatorsChange.remove_orgname(bookinfo, artinfo, title_logo, type)
     f = File.new(artinfo)
     text = f.read
     true
