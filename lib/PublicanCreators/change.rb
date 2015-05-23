@@ -67,18 +67,12 @@ module PublicanCreatorsChange
       string = "--lang #{language} --name #{title}"
     end
     # @note If a work brand is set it will be used. Otherwise the publican brand will be used.
-    if brand == ''
+    if brand.empty?
       # @note do nothing
     else
       string << " --brand #{brand}"
     end
-    # @note Check if DocBook 5 wished as default, if yes it adds the @param dtdver 5.0 to string
-    if db5 == 'true'
-      string << ' --dtdver 5.0'
-    end
-    system("publican create #{string}")
-    # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-    PublicanCreatorsChange.check_result(title)
+    create_docu(string, db5, title)
   end
 
   # Method for creating initial documentation for private. It asks for title, type, language, homework, brand_homework, brand_private
@@ -99,7 +93,7 @@ module PublicanCreatorsChange
       if homework == 'FALSE'
         puts 'Creating initial documentation ...'.color(:yellow)
         string = "--type Article --lang #{language} --name #{title}"
-        if brand_private == ''
+        if brand_private.empty?
           # @note do nothing
         else
           string << " --brand #{brand_private}"
@@ -107,9 +101,9 @@ module PublicanCreatorsChange
       else
         puts 'Creating initial documentation ...'.color(:yellow)
         string = "--type Article --lang #{language} --name #{title}"
-        if brand_private == ''
+        if brand_private.empty?
           # do nothing
-        else
+        elsif brand_homework != ''
           string << " --brand #{brand_homework}"
         end
       end
@@ -123,13 +117,33 @@ module PublicanCreatorsChange
         string << " --brand #{brand_private}"
       end
     end
+    create_docu(string, db5, title)
+  end
+
+  # This method uses the input of init_docu methods to create the documentation
+  # @param [String] string This input comes from init_docu
+  # @param [String] db5 just sets your preferences. If you like to have DocBook 5.x as default you can set it there.
+  # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
+  def self.create_docu(string, db5, title)
+    # @note Check if DocBook 5 wished as default, if yes it adds the @param dtdver 5.0 to string
     if db5 == 'true'
       string << ' --dtdver 5.0'
     end
-    system("publican create #{string}").color(:yellow)
+    system("publican create #{string}")
     # @param [String] title comes from the get method. This @param represents the name or title of your work. It is used in all important code places.
-    PublicanCreatorsChange.check_result(title)
+    check_result(title)
   end
+
+
+
+  def self.check_environment(environment, title, type, language, brand, db5, homework, brand_homework, brand_private)
+    if environment == 'Work'
+      init_docu_work(title, type, language, brand, db5)
+    else
+      init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
+    end
+  end
+
 
   # This method will be launched from the init_docu_* methods. It returns a success, otherwise it raises with a error.
   # Descriptions:
@@ -152,9 +166,11 @@ module PublicanCreatorsChange
   # @param [String] global_entities is just the path to the global entity file.
   # @param [String] brand can be a special customized brand for your company to fit the Styleguide.
   # @return [String] true or false
-  def self.add_entity(environment, global_entities, brand, ent)
+  def self.add_entity(environment, global_entities, ent)
     if environment == 'Work'
-      if brand == 'XCOM'
+      if global_entities.empty?
+        puts 'Nothing to do'.color(:yellow)
+      else
         puts 'Adding global entities...'.color(:yellow)
         # @note Adding global entities
         open(ent, 'a') { |f|
@@ -169,7 +185,7 @@ module PublicanCreatorsChange
         output.close
       end
     else
-      puts 'Nothing to do'.color(:yellow)
+      puts 'Nothing to do'
     end
   end
 
@@ -185,16 +201,18 @@ module PublicanCreatorsChange
     # @note Replace the Holder with the real one
     puts 'Replace holder field with the present user'.color(:yellow)
     if environment == 'Work'
-      text = File.read(ent)
-      new_contents = text.gsub("| You need to change the HOLDER entity in the de-DE/#{title}.ent file |", "#{company_name}")
-      puts new_contents
-      File.open(ent, 'w') { |file| file.puts new_contents }
+      namefill = "#{company_name}"
     else
-      text = File.read(ent)
-      new_contents = text.gsub("| You need to change the HOLDER entity in the de-DE/#{title}.ent file |", "#{name}")
-      puts new_contents
-      File.open(ent, 'w') { |file| file.puts new_contents }
+      namefill = "#{name}"
     end
+    change_holder_do(namefill, title, ent)
+  end
+
+  def self.change_holder_do(namefill, title, ent)
+    text = File.read(ent)
+    new_contents = text.gsub("| You need to change the HOLDER entity in the de-DE/#{title}.ent file |", "#{namefill}")
+    puts new_contents
+    File.open(ent, 'w') { |file| file.puts new_contents }
   end
 
   # This method removes the <orgname> node from the XML file. Remove titlepage logo because of doing this with the publican branding files. This method will applied if
@@ -204,7 +222,12 @@ module PublicanCreatorsChange
   # @param [String] info can be the Article_Info or Book_Info. Which is used there depends on the @param "type".
   # @param [String] title_logo means that you can set if you want to use Publican's Title Logo or use your own Title Logo with your Stylesheets.
   # @return [String] true or false
-  def self.remove_orgname(info, title_logo)
+  def self.remove_orgname(bookinfo, artinfo, title_logo, type)
+    if type == 'Article'
+      info = artinfo
+    else
+      info = bookinfo
+    end
     if title_logo == 'false'
       puts 'Remove title logo from Article_Info or Books_Info'.color(:yellow)
       doc = Nokogiri::XML(IO.read(info))
@@ -277,11 +300,7 @@ module PublicanCreatorsChange
   # @param [String] email is your private email address.
   # @return [String] true or false
   def self.fix_revhist(environment, name, email_business, email, revhist)
-    namechomp = name.chomp
-    # @note Split the variable to the array title[*]
-    name = namechomp.split(' ')
-    firstname = name[0]
-    surname = name[1]
+    firstname, surname = get_name(name)
     # @note Revision_History: Change default stuff to the present user
     puts 'Replace the default content with the new content from the user (Revision History)'.color(:yellow)
     add_result('Enter your first name here.', "#{firstname}", revhist)
@@ -306,11 +325,7 @@ module PublicanCreatorsChange
   # @param [String] agroup Path to Author_Group.xml
   # @return [String] true or false
   def self.fix_authorgroup(name, email_business, company_name, company_division, email, environment, agroup)
-    namechomp = name.chomp
-    # @note Split the variable to the array title[*]
-    name = namechomp.split(' ')
-    firstname = name[0]
-    surname = name[1]
+    firstname, surname = get_name(name)
     # @note Author Group: Change the default stuff to the present user
     puts 'Replace the default content with the new content from the user (Authors_Group)'.color(:yellow)
     add_result('Enter your first name here.', "#{firstname}", agroup)
@@ -326,5 +341,14 @@ module PublicanCreatorsChange
       add_result('Enter your organisation\'s name here.', '', agroup)
       add_result('Enter your organisational division here.', '', agroup)
     end
+  end
+
+  def self.get_name(name)
+    namechomp = name.chomp
+    # @note Split the variable to the array title[*]
+    name = namechomp.split(' ')
+    firstname = name[0]
+    surname = name[1]
+    [firstname, surname]
   end
 end

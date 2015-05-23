@@ -67,43 +67,27 @@ class PublicanCreators
   puts 'OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN'.color(:yellow)
   puts 'THE SOFTWARE.'.color(:yellow)
 
-  home = Dir.home
-  if File.exist?("#{home}/.publicancreators.cfg")
-    puts 'Found configuration file and using it...'.color(:yellow)
-  else
-    # @raise
-    puts 'Please run rake setup'.color(:red)
-    raise('Exiting now..').color(:red)
+  # This method checks if a oldconfig is available
+  def self.oldconfig
+    home = Dir.home
+    if File.exist?("#{home}/.publicancreators.cfg")
+      puts 'Found configuration file and using it...'.color(:yellow)
+    else
+      # @raise
+      puts 'Please run rake setup'.color(:red)
+      raise('Exiting now..').color(:red)
+    end
   end
+
+  # @note Check oldconfig
+  oldconfig
 
   puts 'Reading the config file in ~/.publicancreators.cfg'
   # @note Run config method who reads in the config file and puts the variables in an array
-  PublicanCreatorsGet.config
-  a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x = PublicanCreatorsGet.config
-  name = "#{a}"
-  email = "#{b}"
-  language = "#{c}"
-  use_brand = "#{d}"
-  title_logo = "#{e}"
-  legal = "#{f}"
-  brand = "#{g}"
-  company_name = "#{h}"
-  company_division = "#{i}"
-  email_business = "#{j}"
-  brand_dir = "#{k}"
-  glob_entities = "#{l}"
-  articles_dir_business = "#{m}"
-  reports_dir_business = "#{n}"
-  books_dir_business = "#{o}"
-  articles_dir_private = "#{p}"
-  homework_dir_private = "#{q}"
-  books_dir_private = "#{r}"
-  brand_private = "#{s}"
-  brand_homework = "#{t}"
-  db5 = "#{u}"
-  conf_ver = "#{v}"
-  xfc_brand_dir = "#{w}"
-  pdfview = "#{x}"
+  name, email, language, use_brand, title_logo, legal, brand, company_name, company_division, email_business,
+      brand_dir, glob_entities, articles_dir_business, reports_dir_business, books_dir_business, articles_dir_private,
+      homework_dir_private, books_dir_private, brand_private, brand_homework, db5, conf_ver, xfc_brand_dir,
+      pdfview = PublicanCreatorsGet.config
 
   puts 'Your configuration is:'.color(:yellow)
   puts "Your Name: #{name}".color(:yellow)
@@ -132,31 +116,41 @@ class PublicanCreators
   puts "Your prefered PDF-Viewer: #{pdfview}".color(:yellow)
 
   global_entities = "#{brand_dir}/#{glob_entities}"
+  puts "Your global entities file is there: #{global_entities}"
 
   # @note Ask for the title and other settings via yad and put them into a array
-  titleget = PublicanCreatorsGet.title
-
-  environment = titleget[0]
-  type = titleget[1]
-  opt = titleget[2]
-  title = titleget[3]
+  environment, type, opt, title = PublicanCreatorsGet.title
 
   puts "Environment: #{environment}".color(:yellow)
   puts "Type: #{type}".color(:yellow)
   puts "Optional: #{opt}".color(:yellow)
   puts "Title: #{title}".color(:yellow)
 
-  # @note Set default values
-  if opt == 'Report'
-    report = 'TRUE'
-  else
-    report = 'FALSE'
+  # This method sets the default value for report
+  # @param [String] opt Can be Report or Homework or Normal
+  # @return [String] report
+  def self.defaults_report(opt)
+    if opt == 'Report'
+      report = 'TRUE'
+    else
+      report = 'FALSE'
+    end
+    return report
   end
-  if opt == 'Homework'
-    homework = 'TRUE'
-  else
-    homework = 'FALSE'
+  report = defaults_report(opt)
+
+  # This method sets the default value for report
+  # @param [String] opt Can be Report or Homework or Normal
+  # @return [String] report
+  def self.defaults_homework(opt)
+    if opt == 'Homework'
+      homework = 'TRUE'
+    else
+      homework = 'FALSE'
+    end
+    return homework
   end
+  homework = defaults_homework(opt)
 
   # @note Hardcoded variables
   artinfo = "#{title}/#{language}/Article_Info.xml"
@@ -176,11 +170,7 @@ class PublicanCreators
   # @param [String] articles_dir_private path to your private articles directory
   # @param [String] homework path to your homework directory
   # @param [String] books_dir_private path to your private books directory
-  if environment == 'Work'
-    targetdir = PublicanCreatorsPrepare.prepare_work(type, reports_dir_business, articles_dir_business, report, books_dir_business)
-  else
-    targetdir = PublicanCreatorsPrepare.prepare_private(type, homework, articles_dir_private, homework_dir_private, books_dir_private)
-  end
+  targetdir = PublicanCreatorsPrepare.prepare(environment, type, reports_dir_business, articles_dir_business, report, books_dir_business,homework, articles_dir_private, homework_dir_private, books_dir_private)
 
   # @note Checks if the needed directory targetdir is available. Otherwise it creates one.
   puts "Creating directory #{targetdir}".color(:yellow)
@@ -200,17 +190,13 @@ class PublicanCreators
     # @param [String] homework true or false
     # @param [String] brand_homework e.g. ils (config file)
     # @param [String] brand_private e.g. manns (config file)
-    if environment == 'Work'
-      PublicanCreatorsChange.init_docu_work(title, type, language, brand, db5)
-    else
-      PublicanCreatorsChange.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
-    end
+    PublicanCreatorsChange.check_environment(environment, title, type, language, brand, db5, homework, brand_homework, brand_private)
 
     # @param [String] title comes from titleget[3]
     # @param [String] environment Work or Private
     # @param [String] global_entities path to a global entities file (config file)
     # @param [String] brand e.g. Debian or nothing for using publicans default brand (config file)
-    PublicanCreatorsChange.add_entity(environment, global_entities, brand, ent)
+    PublicanCreatorsChange.add_entity(environment, global_entities, ent)
 
     # @param [String] title comes from titleget[3]
     # @param [String] environment Work or Private
@@ -228,11 +214,7 @@ class PublicanCreators
     # @param [String] bookinfo path to Book_Info (hardcoded)
     # @param [String] title_logo remove titlelogo from articlepage (config file)
     # @param [String] type Book or Article
-    if type == 'Article'
-      PublicanCreatorsChange.remove_orgname(artinfo, title_logo)
-    else
-      PublicanCreatorsChange.remove_orgname(bookinfo, title_logo)
-    end
+    PublicanCreatorsChange.remove_orgname(bookinfo, artinfo, title_logo, type)
 
     # @param [String] environment Work or Private
     # @param [String] name your name (config file)

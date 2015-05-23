@@ -31,19 +31,10 @@ require File.expand_path(File.join(File.dirname(__FILE__), 'get.rb'))
 # A class for creating a revison to a publican project
 class RevisionCreator
   # @note Ask for the revision information
-  revisionget = PublicanCreatorsGet.revision
+  directory, member1, member2, member3, member4, member5, revnumber = PublicanCreatorsGet.revision
   language = PublicanCreatorsGet.config_revision
-  directory = revisionget[1]
-  member1 = revisionget[2]
-  member2 = revisionget[3]
-  member3 = revisionget[4]
-  member4 = revisionget[5]
-  member5 = revisionget[6]
-  revnumber = revisionget[7]
 
-  revisionsplit = revnumber.split('-')
-  revision = revisionsplit[0]
-  edition = revisionsplit[1]
+  revision, edition = revnumber.split('-')
 
   puts "Directory: #{directory}".color(:yellow)
   puts "Member1: #{member1}".color(:yellow)
@@ -56,8 +47,7 @@ class RevisionCreator
   puts "Revision: #{revision}".color(:yellow)
   puts "Edition: #{edition}".color(:yellow)
 
-  # @param [String] directory The directory where the projects publican.cfg is
-  FileUtils.cd(directory) do
+  def self.prepare_revision(member1, member2, member3, member4, member5, revnumber, language)
     string = "--member \"#{member1}\""
     if member2 == ''
       puts 'Do nothing'
@@ -81,6 +71,10 @@ class RevisionCreator
     end
     string << " --revnumber \"#{revnumber}\""
     string << " --lang \"#{language}\""
+  end
+  # @param [String] directory The directory where the projects publican.cfg is
+  FileUtils.cd(directory) do
+    string = prepare_revision(member1, member2, member3, member4, member5, revnumber, language)
     PublicanCreatorsChange.replace_productnumber(revision, edition, language)
     system("publican add_revision #{string}")
   end
