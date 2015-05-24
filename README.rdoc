@@ -25,9 +25,11 @@ donations :: {<img src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateC
 == Description
 
 PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators asks after
-launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. So it adds the users
-information in the Article_Info, Revision_History and so on.
-You can write your own settings in the Configurations file.
+launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files.
+It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
+will replace the default values with your name, your company, your company_divison and your private or your business
+email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
+ the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
 
 == Installation
 

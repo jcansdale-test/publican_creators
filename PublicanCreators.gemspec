@@ -10,7 +10,12 @@ Gem::Specification.new do |spec|
   spec.email = ['Sascha.Manns@bdvb.de']
 
   spec.summary = %q{A short program to fix the publican documentation}
-  spec.description = %q{PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [fedorahosted.org/publican/]. PublicanCreators asks after launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. So it adds the users information in the Article_Info, Revision_History and so on. You can write your own settings in the Configurations file.}
+  spec.description = %q{PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators asks after
+launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files.
+It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
+will replace the default values with your name, your company, your company_divison and your private or your business
+email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
+ the Title Logo or the Legal Notice. As a feature it ships a build script for each project.}
   spec.homepage = 'https://github.com/saigkill/PublicanCreators'
   spec.license = 'MIT'
 
