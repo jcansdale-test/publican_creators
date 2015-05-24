@@ -110,7 +110,7 @@ msgstr ""
 msgid "Release 0.2.0 (2015-05-07)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.2.0</secondary>"
 msgstr ""
 
 msgid "PC-6: Create rules for setup Fedora"
@@ -149,7 +149,7 @@ msgstr ""
 msgid "Release 0.1.0 (2015-04-25)"
 msgstr ""
 
-msgid "<primary>Release Notes</primary> <secondary>0.1.0</secondary>"
+msgid "<primary>Release Notes</primary> <secondary>0.3.0</secondary>"
 msgstr ""
 
 msgid "Build the base functions"

@@ -22,3 +22,4 @@ msgstr "Diese Dokumentation beinhaltet keine Anleitung zu <quote>Publican</quote
 
 msgid "PublicanCreators was launched because to help people who working daily with Publican and DocBook in different formats and environments. So i would like to thank the Publican people for building this great tool. Also i'm thanking the Ruby guys in special the Nokogiri and Parseconfig teams. A special thank goes to the guys on stackoverflow who helped me a lot of times."
 msgstr "PublicanCreators wurde gestartet, um Menschen zu helfen, die täglich mit Publican und DocBook und in verschiedenen Formaten und Umgebungen zu tun haben. Ich danke den Entwicklern von Ruby und im besonderen den Entwicklern von Nokogiri und Parseconfig. Einen besonderen Dank möchte ich den Usern der Plattform Stackoverflow widmen, die mir sehr geholfen haben."
+

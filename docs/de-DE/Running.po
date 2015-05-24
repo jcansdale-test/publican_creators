@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-05-20 20:48+0100\n"
+"PO-Revision-Date: 2015-05-24 21:33+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: en_US\n"
@@ -59,6 +59,51 @@ msgstr "Der gewählte Name solle der des Rootdokumentes sein. Im obigen Beispiel
 msgid "After clicking on <guibutton>Go!</guibutton> the documentation will be created by publican."
 msgstr "Nach dem Klick auf <guibutton>Go!</guibutton> wird die Dokumentation mit Publican erstellt."
 
+msgid "What it does?"
+msgstr "Was macht es?"
+
+msgid "It runs the method <quote>oldconfig</quote> to check if a users configuration file is available. If not, it will break and suggest to run <quote>rake setup_start</quote>."
+msgstr "Zuerst startet die Methode <quote>oldconfig</quote> um herauszufinden, ob ein User Configfile existiert. Falls nicht, bricht es ab, und empfiehlt <quote>rake setup_start</quote> auszuführen."
+
+msgid "The PublicanCreatorsGet.config method will be launched. The method returns a array which will splitted into the used variables."
+msgstr "Die PublicanCreatorsGet.config Methode startet, und gibt ein Array zurück. Dieses wird in die intern benutzten Variablen aufgeteilt."
+
+msgid "The PublicanCreatorsGet.title will be launched. This method returns a array which will be splitted into the variables <quote>environment</quote>, <quote>type</quote>, <quote>opt</quote> and <quote>title</quote>. The <quote>environment</quote> reflects the situation private or work. <quote>type</quote> will be article or book. <quote>opt</quote> can be report, homework or just normal."
+msgstr "Die jetzt gestartete PublicanCreatorsGet.title gibt ein Array zurück, welches auf die Variablen <quote>environment</quote>, <quote>type</quote>, <quote>opt</quote> und <quote>title</quote> aufgeteilt wird. Die <quote>environment</quote> reflektiert die aktuelle Umgebung Private oder Work. <quote>type</quote> könnte Article oder Book sein.  <quote>opt</quote> könnte Report, Homework oder Normal (Leer) sein."
+
+msgid "The PublicanCreatorsPrepare.prepare will be launched. It will find out what target directory to be used. This depends on your configuration file and your given input from the previous method."
+msgstr "Jetzt startet die PublicanCreatorsPrepare.prepare Methode, welche herausfindet, welches Zielverzeichnis zu benutzen ist. Dies hängt sowohl von Ihren Einstellungen im Config File ab, als auch von Ihren Eingaben in der GUI."
+
+msgid "Checker.check is a method who creates the targetdirectory if it doesn't exist."
+msgstr "Checker.check ist die Methode, welche das Zielverzeichnis erstellt, sofern es noch nicht existiert."
+
+msgid "With the FileUtils.cd method it jumps into the new created directory."
+msgstr "Die Methode FileUtils.cd wechselt in das neu erstellte Verzeichnis."
+
+msgid "Now PublicanCreatorsChange.check_environment checks the environment and runs PublicanCreatorsChange.init_docu_work or PublicanCreatorsChange.init_docu_private for running <command>publican create</command> with all chosen flags."
+msgstr "Als nächstes startet die Methode PublicanCreatorsChange.check_environment, um gemäß des jeweiligen Environements mittels <command>publican create</command> die Dokumentation zu erstellen."
+
+msgid "PublicanCreatorsChange.add_entity will work with your TITLE.ent file. If the environment <quote>Work</quote> is chosen, and the variable <quote>global_entities</quote> is filled, it will copy the whole content of the entity file to your new local entity file. The variable <quote>global_entities</quote> can set in your users configuration file."
+msgstr "PublicanCreatorsChange.add_entity arbeitet jetzt mit Ihrem TITLE.ent File. Falls das Environment <quote>Work</quote> gewählt wurde und die Variable <quote>global_entities</quote> gesetzt wurde, kopiert die Methode den Inhalt des globalen Entityfiles in das lokale Entityfile Ihres neuen Projektes."
+
+msgid "Next the method PublicanCreatorsChange.change_holder works with your entity file too. In case of private environment it will use your name as HOLDER. Otherwise it uses your companies name."
+msgstr "Die nächste Methode PublicanCreatorsChange.change arbeitet ebenfalls mit Ihrem Entityfile. Im Fall des Environments \"Work\" wird der company_name eingetragen, andernfalls ziert Ihr Name die Entität HOLDER."
+
+msgid "Sometimes its useful to do not use the given legal notice (In case of small documents or reports). If you are in environment <quote>Work</quote> and has chosen <quote>Article</quote> and has set <quote>legal = true</quote> in your configuration file it (PublicanCreatorsChange.remove_legal) will remove the legal notice."
+msgstr "Manchmal kann es nützlich sein, auf eine vollständige Legal Notice zu verzichten (z.B. für kleinere Dokumente oder Reports). Wenn Sie im Environment <quote>Work</quote> arbeiten, und <quote>Article</quote> auswählten und <quote>legal = true</quote> setzten, wird PublicanCreatorsChange.remove_legal die Legal Notice entfernen."
+
+msgid "Per default Publican adds some Docbook lines for including a title logo. If you are already defined a Title Logo in your XSL-Stylesheets then you can set <quote>title_logo = false</quote>. Then the method PublicanCreatorsChange.remove_orgname removes the predefined title logo from the Article_Info.xml or Book_Info.xml from your project."
+msgstr "Standardmäßig fügt Publican einige Docbook Zeilen hinzu, die in einem Titellogo resultiert. Haben SIe Ihr Titellogo bereits in Ihren XSL-Stylesheets definiert, können sie mit <quote>title_logo = false</quote> den Title Logo entfernen."
+
+msgid "Next step is PublicanCreatorsChange.fix_revhist. In all environments it will use the firstname and surname of the user and replaces them with the default entries in Revision_History.xml. In case of using in environment <quote>Work</quote> it will use your work email address for replacing the default. Otherwise it uses your private address."
+msgstr "Die nächste Methode PublicanCreatorsChange.fix_revhist ersetzt in der Revision_History.xml die Voreinstellungen für den Vor- und Nachnamen mit Ihrem. Falls das Environment <quote>Work</quote> benutzt wird, wird die Arbeitsemailadresse verwendet, andernfalls Ihre Privatemailadresse."
+
+msgid "Now the method PublicanCreatorsChange.fix_authorgroup does similar the previous method just for the Author_Group.xml file. In addition it can set the company_name and company_division if chosen."
+msgstr "Jetzt wird die Methode PublicanCreatorsChange.fix_authorgroup gestartet, die in etwa das tut, wie die vorherige. Jedoch ändert sie die Author_Group.xml. Falls das Environment \"Work\" gesetzt ist, fügt die Methode den company_name und die company_division hinzu."
+
+msgid "The last method PublicanCreatorsExport.export_buildscript generates a buildscript for your project."
+msgstr "Die letzte Methode PublicanCreatorsExport.export_buildscript generiert ein Buildscript für das aktuelle Projekt."
+
 msgid "Add a revision"
 msgstr "Eine Revision hinzufügen"
 
@@ -86,11 +131,11 @@ msgstr "<emphasis role=\"bold\">Revision number</emphasis>: Hier tragen Sie Ihre
 msgid "From Version 0.4.4.0 PublicanCreators ships a new feature. The entered Revision number will be splitted internal. If you enter a number like <quote>0.4.1-0</quote> the program splits it into a revision number 0.4.1 and a edition number 0. So the productversion tag in Article_Info.xml or Book_Info.xml will be replaced with the revision number, and the edition field will become the edition value."
 msgstr "Ab der Version 0.4.4.0 bietet PublicanCreators ein neues automatisches Feature. Die eingegebene Revisionsnummer wird intern gesplittet. Wird beispielsweise eine Revisionsnummer <quote>0.4.1-0</quote> wird die 0.4.1 als Revisionsnummer verwendet, und die 0 als Editionsnummer. In der Article_Info.xml oder Book_Info.xml wird somit die Revisionsnummer als Produktnummer verwendet, und die Edition als Editionsnummer."
 
-#~ msgid "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Your Title</emphasis>. Use underscores instead of blanks."
-#~ msgstr "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Ihr Title</emphasis>. Benutzen Sie Unterstriche statt Leerzeichen."
-
 #~ msgid "Title: Your Title. Use underscores instead of blanks."
 #~ msgstr "Titel: Ihr gewünschter Titel (mit Unterstrichen statt Leerzeichen)"
+
+#~ msgid "<emphasis role=\"bold\">Commits</emphasis>: There you can place one to five <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug report."
+#~ msgstr "<emphasis role=\"bold\">Commits</emphasis>: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie regelmäßig mehr als 5 benötigen, eröffnen Sie einen Bugreport."
 
 #~ msgid "Environment: Work or Private"
 #~ msgstr "Environment: Work oder Private (Arbeit oder Private)"
@@ -98,8 +143,9 @@ msgstr "Ab der Version 0.4.4.0 bietet PublicanCreators ein neues automatisches F
 #~ msgid "Projectdir: Use that to move to your target directory (That directory where your projects publican.cfg is)"
 #~ msgstr "Projectdir: Wechseln Sie mit dem Auswahlwerkzeug in Ihr Zielverzeichnis (das, indem auch Ihre Dokumentations publican.cfg steckt)"
 
-#~ msgid "<emphasis role=\"bold\">Commits</emphasis>: There you can place one to five <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug report."
-#~ msgstr "<emphasis role=\"bold\">Commits</emphasis>: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie regelmäßig mehr als 5 benötigen, eröffnen Sie einen Bugreport."
-
 #~ msgid "Revision number: There you can place your revision number."
 #~ msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."
+
+#~ msgid "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Your Title</emphasis>. Use underscores instead of blanks."
+#~ msgstr "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Ihr Title</emphasis>. Benutzen Sie Unterstriche statt Leerzeichen."
+

@@ -5,13 +5,14 @@ license :: http://opensource.org/licenses/MIT
 last public version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="version">}[http://rubygems.org/gems/PublicanCreators]
 continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/PublicanCreators]
 continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master" alt="integration state">}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators]
+continuous integration :: {<img src="http://evgeny-goldin.org/teamcity/app/rest/builds/buildType:(id:PublicanCreators_Build)/statusIcon" />}[http://saigkill.ddns.net:8111]
 test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/PublicanCreators?branch=master]
 code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators.png" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
 code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators]
 dependency check :: {<img src="https://gemnasium.com/saigkill/PublicanCreators.png" alt="Dependency Status" />}[https://gemnasium.com/saigkill/PublicanCreators]
 still maintained? :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintaining Status" /}[http://stillmaintained.com/saigkill/PublicanCreators]
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
-code documentation :: http://www.rubydoc.info/gems/PublicanCreators/0.4.0.0
+code documentation :: http://www.rubydoc.info/gems/PublicanCreators/0.4.6.0
 user documentation (en) :: http://saigkill.github.io/docs/publicancreators/en-US/html
 user documentation (de) :: http://saigkill.github.io/docs/publicancreators/de-DE/html
 bugs :: http://saigkill.ddns.net:8112/dashboard

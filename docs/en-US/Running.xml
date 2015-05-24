@@ -80,6 +80,87 @@
       the documentation will be created by
       publican.
     </para>
+    <section>
+      <info>
+        <title>What it does?</title>
+      </info>
+      <orderedlist>
+        <listitem>
+          <para>It runs the method <quote>oldconfig</quote> to check if a users configuration file
+            is available. If not, it will break and suggest to run <quote>rake
+            setup_start</quote>.</para>
+        </listitem>
+        <listitem>
+          <para>The PublicanCreatorsGet.config method will be launched. The method returns a array
+            which will splitted into the used variables.</para>
+        </listitem>
+        <listitem>
+          <para>The PublicanCreatorsGet.title will be launched. This method returns a array which
+            will be splitted into the variables <quote>environment</quote>, <quote>type</quote>,
+              <quote>opt</quote> and <quote>title</quote>.  The <quote>environment</quote> reflects
+            the situation private or work. <quote>type</quote> will be article or book.
+              <quote>opt</quote> can be report, homework or just normal.</para>
+        </listitem>
+        <listitem>
+          <para>The PublicanCreatorsPrepare.prepare will be launched. It will find out what target
+            directory to be used. This depends on your configuration file and your given input from
+            the previous method.</para>
+        </listitem>
+        <listitem>
+          <para>Checker.check is a method who creates the targetdirectory if it doesn't
+            exist.</para>
+        </listitem>
+        <listitem>
+          <para>With the FileUtils.cd method it jumps into the new created directory.</para>
+        </listitem>
+        <listitem>
+          <para>Now PublicanCreatorsChange.check_environment checks the environment and runs
+            PublicanCreatorsChange.init_docu_work or PublicanCreatorsChange.init_docu_private for
+            running <command>publican create</command> with all chosen flags.</para>
+        </listitem>
+        <listitem>
+          <para>PublicanCreatorsChange.add_entity will work with your TITLE.ent file. If the
+            environment <quote>Work</quote> is chosen, and the variable
+              <quote>global_entities</quote> is filled, it will copy the whole content of the entity
+            file to your new local entity file. The variable <quote>global_entities</quote> can set
+            in your users configuration file.</para>
+        </listitem>
+        <listitem>
+          <para>Next the method PublicanCreatorsChange.change_holder works with your entity file
+            too. In case of private environment it will use your name as HOLDER. Otherwise it uses
+            your companies name.</para>
+        </listitem>
+        <listitem>
+          <para>Sometimes its useful to do not use the given legal notice (In case of small
+            documents or reports). If you are in environment <quote>Work</quote> and has chosen
+              <quote>Article</quote> and has set <quote>legal = true</quote> in your configuration
+            file it (PublicanCreatorsChange.remove_legal) will remove the legal notice.</para>
+        </listitem>
+        <listitem>
+          <para>Per default Publican adds some Docbook lines for including a title logo. If you are
+            already defined a Title Logo in your XSL-Stylesheets then you can set <quote>title_logo
+              = false</quote>. Then the method PublicanCreatorsChange.remove_orgname removes the
+            predefined title logo from the Article_Info.xml or Book_Info.xml from your
+            project.</para>
+        </listitem>
+        <listitem>
+          <para>Next step is PublicanCreatorsChange.fix_revhist. In all environments it will use the
+            firstname and surname of the user and replaces them with the default entries in
+            Revision_History.xml. In case of using in environment <quote>Work</quote> it will use
+            your work email address for replacing the default. Otherwise it uses your private
+            address.</para>
+        </listitem>
+        <listitem>
+          <para>Now the method PublicanCreatorsChange.fix_authorgroup does similar the previous
+            method just for the Author_Group.xml file. In addition it can set the company_name and
+            company_division if chosen.</para>
+        </listitem>
+        <listitem>
+          <para>The last method PublicanCreatorsExport.export_buildscript generates a buildscript
+            for your project.</para>
+        </listitem>
+      </orderedlist>
+    </section>
   </section>
 
   <section>
