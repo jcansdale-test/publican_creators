@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## 0.4.7 (no relesed yet)
+
+## 0.4.6 (2015-05-23)
+### Bugfixes
+* PC-15 Cleanup and simplify the codebase 
+
+## 0.4.5 (2015-05-21)
+### Bugfixes
+* fixed PC-13 Hardcoded language in fix_authorgroup_work
+* fixed PC-14 Refactor fix_authorgroup_work
+
+## 0.4.4 (2015-05-20)
+### Bugfixes
+* fixed PC-12 Extend RevisionCreator for changing the version number in Article_Info or Book_Info
+* Updated documentation after fixing PC-12
+
+## 0.4.3 (2015-05-18)
+### Cosmetic
+* Updated and improved documentation
+
 ## 0.4.1 - 0.4.2 (2015-05-16)
 ### Bugfixes
 * Removed require PublicanCreators from RevisonCreator, because otherwise starts PublicanCreators.

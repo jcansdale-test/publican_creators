@@ -14,12 +14,9 @@ documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanC
 code documentation :: http://www.rubydoc.info/gems/PublicanCreators/0.4.0.0
 user documentation (en) :: http://saigkill.github.io/docs/publicancreators/en-US/html
 user documentation (de) :: http://saigkill.github.io/docs/publicancreators/de-DE/html
-user documentation PDF (en) :: http://saigkill.github.io/docs/publicancreators/en-US/pdf/Documentation-0.4.0-PublicanCreators-en-US.pdf
-user documentation PDF (de) :: http://saigkill.github.io/docs/publicancreators/de-DE/pdf/Documentation-0.4.0-PublicanCreators-de-DE.pdf
 bugs :: http://saigkill.ddns.net:8112/dashboard
 review code :: http://saigkill.ddns.net:8080/publicancreators/view
 authors blog :: http://saigkill.github.io
-authors twitter :: @saigkill
 openhub :: https://www.openhub.net/p/PublicanCreators
 openhatch :: http://openhatch.org/projects/PublicanCreators
 donations :: {<img src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif" />}[http://saigkill.github.io/pages/donate/index.html] Donations are welcome :-)

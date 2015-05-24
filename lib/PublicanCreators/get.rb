@@ -31,8 +31,7 @@ require 'dir'
 module PublicanCreatorsGet
 
   # This method ask for the title, environment, type and optional settings. It returns the title variable.
-  # Description:
-  # @return [String] title
+  # @return [String] environment, type, opt, title
   def self.title
     # @note Put the yad input as variable titlein
     titlein = `yad --title="Create documentation" --center --on-top --form --item-separator=, --separator="|"  --field="Environment:CBE" --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name (with underscores instead of blanks and without umlauts):TEXT" --field="Please file bugs or feature requests on http://saigkill.ddns.net:8112/dashboard:LBL" --button="Go!" "Work,Private" "Article,Book" "Normal,Report,Homework"`

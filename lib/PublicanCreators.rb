@@ -68,6 +68,7 @@ class PublicanCreators
   puts 'THE SOFTWARE.'.color(:yellow)
 
   # This method checks if a oldconfig is available
+  # @return [String] true or false
   def self.oldconfig
     home = Dir.home
     if File.exist?("#{home}/.publicancreators.cfg")

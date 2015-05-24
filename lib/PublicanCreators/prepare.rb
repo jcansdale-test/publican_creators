@@ -28,7 +28,6 @@
 module PublicanCreatorsPrepare
 
   # In case of environment == Work this tests will be launched. It returns a article or books dir
-  # Description:
   # @param [String] type represents the Document-Type like Article or Book.
   # @param [String] reports_dir_business contains the directory to your reports
   # @param [String] articles_dir_bus represents the directory for your articles
@@ -74,6 +73,18 @@ module PublicanCreatorsPrepare
     end
   end
 
+  # This method prepares the targetdir
+  # @param [String] type represents the Document-Type like Article or Book.
+  # @param [String] reports_dir_business contains the directory to your reports
+  # @param [String] articles_dir_bus represents the directory for your articles
+  # @param [String] report contains a true or false. There you can set if the new Publication is a Report or not.
+  # @param [String] books_dir_business contains the directory for your business books
+  # @return [String] books_dir returns article_dir or books_dir
+  # @param [String] homework contains true or false. If your present Publication is a homework you can set it there.
+  # @param [String] articles_dir_private contains the path to your private articles_dir
+  # @param [String] homework_dir_private contains the path to your homework dir.
+  # @param [String] books_dir_private contains the path to your private books_dir
+  # @return [String] targetdir
   def self.prepare(environment, type, reports_dir_business, articles_dir_business, report, books_dir_business,homework, articles_dir_private, homework_dir_private, books_dir_private)
     if environment == 'Work'
       targetdir = prepare_work(type, reports_dir_business, articles_dir_business, report, books_dir_business)
