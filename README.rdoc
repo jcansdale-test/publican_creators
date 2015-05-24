@@ -29,7 +29,7 @@ launching which title, type and environment should be used. Then it starts publi
 It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
 will replace the default values with your name, your company, your company_divison and your private or your business
 email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
- the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
+the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
 
 == Installation
 
