@@ -174,6 +174,7 @@ module PublicanCreatorsChange
   # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is given it reads your global entity file and appends it on the ent file.
   # @param [String] global_entities is just the path to the global entity file.
   # @param [String] brand can be a special customized brand for your company to fit the Styleguide.
+  # @param [String] ent Path to the entity file
   # @return [String] true or false
   def self.add_entity(environment, global_entities, ent)
     if environment == 'Work'

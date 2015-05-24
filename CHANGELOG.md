@@ -4,7 +4,10 @@
 
 ## 0.4.6 (2015-05-23)
 ### Bugfixes
-* PC-15 Cleanup and simplify the codebase 
+* PC-15 Cleanup and simplify the codebase
+* fixed Inch CI: revision/f0acc2fd/code_object/1107530
+* fixed Inch CI: revision/f0acc2fd/code_object/1104611
+* fixed Inch CI: revision/f0acc2fd/code_object/1107517
 
 ## 0.4.5 (2015-05-21)
 ### Bugfixes

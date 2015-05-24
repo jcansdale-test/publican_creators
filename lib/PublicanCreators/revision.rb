@@ -47,6 +47,15 @@ class RevisionCreator
   puts "Revision: #{revision}".color(:yellow)
   puts "Edition: #{edition}".color(:yellow)
 
+  # This method prepares the string for adding a new revision
+  # @param [String] member1 is the first string into revdescription
+  # @param [String] member2 is the second string into revdescription
+  # @param [String] member3 is the third string into revdescription
+  # @param [String] member4 is the fourth string into revdescription
+  # @param [String] member5 is the fifth string into revdescription
+  # @param [String] revnumber is the revision number
+  # @param [String] language is the language. Comes from config file.
+  # @return [String] string is that string for creating the commit
   def self.prepare_revision(member1, member2, member3, member4, member5, revnumber, language)
     string = "--member \"#{member1}\""
     if member2 == ''
@@ -71,7 +80,10 @@ class RevisionCreator
     end
     string << " --revnumber \"#{revnumber}\""
     string << " --lang \"#{language}\""
+    return string
   end
+
+  # This method changes to the target directory
   # @param [String] directory The directory where the projects publican.cfg is
   # @return [String] true or false
   FileUtils.cd(directory) do
