@@ -89,8 +89,8 @@
       <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4090909" vertical-offset="324" max-vertical-offset="1422">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.25174826" vertical-offset="270" max-vertical-offset="1422">
+              <caret line="7" column="135" selection-start-line="7" selection-start-column="135" selection-end-line="7" selection-end-column="135" />
               <folding />
             </state>
           </provider>
@@ -706,7 +706,11 @@
       <created>1432497481934</created>
       <updated>1432497481934</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="reworked documentation">
+      <created>1432497569500</created>
+      <updated>1432497569500</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <option name="markAsInProgress" value="true" />
     <servers>
       <YouTrack shared="false" url="http://saigkill.ddns.net:8112">
@@ -1186,8 +1190,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4090909" vertical-offset="324" max-vertical-offset="1422">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.25174826" vertical-offset="270" max-vertical-offset="1422">
+          <caret line="7" column="135" selection-start-line="7" selection-start-column="135" selection-end-line="7" selection-end-column="135" />
           <folding />
         </state>
       </provider>
