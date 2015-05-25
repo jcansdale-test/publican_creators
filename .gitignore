@@ -1,8 +1,6 @@
-/.bundle/
 /.yardoc
 /Gemfile.lock
 /coverage/
-/doc/
 /docs/pot/
 /docs/trans_drop
 /docs/tmp

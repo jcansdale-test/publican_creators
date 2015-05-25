@@ -78,36 +78,34 @@ require 'dir'
 require 'fileutils'
 desc 'Checks if temp dir is available. Otherwise it creates it'
 task :checker do
-    todos = "../tmp/#{language}/docx"
-    if Dir.exist?(todos)
-      puts 'Found directory. Im using it.'
-    else
-      puts 'No directory found. Im creating it.'
-      FileUtils.mkdir_p(todos)
-    end
-    todos = "../tmp/#{language}/odt"
-    if Dir.exist?(todos)
-      puts 'Found directory. Im using it.'
-    else
-      puts 'No directory found. Im creating it.'
-      FileUtils.mkdir_p(todos)
-    end
-    todos = "../tmp/#{language}/rtf"
-    if Dir.exist?(todos)
-      puts 'Found directory. Im using it.'
-    else
-      puts 'No directory found. Im creating it.'
-      FileUtils.mkdir_p(todos)
-    end
-    todos = "../tmp/#{language}/wml"
-    if Dir.exist?(todos)
-      puts 'Found directory. Im using it.'
-    else
-      puts 'No directory found. Im creating it.'
-      FileUtils.mkdir_p(todos)
-    end
+  todos = "../tmp/#{language}/docx"
+  if Dir.exist?(todos)
+    puts 'Found directory. Im using it.'
+  else
+    puts 'No directory found. Im creating it.'
+    FileUtils.mkdir_p(todos)
   end
-
+  todos = "../tmp/#{language}/odt"
+  if Dir.exist?(todos)
+    puts 'Found directory. Im using it.'
+  else
+    puts 'No directory found. Im creating it.'
+    FileUtils.mkdir_p(todos)
+  end
+  todos = "../tmp/#{language}/rtf"
+  if Dir.exist?(todos)
+    puts 'Found directory. Im using it.'
+  else
+    puts 'No directory found. Im creating it.'
+    FileUtils.mkdir_p(todos)
+  end
+  todos = "../tmp/#{language}/wml"
+  if Dir.exist?(todos)
+    puts 'Found directory. Im using it.'
+  else
+    puts 'No directory found. Im creating it.'
+    FileUtils.mkdir_p(todos)
+  end
 end
 
 desc 'Convert to DOCX'

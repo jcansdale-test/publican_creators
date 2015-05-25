@@ -171,7 +171,11 @@ class PublicanCreators
   # @param [String] articles_dir_private path to your private articles directory
   # @param [String] homework path to your homework directory
   # @param [String] books_dir_private path to your private books directory
-  targetdir = PublicanCreatorsPrepare.prepare(environment, type, reports_dir_business, articles_dir_business, report, books_dir_business,homework, articles_dir_private, homework_dir_private, books_dir_private)
+  #targetdir = PublicanCreatorsPrepare.prepare(environment, type, reports_dir_business, articles_dir_business,
+  # report, books_dir_business,homework, articles_dir_private, homework_dir_private, books_dir_private)
+  targetdir = PublicanCreatorsPrepare.targetdir(environment, type, report, reports_dir_business,
+                                                articles_dir_business, books_dir_business, homework,
+                                                articles_dir_private, homework_dir_private, books_dir_private)
 
   # @note Checks if the needed directory targetdir is available. Otherwise it creates one.
   puts "Creating directory #{targetdir}".color(:yellow)
