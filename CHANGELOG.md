@@ -1,10 +1,17 @@
 # CHANGELOG
 
-## 0.4.7 (no relesed yet)
+## 0.4.8 (not released yet)
+
+## 0.4.7 (2015-05-25)
+### Bugfixes
+* fixed PC-17 Fix buildscript (Rakefile) 
+
+### Cosmetics
+* fixed PC-16 Refactor prepare 
 
 ## 0.4.6 (2015-05-23)
 ### Bugfixes
-* PC-15 Cleanup and simplify the codebase
+* fixed PC-15 Cleanup and simplify the codebase
 * fixed Inch CI: revision/f0acc2fd/code_object/1107530
 * fixed Inch CI: revision/f0acc2fd/code_object/1104611
 * fixed Inch CI: revision/f0acc2fd/code_object/1107517
