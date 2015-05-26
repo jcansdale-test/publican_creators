@@ -67,43 +67,26 @@ task :check_distro do
     puts 'Found Fedora/Redhat'.color(:yellow)
     puts 'Installing publican'.color(:yellow)
     system('sudo yum install publican*')
-    @distcheck = 'fedora'
-  else
-    @distcheck = ''
-  end
-  if File.exist?('/etc/SuSE-release')
+  elsif File.exist?('/etc/SuSE-release')
     puts 'Found openSUSE'.color(:yellow)
     puts 'Can\'t prepare publican for openSUSE because there are no packages.'.color(:red)
     puts 'You can try to install publican with this Howto: http://bit.ly/1dQtGLa'.color(:red)
-    @distcheck = 'opensuse'
-  else
-    @distcheck = ''
-  end
-  if distro == 'Debian'
+  elsif distro == 'Debian'
     puts 'Found Debian'.color(:yellow)
     puts 'Can\'t prepare publican for Debian. Maybe im preparing a setup routine later.'.color(:red)
     puts 'You can try to install publican with this Howto: http://bit.ly/1dQtGLa'.color(:red)
-    @distcheck = 'debian'
-  else
-    @distcheck = ''
-  end
-  if distro == 'Ubuntu'
+  elsif distro == 'Ubuntu'
     puts 'Found Ubuntu'.color(:yellow)
     if distver <= '13'
       puts 'You need a Ubuntu 14.04 version or newer to use PublicanCreators'.color(:red)
-      @distcheck = ''
     else
       puts 'Your Ubuntu version is supported by Ubuntu'.color(:yellow)
       system('sudo apt-get install publican yad')
       system('sudo add-apt-repository ppa:sascha-manns-h/publican -y')
       system('sudo apt-get update')
       system('sudo apt-get install --only-upgrade publican')
-      @distcheck = 'ubuntu'
     end
   else
-    @distcheck = ''
-  end
-  if @distcheck == ''
     puts 'Sorry it looks like your OS isn\'t supported yet'.color(:red)
     puts 'You can try to install publican with this Howto: http://bit.ly/1dQtGLa'.color(:red)
   end
@@ -285,7 +268,7 @@ task :make_release do
   home = Dir.home
   target = "#{home}/RubymineProjects/saigkill.github.com/_posts"
   time = Time.new
-  date = time.strftime("%Y-%m-%d")
+  date = time.strftime('%Y-%m-%d')
 
   system('git add .idea/*')
   system('git commit -m "Updated workspace"')
@@ -330,6 +313,9 @@ To run it you can type /path/to/gem/bin/PublicanCreators.rb, or just use the lau
 # What has be done in this version #{version}?
   * Step 1
   * Step2
+
+# Donations
+[![publicancreators](https://pledgie.com/campaigns/29306.png?skin_name=chrome)](https://pledgie.com/campaigns/29306)
 EOF
   end
   puts 'Prepared your Blogpost. Please add the changes of this release'
