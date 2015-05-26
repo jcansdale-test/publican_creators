@@ -50,8 +50,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rakefile" afterPath="$PROJECT_DIR$/Rakefile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PublicanCreators.iws" />
@@ -714,7 +712,11 @@
       <created>1432660164123</created>
       <updated>1432660164123</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="pre0.4.8">
+      <created>1432661839199</created>
+      <updated>1432661839199</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <option name="markAsInProgress" value="true" />
     <servers>
       <YouTrack shared="false" url="http://saigkill.ddns.net:8112">
