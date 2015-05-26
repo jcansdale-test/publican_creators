@@ -31,7 +31,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), 'get.rb'))
 # A class for creating a revison to a publican project
 class RevisionCreator
   # @note Ask for the revision information
-  directory, member1, member2, member3, member4, member5, revnumber = PublicanCreatorsGet.revision
+  null, directory, member1, member2, member3, member4, member5, revnumber = PublicanCreatorsGet.revision
   language = PublicanCreatorsGet.config_revision
 
   revision, edition = revnumber.split('-')
@@ -46,6 +46,7 @@ class RevisionCreator
   puts "Revnumber: #{revnumber}".color(:yellow)
   puts "Revision: #{revision}".color(:yellow)
   puts "Edition: #{edition}".color(:yellow)
+  puts null
 
   # This method prepares the string for adding a new revision
   # @param [String] member1 is the first string into revdescription

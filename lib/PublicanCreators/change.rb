@@ -42,8 +42,8 @@ module PublicanCreatorsChange
     text = File.read(file)
     new_value = text.gsub(nice_description, value_name)
     puts new_value
-    File.open(file, 'w') { |file|
-      file.puts new_value
+    File.open(file, 'w') { |file1|
+      file1.puts new_value
     }
   end
 
@@ -320,7 +320,7 @@ module PublicanCreatorsChange
     puts 'Replace the default content with the new content from the user (Revision History)'.color(:yellow)
     add_result('Enter your first name here.', "#{firstname}", revhist)
     add_result('Enter your surname here.', "#{surname}", revhist)
-    add_result('Initial creation by publican', "Initial creation", revhist)
+    add_result('Initial creation by publican', 'Initial creation', revhist)
 
     if environment == 'Work'
       add_result('Enter your email address here.', "#{email_business}", revhist)
@@ -344,7 +344,7 @@ module PublicanCreatorsChange
     puts 'Replace the default content with the new content from the user (Authors_Group)'.color(:yellow)
     add_result('Enter your first name here.', "#{firstname}", agroup)
     add_result('Enter your surname here.', "#{surname}", agroup)
-    add_result('Initial creation by publican', "Initial creation", agroup)
+    add_result('Initial creation by publican', 'Initial creation', agroup)
 
     if environment == 'Work'
       add_result('Enter your email address here.', "#{email_business}", agroup)

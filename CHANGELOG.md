@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## 0.4.8 (not released yet)
+### Bugfixes
+* fixed  PC-18 Can't use RevisionCreator anymore
 
 ## 0.4.7 (2015-05-25)
 ### Bugfixes

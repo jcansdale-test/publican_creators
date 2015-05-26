@@ -278,4 +278,61 @@ task :publish_doc do
   end
 end
 
+require 'fileutils'
+desc 'Prepares for release'
+task :make_release do
+  version = PublicanCreatorsVersion::Version::STRING
+  home = Dir.home
+  target = "#{home}/RubymineProjects/saigkill.github.com/_posts"
+  time = Time.new
+  date = time.strftime("%Y-%m-%d")
+
+  system('git add .idea/*')
+  system('git commit -m "Updated workspace"')
+  puts 'done'
+  system('rake release')
+
+  FileUtils.cd(target) do
+    FileUtils.touch "#{date}-PublicanCreators-#{version}-released.md"
+    File.write "#{date}-PublicanCreators-#{version}-released.md", <<EOF
+---
+layout: post
+title: "PublicanCreators #{version} - A Gem for DocBook Publishers"
+description: "Using DocBook and Redhat's Publican daily? Then this Rubygem made your day."
+category: "programming"
+tags: [Ruby]
+---
+{% include JB/setup %}
+
+# Introduction
+PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [fedorahosted.org/publican/]. PublicanCreators asks after launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and will replace the default values with your name, your company, your company_divison and your private or your business email address, depending on your chosen environment. Also you can set inside your config file that you want to remove the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
+
+# Installation
+If you give it a try just follow the next steps (If you have already Ruby installed):
+
+  * gem install PublicanCreators
+  * gem install rake (If not installed yet)
+  * cd /path/to/gem
+  * rake setup
+
+# Dependencies
+You need to have yad and publican (a 4.x version) installed. In case of using Ubuntu or Fedora the setup routine will install it for you. The soft dependencies "dir", "fileutils" and "nokogiri" will be solved by bundler.
+
+# Running the Gem
+To run it you can type /path/to/gem/bin/PublicanCreators.rb, or just use the launcher.
+
+# References
+  * Projects home: [https://github.com/saigkill/PublicanCreators](https://github.com/saigkill/PublicanCreators)
+  * User documentation (en): [http://saigkill.github.io/docs/publicancreators/en-US/html](http://saigkill.github.io/docs/publicancreators/en-US/html)
+  * User documentation (de): [http://saigkill.github.io/docs/publicancreators/de-DE/html](http://saigkill.github.io/docs/publicancreators/de-DE/html)
+  * Bug reports: [http://saigkill.ddns.net:8112/dashboard](http://saigkill.ddns.net:8112/dashboard)
+
+# What has be done in this version #{version}?
+  * Step 1
+  * Step2
+EOF
+  end
+  puts 'Prepared your Blogpost. Please add the changes of this release'
+end
+
 # vim: syntax=ruby

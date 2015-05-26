@@ -39,11 +39,9 @@ module PublicanCreatorsGet
     # @note Cleanup the array
     environment, type, opt, titlefix = titlein.chomp.split('|')
 
-    if titlefix.include?(' ')
-      title = titlefix.gsub(/ /, '_')
-    else
-      title = titlefix
-    end
+    # @note replace blanks with underscores
+    title = titlefix.gsub(/ /, '_')
+
     [environment, type, opt, title]
   end
 
