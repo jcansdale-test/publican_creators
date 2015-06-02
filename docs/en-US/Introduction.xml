@@ -162,8 +162,7 @@ Done installing documentation for parseconfig, mini_portile, nokogiri, dir, Publ
 5 gems installed</screen>
     </para>
     <para>The installation can takes some time, because some of the dependencies must compiled
-      natively on your computer.
-    </para>
+      natively on your computer. </para>
     <section>
       <info>
         <title>Running the setup</title>
@@ -180,43 +179,33 @@ Done installing documentation for parseconfig, mini_portile, nokogiri, dir, Publ
             PublicanCreators. </para>
         </note>
       </para>
-      <para>The setup script does the following:
-        <itemizedlist>
+      <para>The setup script does the following: <itemizedlist>
           <listitem>
-            <para>It checks on which host os (Linux) it runs. Then it reacts to that and
-              tried to install the hard dependencies yad and publican.
-            </para>
+            <para>It checks on which host os (Linux) it runs. Then it reacts to that and tried to
+              install the hard dependencies yad and publican. </para>
             <para>PublicanCreators needs a 4.x version of publican because it uses the parameter
-              <quote>--dtdver</quote>. In case of a Ubuntu host os the setup adds a Launchpad PPA
+                <quote>--dtdver</quote>. In case of a Ubuntu host os the setup adds a Launchpad PPA
               which provides backported versions of publican 4.x for Trusty (14.04) and Utopic
               (14.10). Vivid Velvet ships a usable publican 4.x version. For other Distributions you
               have to check if a 4.x version is available for your os. Otherwise PublicanCreators
-              will NOT work.
-            </para>
+              will NOT work. </para>
           </listitem>
           <listitem>
-            <para>If you have already a
-              <filename>.publicancreators.cfg</filename>
-              in your
+            <para>If you have already a <filename>.publicancreators.cfg</filename> in your
               Homedirectory it will add the actual shipped
-              <filename>.publicancreators.cfg</filename>
-              as .publicancreators.cfg.new in your
+                <filename>.publicancreators.cfg</filename> as .publicancreators.cfg.new in your
               Homedirectory. You have to check, if new parameters are added or depreached one are
-              there. So modify your old .publicancreators to match the new one.
-            </para>
+              there. So modify your old .publicancreators to match the new one. </para>
           </listitem>
           <listitem>
-            <para>The last thing in the setup is to install two *.desktop files for
-              PublicanCreators and RevisionCreator in
-              <filename>.local/share/applications</filename>. This means it will
-              shown in the program launcher.
-            </para>
+            <para>The last thing in the setup is to install two *.desktop files for PublicanCreators
+              and RevisionCreator in <filename>.local/share/applications</filename>. This means it
+              will shown in the program launcher. </para>
           </listitem>
           <listitem>
-            <para>If you aren't have a old .publicancreators.cfg the setup copies a
-              actual version in your Homedirectory and will launch a Texteditor with
-              the config loaded. So you can modify it to your needs. The config file
-              will be explained in the next chapter.
+            <para>If you aren't have a old .publicancreators.cfg the setup copies a actual version
+              in your Homedirectory and will launch a Texteditor with the config loaded. So you can
+              modify it to your needs. The config file will be explained in the next chapter.
             </para>
           </listitem>
         </itemizedlist>
@@ -279,7 +268,7 @@ Finished Setup</screen>
                 <command>.publicancreators.cfg.new</command>.</para>
           </listitem>
           <listitem>
-            <para><command>rake create_desktop_cre</command> and  <command>rake
+            <para><command>rake create_desktop_cre</command> and <command>rake
                 create_desktop_rev</command>: It updates your old desktop files to the new
               path.</para>
           </listitem>

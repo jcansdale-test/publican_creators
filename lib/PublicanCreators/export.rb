@@ -34,14 +34,17 @@ module PublicanCreatorsExport
   # Exports a predefined Shellscript to the target directory.
   # It returns a sucess or fail.
   # Description:
-  # @param [String] title comes from the get method. This parameter represents the name or title of your work. It is used in all important code places.
+  # @param [String] title comes from the get method. This parameter represents
+  #                 the name or title of your work. It is used in all important
+  #                 code places.
   # @param [String] builds is the path to your buildscript
-  # @param [String] language is just the ISO Code of your target language like: #{language}, en-GB or such things.
+  # @param [String] language is just the ISO Code of your target language
+  #                 like: #{language}, en-GB or such things.
   # @param [String] xfc_brand_dir if present the path to your branded xfc stylesheets (config file)
   # @param [String] pdfview your prefered PDF-Viewer (config file)
   # @return [String] true or false
   def self.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
-    puts 'Export the buildscript into new directory...'.color(:yellow)
+    puts 'Export the buildscript into new directory...'
     FileUtils.touch "#{builds}"
     File.write "#{builds}", <<EOF
 # -*- ruby -*-

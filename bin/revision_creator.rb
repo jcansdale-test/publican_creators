@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 # @author Sascha Manns
 # @abstract Class RevisionCreator for PublicanCreator
-#
 # Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,13 +20,6 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-#
-# Fix for PC-1
-# Dependencies
-require File.expand_path(File.join(File.dirname(__FILE__), '../lib/PublicanCreators', 'revision.rb'))
+require File.expand_path(File.join(File.dirname(__FILE__),
+                                   '../lib/PublicanCreators', 'revision.rb'))
 RevisionCreator.new
-
-
-
-
-

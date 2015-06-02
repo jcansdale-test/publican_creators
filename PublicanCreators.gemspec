@@ -39,10 +39,13 @@ email address, depending on your chosen environment. Also you can set inside you
   spec.add_development_dependency 'shoulda', '~> 3.5', '>= 3.5.0'
   spec.add_development_dependency 'simplecov', '~> 0.10', '>= 0.10.0'
   spec.add_development_dependency 'cucumber', '~> 2.0', '>= 2.0.0'
+  spec.add_development_dependency 'rubocop', '~> 0.31', '>= 0.31.0'
+  spec.add_development_dependency 'rubocop-rspec', '~> 1.3', '>= 1.3.0'
 
   spec.add_runtime_dependency 'dir', '~> 0.1', '>= 0.1.2'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0', '>= 1.0.6'
   spec.add_runtime_dependency 'rainbow', '~> 2.0', '>= 2.0.0'
+
 end
 

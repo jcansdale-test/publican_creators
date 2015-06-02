@@ -13,7 +13,7 @@ require 'rainbow/ext/string'
 require File.dirname(__FILE__) + '/spec_helper'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-#Test environment
+# Test environment
 title = 'The_holy_Bible'
 environment = 'Dienstlich'
 type = 'Article'
@@ -36,93 +36,91 @@ builds = "#{title}/de-DE/Rakefile"
 brand_dir = '/usr/share/publican/Common_Content/XCOM'
 global_entities = "#{brand_dir}/de-DE/entitiesxcom.ent"
 xfc_brand_dir = '/opt/XMLmind/xfc-xcom-stylesheet/xsl/fo/docbook.xsl'
-pdfview = '/opt/cxoffice/bin/wine --bottle "PDF-XChange Viewer 2.x" --cx-app PDFXCview.exe'
+pdfview = '/opt/cxoffice/bin/wine --bottle "PDF-XChange Viewer 2.x" --cx-app
+PDFXCview.exe'
 
-describe 'Documentation Creator Work' do
-  it 'should change to an directory and creates there an initial documentation' do
+# Documentation Creator Work
+describe 'PublicanCreatorsChange.init_docu_work' do
+  it 'accesses a directory and creates there an initial documentation' do
     PublicanCreatorsChange.init_docu_work(title, type, language, brand, db5)
     Dir.exist?(title)
     :should == true
   end
-end
 
-describe 'Entity Changer' do
-  it 'should add the XCOM Entities' do
-    PublicanCreatorsChange.add_entity(environment, global_entities, ent)
-    f = File.new(ent)
-    text = f.read
-    true
-    if text =~ /XCOM/
-      false
+  describe 'PublicanCreatorsChange.add_entity' do
+    it 'adds the XCOM Entities' do
+      PublicanCreatorsChange.add_entity(environment, global_entities, ent)
+      f = File.new(ent)
+      text = f.read
+      true
+      if text =~ /XCOM/
+        false
+      end
+      :should == true
     end
-    :should == true
   end
-end
 
-describe 'Orgname Remover' do
-  it 'should remove the Orgname node from the XML file' do
-    PublicanCreatorsChange.remove_orgname(bookinfo, artinfo, title_logo, type)
-    f = File.new(artinfo)
-    text = f.read
-    true
-    if text =~ /orgname/
-      false
+  describe 'PublicanCreatorsChange.remove_orgname' do
+    it 'removes the Orgname node from the XML file' do
+      PublicanCreatorsChange.remove_orgname(bookinfo, artinfo, title_logo, type)
+      f = File.new(artinfo)
+      text = f.read
+      true
+      if text =~ /orgname/
+        false
+      end
+      :should == false
     end
-    :should == false
   end
-end
 
-describe 'Remove Legalnotice' do
-  it 'should remove the Legalnotice from the XML file' do
-    PublicanCreatorsChange.remove_legal(environment, type, legal, artinfo)
-    f = File.new(artinfo)
-    text = f.read
-    true
-    if text =~ /Legal_Notice/
-      false
+  describe 'PublicanCreatorsChange.remove_legal' do
+    it 'removes the Legalnotice from the XML file' do
+      PublicanCreatorsChange.remove_legal(environment, type, legal, artinfo)
+      f = File.new(artinfo)
+      text = f.read
+      true
+      if text =~ /Legal_Notice/
+        false
+      end
+      :should == false
     end
-    :should == false
   end
-end
 
-describe 'Fix Revision History' do
-  it 'should change names and emailaddresses to the present user' do
-    PublicanCreatorsChange.fix_revhist(environment, name, email_business, email, revhist)
-    f = File.new(revhist)
-    text = f.read
-    true
-    if text =~ /Sascha.Manns@xcom.de/
-      false
+  describe 'PublicanCreatorsChange.fix_revhist' do
+    it 'changes names and emailaddresses to the present user' do
+      PublicanCreatorsChange.fix_revhist(environment, name, email_business,
+                                         email, revhist)
+      f = File.new(revhist)
+      text = f.read
+      true
+      if text =~ /Sascha.Manns@xcom.de/
+        false
+      end
+      :should == true
     end
-    :should == true
   end
-end
 
-describe 'Fix Authorgroup' do
-  it 'should change the names and emailaaddresses to the present user' do
-    PublicanCreatorsChange.fix_authorgroup(name, email_business, company_name, company_division, email, environment, agroup)
-    f = File.new(agroup)
-    text = f.read
-    true
-    if text =~ /Sascha.Manns@xcom.de/
-      false
+  describe 'PublicanCreatorsChange.fix_authorgroup' do
+    it 'change the names and emailaaddresses to the present user' do
+      PublicanCreatorsChange.fix_authorgroup(name, email_business, company_name,
+                                             company_division, email,
+                                             environment, agroup)
+      f = File.new(agroup)
+      text = f.read
+      true
+      if text =~ /Sascha.Manns@xcom.de/
+        false
+      end
+      :should == true
     end
-    :should == true
   end
-end
 
-describe 'Export Buildscript' do
-  it 'should export a shellscript with resolved title entity' do
-    PublicanCreatorsExport.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
-    File.exist?(builds)
-    :should == true
-  end
-end
-
-describe 'Cleanup' do
-  it 'should remove the test directory' do
-    FileUtils.rm_rf(title)
-    Dir.exist?(title)
-    :should == false
+  describe 'PublicanCreatorsExport.export_buildscript' do
+    it 'exports a shellscript with resolved title entity' do
+      PublicanCreatorsExport.export_buildscript(title, builds, language,
+                                                xfc_brand_dir, pdfview)
+      File.exist?(builds)
+      :should == true
+    end
   end
 end

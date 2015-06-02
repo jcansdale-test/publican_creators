@@ -30,22 +30,22 @@ require 'rainbow/ext/string'
 
 # Module for different checks
 module Checker
-
-  # Checks if the targetdirectory are present. If not, it creates one. It returns a success or fail.
+  # Checks if the targetdirectory are present. If not, it creates one. It
+  # returns a success or fail.
   # @param [String] todos contains the target directory
   # @return [String] true or false
   def self.check_dir(todos)
     # @note Checking if dir exists
     if Dir.exist?(todos)
-      puts 'Found directory. Im using it.'.color(:green)
+      puts 'Found directory. Im using it.'
     else
-      puts 'No directory found. Im creating it.'.color(:red)
+      puts 'No directory found. Im creating it.'
       # @note Creates the new directory
       FileUtils.mkdir_p(todos)
       if Dir.exist?(todos)
-        puts 'Created new directory...'.color(:green)
+        puts 'Created new directory...'
       else
-        raise('Cant create directory').color(:red)
+        fail('Cant create directory')
       end
     end
   end

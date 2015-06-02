@@ -40,7 +40,23 @@ task :test_with_coveralls => [:spec, 'coveralls:push']
 require 'yard'
 desc 'Run yarddoc for the source'
 YARD::Rake::YardocTask.new do |t|
-  t.files = %w('lib/**/*.rb', 'bin/PublicanCreators.rb', 'bin/RevisionCreator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
+  t.files = %w('lib/**/*.rb', 'bin/publican_creators.rb', 'bin/revision_creator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
+end
+
+# Rubocop
+require 'rubocop/rake_task'
+desc 'Run RuboCop on the lib directory'
+RuboCop::RakeTask.new(:rubocop) do |task|
+  task.patterns = ['lib/**/*.rb']
+  # only show the files with failures
+  task.formatters = ['files']
+  # don't abort rake on failure
+  task.fail_on_error = false
+end
+
+# Rubocop-rspec
+RuboCop::RakeTask.new do |task|
+  task.requires << 'rubocop-rspec'
 end
 
 # Setup procedure
@@ -123,7 +139,7 @@ end
 desc 'Link binary PublicanCreator.rb'
 task :link_binary_cre do
   puts 'Linking binaries'
-  publicancre = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'PublicanCreators.rb'))
+  publicancre = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican_creators.rb'))
   publicancrebin = '/usr/bin/publicancreators'
   if File.exist?("#{publicancrebin}")
     puts "File #{publicancrebin} exists. Removing it.".color(:yellow)
@@ -136,9 +152,9 @@ task :link_binary_cre do
   end
 end
 
-desc 'Link binary RevisionCreator.rb'
+desc 'Link binary revision_creator.rb'
 task :link_binary_rev do
-  publicanrev = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'RevisionCreator.rb'))
+  publicanrev = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'revision_creator.rb'))
   publicanrevbin = '/usr/bin/publicancreators-rev'
   if File.exist?("#{publicanrevbin}")
     puts "File #{publicanrevbin} exists. Removing it".color(:yellow)
@@ -158,7 +174,7 @@ task :create_desktop_cre do
   home = Dir.home
   publicancre = "#{home}/.local/share/applications/publicancreators.desktop"
   publicancreico = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican.png'))
-  publicancrebin = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'PublicanCreators.rb'))
+  publicancrebin = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican_creators.rb'))
   if File.exists?(publicancre)
     FileUtils.rm(publicancre)
   end
@@ -181,7 +197,7 @@ task :create_desktop_rev do
   home = Dir.home
   publicanrev = "#{home}/.local/share/applications/publicancreators-rev.desktop"
   publicanrevico = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican-revision.png'))
-  publicanrevbin = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'RevisionCreator.rb'))
+  publicanrevbin = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'revision_creator.rb'))
   if File.exist?(publicanrev)
     FileUtils.rm(publicanrev)
   end
@@ -302,7 +318,7 @@ If you give it a try just follow the next steps (If you have already Ruby instal
 You need to have yad and publican (a 4.x version) installed. In case of using Ubuntu or Fedora the setup routine will install it for you. The soft dependencies "dir", "fileutils" and "nokogiri" will be solved by bundler.
 
 # Running the Gem
-To run it you can type /path/to/gem/bin/PublicanCreators.rb, or just use the launcher.
+To run it you can type /path/to/gem/bin/publican_creators.rb, or just use the launcher.
 
 # References
   * Projects home: [https://github.com/saigkill/PublicanCreators](https://github.com/saigkill/PublicanCreators)
