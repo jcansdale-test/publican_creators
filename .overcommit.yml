@@ -16,16 +16,16 @@
 # Uncomment the following lines to make the configuration take effect.
 
 PreCommit:
-#  BundleCheck:
-#    enabled: true
-#    description: 'Checking Gemfile dependencies'
-#    required_executable: 'bundle'
-#    flags: ['check']
-#    install_command: 'gem install bundler'
-#    include:
-#      - 'Gemfile'
-#      - 'Gemfile.lock'
-#      - '*.gemspec'
+  BundleCheck:
+    enabled: true
+    description: 'Checking Gemfile dependencies'
+    required_executable: 'bundle'
+    flags: ['check']
+    install_command: 'gem install bundler'
+    include:
+      - 'Gemfile'
+      - 'Gemfile.lock'
+      - '*.gemspec'
 
 #  Reek:
 #    enabled: true
