@@ -3,7 +3,8 @@
 home :: https://github.com/saigkill/PublicanCreators
 license :: http://opensource.org/licenses/MIT
 last public version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="version">}[http://rubygems.org/gems/PublicanCreators]
-continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://travis-ci.org/saigkill/PublicanCreators]
+continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master" alt="integration state">}[https://scrutinizer-c.com/g/saigkill/PublicanCreators]
+continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://travis.org/saigkill/PublicanCreators]
 continuous integration :: {<img src="http://saigkill.ddns.net:8111/app/rest/builds/buildType:%28id:PublicanCreators_Build%29/statusIcon" />}[http://saigkill.ddns.net:8111]
 test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/PublicanCreators?branch=master]
 code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators.png" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
