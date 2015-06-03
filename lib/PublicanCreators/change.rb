@@ -27,7 +27,7 @@
 
 require 'nokogiri'
 require 'dir'
-require 'rainbow/ext/string'
+require 'PublicanCreators/create'
 require 'PublicanCreators/checker'
 
 # Module what contains all methods who are doing changes in files
@@ -44,103 +44,6 @@ module PublicanCreatorsChange
     File.open(file, 'w') do |file1|
       file1.puts new_value
     end
-  end
-
-  # Method for creating initial documentation for work. It asks for title, type,
-  # language, brand and db5 variable, creates a launch-string from them and
-  # launches publican.
-  # @param [String] title comes from the get method. This @param represents the
-  #                 name or title of your work. It is used in all important code
-  #                 places.
-  # @param [String] type represents the Document-Type like Article or Book.
-  # @param [String] language is just the ISO Code of your target language like:
-  #                 de-DE, en-GB or such things.
-  # @param [String] brand can be a special customized brand for your company to
-  #                 fit the styleguide.
-  # @param [String] db5 just sets your preferences. If you like to have DocBook
-  #                 5.x as default you can set it there.
-  # @return [String] true or false
-  # @note That method returns just a success or a fail. After the main part of
-  # the method it starts another method "PublicanCreatorsChange.check_result".
-  # This method checks if the directory with the content of the parameter title
-  # is available.
-  def self.init_docu_work(title, type, language, brand, db5)
-    puts 'Creating initial documentation ...'
-    # Set standard string
-    string = "--lang #{language} --name #{title}"
-    # Add Article if type is Article
-    string << '--type Article' if type.equal? 'Article'
-    # Set business brand if given
-    string << " --brand #{brand}" if brand != ''
-    create_docu(string, db5, title)
-  end
-
-  # Method for creating initial documentation for private. It asks for title,
-  # type, language, homework, brand_homework, brand_private
-  # and db5 variable, creates a launch-string from them and launches publican.
-  # @param [String] title comes from the get method. This parameter represents
-  #                       the name or title of your work. It is used in all
-  #                       important code places.
-  # @param [String] type  represents the Document-Type like Article or Book.
-  # @param [String] brand_private is used in all methods with a "private" in the
-  #                       name. If this brand is set it will be used instead of
-  #                       the original publican brand.
-  # @param [String] language is just the ISO Code of your target language like:
-  #                       de-DE, en-GB or such things.
-  # @param [String] brand_homework can be a special customized brand for
-  #                       distance learning schools.
-  # @param [String] db5 just sets your preferences. If you like to have DocBook
-  #                       5.x as default you can set it there.
-  # @return [String] true or false
-  # @note That method returns just a success or a fail. After the main part of
-  # the method it starts another method "PublicanCreatorsChange.check_result".
-  # This method checks if the directory with the content of the parameter title
-  # is available.
-  def self.init_docu_private(title, type, homework, language, brand_homework,
-      brand_private, db5)
-    puts 'Creating initial documentation ...'
-
-    if type == 'Article'
-      private_article(language, title, brand_private, brand_homework,
-                      homework)
-    else
-      # @note Initial creation of documentation with publican
-      string = "--lang #{language} --name #{title}"
-      string << " --brand #{brand_private}" if brand_private != ''
-    end
-    create_docu(string, db5, title)
-  end
-
-  def self.private_article(language, title, brand_private, brand_homework,
-      homework)
-    # @note Initial creation of documentation with publican
-    string = "--type Article --lang #{language} --name #{title}"
-    # Use brand_private if brand_private is set
-    if brand_private != '' && homework == 'FALSE'
-      string << " --brand #{brand_private}"
-    end
-    # Use brand_homework if its set
-    if brand_homework != '' && homework == 'TRUE'
-      string << " --brand #{brand_homework}"
-    end
-  end
-
-  # This method uses the input of init_docu methods to create the documentation
-  # @param [String] string This input comes from init_docu
-  # @param [String] db5 just sets your preferences. If you like to have DocBook
-  #                     5.x as default you can set it there.
-  # @param [String] title comes from the get method. This param represents the
-  #                     name or title of your work. It is used in all important
-  #                     code places.
-  # @return [String] true or false
-  def self.create_docu(string, db5, title)
-    # @note Check if DocBook 5 wished as default, if yes it adds the parameter
-    # dtdver 5.0 to string
-    string << ' --dtdver 5.0' if db5 == 'true'
-    system("publican create #{string}")
-    # @param [String] title comes from the get method. This param represents
-    # the name or title of your work. It is used in all important code places.
-    check_result(title)
   end
 
   # This method checks the environment and runs the method for
@@ -168,24 +71,11 @@ module PublicanCreatorsChange
   def self.check_environment(environment, title, type, language, brand, db5,
       homework, brand_homework, brand_private)
     if environment == 'Work'
-      init_docu_work(title, type, language, brand, db5)
+      PublicanCreatorsCreate.init_docu_work(title, type, language, brand, db5)
     else
-      init_docu_private(title, type, homework, language, brand_homework,
-                        brand_private, db5)
-    end
-  end
-
-  # This method will be launched from the init_docu_* methods. It returns a
-  # success, otherwise it raises with a error.
-  # @param [String] title comes from the get method. This @param represents the
-  # name or title of your work. It is used in all important code places.
-  # @return [String] true or false
-  def self.check_result(title)
-    # @note checking if new documentation directory exists
-    if Dir.exist?(title)
-      puts 'Creating documentation was a success...'
-    else
-      fail('Cant create documentation. Please try it manual with publican...')
+      PublicanCreatorsCreate.init_docu_private(title, type, homework, language,
+                                               brand_homework, brand_private,
+                                               db5)
     end
   end
 
@@ -263,7 +153,7 @@ module PublicanCreatorsChange
   # @return [String] true or false
   def self.change_holder_do(namefill, title, ent)
     text = File.read(ent)
-    new_contents = text.gsub("| You need to change the HOLDER entity in the
+    new_contents = text.gsub("| You need to change the HOLDER entity in the \
 de-DE/#{title}.ent file |", "#{namefill}")
     puts new_contents
     File.open(ent, 'w') { |file| file.puts new_contents }
@@ -283,14 +173,10 @@ de-DE/#{title}.ent file |", "#{namefill}")
   #                 Stylesheets.
   # @param [String] type represents the Document-Type like Article or Book.
   # @return [String] true or false
-  def self.remove_orgname(bookinfo, artinfo, title_logo, type)
-    if type == 'Article'
-      info = artinfo
-    else
-      info = bookinfo
-    end
+  def self.remove_orgname(info, title_logo)
     if title_logo == 'false'
       puts 'Remove title logo from Article_Info or Books_Info'
+      puts info
       doc = Nokogiri::XML(IO.read(info))
       doc.search('orgname').each do |node|
         node.remove
@@ -300,6 +186,11 @@ de-DE/#{title}.ent file |", "#{namefill}")
     end
   end
 
+  def self.remove_orgname_prepare(bookinfo, artinfo, title_logo, type)
+    info = artinfo if type == 'Article'
+    info = bookinfo if type == 'Book'
+    remove_orgname(info, title_logo)
+  end
   # This method replaces the old productversion to the new revision
   # @param [String] language The default language from the config file
   # @param [String] revision The new revision number
@@ -343,9 +234,7 @@ de-DE/#{title}.ent file |", "#{namefill}")
           # XCOM articles using another way to add them.
           puts 'Remove XI-Includes for Legal Notice...'
           text = File.read(artinfo)
-          new_contents = text.gsub('<xi:include href="Common_Content/
-Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />', '
-<!-- removed legal -->')
+          new_contents = text.gsub('<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />', '')
           puts new_contents
           File.open(artinfo, 'w') { |file| file.puts new_contents }
         end

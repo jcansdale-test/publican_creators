@@ -9,21 +9,32 @@ Gem::Specification.new do |spec|
   spec.authors = ['Sascha Manns']
   spec.email = ['Sascha.Manns@bdvb.de']
 
-  spec.summary = %q{A short program to fix the publican documentation}
-  spec.description = %q{PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators asks after
-launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files.
-It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
-will replace the default values with your name, your company, your company_divison and your private or your business
-email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
- the Title Logo or the Legal Notice. As a feature it ships a build script for each project.}
+  spec.summary = ['A short program to fix the publican documentation']
+  spec.description = ['PublicanCreators are a small tool for daily DocBook
+writers who are using the Redhat publican tool
+[https://fedorahosted.org/publican/]. PublicanCreators asks after launching
+which title, type and environment should be used. Then it starts publican with
+that settings and works then with the produced files. It will work inside the
+ Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and
+Revision_History.xml and will replace the default values with your name, your
+ company, your company_divison and your private or your business email address,
+depending on your chosen environment. Also you can set inside your config file
+that you want to remove the Title Logo or the Legal Notice. As a feature it
+ships a build script for each project.']
+
   spec.homepage = 'https://github.com/saigkill/PublicanCreators'
   spec.license = 'MIT'
 
-  spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files = `git ls-files -z`.split("\x0").reject { |f|
+    f.match(%r{^(test|spec|features)/})
+  }
   spec.bindir = 'bin'
-  spec.executables = spec.files.grep(%w(PublicanCreators RevisionCreator)) { |f| File.basename(f) }
+  spec.executables = spec.files.grep(%w(PublicanCreators RevisionCreator)) { |f|
+    File.basename(f)
+  }
   spec.require_paths = ['lib']
-
+  spec.post_install_message = 'Please file bugreports and feature requests on:
+http://saigkill.ddns.net:8112/dashboard'
 
   spec.platform = Gem::Platform::RUBY
   spec.date = ENV['from'] ? Date.parse(ENV['from']) : Date.today
@@ -38,9 +49,7 @@ email address, depending on your chosen environment. Also you can set inside you
   spec.add_development_dependency 'rspec', '~> 3.2', '>= 3.2.0'
   spec.add_development_dependency 'shoulda', '~> 3.5', '>= 3.5.0'
   spec.add_development_dependency 'simplecov', '~> 0.10', '>= 0.10.0'
-  spec.add_development_dependency 'cucumber', '~> 2.0', '>= 2.0.0'
   spec.add_development_dependency 'rubocop', '~> 0.31', '>= 0.31.0'
-  spec.add_development_dependency 'rubocop-rspec', '~> 1.3', '>= 1.3.0'
 
   spec.add_runtime_dependency 'dir', '~> 0.1', '>= 0.1.2'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
@@ -48,4 +57,3 @@ email address, depending on your chosen environment. Also you can set inside you
   spec.add_runtime_dependency 'rainbow', '~> 2.0', '>= 2.0.0'
 
 end
-

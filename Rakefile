@@ -54,11 +54,6 @@ RuboCop::RakeTask.new(:rubocop) do |task|
   task.fail_on_error = false
 end
 
-# Rubocop-rspec
-RuboCop::RakeTask.new do |task|
-  task.requires << 'rubocop-rspec'
-end
-
 # Setup procedure
 desc 'Launching the setup'
 task :setup_start do

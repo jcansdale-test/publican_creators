@@ -2,10 +2,10 @@ AllCops:
 
   Include:
     - 'lib/**/*.rb'
+    - 'test/**/*.rb'
 
   Exclude:
     - 'Rakefile'
-    - 'test/**/*.rb'
     - 'test/The_holy_Bible/*'
     - 'lib/**/export.rb'
 
@@ -36,5 +36,3 @@ Metrics/ModuleLength:
 Metrics/MethodLength:
   CountComments: false  # count full line comments?
   Max: 20
-
-require: rubocop-rspec

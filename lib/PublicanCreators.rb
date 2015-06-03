@@ -246,7 +246,8 @@ class PublicanCreators
     # @param [String] bookinfo path to Book_Info (hardcoded)
     # @param [String] title_logo remove titlelogo from articlepage (config file)
     # @param [String] type Book or Article
-    PublicanCreatorsChange.remove_orgname(bookinfo, artinfo, title_logo, type)
+    PublicanCreatorsChange.remove_orgname_prepare(bookinfo, artinfo, title_logo,
+                                                  type)
 
     # @param [String] environment Work or Private
     # @param [String] name your name (config file)

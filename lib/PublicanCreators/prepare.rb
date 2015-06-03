@@ -79,7 +79,7 @@ module PublicanCreatorsPrepare
     else
       articles_dir = "#{home}/#{articles_dir_bus}"
     end
-    puts articles_dir
+    return articles_dir
   end
 
   def self.targetdir_private(homework, articles_dir_private,
@@ -90,6 +90,6 @@ module PublicanCreatorsPrepare
     else
       articles_dir = "#{home}/#{homework_dir_private}"
     end
-    puts articles_dir
+    return articles_dir
   end
 end

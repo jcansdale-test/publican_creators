@@ -49,4 +49,18 @@ module Checker
       end
     end
   end
+
+  # This method will be launched from the init_docu_* methods. It returns a
+  # success, otherwise it raises with a error.
+  # @param [String] title comes from the get method. This @param represents the
+  # name or title of your work. It is used in all important code places.
+  # @return [String] true or false
+  def self.check_result(title)
+    # @note checking if new documentation directory exists
+    if Dir.exist?(title)
+      puts 'Creating documentation was a success...'
+    else
+      fail('Cant create documentation. Please try it manual with publican...')
+    end
+  end
 end

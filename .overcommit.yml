@@ -56,16 +56,6 @@ PreCommit:
       - '**/Rakefile'
       - 'lib/**/*.rb'
 
-#  RubyLint:
-#    enabled: true
-#    description: 'Analyzing with ruby-lint'
-#    required_executable: 'ruby-lint'
-#    flags: ['--presenter=syntastic', '--levels=error,warning']
-#    install_command: 'gem install ruby-lint'
-#    include:
-#      - '**/*.gemspec'
-#      - '**/*.rb'
-
 #  TravisLint:
 #    enabled: true
 #    description: 'Checking Travis CI configuration'
@@ -91,7 +81,7 @@ PrePush:
     branches: ['master']
 
   RSpec:
-    enabled: false
+    enabled: true
     description: 'Running RSpec test suite'
     required_executable: 'rspec'
 

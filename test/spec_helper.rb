@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'test'))
 require 'coveralls'
 require 'simplecov'
+require 'fileutils'
+require 'dir'
 Coveralls.wear!
 
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
