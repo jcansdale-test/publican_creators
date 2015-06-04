@@ -27,19 +27,6 @@ PreCommit:
       - 'Gemfile.lock'
       - '*.gemspec'
 
-#  Reek:
-#    enabled: true
-#    description: 'Analyzing with Reek'
-#    required_executable: 'reek'
-#    flags: ['--single-line', '--no-color']
-#    install_command: 'gem install reek'
-#    include:
-#      - '**/*.gemspec'
-#      - '**/*.rake'
-#      - '**/*.rb'
-#      - '**/Gemfile'
-#      - '**/Rakefile'
-
   RuboCop:
     enabled: true
     description: 'Analyzing with RuboCop'
@@ -63,6 +50,19 @@ PreCommit:
     flags: ['lint']
     install_command: 'gem install travis'
     include: '.travis.yml'
+
+#  Reek:
+#    enabled: true
+#    description: 'Analyzing with Reek'
+#    required_executable: 'reek'
+#    flags: ['--single-line', '--no-color']
+#    install_command: 'gem install reek'
+#    include:
+#      - '**/*.gemspec'
+#      - '**/*.rake'
+#      - '**/*.rb'
+#      - '**/Gemfile'
+#      - '**/Rakefile'
 
 TrailingWhitespace:
     exclude:
