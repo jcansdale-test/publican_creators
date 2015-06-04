@@ -83,15 +83,10 @@ module PublicanCreatorsChange
   # global entity file.
   # This method adds the entities from that file into the local one. It returns
   # a success or fail.
-  # @param [String] title comes from the get method. This @param represents the
-  #                 name or title of your work. It is used in all important code
-  #                 places.
   # @param [String] environment shows if you actually want to create a private
   #                 or Business Publication. If Work is given it reads your
   #                 global entity file and appends it on the ent file.
   # @param [String] global_entities is just the path to the global entity file.
-  # @param [String] brand can be a special customized brand for your company to
-  #                 fit the Styleguide.
   # @param [String] ent Path to the entity file
   # @return [String] true or false
   def self.add_entity(environment, global_entities, ent)
@@ -164,14 +159,10 @@ de-DE/#{title}.ent file |", "#{namefill}")
   # will applied if environment is Work, "type" is Article and title_logo is
   # "false".
   # It returns a sucess or fail.
-  # @param [String] bookinfo Book_Info. Which is used there depends on the
-  #                 param "type".
-  # @param [String] artinfo Article_Info. Which is used there depends on the
-  #                 param "type".
+  # @param [String] info can be bookinfo or artinfo
   # @param [String] title_logo means that you can set if you want to use
   #                 Publican's Title Logo or use your own Title Logo with your
   #                 Stylesheets.
-  # @param [String] type represents the Document-Type like Article or Book.
   # @return [String] true or false
   def self.remove_orgname(info, title_logo)
     if title_logo == 'false'
@@ -186,6 +177,15 @@ de-DE/#{title}.ent file |", "#{namefill}")
     end
   end
 
+  # Checks if bookinfo or artinfo is needed, then it starts remove_orgname
+  # @param [String] bookinfo Book_Info. Which is used there depends on the
+  #                 param "type".
+  # @param [String] artinfo Article_Info. Which is used there depends on the
+  #                 param "type".
+  # @param [String] title_logo means that you can set if you want to use
+  #                 Publican's Title Logo or use your own Title Logo with your
+  #                 Stylesheets.
+  # @param [String] type represents the Document-Type like Article or Book.
   def self.remove_orgname_prepare(bookinfo, artinfo, title_logo, type)
     info = artinfo if type == 'Article'
     info = bookinfo if type == 'Book'
@@ -234,6 +234,7 @@ de-DE/#{title}.ent file |", "#{namefill}")
           # XCOM articles using another way to add them.
           puts 'Remove XI-Includes for Legal Notice...'
           text = File.read(artinfo)
+          # rubocop:disable Metrics/LineLength
           new_contents = text.gsub('<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />', '')
           puts new_contents
           File.open(artinfo, 'w') { |file| file.puts new_contents }

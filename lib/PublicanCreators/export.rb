@@ -39,8 +39,9 @@ module PublicanCreatorsExport
   #                 code places.
   # @param [String] builds is the path to your buildscript
   # @param [String] language is just the ISO Code of your target language
-  #                 like: #{language}, en-GB or such things.
-  # @param [String] xfc_brand_dir if present the path to your branded xfc stylesheets (config file)
+  #                 like: en-GB or such things.
+  # @param [String] xfc_brand_dir if present the path to your branded xfc
+  #                 stylesheets (config file)
   # @param [String] pdfview your prefered PDF-Viewer (config file)
   # @return [String] true or false
   def self.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)

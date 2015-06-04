@@ -70,8 +70,6 @@ class RevisionCreator
   end
 
   # This method changes to the target directory
-  # @param [String] directory The directory where the projects publican.cfg is
-  # @return [String] true or false
   FileUtils.cd(directory) do
     string = prepare_revision(member1, member2, member3, member4, member5,
                               revnumber, language)

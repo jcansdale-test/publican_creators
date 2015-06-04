@@ -35,13 +35,6 @@ module PublicanCreatorsPrepare
   #                 new Publication is a Report or not.
   # @param [String] books_dir_business contains the directory for your business
   #                 books
-  # @param [String] type represents the Document-Type like Article or Book.
-  # @param [String] reports_dir_business contains the directory to your reports
-  # @param [String] articles_dir_bus represents the directory for your articles
-  # @param [String] report contains a true or false. There you can set if the
-  #                 new Publication is a Report or not.
-  # @param [String] books_dir_business contains the directory for your business
-  #                 books
   # @param [String] homework contains true or false. If your present Publication
   #                 is a homework you can set it there.
   # @param [String] articles_dir_private contains the path to your private
@@ -72,6 +65,11 @@ module PublicanCreatorsPrepare
     end
   end
 
+  # Prepares the articles_dir for work environment
+  # @param [String] reports_dir_business contains the directory to your reports
+  # @param [String] articles_dir_bus represents the directory for your articles
+  # @param [String] report contains a true or false. There you can set if the
+  #                 new Publication is a Report or not.
   def self.targetdir_work(report, reports_dir_business, articles_dir_bus)
     home = Dir.home
     if report == 'TRUE'
@@ -82,6 +80,12 @@ module PublicanCreatorsPrepare
     return articles_dir
   end
 
+  # Prepares the articles_dir for home environment
+  # @param [String] homework contains true or false. If your present Publication
+  #                 is a homework you can set it there.
+  # @param [String] articles_dir_private contains the path to your private
+  #                 articles_dir
+  # @param [String] homework_dir_private contains the path to your homework dir.
   def self.targetdir_private(homework, articles_dir_private,
       homework_dir_private)
     home = Dir.home
