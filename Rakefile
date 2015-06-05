@@ -39,6 +39,7 @@ task :test_with_coveralls => [:spec, 'coveralls:push']
 # Yard Task
 require 'yard'
 desc 'Run yarddoc for the source'
+# rubocop:disable Metrics/LineLength
 YARD::Rake::YardocTask.new do |t|
   t.files = %w('lib/**/*.rb', 'bin/publican_creators.rb', 'bin/revision_creator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
 end
@@ -52,6 +53,17 @@ RuboCop::RakeTask.new(:rubocop) do |task|
   task.formatters = ['files']
   # don't abort rake on failure
   task.fail_on_error = false
+end
+
+# Reek
+require 'reek/rake/task'
+Reek::Rake::Task.new do |t|
+  t.name          = 'reek'
+  t.config_file   = 'config.reek'
+  t.source_files  = 'lib/**/*.rb'
+  t.reek_opts     = '' # -U
+  t.fail_on_error = false
+  t.verbose       = true
 end
 
 # Setup procedure
@@ -170,9 +182,7 @@ task :create_desktop_cre do
   publicancre = "#{home}/.local/share/applications/publicancreators.desktop"
   publicancreico = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican.png'))
   publicancrebin = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican_creators.rb'))
-  if File.exists?(publicancre)
-    FileUtils.rm(publicancre)
-  end
+  FileUtils.rm(publicancre) if File.exists?(publicancre)
   puts 'Creating Desktop file for PublicanCreators'.color(:yellow)
   FileUtils.touch "#{publicancre}"
   File.write "#{publicancre}", <<EOF
@@ -193,9 +203,7 @@ task :create_desktop_rev do
   publicanrev = "#{home}/.local/share/applications/publicancreators-rev.desktop"
   publicanrevico = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'publican-revision.png'))
   publicanrevbin = File.expand_path(File.join(File.dirname(__FILE__), 'bin/', 'revision_creator.rb'))
-  if File.exist?(publicanrev)
-    FileUtils.rm(publicanrev)
-  end
+  FileUtils.rm(publicanrev) if File.exist?(publicanrev)
   puts 'Creating Desktop file for PublicanCreatorsRevision'.color(:yellow)
   FileUtils.touch "#{publicanrev}"
   File.write "#{publicanrev}", <<EOF

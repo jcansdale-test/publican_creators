@@ -2,7 +2,7 @@
 # @author Sascha Manns
 # @abstract Main Class for PublicanCreators
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
+# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -43,7 +43,7 @@ class PublicanCreators
   puts "Script: #{my_name}"
   puts "Version: #{version}"
   puts
-  puts 'Copyright (C) 2015 Sascha Manns <Sascha.Manns@bdvb.de>'
+  puts 'Copyright (C) 2015 Sascha Manns <Sascha-Manns@web.de>'
   puts 'Description: This script creates a article or book set with'
   puts 'Publican. Then it modifies it for your needs.'
   puts 'License: MIT'

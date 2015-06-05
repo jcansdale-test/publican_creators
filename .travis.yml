@@ -30,4 +30,4 @@ after_success:
 
 notifications:
   email:
-    - Sascha.Manns@bdvb.de
+    - Sascha-Manns@web.de

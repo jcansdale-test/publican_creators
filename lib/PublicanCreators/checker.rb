@@ -2,7 +2,7 @@
 # @author Sascha Manns
 # @abstract Class for checking directories and creating them
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
+# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal

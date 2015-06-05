@@ -7,7 +7,6 @@ AllCops:
   Exclude:
     - 'Rakefile'
     - 'test/The_holy_Bible/*'
-    - 'lib/**/export.rb'
 
   DisplayCopNames: true
 

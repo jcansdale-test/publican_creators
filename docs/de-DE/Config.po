@@ -59,7 +59,7 @@ msgstr "Ihr Name z.B. Ada Lovelace"
 msgid "email_private"
 msgstr ""
 
-msgid "Sascha.Manns@bdvb.de"
+msgid "Sascha-Manns@web.de"
 msgstr ""
 
 msgid "Your private email address"

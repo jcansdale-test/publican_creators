@@ -278,7 +278,6 @@ Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />'
   end
 end
 
-
 describe 'PublicanCreatorsChange' do
   describe '.fix_revhist' do
     context 'Work Environment' do
@@ -286,7 +285,7 @@ describe 'PublicanCreatorsChange' do
       name = 'Sascha Manns'
       firstname = 'Sascha'
       surname = 'Manns'
-      email = 'Sascha.Manns@bdvb.de'
+      email = 'Sascha-Manns@web.de'
       email_business = 'Sascha.Manns@xcom.de'
       title = 'The_holy_Bible-WorkArt'
       revhist = "#{title}/de-DE/Revision_History.xml"
@@ -305,7 +304,7 @@ describe 'PublicanCreatorsChange' do
       name = 'Sascha Manns'
       firstname = 'Sascha'
       surname = 'Manns'
-      email = 'Sascha.Manns@bdvb.de'
+      email = 'Sascha-Manns@web.de'
       email_business = 'Sascha.Manns@xcom.de'
       title = 'The_holy_Bible-PrivArt'
       revhist = "#{title}/de-DE/Revision_History.xml"
@@ -353,7 +352,7 @@ describe 'PublicanCreatorsChange' do
       surname = 'Manns'
       company_name = 'XCOM AG'
       company_division = 'SWE7'
-      email = 'Sascha.Manns@bdvb.de'
+      email = 'Sascha-Manns@web.de'
       environment = 'Private'
       title = 'The_holy_Bible-PrivArt'
       agroup = "#{title}/de-DE/Author_Group.xml"
@@ -402,4 +401,3 @@ describe 'PublicanCreatorsTest' do
     end
   end
 end
-

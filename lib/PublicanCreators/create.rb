@@ -3,7 +3,7 @@
 # @author Sascha Manns
 # @abstract Class for all file changes
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
+# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -53,9 +53,7 @@ class PublicanCreatorsCreate
     # Set standard string
     string = "--lang #{language} --name #{title}"
     # Add Article if type is Article
-    if type == 'Article'
-      string << ' --type Article'
-    end
+    string << ' --type Article' if type == 'Article'
     # Set business brand if given
     string << " --brand #{brand}" if brand != ''
     # @note Check if DocBook 5 wished as default, if yes it adds the parameter
@@ -90,8 +88,8 @@ class PublicanCreatorsCreate
     puts 'Creating initial documentation ...'
 
     if type == 'Article'
-      string = private_article(language, title, brand_private, brand_homework,
-                      homework)
+      string = private_article(language, title, brand_private,
+                               brand_homework, homework)
     else
       # @note Initial creation of documentation with publican
       string = "--lang #{language} --name #{title}"

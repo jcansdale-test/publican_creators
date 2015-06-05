@@ -3,7 +3,7 @@
 # @author Sascha Manns
 # @abstract Class for all file changes
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
+# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -89,6 +89,7 @@ module PublicanCreatorsChange
   # @param [String] global_entities is just the path to the global entity file.
   # @param [String] ent Path to the entity file
   # @return [String] true or false
+  # This method smells of :reek:UncommunicativeVariableName
   def self.add_entity(environment, global_entities, ent)
     if environment == 'Work'
       if global_entities.empty?

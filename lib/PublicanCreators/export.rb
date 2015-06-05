@@ -2,7 +2,7 @@
 # @author Sascha Manns
 # @abstract Class for exporting bash scripts
 #
-# Copyright (C) 2015  Sascha Manns <Sascha.Manns@bdvb.de>
+# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -28,9 +28,9 @@ require 'PublicanCreators/change'
 require 'fileutils'
 require 'rainbow/ext/string'
 
+# rubocop:disable Metrics/MethodLength
 # Module for running exports to a file
 module PublicanCreatorsExport
-
   # Exports a predefined Shellscript to the target directory.
   # It returns a sucess or fail.
   # Description:
@@ -47,6 +47,7 @@ module PublicanCreatorsExport
   def self.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
     puts 'Export the buildscript into new directory...'
     FileUtils.touch "#{builds}"
+    # rubocop:disable Metrics/LineLength
     File.write "#{builds}", <<EOF
 # -*- ruby -*-
 # encoding: utf-8

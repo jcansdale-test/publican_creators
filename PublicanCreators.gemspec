@@ -1,4 +1,4 @@
-# coding: utf-8
+# rubocop:disable Style/FileName
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'PublicanCreators/version'
@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name = 'PublicanCreators'
   spec.version = PublicanCreatorsVersion::Version::STRING
   spec.authors = ['Sascha Manns']
-  spec.email = ['Sascha.Manns@bdvb.de']
+  spec.email = ['Sascha-Manns@web.de']
 
   spec.summary = ['A short program to fix the publican documentation']
   spec.description = ['PublicanCreators are a small tool for daily DocBook
@@ -33,7 +33,7 @@ ships a build script for each project.']
     File.basename(f)
   }
   spec.require_paths = ['lib']
-  spec.post_install_message = 'Please file bugreports and feature requests on:
+  spec.post_install_message = 'Please file bugreports and feature requests on: \
 http://saigkill.ddns.net:8112/dashboard'
 
   spec.platform = Gem::Platform::RUBY
@@ -50,10 +50,13 @@ http://saigkill.ddns.net:8112/dashboard'
   spec.add_development_dependency 'shoulda', '~> 3.5', '>= 3.5.0'
   spec.add_development_dependency 'simplecov', '~> 0.10', '>= 0.10.0'
   spec.add_development_dependency 'rubocop', '~> 0.31', '>= 0.31.0'
+  spec.add_development_dependency 'overcommit', '~> 0.24', '>= 0.24.0'
+  spec.add_development_dependency 'travis', '~> 1.7', '>= 1.7.7'
+  spec.add_development_dependency 'reek', '~> 2.2', '>= 2.2.1'
+  spec.add_development_dependency 'ruby-lint', '~> 2.0', '>= 2.0.4'
 
   spec.add_runtime_dependency 'dir', '~> 0.1', '>= 0.1.2'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0', '>= 1.0.6'
   spec.add_runtime_dependency 'rainbow', '~> 2.0', '>= 2.0.0'
-
 end
