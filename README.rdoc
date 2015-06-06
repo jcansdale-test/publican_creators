@@ -21,6 +21,7 @@ authors blog :: http://saigkill.github.io
 openhub :: https://www.openhub.net/p/PublicanCreators
 openhatch :: http://openhatch.org/projects/PublicanCreators
 donations :: {<img src="https://pledgie.com/campaigns/29306.png?skin_name=chrome" />}[https://pledgie.com/campaigns/29306] Donations are welcome :-)
+
 == Description
 
 PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators asks after
