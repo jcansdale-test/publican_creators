@@ -34,7 +34,7 @@ class PublicanCreatorsVersion
     # Patchlevel
     PATCH = 8
     # Buildversion. Mostly 0
-    BUILD = 0
+    BUILD = 1
     # @note This will be shown by PublicanCreatorsVersion::Version::STRING
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join('.')
   end
