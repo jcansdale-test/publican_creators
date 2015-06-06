@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.4.8.1 (2015-05-26)
+### Testbase
+* Improved and extended testcases for continuous integration
+### Code
+* Improved code to pacify rubocop.
+
 ## 0.4.8 (2015-05-26)
 ### Bugfixes
 * fixed  PC-18 Can't use RevisionCreator anymore

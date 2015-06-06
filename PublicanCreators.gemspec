@@ -6,11 +6,11 @@ require 'PublicanCreators/version'
 Gem::Specification.new do |spec|
   spec.name = 'PublicanCreators'
   spec.version = PublicanCreatorsVersion::Version::STRING
-  spec.authors = ['Sascha Manns']
-  spec.email = ['Sascha-Manns@web.de']
+  spec.authors = 'Sascha Manns'
+  spec.email = 'Sascha-Manns@web.de'
 
-  spec.summary = ['A short program to fix the publican documentation']
-  spec.description = ['PublicanCreators are a small tool for daily DocBook
+  spec.summary = ['Program for controlling Publican']
+  spec.description = 'PublicanCreators are a small tool for daily DocBook
 writers who are using the Redhat publican tool
 [https://fedorahosted.org/publican/]. PublicanCreators asks after launching
 which title, type and environment should be used. Then it starts publican with
@@ -20,7 +20,7 @@ Revision_History.xml and will replace the default values with your name, your
  company, your company_divison and your private or your business email address,
 depending on your chosen environment. Also you can set inside your config file
 that you want to remove the Title Logo or the Legal Notice. As a feature it
-ships a build script for each project.']
+ships a build script for each project.'
 
   spec.homepage = 'https://github.com/saigkill/PublicanCreators'
   spec.license = 'MIT'
@@ -33,8 +33,8 @@ ships a build script for each project.']
     File.basename(f)
   }
   spec.require_paths = ['lib']
-  spec.post_install_message = 'Please file bugreports and feature requests on: \
-http://saigkill.ddns.net:8112/dashboard'
+  spec.post_install_message = 'Please file bugreports and feature requests
+on: http://saigkill.ddns.net:8112/dashboard'
 
   spec.platform = Gem::Platform::RUBY
   spec.date = ENV['from'] ? Date.parse(ENV['from']) : Date.today
