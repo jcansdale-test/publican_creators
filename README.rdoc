@@ -4,7 +4,6 @@ license :: {<img src="http://img.shields.io/:license-gpl3-blue.svg" alt="license
 last public version :: {<img src="https://badge.fury.io/rb/PublicanCreators.png" alt="version">}[http://rubygems.org/gems/PublicanCreators]
 continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master" alt="integration state">}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators]
 continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="integration state">}[https://secure.travis-ci.org/saigkill/PublicanCreators]
-continuous integration :: {<img src="https://api.shippable.com/projects/55772d47edd7f2c0520ebc31/badge?branchName=master&no=1434429717639" />}[https://api.shippable.com/projects/55772d47edd7f2c0520ebc31]
 test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/saigkill/PublicanCreators?branch=master]
 code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators.png" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
 code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/PublicanCreators]
