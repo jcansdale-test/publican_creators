@@ -43,13 +43,13 @@ PreCommit:
       - '**/Rakefile'
       - 'lib/**/*.rb'
 
-  TravisLint:
-    enabled: true
-    description: 'Checking Travis CI configuration'
-    required_executable: 'travis'
-    flags: ['lint']
-    install_command: 'gem install travis'
-    include: '.travis.yml'
+#  TravisLint:
+#    enabled: true
+#    description: 'Checking Travis CI configuration'
+#    required_executable: 'travis'
+#    flags: ['lint']
+#    install_command: 'gem install travis'
+#    include: '.travis.yml'
 
 #  Reek:
 #    enabled: true

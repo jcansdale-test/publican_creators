@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name = 'PublicanCreators'
   spec.version = PublicanCreatorsVersion::Version::STRING
   spec.authors = 'Sascha Manns'
-  spec.email = 'Sascha-Manns@web.de'
+  spec.email = 'samannsml@directbox.com'
 
   spec.summary = ['Program for controlling Publican']
   spec.description = 'PublicanCreators are a small tool for daily DocBook
@@ -23,7 +23,7 @@ that you want to remove the Title Logo or the Legal Notice. As a feature it
 ships a build script for each project.'
 
   spec.homepage = 'https://github.com/saigkill/PublicanCreators'
-  spec.license = 'MIT'
+  spec.license = 'GPL-3'
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f|
     f.match(%r{^(test|spec|features)/})

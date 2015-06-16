@@ -41,7 +41,8 @@ require 'yard'
 desc 'Run yarddoc for the source'
 # rubocop:disable Metrics/LineLength
 YARD::Rake::YardocTask.new do |t|
-  t.files = %w('lib/**/*.rb', 'bin/publican_creators.rb', 'bin/revision_creator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.txt', 'README.rdoc')
+  t.files = %w('lib/**/*.rb', 'bin/publican_creators.rb',
+'bin/revision_creator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.md', 'README.rdoc')
 end
 
 # Rubocop
