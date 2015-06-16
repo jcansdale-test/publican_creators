@@ -24,7 +24,8 @@ ships a build script for each project.'
 
   spec.homepage = 'https://github.com/saigkill/PublicanCreators'
   spec.license = 'GPL-3'
-  spec.metadata = {issue_tracker: 'http://saigkill-bugs.myjetbrains.com/youtrack/issues'}
+  spec.metadata = {'issue_tracker' => 'http://saigkill-bugs.myjetbrains
+.com/youtrack/issues'}
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f|
     f.match(%r{^(test|spec|features)/})
