@@ -2,7 +2,7 @@
 # @author Sascha Manns
 # @abstract Class for exporting bash scripts
 #
-# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
+# Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
 # License: GPL-3
 
 # Dependencies

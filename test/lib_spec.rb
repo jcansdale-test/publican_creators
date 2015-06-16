@@ -285,7 +285,7 @@ describe 'PublicanCreatorsChange' do
       name = 'Sascha Manns'
       firstname = 'Sascha'
       surname = 'Manns'
-      email = 'Sascha-Manns@web.de'
+      email = 'samannsml@directbox.com'
       email_business = 'Sascha.Manns@xcom.de'
       title = 'The_holy_Bible-WorkArt'
       revhist = "#{title}/de-DE/Revision_History.xml"
@@ -304,7 +304,7 @@ describe 'PublicanCreatorsChange' do
       name = 'Sascha Manns'
       firstname = 'Sascha'
       surname = 'Manns'
-      email = 'Sascha-Manns@web.de'
+      email = 'samannsml@directbox.com'
       email_business = 'Sascha.Manns@xcom.de'
       title = 'The_holy_Bible-PrivArt'
       revhist = "#{title}/de-DE/Revision_History.xml"
@@ -352,7 +352,7 @@ describe 'PublicanCreatorsChange' do
       surname = 'Manns'
       company_name = 'XCOM AG'
       company_division = 'SWE7'
-      email = 'Sascha-Manns@web.de'
+      email = 'samannsml@directbox.com'
       environment = 'Private'
       title = 'The_holy_Bible-PrivArt'
       agroup = "#{title}/de-DE/Author_Group.xml"

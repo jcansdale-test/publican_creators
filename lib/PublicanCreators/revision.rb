@@ -1,7 +1,7 @@
 # @author Sascha Manns
 # @abstract Class RevisionCreator for PublicanCreator
 #
-# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
+# Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
 # License: GPL-3
 #
 # Fix for PC-1

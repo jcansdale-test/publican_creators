@@ -5,5 +5,5 @@ lib/**/*.rb
 -
 CHANGELOG.md
 CODE_OF_CONDUCT.md
-LICENSE.txt
+LICENSE.md
 README.rdoc

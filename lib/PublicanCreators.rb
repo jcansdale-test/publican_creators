@@ -2,7 +2,7 @@
 # @author Sascha Manns
 # @abstract Main Class for PublicanCreators
 #
-# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
+# Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
 # License: GPL-3
 
 # Dependencies
@@ -26,7 +26,7 @@ class PublicanCreators
   puts "Script: #{my_name}"
   puts "Version: #{version}"
   puts
-  puts 'Copyright (C) 2015 Sascha Manns <Sascha-Manns@web.de>'
+  puts 'Copyright (C) 2015 Sascha Manns <samannsml@directbox.com>'
   puts 'Description: This script creates a article or book set with'
   puts 'Publican. Then it modifies it for your needs.'
   puts 'License: GPL-3'

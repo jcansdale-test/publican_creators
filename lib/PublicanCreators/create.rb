@@ -3,7 +3,7 @@
 # @author Sascha Manns
 # @abstract Class for all file changes
 #
-# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
+# Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
 # License: GPL-3
 
 # Dependencies

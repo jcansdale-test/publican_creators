@@ -2,7 +2,7 @@
 # @author Sascha Manns
 # @abstract Class for maintaining the version number
 #
-# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
+# Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
 # License: GPL-3
 
 # Method for versioning the gem

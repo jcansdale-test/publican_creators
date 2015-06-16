@@ -2,7 +2,7 @@
 # @author Sascha Manns
 # @abstract Class for gathering information from config file and user input
 #
-# Copyright (C) 2015  Sascha Manns <Sascha-Manns@web.de>
+# Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
 # License: GPL-3
 
 # Dependencies

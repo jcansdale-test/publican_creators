@@ -21,7 +21,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install software-properties-common
     - sudo apt-get install publican
-    - sudo echo "deb [trusted=yes] https://repo.fury.io/saigkill/ /" >> /etc/apt/sources.list.d/gemfury.list
+    - sudo add-apt-repository ppa:sascha-manns-h/publican -y
     - sudo apt-get update
     - sudo apt-get install --only-upgrade publican
     - sudo apt-get install publican-xcom
@@ -31,4 +31,4 @@ after_success:
 
 notifications:
   email:
-    - Sascha-Manns@web.de
+    - samannsml@directbox.com

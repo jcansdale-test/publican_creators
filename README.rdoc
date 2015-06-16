@@ -61,7 +61,7 @@ Bundler should solve the dependencies by itself.
 Or just use the Launcher.
 
 == Feature Requests & Bug Reports
-You can file Requests and Reports on the my bugtracker: [http://saigkill.ddns.net:8112/dashboard]
+You can file Requests and Reports on the my bugtracker: [http://saigkill-bugs.myjetbrains.com/youtrack/issues]
 
 == Contributing
 
