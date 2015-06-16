@@ -18,7 +18,7 @@ authors blog :: http://saigkill.github.io
 openhub :: https://www.openhub.net/p/PublicanCreators
 openhatch :: http://openhatch.org/projects/PublicanCreators
 donations :: {<img src="https://pledgie.com/campaigns/29306.png?skin_name=chrome" />}[https://pledgie.com/campaigns/29306] {<img src="http://tsv-neuss.de/cms/upload/News-Bilder/amazon1.png" />}[http://www.amazon.de/registry/wishlist/D75HOEQ00BDD]
-donations :: {<img src="http://img.shields.io/gratipay/saigkill.svg">}[https://gratipay.com/~saigkill/]
+donations :: {<img src="http://img.shields.io/gratipay/saigkill.svg" />}[https://gratipay.com/~saigkill/]
 
 == Description
 

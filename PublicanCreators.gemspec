@@ -1,4 +1,5 @@
 # rubocop:disable Style/FileName
+# rubocop:disable Metrics/LineLength
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'PublicanCreators/version'
@@ -24,8 +25,7 @@ ships a build script for each project.'
 
   spec.homepage = 'https://github.com/saigkill/PublicanCreators'
   spec.license = 'GPL-3'
-  spec.metadata = {'issue_tracker' => 'http://saigkill-bugs.myjetbrains
-.com/youtrack/issues'}
+  spec.metadata = { 'issue_tracker' => 'http://saigkill-bugs.myjetbrains.com/youtrack/issues' }
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f|
     f.match(%r{^(test|spec|features)/})
@@ -35,8 +35,7 @@ ships a build script for each project.'
     File.basename(f)
   }
   spec.require_paths = ['lib']
-  spec.post_install_message = 'Please file bugreports and feature requests
-on: http://saigkill-bugs.myjetbrains.com/youtrack/issues'
+  spec.post_install_message = 'Please file bugreports and feature requests on: http://saigkill-bugs.myjetbrains.com/youtrack/issues'
 
   spec.platform = Gem::Platform::RUBY
   spec.date = ENV['from'] ? Date.parse(ENV['from']) : Date.today
