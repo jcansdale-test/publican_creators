@@ -325,6 +325,9 @@ You need to have yad and publican (a 4.x version) installed. In case of using Ub
 # Running the Gem
 To run it you can type /path/to/gem/bin/publican_creators.rb, or just use the launcher.
 
+# Downloads
+All downloads of PublicanCreators:
+[![downloads-all](https://img.shields.io/gem/dt/PublicanCreators.svg)](https://rubygems.org/gems/PublicanCreators)
 # References
   * Projects home: [https://github.com/saigkill/PublicanCreators](https://github.com/saigkill/PublicanCreators)
   * User documentation (en): [http://saigkill.github.io/docs/publicancreators/en-US/html](http://saigkill.github.io/docs/publicancreators/en-US/html)
