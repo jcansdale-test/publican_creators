@@ -25,7 +25,7 @@
 
 ## Description
 
-PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators asks after
+PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool https://fedorahosted.org/publican/. PublicanCreators asks after
 launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files.
 It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
 will replace the default values with your name, your company, your company_divison and your private or your business
@@ -63,7 +63,7 @@ Bundler should solve the dependencies by itself.
 Or just use the Launcher.
 
 ## Feature Requests & Bug Reports
-You can file Requests and Reports on the my bugtracker: [http://saigkill-bugs.myjetbrains.com/youtrack/issues]
+You can file Requests and Reports on the my bugtracker: http://saigkill-bugs.myjetbrains.com/youtrack/issues.
 
 ## Contributing
 

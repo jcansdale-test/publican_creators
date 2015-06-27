@@ -8,7 +8,17 @@
             <set />
           </value>
         </entry>
+        <entry key="/Dummy.youtrack">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.overcommit.yml">
           <value>
             <set />
           </value>
