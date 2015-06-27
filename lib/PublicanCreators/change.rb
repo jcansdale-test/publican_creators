@@ -12,6 +12,7 @@ require 'nokogiri'
 require 'dir'
 require 'PublicanCreators/create'
 require 'PublicanCreators/checker'
+require 'MannsShared'
 
 # Module what contains all methods who are doing changes in files
 module PublicanCreatorsChange

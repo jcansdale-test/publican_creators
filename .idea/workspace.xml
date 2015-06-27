@@ -50,7 +50,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PublicanCreators.gemspec" afterPath="$PROJECT_DIR$/PublicanCreators.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PublicanCreators.iml" afterPath="$PROJECT_DIR$/.idea/PublicanCreators.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators/change.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators/change.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PublicanCreators.iws" />
@@ -92,11 +96,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <file leaf-file-name="change.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/change.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7585089">
-              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PublicanCreators.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.69827586">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -145,7 +159,6 @@
         <option value="$PROJECT_DIR$/config.reek" />
         <option value="$PROJECT_DIR$/test/lib_spec.rb" />
         <option value="$PROJECT_DIR$/.gemnasium.yml" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators/change.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/checker.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/create.rb" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/export.rb" />
@@ -156,14 +169,15 @@
         <option value="$PROJECT_DIR$/bin/revision_creator.rb" />
         <option value="$PROJECT_DIR$/LICENSE.md" />
         <option value="$PROJECT_DIR$/.overcommit.yml" />
-        <option value="$PROJECT_DIR$/lib/PublicanCreators.rb" />
-        <option value="$PROJECT_DIR$/PublicanCreators.gemspec" />
         <option value="$PROJECT_DIR$/README.rdoc" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/version.rb" />
         <option value="$PROJECT_DIR$/CHANGELOG.md" />
         <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/PublicanCreators.gemspec" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators/change.rb" />
+        <option value="$PROJECT_DIR$/lib/PublicanCreators.rb" />
       </list>
     </option>
   </component>
@@ -251,6 +265,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PublicanCreators" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -863,7 +909,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435404827716</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fixed travis config0">
+      <created>1435406893963</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1435406893963</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers>
       <YouTrack shared="false" url="http://saigkill-bugs.myjetbrains.com/youtrack">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -911,7 +963,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Code Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32463464" sideWeight="0.49972692" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32463464" sideWeight="0.49972692" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Pomodoro CD" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22501366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1126,13 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08723748">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/repos/bzr/publican/publicancreators-debian/debian/ruby-publicancreators.docs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15228426">
@@ -1165,13 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029220778">
           <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20421393">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1286,34 +1324,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/change.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8328445">
-          <caret line="161" column="5" selection-start-line="140" selection-start-column="2" selection-end-line="161" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/checker.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82697946">
           <caret line="47" column="5" selection-start-line="35" selection-start-column="2" selection-end-line="47" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.026393">
-          <caret line="32" column="116" selection-start-line="32" selection-start-column="116" selection-end-line="32" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PublicanCreators.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65102637">
-          <caret line="37" column="161" selection-start-line="37" selection-start-column="161" selection-end-line="37" selection-end-column="161" />
           <folding />
         </state>
       </provider>
@@ -1376,6 +1390,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7585089">
           <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08752026">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20421393">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PublicanCreators.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2025862">
+          <caret line="62" column="66" selection-start-line="62" selection-start-column="66" selection-end-line="62" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators/change.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/PublicanCreators.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69827586">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding />
         </state>
       </provider>

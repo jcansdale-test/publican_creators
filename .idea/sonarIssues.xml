@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/PublicanCreators.gemspec">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/README.md">
           <value>
             <set />
@@ -34,6 +39,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/Rakefile">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/lib/PublicanCreators.rb">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/lib/PublicanCreators/change.rb">
           <value>
             <set />
           </value>

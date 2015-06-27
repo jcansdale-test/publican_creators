@@ -138,6 +138,7 @@
     </content>
     <orderEntry type="jdk" jdkName="RVM: ruby-2.2.1" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="MannsShared (v0.1.6.0, RVM: ruby-2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="abstract_type (v0.0.7, RVM: ruby-2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.2.1, RVM: ruby-2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="adamantium (v0.2.0, RVM: ruby-2.2.1) [gem]" level="application" />

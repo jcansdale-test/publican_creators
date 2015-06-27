@@ -16,6 +16,7 @@ require 'fileutils'
 require 'nokogiri'
 require 'rainbow/ext/string'
 require 'bundler/setup'
+require 'MannsShared'
 
 # Main Class of PublicanCreators
 # @return [String] true or false
