@@ -30,7 +30,7 @@ class PublicanCreators
   puts 'Description: This script creates a article or book set with'
   puts 'Publican. Then it modifies it for your needs.'
   puts 'License: GPL-3'
-  puts 'Bugs: Please file bugs on http://saigkill-bugs.myjetbrains.com/youtrack/issues'
+  puts 'Bugs: Please file bugs on http://saigkill-bugs.myjetbrains.com/youtrack/issues?q=project%3A+PublicanCreators'
 
   # This method checks if a oldconfig is available
   # @return [String] true or false

@@ -42,7 +42,7 @@ desc 'Run yarddoc for the source'
 # rubocop:disable Metrics/LineLength
 YARD::Rake::YardocTask.new do |t|
   t.files = %w('lib/**/*.rb', 'bin/publican_creators.rb',
-'bin/revision_creator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.md', 'README.rdoc')
+'bin/revision_creator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.md', 'README.md')
 end
 
 # Rubocop
@@ -76,7 +76,8 @@ task :setup_start do
   puts "#            Version: #{version}                        #".color(:yellow)
   puts '#                                                    #'.color(:yellow)
   puts '# Please file bugreports on:                         #'.color(:yellow)
-  puts '# http://saigkill.ddns.net:8112/dashboard            #'.color(:yellow)
+  puts '# http://saigkill-bugs.myjetbrains.com/youtrack      #'.color(:yellow)
+  puts '#        /issues?q=project%3A+PublicanCreators       #'.color(:yellow)
   puts '######################################################'.color(:yellow)
 end
 
@@ -155,9 +156,9 @@ task :link_binary_cre do
     puts 'Removed'.color(:yellow)
   else
     puts "File #{publicancrebin} doesnt exist. Creating it".color(:yellow)
-    system("sudo ln -s #{publicancre} #{publicancrebin}")
-    puts "Linked to #{publicancrebin}".color(:yellow)
   end
+  system("sudo ln -s #{publicancre} #{publicancrebin}")
+  puts "Linked to #{publicancrebin}".color(:yellow)
 end
 
 desc 'Link binary revision_creator.rb'
@@ -170,9 +171,9 @@ task :link_binary_rev do
     puts 'Removed'.color(:yellow)
   else
     puts "File #{publicanrevbin} doesnt exist. Creating it.".color(:yellow)
-    system("sudo ln -s #{publicanrev} #{publicanrevbin}")
-    puts "Linked to #{publicanrevbin}".color(:yellow)
   end
+  system("sudo ln -s #{publicanrev} #{publicanrevbin}")
+  puts "Linked to #{publicanrevbin}".color(:yellow)
 end
 
 require 'etc'

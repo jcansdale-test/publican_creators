@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.9 (2015-06-27)
+### Fixes
+* Fixed link creater for bins. The old code removes the old link, but doesn't creates a new one.
+
 ## 0.4.8.1 (2015-05-26)
 ### Testbase
 * Improved and extended testcases for continuous integration
