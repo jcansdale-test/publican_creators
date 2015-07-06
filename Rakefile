@@ -362,8 +362,9 @@ task :deployment do
   FileUtils.rm("PublicanCreators-#{version}.gem")
   FileUtils.rm_rf("publicancreators-#{version}")
   FileUtils.rm_rf("ruby-publicancreators-#{version}")
-  # puts 'Uploading package'
-  # system("curl -T pkg/#{appname}_#{version}-1_all.deb -usaigkill:c120ed9aebbb02ef79be5b2c00b60b539d82257f \"https://api.bintray.com/content/saigkill/deb/make-test-release/v#{version}/pool/main/r/#{appname}_#{version}-1_all.deb;deb_distribution=all;deb_component=main;deb_architecture=all;publish=1\"")
+  puts 'Uploading package'
+  system("curl -T pkg/#{appname}_#{version}-1_all.deb -usaigkill:c120ed9aebbb02ef79be5b2c00b60b539d82257f \"https://api.bintray.com/content/saigkill/deb/make-test-release/v#{version}/pool/main/r/#{appname}_#{version}-1_all.deb;deb_distribution=all;deb_component=main;deb_architecture=all;publish=1\"")
+  system("curl -T pkg/#{appname}_#{version}-1_noarch.rpm -usaigkill:c120ed9aebbb02ef79be5b2c00b60b539d82257f \"https://api.bintray.com/content/saigkill/rpm/PublicanCreators/v#{version}/pool/main/r/#{appname}_#{version}-1_noarch .rpm;publish=1\"")
 end
 
 # vim: syntax=ruby
