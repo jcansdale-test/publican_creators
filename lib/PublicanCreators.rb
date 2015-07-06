@@ -35,19 +35,7 @@ class PublicanCreators
 
   # This method checks if a oldconfig is available
   # @return [String] true or false
-  def self.oldconfig
-    home = Dir.home
-    if File.exist?("#{home}/.publicancreators.cfg")
-      puts 'Found configuration file and using it...'
-    else
-      # @raise
-      puts 'Please run rake setup'
-      fail('Exiting now..')
-    end
-  end
-
-  # @note Check oldconfig
-  oldconfig
+  MannsShared.oldconfig_exists?('.publicancreators.cfg')
 
   puts 'Reading the config file in ~/.publicancreators.cfg'
   # @note Run config method who reads in the config file and puts the variables
@@ -166,7 +154,7 @@ class PublicanCreators
   puts "Creating directory #{targetdir}"
   # @param [String] targetdir comes from PublicanCreatorsPrepare.prepare_work or
   # .prepare_private
-  Checker.check_dir(targetdir)
+  MannsShared.check_dir(targetdir)
 
   # @note Change to target directory
   puts 'Change to this directory'
