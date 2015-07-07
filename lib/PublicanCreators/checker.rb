@@ -7,7 +7,6 @@
 
 # Dependencies
 
-require 'dir'
 require 'fileutils'
 require 'rainbow/ext/string'
 
