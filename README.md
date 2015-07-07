@@ -6,6 +6,8 @@
 | last public version           | [![publicversion](https://badge.fury.io/rb/PublicanCreators.png)](http://rubygems.org/gems/PublicanCreators)                                                                      |
 | downloads latest              | [![downloads-latest](https://img.shields.io/gem/dtv/PublicanCreators.svg)](https://rubygems.org/gems/PublicanCreators)                                                            |
 | downloads all                 | [![downloads-all](https://img.shields.io/gem/dt/PublicanCreators.svg)](https://rubygems.org/gems/PublicanCreators)                                                                |
+| download latest deployed deb  | [![Download](https://api.bintray.com/packages/saigkill/deb/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/deb/PublicanCreators/_latestVersion)                          |
+| download latest deployed rpm  | [![Download](https://api.bintray.com/packages/saigkill/rpm/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/rpm/PublicanCreators/_latestVersion)
 | continuous integration        | [![travis](https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master)](https://secure.travis-ci.org/saigkill/PublicanCreators)                                     |
 | continuous integration        | [![scrutinizer](https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master)](https://scrutinizer-ci.com/g/saigkill/PublicanCreators/build-status/master)   |
 | test coverage                 | [![coveralls](https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master)](https://coveralls.io/r/saigkill/PublicanCreators?branch=master)                      |

@@ -319,6 +319,12 @@ If you give it a try just follow the next steps (If you have already Ruby instal
   * cd /path/to/gem
   * rake setup
 
+# Download last deployed Linux packages
+## deb
+[![Download](https://api.bintray.com/packages/saigkill/deb/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/deb/PublicanCreators/_latestVersion)
+##rpm
+[![Download](https://api.bintray.com/packages/saigkill/rpm/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/rpm/PublicanCreators/_latestVersion)
+
 # Dependencies
 You need to have yad and publican (a 4.x version) installed. In case of using Ubuntu or Fedora the setup routine will install it for you. The soft dependencies "dir", "fileutils" and "nokogiri" will be solved by bundler.
 
@@ -352,17 +358,20 @@ task :deployment do
   appname = 'ruby-publicancreators'
   FileUtils.cd('pkg') do
     puts 'Building package'
-    #system("gem2deb PublicanCreators")
-    #system('fpm -s gem -t rpm PublicanCreators')
+    system('rm -rf *')
+    system("gem2deb PublicanCreators")
+    system('fpm -s gem -t rpm PublicanCreators')
 
-    #FileUtils.mv("rubygem-PublicanCreators-#{version}-1.noarch.rpm", "rubygem-publicancreators-#{version}-1.noarch
-    # .rpm")
+    FileUtils.mv("rubygem-PublicanCreators-#{version}-1.noarch.rpm", "rubygem-publicancreators-#{version}-1.noarch.rpm")
 
     puts 'Uploading package'
     system("curl -T #{appname}_#{version}-1_all.deb -usaigkill:c120ed9aebbb02ef79be5b2c00b60b539d82257f \"https://api.bintray.com/content/saigkill/deb/PublicanCreators/v#{version}/pool/main/r/#{appname}_#{version}-1_all.deb;deb_distribution=all;deb_component=main;deb_architecture=all;publish=1\"")
-    #system("curl -T rubygem-publicancreators-#{version}-1.noarch.rpm
-    # -usaigkill:c120ed9aebbb02ef79be5b2c00b60b539d82257f \"https://api.bintray.com/content/saigkill/rpm/PublicanCreators/v#{version}/pool/main/r/rubygem-publicancreators_#{version}-1.noarch.rpm;publish=1\"")
+    system("curl -T rubygem-publicancreators-#{version}-1.noarch.rpm -usaigkill:c120ed9aebbb02ef79be5b2c00b60b539d82257f \"https://api.bintray.com/content/saigkill/rpm/PublicanCreators/v#{version}/pool/main/r/rubygem-publicancreators_#{version}-1.noarch.rpm;publish=1\"")
   end
 end
 
+desc 'Run release & deployment'
+task :rad => [:make_release, :deployment] do
+  puts 'Finished Setup'.color(:green)
+end
 # vim: syntax=ruby
