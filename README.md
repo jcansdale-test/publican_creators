@@ -20,8 +20,10 @@
 | documentation                 | http://www.rubydoc.info/gems/PublicanCreators                                                                                                                                    |
 | user documentation            | http://saigkill.github.io/docs/PublicanCreators/en-US/html/                                                                                                                                    |
 | Bugreports & Feature requests | http://saigkill-bugs.myjetbrains.com/youtrack/issues                                                                                                                              |
+| Mailinglist                   | https://groups.google.com/forum/#!forum/publicancreators |
 | authors blog                  | http://saigkill.github.io                                                                                                                                                         |
 | openhub statistics            | https://www.openhub.net/p/PublicanCreators                                                                                                                                       |
+| openhatch                     | http://openhatch.org/projects/PublicanCreators |
 | donations                     | [![pledgie](https://pledgie.com/campaigns/29306.png?skin_name=chrome)](https://pledgie.com/campaigns/29306)                                                                         |
 | donations                     | [![gratipay](http://img.shields.io/gratipay/saigkill.svg)](https://gratipay.com/~saigkill/)                                                                                         |
 | donations                     | [![amazon](http://tsv-neuss.de/cms/upload/News-Bilder/amazon1.png)](http://www.amazon.de/registry/wishlist/D75HOEQ00BDD)                                                            |
