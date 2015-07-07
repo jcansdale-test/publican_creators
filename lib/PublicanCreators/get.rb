@@ -8,7 +8,6 @@
 # Dependencies
 
 require 'parseconfig'
-require 'dir'
 
 # This method provides methods for user inputs
 module PublicanCreatorsGet

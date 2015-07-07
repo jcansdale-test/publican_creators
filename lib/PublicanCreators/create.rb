@@ -8,7 +8,6 @@
 
 # Dependencies
 require 'nokogiri'
-require 'dir'
 require 'PublicanCreators/checker'
 
 # Class for creating stuff

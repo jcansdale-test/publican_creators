@@ -9,7 +9,6 @@
 # Dependencies
 
 require 'nokogiri'
-require 'dir'
 require 'PublicanCreators/create'
 require 'PublicanCreators/checker'
 require 'MannsShared'
