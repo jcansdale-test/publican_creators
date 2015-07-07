@@ -10,6 +10,7 @@
 | download latest deployed rpm  | [![Download](https://api.bintray.com/packages/saigkill/rpm/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/rpm/PublicanCreators/_latestVersion)
 | continuous integration        | [![travis](https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master)](https://secure.travis-ci.org/saigkill/PublicanCreators)                                     |
 | continuous integration        | [![scrutinizer](https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master)](https://scrutinizer-ci.com/g/saigkill/PublicanCreators/build-status/master)   |
+| continuous integration        | [![teamcity](http://saigkill.ddns.net:8111/app/rest/builds/buildType:(id:PublicanCreators_Build)/statusIcon)](http://saigkill.ddns.net:8111/viewType.html?buildTypeId=PublicanCreators_Build&guest=1)   |
 | test coverage                 | [![coveralls](https://coveralls.io/repos/saigkill/PublicanCreators/badge.png?branch=master)](https://coveralls.io/r/saigkill/PublicanCreators?branch=master)                      |
 | code quality                  | [![codeclimate](https://codeclimate.com/github/saigkill/PublicanCreators.png)](https://codeclimate.com/github/saigkill/PublicanCreators)                                          |
 | code quality                  | [![scrutinizer](https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/saigkill/PublicanCreators/?branch=master) |
