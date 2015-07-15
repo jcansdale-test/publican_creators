@@ -24,6 +24,8 @@
 | authors blog                  | http://saigkill.github.io                                                                                                                                                         |
 | openhub statistics            | https://www.openhub.net/p/PublicanCreators                                                                                                                                       |
 | openhatch                     | http://openhatch.org/projects/PublicanCreators |
+| version notification deb      | [![bintray](https://www.bintray.com/docs/images/bintray_badge_color.png)](https://bintray.com/saigkill/deb/PublicanCreators/view?source=watch)                                           |
+| version notification rpm      | [![bintray](https://www.bintray.com/docs/images/bintray_badge_color.png)](https://bintray.com/saigkill/rpm/PublicanCreators/view?source=watch)                              |
 | donations                     | [![pledgie](https://pledgie.com/campaigns/29306.png?skin_name=chrome)](https://pledgie.com/campaigns/29306)                                                                         |
 | donations                     | [![gratipay](http://img.shields.io/gratipay/saigkill.svg)](https://gratipay.com/~saigkill/)                                                                                         |
 | donations                     | [![amazon](http://tsv-neuss.de/cms/upload/News-Bilder/amazon1.png)](http://www.amazon.de/registry/wishlist/D75HOEQ00BDD)                                                            |

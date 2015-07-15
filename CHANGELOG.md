@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.10 - 0.4.11 (?)
+### Improvements
+* Added bintray deployment
+
 ## 0.4.9 (2015-06-27)
 ### Fixes
 * Fixed link creater for bins. The old code removes the old link, but doesn't creates a new one.

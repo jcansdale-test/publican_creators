@@ -25,7 +25,7 @@ ships a build script for each project.'
 
   spec.homepage = 'https://github.com/saigkill/PublicanCreators'
   spec.license = 'GPL-3'
-  spec.metadata = { 'issue_tracker' => 'http://saigkill-bugs.myjetbrains.com/youtrack/issues?q=project%3A+PublicanCreators' }
+  spec.metadata = { 'issue_tracker' => 'http://saigkill-bugs.myjetbrains.com/youtrack/issues' }
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f|
     f.match(%r{^(test|spec|features)/})
@@ -35,7 +35,7 @@ ships a build script for each project.'
     File.basename(f)
   }
   spec.require_paths = ['lib']
-  spec.post_install_message = 'Please file bugreports and feature requests on: http://saigkill-bugs.myjetbrains.com/youtrack/issues?q=project%3A+PublicanCreators'
+  spec.post_install_message = 'Please file bugreports and feature requests on: http://saigkill-bugs.myjetbrains.com/youtrack/issues'
 
   spec.platform = Gem::Platform::RUBY
   spec.date = ENV['from'] ? Date.parse(ENV['from']) : Date.today
@@ -56,6 +56,7 @@ ships a build script for each project.'
   spec.add_development_dependency 'reek', '~> 2.2', '>= 2.2.1'
   spec.add_development_dependency 'ruby-lint', '~> 2.0', '>= 2.0.4'
   spec.add_development_dependency 'fpm',  '~> 1.3', '>= 1.3.3'
+  spec.add_development_dependency 'bundler-audit', '~> 0.4', '>= 0.4.0'
 
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0', '>= 1.0.6'

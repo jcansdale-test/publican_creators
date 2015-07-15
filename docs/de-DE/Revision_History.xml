@@ -10,18 +10,35 @@
 	 <simpara>
 		<revhistory>
 			<revision>
-				<revnumber>0.4.0-0.12</revnumber>
-				<date>Sun May 24 2015</date>
+				<revnumber>0.4.0-0.13</revnumber>
+				<date>Tue Jul 14 2015</date>
 				<author>
 					<firstname>Sascha</firstname>
 					<surname>Manns</surname>
-					<email>samannsml@directbox.com</email>
+					<email>Sascha.Manns@bdvb.de</email>
 				</author>
 				<revdescription>
 					<simplelist>
 						<member>Translation files synchronised with XML sources 0.4.0-0</member>
 					</simplelist>
 				</revdescription>
+			</revision>
+			 <revision>
+				<revnumber>0.4.0-0.12</revnumber>
+				 <date>Sun May 24 2015</date>
+				 <author>
+					<firstname>Sascha</firstname>
+					 <surname>Manns</surname>
+					 <email>samannsml@directbox.com</email>
+				</author>
+				 <revdescription>
+					<simplelist>
+						<member>Translation files synchronised with XML sources 0.4.0-0</member>
+
+					</simplelist>
+
+				</revdescription>
+
 			</revision>
 			 <revision>
 				<revnumber>0.4.0-0.11</revnumber>

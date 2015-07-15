@@ -67,6 +67,29 @@ Reek::Rake::Task.new do |t|
   t.verbose = true
 end
 
+require 'bundler/audit/cli'
+namespace :bundle_audit do
+  desc 'Update bundle-audit database'
+  task :update do
+    Bundler::Audit::CLI.new.update
+  end
+
+  desc 'Check gems for vulns using bundle-audit'
+  task :check do
+    Bundler::Audit::CLI.new.check
+  end
+
+  desc 'Update vulns database and check gems using bundle-audit'
+  task :run do
+    Rake::Task['bundle_audit:update'].invoke
+    Rake::Task['bundle_audit:check'].invoke
+  end
+end
+
+task :bundle_audit do
+  Rake::Task['bundle_audit:run'].invoke
+end
+
 # Setup procedure
 desc 'Launching the setup'
 task :setup_start do
@@ -359,7 +382,7 @@ task :deployment do
   FileUtils.cd('pkg') do
     puts 'Building package'
     system('rm -rf *')
-    system("gem2deb PublicanCreators")
+    system('gem2deb PublicanCreators')
     system('fpm -s gem -t rpm PublicanCreators')
 
     FileUtils.mv("rubygem-PublicanCreators-#{version}-1.noarch.rpm", "rubygem-publicancreators-#{version}-1.noarch.rpm")
