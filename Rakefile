@@ -379,9 +379,9 @@ task :deployment do
   version = PublicanCreatorsVersion::Version::STRING
   puts version
   appname = 'ruby-publicancreators'
+  FileUtils.mkdir('pkg') if File.exist?('pkg') == false
   FileUtils.cd('pkg') do
     puts 'Building package'
-    system('rm -rf *')
     system('gem2deb PublicanCreators')
     system('fpm -s gem -t rpm PublicanCreators')
 
@@ -391,6 +391,7 @@ task :deployment do
     system("curl -T #{appname}_#{version}-1_all.deb -usaigkill:c120ed9aebbb02ef79be5b2c00b60b539d82257f \"https://api.bintray.com/content/saigkill/deb/PublicanCreators/v#{version}/pool/main/r/#{appname}_#{version}-1_all.deb;deb_distribution=all;deb_component=main;deb_architecture=all;publish=1\"")
     system("curl -T rubygem-publicancreators-#{version}-1.noarch.rpm -usaigkill:c120ed9aebbb02ef79be5b2c00b60b539d82257f \"https://api.bintray.com/content/saigkill/rpm/PublicanCreators/v#{version}/pool/main/r/rubygem-publicancreators_#{version}-1.noarch.rpm;publish=1\"")
   end
+  FileUtils.rm_rf('pkg')
 end
 
 desc 'Run release & deployment'
