@@ -20,7 +20,6 @@
 | documentation                 | http://www.rubydoc.info/gems/PublicanCreators                                                                                                                                    |
 | user documentation            | http://saigkill.github.io/docs/PublicanCreators/en-US/html/                                                                                                                                    |
 | Bugreports & Feature requests | http://saigkill-bugs.myjetbrains.com/youtrack/issues                                                                                                                              |
-| Code comment & review         | http://saigkill.ddns.net:8080/publicancreators/view |
 | Mailinglist                   | https://groups.google.com/forum/#!forum/publicancreators |
 | authors blog                  | http://saigkill.github.io                                                                                                                                                         |
 | openhub statistics            | https://www.openhub.net/p/PublicanCreators                                                                                                                                       |
