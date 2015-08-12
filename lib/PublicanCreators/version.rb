@@ -6,7 +6,7 @@
 # License: GPL-3
 
 # Method for versioning the gem
-class PublicanCreatorsVersion
+class PublicanCreators
   # @note human readable Version
   # @return [String] STRING (Version)
   module Version

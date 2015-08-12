@@ -6,7 +6,7 @@ require 'PublicanCreators/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'PublicanCreators'
-  spec.version = PublicanCreatorsVersion::Version::STRING
+  spec.version = PublicanCreators::Version::STRING
   spec.authors = 'Sascha Manns'
   spec.email = 'samannsml@directbox.com'
 
@@ -61,5 +61,5 @@ ships a build script for each project.'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0', '>= 1.0.6'
   spec.add_runtime_dependency 'rainbow', '~> 2.0', '>= 2.0.0'
-  spec.add_runtime_dependency 'MannsShared', '~> 0.1', '>= 0.1.6.0'
+  spec.add_runtime_dependency 'MannsShared', '~> 0.1', '>= 0.1.8'
 end

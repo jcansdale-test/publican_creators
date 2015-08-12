@@ -93,7 +93,7 @@ end
 # Setup procedure
 desc 'Launching the setup'
 task :setup_start do
-  version = PublicanCreatorsVersion::Version::STRING
+  version = PublicanCreators::Version::STRING
   puts '######################################################'.color(:yellow)
   puts '#            PublicanCrators Setup                   #'.color(:yellow)
   puts "#            Version: #{version}                        #".color(:yellow)
@@ -276,7 +276,7 @@ end
 require 'fileutils'
 desc 'Publish Userdocs'
 task :publish_doc do
-  version = PublicanCreatorsVersion::Version::STRING
+  version = PublicanCreators::Version::STRING
   home = Dir.home
   srcde = 'docs/tmp/de-DE/html'
   srcen = 'docs/tmp/en-US/html'
@@ -308,7 +308,7 @@ end
 require 'fileutils'
 desc 'Prepares for release'
 task :make_release do
-  version = PublicanCreatorsVersion::Version::STRING
+  version = PublicanCreators::Version::STRING
   home = Dir.home
   target = "#{home}/RubymineProjects/saigkill.github.com/_posts"
   time = Time.new
