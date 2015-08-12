@@ -320,14 +320,14 @@ task :make_release do
   system('rake release')
 
   FileUtils.cd(target) do
-    FileUtils.touch "#{date}-PublicanCreators-#{version}-released.md"
-    File.write "#{date}-PublicanCreators-#{version}-released.md", <<EOF
+    FileUtils.touch "#{date}-PublicanCreators-#{version}-released-en.md"
+    File.write "#{date}-PublicanCreators-#{version}-released-en.md", <<EOF
 ---
 layout: post
 title: "PublicanCreators #{version} - A Gem for DocBook Publishers"
 description: "Using DocBook and Redhat's Publican daily? Then this Rubygem made your day."
 category: "programming"
-tags: [Ruby]
+tags: [ruby, opensource, publican, en-US]
 ---
 {% include JB/setup %}
 
@@ -364,6 +364,59 @@ All downloads of PublicanCreators:
   * Bug reports: [http://saigkill.ddns.net:8112/dashboard](http://saigkill.ddns.net:8112/dashboard)
 
 # What has be done in this version #{version}?
+  * Step 1
+  * Step2
+
+# Donations
+[![publicancreators](https://pledgie.com/campaigns/29306.png?skin_name=chrome)](https://pledgie.com/campaigns/29306)
+EOF
+  end
+  FileUtils.cd(target) do
+    FileUtils.touch "#{date}-PublicanCreators-#{version}-released-de.md"
+    File.write "#{date}-PublicanCreators-#{version}-released-de.md", <<EOF
+---
+layout: post
+title: "PublicanCreators #{version} - Ein Gem für DocBook Publishers"
+description: "Benutzen Sie täglich DocBook und Redhat's publican? Dann ist dieses Gem für Sie."
+category: "programming"
+tags: [ruby, opensource, publican, de-DE]
+---
+{% include JB/setup %}
+
+# Einleitung
+PublicanCreators ein kleines Tool für tägliche DocBook-Schreiber, die das Publican Tool [fedorahosted.org/publican/] nutzen.
+Nach dem Start fragt PublicanCreators nach dem Titel des Projektes, dem Projekttyp und die aktuelle Umgebung. Dies nutzt PublicanCreators um die von publican erzeugten Dateien zu manipulieren. So bearbeitet es die Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml und die Revision_History. Es setzt Ihren Namen, den Ihrer Firma, den Ihrer Abteilung oder auch die private oder geschäftliche Emailadresse (je nach benutzter Umgebung). Im Configfile des Programms können weitere Einstellungen vorgenommen werden, wie das entfernen des Titel Logos oder der Legal Notice. Abschließend generiert das Programm ein Buildscript (Rakefile) für jedes Projekt.
+
+# Installation
+Wenn Ruby bereits installiert ist, kann PublicanCreators wie folgt installiert werden:
+
+  * gem install PublicanCreators
+  * gem install rake (falls noch nicht installiert)
+  * cd /path/to/gem
+  * rake setup
+
+# Download der zuletzt veröffentlichten Linux packages
+## deb
+[![Download](https://api.bintray.com/packages/saigkill/deb/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/deb/PublicanCreators/_latestVersion)
+##rpm
+[![Download](https://api.bintray.com/packages/saigkill/rpm/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/rpm/PublicanCreators/_latestVersion)
+
+# Abhängigkeiten
+Sie benötigen yad und publican (eine 4.x version), die bereits installiert sein müssen.
+
+# Das Gem starten
+Starten Sie /path/to/gem/bin/publican_creators.rb, oder benutzen Sie einfach den launcher.
+
+# Downloads
+Gesamtdownloads von PublicanCreators:
+[![downloads-all](https://img.shields.io/gem/dt/PublicanCreators.svg)](https://rubygems.org/gems/PublicanCreators)
+# Referenzen
+  * Projekt Home: [https://github.com/saigkill/PublicanCreators](https://github.com/saigkill/PublicanCreators)
+  * User Dokumentation (en): [http://saigkill.github.io/docs/publicancreators/en-US/html](http://saigkill.github.io/docs/publicancreators/en-US/html)
+  * User Dokumentation (de): [http://saigkill.github.io/docs/publicancreators/de-DE/html](http://saigkill.github.io/docs/publicancreators/de-DE/html)
+  * Bugreports: [http://saigkill.ddns.net:8112/dashboard](http://saigkill.ddns.net:8112/dashboard)
+
+# Was ist neu in version #{version}?
   * Step 1
   * Step2
 
