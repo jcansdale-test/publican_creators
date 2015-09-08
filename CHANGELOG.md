@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.4.13 (2015-09-08)
+### Improvements
+* fixed PC23 (usage of setup.rb instead of native code). 
+* New structure: etc contains the publicancreators.cfg which will installed to HOME/.publican_creators/publicancreators.cfg. 
+Also share/publican_creators contains the pictures for the launchers.
+* Added .index and MANIFEST for packagers
+
 ## 0.4.10 - 0.4.12 (?)
 ### Improvements
 * Added bintray deployment

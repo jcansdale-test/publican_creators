@@ -12,6 +12,7 @@ require 'PublicanCreators/get'
 require 'PublicanCreators/change'
 require 'PublicanCreators/export'
 require 'PublicanCreators/prepare'
+require 'PublicanCreators/notifier'
 require 'fileutils'
 require 'nokogiri'
 require 'rainbow/ext/string'
@@ -31,13 +32,13 @@ class PublicanCreators
   puts 'Description: This script creates a article or book set with'
   puts 'Publican. Then it modifies it for your needs.'
   puts 'License: GPL-3'
-  puts 'Bugs: Please file bugs on http://saigkill-bugs.myjetbrains.com/youtrack/issues?q=project%3A+PublicanCreators'
+  puts 'Bugs: Please file bugs on http://saigkill-bugs.myjetbrains.com/youtrack/'
 
   # This method checks if a oldconfig is available
   # @return [String] true or false
-  MannsShared.oldconfig_exists?('.publicancreators.cfg')
+  MannsShared.oldconfig_exists?("#{Dir.home}/.publican_creators/publicancreators.cfg")
 
-  puts 'Reading the config file in ~/.publicancreators.cfg'
+  puts 'Reading the config file in publicancreators.cfg'
   # @note Run config method who reads in the config file and puts the variables
   # in an array
   # name, email, language, use_brand, title_logo, legal, brand, company_name,
@@ -48,7 +49,7 @@ class PublicanCreators
   #     pdfview = PublicanCreatorsGet.config
 
   home = Dir.home
-  config = ParseConfig.new("#{home}/.publicancreators.cfg")
+  config = ParseConfig.new("#{home}/.publican_creators/publicancreators.cfg")
   conf_ver = config['conf_ver']
   name = config['name']
   email = config['email_private']
@@ -229,7 +230,7 @@ class PublicanCreators
                                               xfc_brand_dir, pdfview)
 
     puts "Now you can find your documentation there: #{targetdir}/#{title}"
-
+    Notifier.run
     puts "Thanks for using: #{my_name} #{version}"
   end
 end

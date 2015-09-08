@@ -1,0 +1,51 @@
+--- 
+name:    publicancreators
+version: 0.4.13
+title:   Publicancreators
+summary: Program for controlling Publican
+
+description:
+  PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators asks after launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and will replace the default values with your name, you company, your company_divison and your private or your business email address, depending on your chosen environment. Also you can set inside your config fil that you want to remove the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
+
+authors:
+  - Sascha Manns <samannsml@directbox.com>
+
+requirements:
+- nokogiri
+- parseconfig
+- rainbow
+- MannsShared
+- setup
+- notifier
+- rake (build)
+- bundler (build)
+- rdoc (build)
+- yard (build)
+- gem-release (build)
+- rubocop (build)
+- reek (build)
+- ruby-lint (build)
+- indexer (build)
+- mast (build)
+- test (test)
+- coveralls (test)
+- rspec (test)
+- shoulda (test)
+- simplecov (test)
+
+repositories:
+  upstream: https://github.com/saigkill/PublicanCreators.git
+
+resources:
+  home: http://saigkill.github.io
+  code: https://github.com/saigkill/PublicanCreators
+  bugs: http://saigkill-bugs.myjetbrains.com/youtrack
+  issues: http://saigkill-bugs.myjetbrains.com/youtrack
+
+categories:
+  - publican
+  - docbook
+
+copyrights:
+  - 2015 Sascha Manns (GPL3)
+

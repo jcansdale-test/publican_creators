@@ -1,0 +1,121 @@
+---
+revision: 2013
+type: ruby
+sources:
+- VERSION
+- Index.yml
+authors:
+- name: Sascha Manns
+  email: samannsml@directbox.com
+organizations: []
+requirements:
+- name: nokogiri
+- name: parseconfig
+- name: rainbow
+- name: MannsShared
+- name: setup
+- name: notifier
+- groups:
+  - build
+  development: true
+  name: rake
+- groups:
+  - build
+  development: true
+  name: bundler
+- groups:
+  - build
+  development: true
+  name: rdoc
+- groups:
+  - build
+  development: true
+  name: yard
+- groups:
+  - build
+  development: true
+  name: gem-release
+- groups:
+  - build
+  development: true
+  name: rubocop
+- groups:
+  - build
+  development: true
+  name: reek
+- groups:
+  - build
+  development: true
+  name: ruby-lint
+- groups:
+  - build
+  development: true
+  name: indexer
+- groups:
+  - build
+  development: true
+  name: mast
+- groups:
+  - test
+  development: true
+  name: test
+- groups:
+  - test
+  development: true
+  name: coveralls
+- groups:
+  - test
+  development: true
+  name: rspec
+- groups:
+  - test
+  development: true
+  name: shoulda
+- groups:
+  - test
+  development: true
+  name: simplecov
+conflicts: []
+alternatives: []
+resources:
+- type: home
+  uri: http://saigkill.github.io
+  label: Homepage
+- type: code
+  uri: https://github.com/saigkill/PublicanCreators
+  label: Source Code
+- type: bugs
+  uri: http://saigkill-bugs.myjetbrains.com/youtrack
+  label: Issue Tracker
+- type: issues
+  uri: http://saigkill-bugs.myjetbrains.com/youtrack
+  label: Issue Tracker
+repositories:
+- name: upstream
+  scm: git
+  uri: https://github.com/saigkill/PublicanCreators.git
+categories:
+- publican
+- docbook
+copyrights:
+- holder: Sascha Manns
+  year: '2015'
+  license: GPL3
+customs: []
+paths:
+  lib:
+  - lib
+version: 0.4.13
+name: publicancreators
+title: Publicancreators
+summary: Program for controlling Publican
+description: PublicanCreators are a small tool for daily DocBook writers who are using
+  the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators
+  asks after launching which title, type and environment should be used. Then it starts
+  publican with that settings and works then with the produced files. It will work
+  inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml
+  and will replace the default values with your name, you company, your company_divison
+  and your private or your business email address, depending on your chosen environment.
+  Also you can set inside your config fil that you want to remove the Title Logo or
+  the Legal Notice. As a feature it ships a build script for each project.
+date: '2015-09-08'

@@ -24,6 +24,8 @@
     homework (distance learning school) and a book. For homework i'm using also a third publican
     brand.
   </para>
+  <para>After running the setup you find the config at:
+    $HOME/.publican_creators/publicancreators.cfg.</para>
   <para>So i need to produce 6 sorts of documents in 2 environments (work and private) with 3
     different brands. So i wrote this little program to simplifiy the process.
   </para>

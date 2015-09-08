@@ -21,7 +21,7 @@ module PublicanCreatorsGet
 --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name \
 (with underscores instead of blanks and without umlauts):TEXT" \
 --field="Please file bugs or feature requests \
-on http://saigkill.ddns.net:8112/dashboard:LBL" --button="Go!" "Work,Private" \
+on http://saigkill-bugs.myjetbrains.com/youtrack/:LBL" --button="Go!" "Work,Private" \
 "Article,Book" "Normal,Report,Homework"`
     # @note Format: Work/Private Article/Book title!Normal Report Homework
     # @note Cleanup the array
@@ -59,7 +59,7 @@ entering Revision textes with blanks.:LBL" --button="Go!"`
   def self.config_revision
     include ParseConfig
     home = Dir.home
-    config = ParseConfig.new("#{home}/.publicancreators.cfg")
+    config = ParseConfig.new("#{home}/.publican_creators/publicancreators.cfg")
     language = config['language']
     puts language
   end

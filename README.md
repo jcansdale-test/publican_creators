@@ -6,8 +6,6 @@
 | last public version           | [![publicversion](https://badge.fury.io/rb/PublicanCreators.png)](http://rubygems.org/gems/PublicanCreators)                                                                      |
 | downloads latest              | [![downloads-latest](https://img.shields.io/gem/dtv/PublicanCreators.svg)](https://rubygems.org/gems/PublicanCreators)                                                            |
 | downloads all                 | [![downloads-all](https://img.shields.io/gem/dt/PublicanCreators.svg)](https://rubygems.org/gems/PublicanCreators)                                                                |
-| download latest deployed deb  | [![Download](https://api.bintray.com/packages/saigkill/deb/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/deb/PublicanCreators/_latestVersion)                          |
-| download latest deployed rpm  | [![Download](https://api.bintray.com/packages/saigkill/rpm/PublicanCreators/images/download.svg) ](https://bintray.com/saigkill/rpm/PublicanCreators/_latestVersion)
 | continuous integration        | [![travis](https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master)](https://secure.travis-ci.org/saigkill/PublicanCreators)                                     |
 | continuous integration        | [![scrutinizer](https://scrutinizer-ci.com/g/saigkill/PublicanCreators/badges/build.png?b=master)](https://scrutinizer-ci.com/g/saigkill/PublicanCreators/build-status/master)   |
 | continuous integration        | [![teamcity](http://saigkill.ddns.net:8111/app/rest/builds/buildType:(id:PublicanCreators_Build)/statusIcon)](http://saigkill.ddns.net:8111/viewType.html?buildTypeId=PublicanCreators_Build&guest=1)   |
@@ -24,8 +22,6 @@
 | authors blog                  | http://saigkill.github.io                                                                                                                                                         |
 | openhub statistics            | https://www.openhub.net/p/PublicanCreators                                                                                                                                       |
 | openhatch                     | http://openhatch.org/projects/PublicanCreators |
-| version notification deb      | [![bintray](https://www.bintray.com/docs/images/bintray_badge_color.png)](https://bintray.com/saigkill/deb/PublicanCreators/view?source=watch)                                           |
-| version notification rpm      | [![bintray](https://www.bintray.com/docs/images/bintray_badge_color.png)](https://bintray.com/saigkill/rpm/PublicanCreators/view?source=watch)                              |
 | donations                     | [![pledgie](https://pledgie.com/campaigns/29306.png?skin_name=chrome)](https://pledgie.com/campaigns/29306)                                                                         |
 | donations                     | [![gratipay](http://img.shields.io/gratipay/saigkill.svg)](https://gratipay.com/~saigkill/)                                                                                         |
 | donations                     | [![amazon](http://tsv-neuss.de/cms/upload/News-Bilder/amazon1.png)](http://www.amazon.de/registry/wishlist/D75HOEQ00BDD)                                                            |
@@ -44,28 +40,19 @@ the Title Logo or the Legal Notice. As a feature it ships a build script for eac
 The installation is very easy.
 
     gem install PublicanCreators
-    gem install rake
     cd /path/to/gem
-    rake setup_start
+    rake setup
 
 You have to run the setup after each gem update.
 
 ## Hard dependencies
 * yad
-* publican (a 4.x version is needed)
-
-## Soft dependencies
-I'm using:
-
-* dir
-* fileutils
-* nokogiri
-
-Bundler should solve the dependencies by itself.
+* publican (a 4.x version is needed). If you use Ubuntu you can use the ppa ppa:sascha-manns-h/publican.
 
 ## Usage
 
-    /path/to/gem/bin/PublicanCreators.rb
+    publican_creators.rb (Main program)
+    revision_creator.rb (The revision updater)
 
 Or just use the Launcher.
 
@@ -79,3 +66,5 @@ You can file Requests and Reports on the my bugtracker: http://saigkill-bugs.myj
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+Read https://github.com/saigkill/PublicanCreators/blob/master/CONTRIBUTING.md

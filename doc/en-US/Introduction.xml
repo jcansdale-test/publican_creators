@@ -7,7 +7,8 @@
         <!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
         %DOCBOOK_ENTS;
         ]>
-<chapter version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Introduction</title>
   <indexterm>
     <primary>Introduction</primary>
@@ -24,9 +25,7 @@
       <primary>Introduction</primary>
       <secondary>Install Ruby</secondary>
     </indexterm>
-    <para>One of the easiest way to install ruby is by using RVM. So follow the next
-      steps:
-    </para>
+    <para>One of the easiest way to install ruby is by using RVM. So follow the next steps: </para>
     <para>
       <procedure>
         <step>
@@ -64,11 +63,8 @@ In case of problems: http://rvm.io/help and https://twitter.com/rvm_io
           </para>
           <para>
             <note>
-              <para>If this command fails, you have to install the
-                <package>curl</package>
-                package. Use your package manager to do
-                this.
-              </para>
+              <para>If this command fails, you have to install the <package>curl</package> package.
+                Use your package manager to do this. </para>
             </note>
           </para>
         </step>
@@ -173,7 +169,7 @@ Done installing documentation for parseconfig, mini_portile, nokogiri, dir, Publ
       </indexterm>
       <para>For running the setup go to the gem's directory with
             <command>.rvm/gems/ruby-<replaceable>2.2.1</replaceable>/gems/PublicanCreators-<replaceable>&pcver;</replaceable></command>.
-        Then just type <command>rake setup_start</command>. <note>
+        Then just type <command>rake setup</command>. <note>
           <para>Keep in mind, that the 2.2.1 from ruby-2.2.1 must match your chosen version. Also
             you have to replace <replaceable>&pcver;</replaceable> with the installed version of
             PublicanCreators. </para>
@@ -181,21 +177,21 @@ Done installing documentation for parseconfig, mini_portile, nokogiri, dir, Publ
       </para>
       <para>The setup script does the following: <itemizedlist>
           <listitem>
-            <para>It checks on which host os (Linux) it runs. Then it reacts to that and tried to
-              install the hard dependencies yad and publican. </para>
+            <para>It checks on which host os (Linux) it runs.  </para>
             <para>PublicanCreators needs a 4.x version of publican because it uses the parameter
-                <quote>--dtdver</quote>. In case of a Ubuntu host os the setup adds a Launchpad PPA
-              which provides backported versions of publican 4.x for Trusty (14.04) and Utopic
-              (14.10). Vivid Velvet ships a usable publican 4.x version. For other Distributions you
-              have to check if a 4.x version is available for your os. Otherwise PublicanCreators
-              will NOT work. </para>
+                <quote>--dtdver</quote>. In case of a Ubuntu host you can use the
+              <programlisting>ppa:sascha-manns-h/publican</programlisting>PPA which provides
+              backported versions of publican 4.x for Trusty (14.04) and Utopic (14.10). Vivid
+              Velvet ships a usable publican 4.x version. For other Distributions you have to check
+              if a 4.x version is available for your os. Otherwise PublicanCreators will NOT work.
+            </para>
           </listitem>
           <listitem>
-            <para>If you have already a <filename>.publicancreators.cfg</filename> in your
-              Homedirectory it will add the actual shipped
-                <filename>.publicancreators.cfg</filename> as .publicancreators.cfg.new in your
-              Homedirectory. You have to check, if new parameters are added or depreached one are
-              there. So modify your old .publicancreators to match the new one. </para>
+            <para>If you have already a <filename>publicancreators.cfg</filename> in your
+              Homedirectory it will add the actual shipped <filename>publicancreators.cfg</filename>
+              as .publicancreators.cfg.new in your Homedirectory. You have to check, if new
+              parameters are added or depreached one are there. So modify your old .publicancreators
+              to match the new one. </para>
           </listitem>
           <listitem>
             <para>The last thing in the setup is to install two *.desktop files for PublicanCreators
@@ -204,9 +200,7 @@ Done installing documentation for parseconfig, mini_portile, nokogiri, dir, Publ
           </listitem>
           <listitem>
             <para>If you aren't have a old .publicancreators.cfg the setup copies a actual version
-              in your Homedirectory and will launch a Texteditor with the config loaded. So you can
-              modify it to your needs. The config file will be explained in the next chapter.
-            </para>
+              in your Homedirectory . </para>
           </listitem>
         </itemizedlist>
       </para>
@@ -253,31 +247,6 @@ File /usr/bin/publicancreators-rev exists. Removing it
 Removed
 Found old publicancreators.desktop file. Renew it now
 Finished Setup</screen>
-      </para>
-    </section>
-    <section>
-      <info>
-        <title>Update from a older version</title>
-      </info>
-      <para>If you have an older version of PublicanCreators, you can run the full <command>rake
-          setup_start</command> or you can just use the following steps:</para>
-      <para>
-        <itemizedlist>
-          <listitem>
-            <para><command>rake check_config</command>: It adds the present
-                <command>.publicancreators.cfg.new</command>.</para>
-          </listitem>
-          <listitem>
-            <para><command>rake create_desktop_cre</command> and <command>rake
-                create_desktop_rev</command>: It updates your old desktop files to the new
-              path.</para>
-          </listitem>
-          <listitem>
-            <para><command>rake link_binary_cre</command> and <command>rake
-                link_binary_rev</command>: That is not regular needed. You can launch this, if you
-              use the binaries from /usr/bin.</para>
-          </listitem>
-        </itemizedlist>
       </para>
     </section>
   </section>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-05-19 12:20+0100\n"
+"PO-Revision-Date: 2015-09-08 15:10+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: en_US\n"
@@ -22,6 +22,9 @@ msgstr "Die Konfigurationsdatei bietet Ihnen viele Möglichkeiten für eigene An
 
 msgid "I'm a technical writer who writes on work and private too. So i have two publican brands for business and private. On work i have three classes of documents: a normal article, a report (it's a smaller version of a article but whithout a full legal notice. Using a smaller version as code template.) and a book. Private i also have three sorts of documents: a article, a homework (distance learning school) and a book. For homework i'm using also a third publican brand."
 msgstr "Ich arbeite als Technischer Autor und schreibe auch privat. So habe ich zwei Publican Brands für die Arbeit und für private Zwecke, wie diesem. Auf der Arbeit arbeite ich mit drei verschiedenen Dokumenten\"klassen\": einem normalen Artikel, einem Report (eine schmalere und anders gegliederte Form des Artikels, jedoch ohne vollständigere Version der Legal Notice) und einem Buch. Privat erstelle ich Artikel, Bücher und Hausaufgaben (einer Fernschule). Für letztere nutze ich einen dritten Brand."
+
+msgid "After running the setup you find the config at: $HOME/.publican_creators/publicancreators.cfg."
+msgstr "Nach der Ausführung des Setup ist die Configdatei hier zu finden: $HOME/.publican_creators/publicancreators.cfg"
 
 msgid "So i need to produce 6 sorts of documents in 2 environments (work and private) with 3 different brands. So i wrote this little program to simplifiy the process."
 msgstr "Daher arbeite ich mit 6 Dokumentensorten in zwei Umgebungen (Arbeit und Privat) und drei verschiedenen brands. Zur Vereinfachung (und weil ich mir nicht immer die Kommandozeilenparameter merken kann), startete ich dieses kleine Programm."
@@ -280,4 +283,3 @@ msgstr ""
 
 msgid "Path where your books will be created."
 msgstr "Der Pfad zu Ihren privaten Büchern"
-

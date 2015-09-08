@@ -1,0 +1,1 @@
+set_config_default(sysconfdir, "#{Dir.home}/.publican_creators")

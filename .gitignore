@@ -1,9 +1,9 @@
 /.yardoc
 /Gemfile.lock
 /coverage/
-/docs/pot/
-/docs/trans_drop
-/docs/tmp
-/docs/PublicanCreators.xpr
+/doc/pot/
+/doc/trans_drop
+/doc/tmp
+/doc/PublicanCreators.xpr
 /pkg/
 /test/coverage

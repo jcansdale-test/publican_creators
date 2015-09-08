@@ -20,17 +20,9 @@
     <itemizedlist>
       <listitem>
         <para><emphasis role="bold">Bugtracker</emphasis>: <link
-            xlink:href="http://saigkill.ddns.net:8112/dashboard"
-            >http://saigkill.ddns.net:8112/dashboard</link>. There you can place bug reports and
-          feature requests. </para>
-      </listitem>
-      <listitem>
-        <para>
-          <emphasis role="bold">Review board</emphasis>: <link
-            xlink:href="http://saigkill.ddns.net:8080/publicancreators/view"
-            >http://saigkill.ddns.net:8080/publicancreators/view</link>. If you are an programmer
-          you can help with reviewing my code. If you know ways to make it better, just let me know.
-          So i can learn from it. </para>
+            xlink:href="http://saigkill-bugs.myjetbrains.com/youtrack/"
+            >http://saigkill-bugs.myjetbrains.com/youtrack/</link>. There you can place bug reports
+          and feature requests. </para>
       </listitem>
       <listitem>
         <para><emphasis role="bold">OpenHub</emphasis>: <link
