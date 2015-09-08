@@ -23,7 +23,7 @@ require 'MannsShared'
 # @return [String] true or false
 class PublicanCreators
   my_name = File.basename($PROGRAM_NAME)
-  version = PublicanCreatorsVersion::Version::STRING
+  version = PublicanCreators::Version::STRING
 
   puts "Script: #{my_name}"
   puts "Version: #{version}"
@@ -33,10 +33,6 @@ class PublicanCreators
   puts 'Publican. Then it modifies it for your needs.'
   puts 'License: GPL-3'
   puts 'Bugs: Please file bugs on http://saigkill-bugs.myjetbrains.com/youtrack/'
-
-  # This method checks if a oldconfig is available
-  # @return [String] true or false
-  MannsShared.oldconfig_exists?("#{Dir.home}/.publican_creators/publicancreators.cfg")
 
   puts 'Reading the config file in publicancreators.cfg'
   # @note Run config method who reads in the config file and puts the variables

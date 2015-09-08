@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-05-24 21:33+0100\n"
+"PO-Revision-Date: 2015-09-08 15:37+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: en_US\n"
@@ -62,8 +62,8 @@ msgstr "Nach dem Klick auf <guibutton>Go!</guibutton> wird die Dokumentation mit
 msgid "What it does?"
 msgstr "Was macht es?"
 
-msgid "It runs the method <quote>oldconfig</quote> to check if a users configuration file is available. If not, it will break and suggest to run <quote>rake setup_start</quote>."
-msgstr "Zuerst startet die Methode <quote>oldconfig</quote> um herauszufinden, ob ein User Configfile existiert. Falls nicht, bricht es ab, und empfiehlt <quote>rake setup_start</quote> auszuführen."
+msgid "It runs the method <quote>oldconfig</quote> to check if a users configuration file is available. If not, it will break and suggest to run <quote>rake setup</quote>."
+msgstr "Zuerst startet die Methode <quote>oldconfig</quote> um herauszufinden, ob ein User Configfile existiert. Falls nicht, bricht es ab, und empfiehlt <quote>rake setup</quote> auszuführen."
 
 msgid "The PublicanCreatorsGet.config method will be launched. The method returns a array which will splitted into the used variables."
 msgstr "Die PublicanCreatorsGet.config Methode startet, und gibt ein Array zurück. Dieses wird in die intern benutzten Variablen aufgeteilt."
@@ -131,21 +131,20 @@ msgstr "<emphasis role=\"bold\">Revision number</emphasis>: Hier tragen Sie Ihre
 msgid "From Version 0.4.4.0 PublicanCreators ships a new feature. The entered Revision number will be splitted internal. If you enter a number like <quote>0.4.1-0</quote> the program splits it into a revision number 0.4.1 and a edition number 0. So the productversion tag in Article_Info.xml or Book_Info.xml will be replaced with the revision number, and the edition field will become the edition value."
 msgstr "Ab der Version 0.4.4.0 bietet PublicanCreators ein neues automatisches Feature. Die eingegebene Revisionsnummer wird intern gesplittet. Wird beispielsweise eine Revisionsnummer <quote>0.4.1-0</quote> wird die 0.4.1 als Revisionsnummer verwendet, und die 0 als Editionsnummer. In der Article_Info.xml oder Book_Info.xml wird somit die Revisionsnummer als Produktnummer verwendet, und die Edition als Editionsnummer."
 
-#~ msgid "Revision number: There you can place your revision number."
-#~ msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."
-
-#~ msgid "Title: Your Title. Use underscores instead of blanks."
-#~ msgstr "Titel: Ihr gewünschter Titel (mit Unterstrichen statt Leerzeichen)"
-
-#~ msgid "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Your Title</emphasis>. Use underscores instead of blanks."
-#~ msgstr "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Ihr Title</emphasis>. Benutzen Sie Unterstriche statt Leerzeichen."
+#~ msgid "<emphasis role=\"bold\">Commits</emphasis>: There you can place one to five <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug report."
+#~ msgstr "<emphasis role=\"bold\">Commits</emphasis>: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie regelmäßig mehr als 5 benötigen, eröffnen Sie einen Bugreport."
 
 #~ msgid "Projectdir: Use that to move to your target directory (That directory where your projects publican.cfg is)"
 #~ msgstr "Projectdir: Wechseln Sie mit dem Auswahlwerkzeug in Ihr Zielverzeichnis (das, indem auch Ihre Dokumentations publican.cfg steckt)"
 
+#~ msgid "Title: Your Title. Use underscores instead of blanks."
+#~ msgstr "Titel: Ihr gewünschter Titel (mit Unterstrichen statt Leerzeichen)"
+
+#~ msgid "Revision number: There you can place your revision number."
+#~ msgstr "Revision number: Hier geben Sie die Revisionsnummer ein."
+
+#~ msgid "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Your Title</emphasis>. Use underscores instead of blanks."
+#~ msgstr "<emphasis role=\"bold\">Title</emphasis>: <emphasis>Ihr Title</emphasis>. Benutzen Sie Unterstriche statt Leerzeichen."
+
 #~ msgid "Environment: Work or Private"
 #~ msgstr "Environment: Work oder Private (Arbeit oder Private)"
-
-#~ msgid "<emphasis role=\"bold\">Commits</emphasis>: There you can place one to five <emphasis>revision texts</emphasis>. If you need more than 5 regularly so file a bug report."
-#~ msgstr "<emphasis role=\"bold\">Commits</emphasis>: Hier können Sie bis zu 5 Revisionstexte eingeben. Sollten Sie regelmäßig mehr als 5 benötigen, eröffnen Sie einen Bugreport."
-

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2015-05-12 20:15+0200\n"
-"PO-Revision-Date: 2015-09-08 15:12+0100\n"
+"PO-Revision-Date: 2015-09-08 15:38+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: en_US\n"
@@ -194,8 +194,8 @@ msgstr ""
 msgid "PPA which provides backported versions of publican 4.x for Trusty (14.04) and Utopic (14.10). Vivid Velvet ships a usable publican 4.x version. For other Distributions you have to check if a 4.x version is available for your os. Otherwise PublicanCreators will NOT work."
 msgstr ""
 
-msgid "If you have already a <filename>publicancreators.cfg</filename> in your Homedirectory it will add the actual shipped <filename>publicancreators.cfg</filename> as .publicancreators.cfg.new in your Homedirectory. You have to check, if new parameters are added or depreached one are there. So modify your old .publicancreators to match the new one."
-msgstr "Falls Sie bereits ein Konfigurationsfile <filename>publicancreators.cfg</filename> betreiben, wird die aktuelle <filename>publicancreators.cfg</filename> als publicancreators.cfg.new abgespeichert. Nun müssen Sie lediglich die geänderten Parameter in Ihr \"altes\" File übertragen."
+msgid "If you have already a <filename>publicancreators.cfg</filename> in your Homedirectory it will add the actual shipped <filename>publicancreators.cfg</filename> as publicancreators.cfg in your Homedirectory. The old one will be saved as publicancreators.cfg.bak. You have to check, if new parameters are added or depreached one are there."
+msgstr "Falls Sie bereits ein Konfigurationsfile <filename>publicancreators.cfg</filename> betreiben, wird die aktuelle <filename>publicancreators.cfg</filename> als publicancreators.cfg.bak abgespeichert. "
 
 msgid "The last thing in the setup is to install two *.desktop files for PublicanCreators and RevisionCreator in <filename>.local/share/applications</filename>. This means it will shown in the program launcher."
 msgstr "Als letzten Schritt legt das Setup_Programm zwei *.desktop Dateien für PublicanCreators und RevisionCreator in <filename>.local/share/applications</filename> an. Daher können Sie beides durch den normalen Programmstarter ausführen."
@@ -250,29 +250,29 @@ msgid ""
 "Finished Setup"
 msgstr ""
 
+#~ msgid "Update from a older version"
+#~ msgstr "Aktualisierung von einer früheren Version"
+
+#~ msgid "It installs the bundle"
+#~ msgstr "Es installiert das Bundle (falls etwas fehlt)"
+
+#~ msgid "<command>rake link_binary_cre</command> and <command>rake link_binary_rev</command>: That is not regular needed. You can launch this, if you use the binaries from /usr/bin."
+#~ msgstr "<command>rake link_binary_cre</command> and <command>rake link_binary_rev</command>: Wenn Sie die Links nach /usr/bin nutzen, dann können Sie diese hiermit aktualisieren."
+
 #~ msgid "If you have an older version of PublicanCreators, you can run the full <command>rake setup_start</command> or you can just use the following steps:"
 #~ msgstr "Wenn Sie bereits eine ältere Version von PublicanCreators installiert haben, können SIe ein vollständiges <command>rake setup_start</command> starten, oder Sie kürzen es durch die nächsten Schritte ab:"
 
 #~ msgid "It checks on which host os (Linux) it runs. Then it reacts to that and tried to install the hard dependencies yad and publican."
 #~ msgstr "Es überprüft, auf welcher Linuxversion es läuft. Dann reagiert es darauf, indem es auf verschiedene Weise die Hard-Dependencies (Linux-Pakete wie yad) installiert."
 
+#~ msgid "<command>rake create_desktop_cre</command> and <command>rake create_desktop_rev</command>: It updates your old desktop files to the new path."
+#~ msgstr "<command>rake create_desktop_cre</command> and <command>rake create_desktop_rev</command>: Dies aktualisier den Pfad Ihrer Desktop Files."
+
+#~ msgid "If you aren't have a old .publicancreators.cfg the setup copies a actual version in your Homedirectory and will launch a Texteditor with the config loaded. So you can modify it to your needs. The config file will be explained in the next chapter."
+#~ msgstr "Falls Sie keine ältere Version der .publicancreators.cfg haben, wird die aktuelle in Ihr Benutzerverzeichnis kopiert, und in einem Texteditor geladen. Dort können Sie Ihre Anpassungen vornehmen. Die Konfigurationsdatei wird im nächsten Kapitel erklärt."
+
 #~ msgid "<command>rake check_config</command>: It adds the present <command>.publicancreators.cfg.new</command>."
 #~ msgstr "<command>rake check_config</command>: Dies installiert eine neue <command>.publicancreators.cfg.new</command>."
 
 #~ msgid "PublicanCreators needs a 4.x version of publican because it uses the parameter <quote>--dtdver</quote>. In case of a Ubuntu host os the setup adds a Launchpad PPA which provides backported versions of publican 4.x for Trusty (14.04) and Utopic (14.10). Vivid Velvet ships a usable publican 4.x version. For other Distributions you have to check if a 4.x version is available for your os. Otherwise PublicanCreators will NOT work."
 #~ msgstr "PublicanCreators benötigt eine 4.x Version von Publican, da es Parameter wie <quote>--dtdver</quote> benutzt. Falls Sie Ubuntu benutzen, fügt das Setup Programm ein Launchpad PPA hinzu, welches rückportierte Versionen der 4.x Publican Version für Trusty (14.04) und Utopic (14.10) beinhaltet. Vivid Velvet liefert bereits eine passende Version aus."
-
-#~ msgid "<command>rake create_desktop_cre</command> and <command>rake create_desktop_rev</command>: It updates your old desktop files to the new path."
-#~ msgstr "<command>rake create_desktop_cre</command> and <command>rake create_desktop_rev</command>: Dies aktualisier den Pfad Ihrer Desktop Files."
-
-#~ msgid "It installs the bundle"
-#~ msgstr "Es installiert das Bundle (falls etwas fehlt)"
-
-#~ msgid "Update from a older version"
-#~ msgstr "Aktualisierung von einer früheren Version"
-
-#~ msgid "If you aren't have a old .publicancreators.cfg the setup copies a actual version in your Homedirectory and will launch a Texteditor with the config loaded. So you can modify it to your needs. The config file will be explained in the next chapter."
-#~ msgstr "Falls Sie keine ältere Version der .publicancreators.cfg haben, wird die aktuelle in Ihr Benutzerverzeichnis kopiert, und in einem Texteditor geladen. Dort können Sie Ihre Anpassungen vornehmen. Die Konfigurationsdatei wird im nächsten Kapitel erklärt."
-
-#~ msgid "<command>rake link_binary_cre</command> and <command>rake link_binary_rev</command>: That is not regular needed. You can launch this, if you use the binaries from /usr/bin."
-#~ msgstr "<command>rake link_binary_cre</command> and <command>rake link_binary_rev</command>: Wenn Sie die Links nach /usr/bin nutzen, dann können Sie diese hiermit aktualisieren."

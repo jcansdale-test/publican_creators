@@ -189,9 +189,9 @@ Done installing documentation for parseconfig, mini_portile, nokogiri, dir, Publ
           <listitem>
             <para>If you have already a <filename>publicancreators.cfg</filename> in your
               Homedirectory it will add the actual shipped <filename>publicancreators.cfg</filename>
-              as .publicancreators.cfg.new in your Homedirectory. You have to check, if new
-              parameters are added or depreached one are there. So modify your old .publicancreators
-              to match the new one. </para>
+              as publicancreators.cfg in your Homedirectory. The old one will be saved as
+              publicancreators.cfg.bak. You have to check, if new parameters are added or depreached
+              one are there.</para>
           </listitem>
           <listitem>
             <para>The last thing in the setup is to install two *.desktop files for PublicanCreators

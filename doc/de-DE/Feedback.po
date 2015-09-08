@@ -34,3 +34,4 @@ msgstr "Ausserdem sind Sie eingeladen, meinen Blog auf <link xlink:href=\"http:/
 
 #~ msgid "<emphasis role=\"bold\">Review board</emphasis>: <link xlink:href=\"http://saigkill.ddns.net:8080/publicancreators/view\">http://saigkill.ddns.net:8080/publicancreators/view</link>. If you are an programmer you can help with reviewing my code. If you know ways to make it better, just let me know. So i can learn from it."
 #~ msgstr "<emphasis role=\"bold\">Review board</emphasis>: <link xlink:href=\"http://saigkill.ddns.net:8080/publicancreators/view\">http://saigkill.ddns.net:8080/publicancreators/view</link>. Wenn Sie ein Entwickler sind, können Sie auch ein Code-Review vornehmen. Wenn Sie Möglichkeiten finden, etwas besser zu lösen, sind Sie herzlich zu einem Review eingeladen. So kann ich davon lernen."
+

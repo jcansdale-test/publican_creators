@@ -73,7 +73,7 @@ task :setup_start do
   version = PublicanCreators::Version::STRING
   puts '######################################################'.color(:yellow)
   puts '#            PublicanCrators Setup                   #'.color(:yellow)
-  puts "#            Version: #{version}                        #".color(:yellow)
+  puts "#            Version: #{version}                         #".color(:yellow)
   puts '#                                                    #'.color(:yellow)
   puts '# Please file bugreports on:                         #'.color(:yellow)
   puts '# http://saigkill-bugs.myjetbrains.com/youtrack      #'.color(:yellow)
@@ -137,26 +137,29 @@ Icon=#{publicanrevico}
 EOF
 end
 
+require 'fileutils'
 desc 'Backup config  file'
 task :backup_config do
   home = Dir.home
-  prefix = "#{home}/.rvm/rubies/default"
-  datadir = "#{prefix}/share"
-  prefix = "#{datadir}/.publican_creators/"
+  prefix = "#{home}/.publican_creators"
   from = 'publicancreators.cfg'
   to = 'publicancreators.bak'
-  File.cp("#{prefix}/#{from}", "#{prefix}/#{to}")
+  if File.exist?("#{prefix}/#{from}")
+    FileUtils.cd(prefix) do
+      FileUtils.cp(from, to)
+    end
+  end
 end
 
 desc 'Setup'
-task :install do
+task :setuprb do
   system('setup uninstall --force')
   system('setup.rb config --sysconfdir=$HOME/.publican_creators')
   system('setup.rb install')
 end
 
 desc 'Run setup'
-task :setup => [:setup_start, :link_binary_cre, :link_binary_rev, :create_desktop_cre, :create_desktop_rev, :backup_config, :install] do
+task :setup => [:setup_start, :link_binary_cre, :link_binary_rev, :create_desktop_cre, :create_desktop_rev, :backup_config, :setuprb] do
   puts 'Finished Setup'.color(:green)
 end
 

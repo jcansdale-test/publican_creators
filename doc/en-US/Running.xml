@@ -87,8 +87,7 @@
       <orderedlist>
         <listitem>
           <para>It runs the method <quote>oldconfig</quote> to check if a users configuration file
-            is available. If not, it will break and suggest to run <quote>rake
-            setup_start</quote>.</para>
+            is available. If not, it will break and suggest to run <quote>rake setup</quote>.</para>
         </listitem>
         <listitem>
           <para>The PublicanCreatorsGet.config method will be launched. The method returns a array
