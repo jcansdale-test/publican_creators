@@ -358,7 +358,7 @@ EOF
       'PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool' + "#{crlf}" + "#{crlf}" +
       'Installation:'+ "#{crlf}" + "#{crlf}" +
       '    gem install PublicanCreators' + "#{crlf}" +
-      '    cd /path/to/gem \(In case of using RVM anything like ~/.rvm/gems/ruby-2.2.1/gems/latex_curriculum_vitae\)' + "#{crlf}" +
+      '    cd /path/to/gem \(In case of using RVM anything like ~/.rvm/gems/ruby-2.2.1/gems/PublicanCreators\)' + "#{crlf}" +
       '    rake setup' + "#{crlf}" + "#{crlf}" +
       'Dependencies:'+ "#{crlf}" + "#{crlf}" +
       '* publican' + "#{crlf}" +
