@@ -222,6 +222,7 @@ task :publish_doc do
   end
 end
 
+require 'yaml'
 require 'fileutils'
 desc 'Prepares for release'
 task :make_release do
