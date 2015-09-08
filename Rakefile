@@ -222,6 +222,7 @@ task :publish_doc do
   end
 end
 
+require 'MannsShared'
 require 'yaml'
 require 'fileutils'
 desc 'Prepares for release'

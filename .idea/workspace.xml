@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Rakefile" line="376" />
+    <bookmark url="file://$PROJECT_DIR$/Rakefile" line="378" />
   </component>
   <component name="BuildServerSettings">
     <option name="LOGIN" value="root" />
@@ -24,7 +24,7 @@
     <option name="FILTER_BY_STATUS" value="false" />
     <option name="FILTER_MARKED_AS_FIXED" value="false" />
     <option name="SHOW_CLOSE_PROMPT" value="true" />
-    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
+    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="1" />
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
     <treeState key="responsibilities">
       <selectedPath>
@@ -35,12 +35,12 @@
       </selectedPath>
     </treeState>
     <treeState key="changes">
-      <expandedPath>
+      <selectedPath>
         <pathElement>
-          <option name="myNodeId" value="3" />
-          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.ChangesGroupDescriptor" />
+          <option name="myNodeId" value="helperText" />
+          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.LinkedTextDescriptor" />
         </pathElement>
-      </expandedPath>
+      </selectedPath>
     </treeState>
     <treeState key="project">
       <selectedPath>
@@ -53,22 +53,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.setup/metaconfig.rb" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/etc/.publicancreators.cfg" afterPath="$PROJECT_DIR$/etc/publicancreators.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/de-DE/Introduction.mo" afterPath="$PROJECT_DIR$/doc/de-DE/Introduction.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/de-DE/Running.mo" afterPath="$PROJECT_DIR$/doc/de-DE/Running.mo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/de-DE/Changelog.po" afterPath="$PROJECT_DIR$/doc/de-DE/Changelog.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/de-DE/Config.po" afterPath="$PROJECT_DIR$/doc/de-DE/Config.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/de-DE/Feedback.po" afterPath="$PROJECT_DIR$/doc/de-DE/Feedback.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/de-DE/Introduction.po" afterPath="$PROJECT_DIR$/doc/de-DE/Introduction.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/en-US/Introduction.xml" afterPath="$PROJECT_DIR$/doc/en-US/Introduction.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PublicanCreators.iml" afterPath="$PROJECT_DIR$/.idea/PublicanCreators.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PublicanCreators.rb" afterPath="$PROJECT_DIR$/lib/PublicanCreators.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rakefile" afterPath="$PROJECT_DIR$/Rakefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/de-DE/Revision_History.xml" afterPath="$PROJECT_DIR$/doc/de-DE/Revision_History.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/de-DE/Running.po" afterPath="$PROJECT_DIR$/doc/de-DE/Running.po" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/en-US/Running.xml" afterPath="$PROJECT_DIR$/doc/en-US/Running.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="ad4eff4a-9f1a-40ed-80a3-b41a09db6f05" name="PC-20 Use MannsShared instead of native code" comment="" />
@@ -110,7 +95,18 @@
     <favorites_list name="PublicanCreators" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Rakefile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Rakefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14029364">
+              <caret line="224" column="20" selection-start-line="224" selection-start-column="20" selection-end-line="224" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -155,8 +151,8 @@
         <option value="$PROJECT_DIR$/CHANGELOG.md" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators/get.rb" />
-        <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/lib/PublicanCreators.rb" />
+        <option value="$PROJECT_DIR$/Rakefile" />
       </list>
     </option>
   </component>
@@ -891,7 +887,7 @@
       <option name="issue" value="true" />
       <option name="number" value="23" />
       <option name="project" value="PC" />
-      <updated>1441719031066</updated>
+      <updated>1441726184305</updated>
     </task>
     <option name="localTasksCounter" value="59" />
     <servers>
@@ -931,7 +927,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="24" width="1877" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="eSnippet Pro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -942,11 +938,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.50409615" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32254696" sideWeight="0.49098852" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32254696" sideWeight="0.49098852" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953465" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2539596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2539596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
-      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881" sideWeight="0.4871795" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32881" sideWeight="0.4871795" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985386" sideWeight="0.49590388" order="1" side_tool="false" content_ui="tabs" />
@@ -1420,8 +1416,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6978998">
-          <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.14029364">
+          <caret line="224" column="20" selection-start-line="224" selection-start-column="20" selection-end-line="224" selection-end-column="20" />
           <folding />
         </state>
       </provider>
