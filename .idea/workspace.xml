@@ -52,9 +52,7 @@
     </treeState>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="fb53cb12-8353-4c27-9eb6-256993819206" name="Default" comment="" />
     <list id="ad4eff4a-9f1a-40ed-80a3-b41a09db6f05" name="PC-20 Use MannsShared instead of native code" comment="" />
     <ignored path="PublicanCreators.iws" />
     <ignored path=".idea/workspace.xml" />
