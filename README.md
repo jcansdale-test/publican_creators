@@ -56,6 +56,8 @@ You have to run the setup after each gem update.
 
 Or just use the Launcher.
 
+If you like this little program so don't forget to give this GitHub repository a star :-)
+
 ## Feature Requests & Bug Reports
 You can file Requests and Reports on the my bugtracker: http://saigkill-bugs.myjetbrains.com/youtrack/issues.
 
