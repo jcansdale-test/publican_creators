@@ -101,7 +101,7 @@ task :create_desktop_cre do
   prefix = "#{home}/.rvm/rubies/default"
   datadir = "#{prefix}/share"
   publicancre = "#{home}/.local/share/applications/publicancreators.desktop"
-  publicancreico = "#{datadir}/.publican_creators/publican.png"
+  publicancreico = "#{datadir}/publican_creators/publican.png"
   system("sudo rm #{publicancre}") if File.exists?(publicancre)
   puts 'Creating Desktop file for PublicanCreators'.color(:yellow)
   FileUtils.touch "#{publicancre}"
@@ -123,7 +123,7 @@ task :create_desktop_rev do
   prefix = "#{home}/.rvm/rubies/default"
   datadir = "#{prefix}/share"
   publicanrev = "#{home}/.local/share/applications/publicancreators-rev.desktop"
-  publicanrevico = "#{datadir}/.publican_creators/publican-revision.png"
+  publicanrevico = "#{datadir}/publican_creators/publican-revision.png"
   system("sudo rm #{publicanrev}") if File.exist?(publicanrev)
   puts 'Creating Desktop file for PublicanCreatorsRevision'.color(:yellow)
   FileUtils.touch "#{publicanrev}"
@@ -241,7 +241,7 @@ task :make_release do
   system('index --using VERSION Index.yml')
   puts 'Updating MANIFEST'
   system('mast -u && mast -u')
-  system('git add MANIFEST')
+  system('git add MANIFEST .index')
   puts 'done'
   puts 'Updating workspace'
   system('git add .idea/*')
@@ -262,6 +262,7 @@ tags: [ruby, opensource, publican, en-US]
 ---
 {% include JB/setup %}
 
+[![PublicanCreators](http://saigkill.github.io/img/myprojects/publican_creator.png)](https://github.com/saigkill/PublicanCreators)
 # Introduction
 PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [fedorahosted.org/publican/]. PublicanCreators asks after launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and will replace the default values with your name, your company, your company_divison and your private or your business email address, depending on your chosen environment. Also you can set inside your config file that you want to remove the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
 
@@ -307,6 +308,7 @@ tags: [ruby, opensource, publican, de-DE]
 ---
 {% include JB/setup %}
 
+[![PublicanCreators](http://saigkill.github.io/img/myprojects/publican_creator.png)](https://github.com/saigkill/PublicanCreators)
 # Einleitung
 PublicanCreators ein kleines Tool für tägliche DocBook-Schreiber, die das Publican Tool [fedorahosted.org/publican/] nutzen.
 Nach dem Start fragt PublicanCreators nach dem Titel des Projektes, dem Projekttyp und die aktuelle Umgebung. Dies nutzt PublicanCreators um die von publican erzeugten Dateien zu manipulieren. So bearbeitet es die Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml und die Revision_History. Es setzt Ihren Namen, den Ihrer Firma, den Ihrer Abteilung oder auch die private oder geschäftliche Emailadresse (je nach benutzter Umgebung). Im Configfile des Programms können weitere Einstellungen vorgenommen werden, wie das entfernen des Titel Logos oder der Legal Notice. Abschließend generiert das Programm ein Buildscript (Rakefile) für jedes Projekt.
@@ -344,6 +346,7 @@ EOF
   puts 'Prepared your Blogpost. Please add the changes of this release'
   puts 'Now ready for social media posting'
 
+  # rubocop:disable Style/MultilineOperationIndentation
   # Create email to ruby-talk
   space = '%20'
   crlf = '%0D%0A'

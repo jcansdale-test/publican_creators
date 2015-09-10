@@ -15,7 +15,7 @@ class PublicanCreators
     # Minor version.
     MINOR = 4
     # Patchlevel
-    PATCH = 13
+    PATCH = 14
     # Buildversion. Mostly 0
     BUILD = 0
     # @note This will be shown by PublicanCreatorsVersion::Version::STRING
