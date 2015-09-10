@@ -5,7 +5,6 @@ CODE_OF_CONDUCT.md
 bin/publican_creators.rb
 bin/revision_creator.rb
 PublicanCreators.gemspec
-pkg/PublicanCreators-0.4.14.gem
 Gemfile
 Index.yml
 Rakefile
