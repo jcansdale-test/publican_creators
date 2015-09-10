@@ -270,7 +270,7 @@ PublicanCreators are a small tool for daily DocBook writers who are using the Re
 If you give it a try just follow the next steps (If you have already Ruby installed):
 
   * gem install PublicanCreators
-  * cd /path/to/gem
+  * cd /path/to/gem (In case of using RVM anything like ~/.rvm/gems/ruby-2.2.1/gems/youtube_dlhelper-#{version})
   * rake setup
 
 # Dependencies
@@ -317,7 +317,7 @@ Nach dem Start fragt PublicanCreators nach dem Titel des Projektes, dem Projektt
 Wenn Ruby bereits installiert ist, kann PublicanCreators wie folgt installiert werden:
 
   * gem install PublicanCreators
-  * cd /path/to/gem
+  * cd /path/to/gem (Falls RVM benutzt wird z.B. ~/.rvm/gems/ruby-2.2.1/gems/PublicanCreators-#{version})
   * rake setup
 
 # Abhängigkeiten
