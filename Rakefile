@@ -350,7 +350,7 @@ EOF
   # Create email to ruby-talk
   space = '%20'
   crlf = '%0D%0A'
-  subject = "PublicanCreators #{version} released"
+  subject = "[ANN] PublicanCreators #{version} released"
   subject.gsub!(/ /, "#{space}")
   body = 'Hello Ruby list,' + "#{crlf}" + "#{crlf}" +
       "i would like to announce the PublicanCreators gem in version #{version}." + "#{crlf}" + "#{crlf}" +
