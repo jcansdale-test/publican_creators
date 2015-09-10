@@ -105,7 +105,7 @@ customs: []
 paths:
   lib:
   - lib
-version: 0.4.13
+version: 0.4.14
 name: publicancreators
 title: Publicancreators
 summary: Program for controlling Publican
@@ -118,4 +118,4 @@ description: PublicanCreators are a small tool for daily DocBook writers who are
   and your private or your business email address, depending on your chosen environment.
   Also you can set inside your config fil that you want to remove the Title Logo or
   the Legal Notice. As a feature it ships a build script for each project.
-date: '2015-09-08'
+date: '2015-09-10'
