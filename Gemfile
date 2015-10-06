@@ -8,7 +8,6 @@ gem "setup", "~>5.2"
 gem "nokogiri", "~>1.6.6.2"
 gem "parseconfig", "~>1.0.6"
 gem "rainbow", "~>2.0.0"
-gem "manns_shared", "~>1.0.0"
 gem "notifier", "~>0.5.1"
 
 gem "hoe-highline", "~>0.2", :group => [:development, :test]
@@ -20,7 +19,7 @@ gem "hoe-gemspec", "~>1.0", :group => [:development, :test]
 gem "hoe-doofus", "~>1.0", :group => [:development, :test]
 gem "hoe-git", "~>1.6", :group => [:development, :test]
 gem "hoe-rubygems", "~>1.0", :group => [:development, :test]
-gem "hoe-manns", "~>1.0", :group => [:development, :test]
+gem "hoe-manns", "~>1.1", :group => [:development, :test]
 gem "hoe-reek", "~>1.0", :group => [:development, :test]
 gem "hoe-rubocop", "~>0.1", :group => [:development, :test]
 gem "hoe-travis", "~>1.2", :group => [:development, :test]
@@ -35,9 +34,7 @@ gem "gem-release", "~>0.7", :group => [:development, :test]
 gem "indexer", "~>0.3", :group => [:development, :test]
 gem "reek", "~>3.3", :group => [:development, :test]
 gem "manns_shared", "~>1.0", :group => [:development, :test]
-gem "rainbow", "~>2.0", :group => [:development, :test]
 gem "bundler", "~>1.10", :group => [:development, :test]
-gem "parseconfig", "~>1.0", :group => [:development, :test]
 gem "minitest", "~>5.8.1", :group => [:development, :test]
 gem "rspec", "~>3.3", :group => [:development, :test]
 gem "rubocop", "~>0.34", :group => [:development, :test]

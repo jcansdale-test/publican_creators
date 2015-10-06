@@ -55,7 +55,6 @@ Hoe.spec 'publican_creators' do
   dependency 'nokogiri', '~> 1.6.6.2'
   dependency 'parseconfig', '~> 1.0.6'
   dependency 'rainbow', '~> 2.0.0'
-  dependency 'manns_shared', '~> 1.0.0'
   dependency 'notifier', '~> 0.5.1'
 
   extra_dev_deps << ['coveralls', '~> 0.8']
@@ -65,7 +64,7 @@ Hoe.spec 'publican_creators' do
   extra_dev_deps << ['hoe-doofus', '~> 1.0']
   extra_dev_deps << ['hoe-git', '~> 1.6']
   extra_dev_deps << ['hoe-rubygems', '~> 1.0']
-  extra_dev_deps << ['hoe-manns', '~> 1.0']
+  extra_dev_deps << ['hoe-manns', '~> 1.1']
   extra_dev_deps << ['hoe-reek', '~> 1.0']
   extra_dev_deps << ['hoe-rubocop', '~> 0.1']
   extra_dev_deps << ['hoe-travis', '~> 1.2']
@@ -82,9 +81,7 @@ Hoe.spec 'publican_creators' do
   extra_dev_deps << ['indexer', '~> 0.3']
   extra_dev_deps << ['reek', '~> 3.3']
   extra_dev_deps << ['manns_shared', '~> 1.0']
-  extra_dev_deps << ['rainbow', '~> 2.0']
   extra_dev_deps << ['bundler', '~> 1.10']
-  extra_dev_deps << ['parseconfig', '~> 1.0']
   extra_dev_deps << ['minitest', '~> 5.8.1']
   extra_dev_deps << ['rspec', '~> 3.3']
   extra_dev_deps << ['rubocop', '~> 0.34']
