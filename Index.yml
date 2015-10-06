@@ -1,51 +1,70 @@
 --- 
-name:    publicancreators
-version: 0.4.14
-title:   Publicancreators
-summary: Program for controlling Publican
+name:    latex_curriculum_vitae
+version: 1.0.0
+title:   Latex_curriculum_vitae
+summary: A program for creating an application
 
 description:
-  PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [https://fedorahosted.org/publican/]. PublicanCreators asks after launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and will replace the default values with your name, you company, your company_divison and your private or your business email address, depending on your chosen environment. Also you can set inside your config fil that you want to remove the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
+  PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool https://fedorahosted.org/publican/. PublicanCreators asks after
+  launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files.
+  It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
+  will replace the default values with your name, your company, your company_divison and your private or your business
+  email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
+  the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
 
 authors:
   - Sascha Manns <samannsml@directbox.com>
 
 requirements:
+- setup
+- notifier
 - nokogiri
 - parseconfig
 - rainbow
-- MannsShared
-- setup
-- notifier
-- rake (build)
+- manns_shared
 - bundler (build)
-- rdoc (build)
 - yard (build)
-- gem-release (build)
-- rubocop (build)
-- reek (build)
-- ruby-lint (build)
+- hoe (build)
+- hoe-highline (build)
+- hoe-yard (build)
+- hoe-bundler (build
+- hoe-deveiate (build)
+- hoe-gemspec (build)
+- hoe-doofus (build)
+- hoe-git (build)
+- hoe-rubygems (build)
+- hoe-manns (build)
+- hoe-reek (build)
+- hoe-rubocop (build)
+- hoe-travis (build)
+- hoe-seattlerb (build)
+- coveralls (build)
 - indexer (build)
-- mast (build)
+- rdoc (build)
+- gem-release (build)
+- rspec (build)
+- simplecov (build)
+- indexer (build)
+- rake (build)
 - test (test)
-- coveralls (test)
-- rspec (test)
-- shoulda (test)
-- simplecov (test)
+- rubocp (test)
+- reek (test)
+- ZenTest (test)
 
 repositories:
-  upstream: https://github.com/saigkill/PublicanCreators.git
+  upstream: https://gitlab.com/saigkill/publican_creators.git
 
 resources:
   home: http://saigkill.github.io
-  code: https://github.com/saigkill/PublicanCreators
-  bugs: http://saigkill-bugs.myjetbrains.com/youtrack
-  issues: http://saigkill-bugs.myjetbrains.com/youtrack
+  code: https://gitlab.com/saigkill/publican_creators
+  bugs: https://gitlab.com/saigkill/publican_creators/issues
 
 categories:
-  - publican
   - docbook
+  - linux
+  - ruby
+  - publican
 
 copyrights:
-  - 2015 Sascha Manns (GPL3)
+  - 2015 Sascha Manns (MIT)
 

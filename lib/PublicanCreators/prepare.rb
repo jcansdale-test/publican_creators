@@ -3,7 +3,7 @@
 # @abstract Class for preparing the configuration
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 
 # Dependencies
 

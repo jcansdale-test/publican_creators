@@ -4,11 +4,11 @@
 # @abstract Class for all file changes
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 
 # Dependencies
 require 'nokogiri'
-require 'PublicanCreators/checker'
+require 'publican_creators/checker'
 
 # Class for creating stuff
 class PublicanCreatorsCreate

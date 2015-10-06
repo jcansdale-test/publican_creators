@@ -3,7 +3,7 @@
 # @abstract Class for checking directories and creating them
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 
 # Dependencies
 

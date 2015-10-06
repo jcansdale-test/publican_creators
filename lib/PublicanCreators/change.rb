@@ -4,14 +4,14 @@
 # @abstract Class for all file changes
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 
 # Dependencies
 
 require 'nokogiri'
-require 'PublicanCreators/create'
-require 'PublicanCreators/checker'
-require 'MannsShared'
+require 'publican_creators/create'
+require 'publican_creators/checker'
+require 'manns_shared'
 
 # Module what contains all methods who are doing changes in files
 module PublicanCreatorsChange

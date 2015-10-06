@@ -3,11 +3,11 @@
 # @abstract Class for exporting bash scripts
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 
 # Dependencies
 
-require 'PublicanCreators/change'
+require 'publican_creators/change'
 require 'fileutils'
 require 'rainbow/ext/string'
 

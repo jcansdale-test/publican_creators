@@ -3,27 +3,28 @@
 # @abstract Main Class for PublicanCreators
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 
 # Dependencies
-require 'PublicanCreators/version'
-require 'PublicanCreators/checker'
-require 'PublicanCreators/get'
-require 'PublicanCreators/change'
-require 'PublicanCreators/export'
-require 'PublicanCreators/prepare'
-require 'PublicanCreators/notifier'
+require 'publican_creators/checker'
+require 'publican_creators/get'
+require 'publican_creators/change'
+require 'publican_creators/export'
+require 'publican_creators/prepare'
+require 'publican_creators/notifier'
 require 'fileutils'
 require 'nokogiri'
 require 'rainbow/ext/string'
 require 'bundler/setup'
-require 'MannsShared'
+require 'manns_shared'
 
 # Main Class of PublicanCreators
 # @return [String] true or false
 class PublicanCreators
+  # Versionizing
+  VERSION = '1.0.0'
+
   my_name = File.basename($PROGRAM_NAME)
-  version = PublicanCreators::Version::STRING
 
   puts "Script: #{my_name}"
   puts "Version: #{version}"

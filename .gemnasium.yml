@@ -1,5 +1,5 @@
 # api_endpoint: http://private-77f5-gemnasium.apiary-mock.com
-api_key: 0f4473f5825f325227eb7a3a9a3425af    # You personal (secret) API key. Get it at https://gemnasium.com/settings/api_access
-project_name: PublicanCreators    # A name to remember your project.
-project_slug: saigkill/PublicanCreators               # Unique slug for this project. Get it on the "project settings" page.
+api_key: c916184c3e0892558476535b216f7442    # You personal (secret) API key. Get it at https://gemnasium.com/settings/api_access
+project_name: publican_creators    # A name to remember your project.
+project_slug: 4ed576a6572ae68437b5a8f09120850b              # Unique slug for this project. Get it on the "project settings" page.
 project_branch: master        # /!\ If you don't use git, remove this line

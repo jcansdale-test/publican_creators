@@ -1,0 +1,110 @@
+= publican_creators
+
+home  :: http://saigkill.github.io
+code  :: https://gitlab.com/saigkill/publican_creators
+docs  :: https://gitlab.com/saigkill/publican_creators/wikis/home
+bugs  :: https://gitlab.com/saigkill/publican_creators/issues
+mailinglist :: https://groups.google.com/forum/#!forum/publicancreators
+openhub statistics :: https://www.openhub.net/p/PublicanCreators
+openhatch :: http://openhatch.org/projects/PublicanCreators
+mailinglist :: https://groups.google.com/forum/#!forum/publicancreators
+last public version  :: {<img src="https://badge.fury.io/rb/publican_creators.png" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+downloads latest :: {<img src="https://img.shields.io/gem/dtv/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+downloads all :: {<img src="https://img.shields.io/gem/dt/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="Build Status" />}[https://secure.travis-ci.org/saigkill/PublicanCreators]
+continuous integration :: {<img src="https://scrutinizer-ci.com/gp/publican-creators/badges/build.png?b=master&s=9133fc88d0e0064ca8c0b873250bf2cbcda77712" />}[https://scrutinizer-ci.com/gp/publican_creators]
+code quality :: {<img src="https://scrutinizer-ci.com/gp/publican-creators/badges/quality-score.png?b=master&s=5c3fc0d104b141cb3d349c4cbb3703f3ad5d3ad2" />}[https://scrutinizer-ci.com/gp/publican_creators/]
+code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators/badges/gpa.svg" alt="Code Quality" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
+test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.svg?branch=master&service=github" alt="Test Coverage" />}[https://coveralls.io/github/saigkill/PublicanCreators]
+still maintained :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintained?" />}[http://stillmaintained.com/saigkill/PublicanCreators]
+dependency check :: {<img src="https://gemnasium.com/30fa9e5a05d551923777e372c8dbb834.svg" alt="Build Status" />}[https://gemnasium.com/4ed576a6572ae68437b5a8f09120850b]
+documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" alt="Documentation Quality" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
+donations :: {<img src="https://pledgie.com/campaigns/29306.png?skin_name=chrome" alt="Build Status" />}[https://pledgie.com/campaigns/29306]
+donations :: {<img src="http://img.shields.io/gratipay/saigkill.svg" alt="Build Status" />}[https://gratipay.com/~saigkill/]
+donations :: {<img src="http://tsv-neuss.de/cms/upload/News-Bilder/amazon1.png" alt="Build Status" />}[http://www.amazon.de/registry/wishlist/D75HOEQ00BDD]
+
+== DESCRIPTION:
+
+PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool https://fedorahosted.org/publican/. PublicanCreators asks after
+launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files.
+It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
+will replace the default values with your name, your company, your company_divison and your private or your business
+email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
+the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
+
+== FEATURES/PROBLEMS:
+
+* GUI to control publican
+
+== SYNOPSIS:
+
+    publican_creators.rb (Main program)
+    revision_creator.rb (The revision updater)
+
+Or just use the Launcher.
+
+If you like this little program so don't forget to give this GitLab repository a star :-)
+
+== REQUIREMENTS:
+
+* nokogiri
+* parseconfig
+* rainbow
+* manns_shared
+* setup
+* notifier
+
+== REQUIREMENTS (hard)
+
+* yad
+* publican (a 4.x version is needed). If you use Ubuntu you can use the ppa ppa:sascha-manns-h/publican.
+
+== INSTALL:
+
+The installation is very easy.
+
+    gem install publican_creators
+    cd /path/to/gem (In case of using RVM ~/.rvm/gems/ruby-2.2.1/gems/publican_creators)
+    rake
+
+Read the documentation at: https://gitlab.com/saigkill/publican_creators/wikis/home
+
+You have to run the setup after each gem update.
+
+If you like this gem, don't forget to give the GitLab repo a start :-)
+
+== DEVELOPERS:
+
+After checking out the source, run:
+
+  $ rake newb
+
+This task will install any missing dependencies, run the tests/specs,
+and generate the RDoc.
+
+Read https://gitlab.com/saigkill/publican_creators/blob/master/CONTRIBUTING.md
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2015 Sascha Manns <samannsml@directbox.com>
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

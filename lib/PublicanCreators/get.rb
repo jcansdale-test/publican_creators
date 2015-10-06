@@ -3,7 +3,7 @@
 # @abstract Class for gathering information from config file and user input
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 
 # Dependencies
 

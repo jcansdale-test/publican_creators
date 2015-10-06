@@ -4,7 +4,7 @@
 # @abstract Class for all file changes
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 
 # Dependencies
 require 'fileutils'

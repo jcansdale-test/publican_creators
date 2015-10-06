@@ -2,9 +2,8 @@
 # @abstract Class RevisionCreator for PublicanCreator
 #
 # Copyright (C) 2015  Sascha Manns <samannsml@directbox.com>
-# License: GPL-3
+# License: MIT
 #
-# Fix for PC-1
 # Dependencies
 require 'fileutils'
 require 'rainbow/ext/string'

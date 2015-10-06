@@ -55,6 +55,7 @@ ships a build script for each project.'
   spec.add_development_dependency 'ruby-lint', '~> 2.0', '>= 2.0.4'
   spec.add_development_dependency 'indexer', '~> 0.3', '>= 0.3.1'
   spec.add_development_dependency 'mast', '~> 1.4', '>= 1.4.0'
+  spec.add_development_dependency 'hoe', '~> 3.14', '>= 3.14.2'
 
   spec.add_runtime_dependency 'nokogiri', '~> 1.6', '>= 1.6.6.2'
   spec.add_runtime_dependency 'parseconfig', '~> 1.0', '>= 1.0.6'

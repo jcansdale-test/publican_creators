@@ -1,97 +1,99 @@
 # -*- ruby -*-
-require 'bundler/gem_tasks'
+# Release:
+# * update *.wiki markdown documentation for GitLab
+# * enable :git
+# * rake run_before_release
+# * disable :git
+# * Checkin
+# * rake release
+# * rake run_after_release
+
 require 'rubygems'
-require 'rainbow/ext/string'
+require 'hoe'
 
-# encoding: utf-8
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-
-task :default do
-  puts 'Using the default task'
-end
-
-# Bundler Task
-require 'bundler'
-begin
-  Bundler.setup(:default, :development)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts 'Run `bundle install` to install missing gems'
-  exit e.status_code
-end
-require 'rake'
-
-# RSpec Task
-require 'rspec/core'
-require 'rspec/core/rake_task'
-desc 'Running RSpec Tests'
-RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList['test/**/*_spec.rb']
-end
-task :default => :spec
-
-# Coveralls Task
-require 'coveralls/rake/task'
-desc 'Running Coveralls'
-Coveralls::RakeTask.new
-task :test_with_coveralls => [:spec, 'coveralls:push']
-
-# Yard Task
-require 'yard'
-desc 'Run yarddoc for the source'
 # rubocop:disable Metrics/LineLength
-YARD::Rake::YardocTask.new do |t|
-  t.files = %w('lib/**/*.rb', 'bin/publican_creators.rb',
-'bin/revision_creator.rb',  '-', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md', 'LICENSE.md', 'README.md')
+############################################# DEVELOPING ZONE #########################################################
+Hoe.plugin :bundler
+# Hoe.plugin :deveiate
+Hoe.plugin :doofus
+Hoe.plugin :email
+Hoe.plugin :gemspec
+# Hoe.plugin :gem_prelude_sucks
+#Hoe.plugins.delete :git
+Hoe.plugin :git
+Hoe.plugin :history
+Hoe.plugin :highline
+#Hoe.plugin :inline
+Hoe.plugin :manns
+# Hoe.plugin :mercurial
+# Hoe.plugin :perforce
+# Hoe.plugin :racc
+# Hoe.plugin :rcov
+Hoe.plugin :reek
+#Hoe.plugin :rdoc
+Hoe.plugin :rubocop
+#Hoe.plugin :rubygems
+# Hoe.plugin :seattlerb
+Hoe.plugin :travis
+Hoe.plugin :version
+Hoe.plugin :website
+
+Hoe.spec 'publican_creators' do
+  developer('Sascha Manns', 'samannsml@directbox.com')
+  license 'MIT' # this should match the license in the README
+  require_ruby_version '>= 2.2.0'
+
+  email_to << 'ruby-talk@ruby-lang.org'
+  #email_to << 'Sascha.Manns@bdvb.de
+
+  self.history_file = 'History.rdoc'
+  self.readme_file = 'README.rdoc'
+  self.extra_rdoc_files = FileList['*.rdoc'].to_a
+  self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature requests on: https://gitlab.com/saigkill/publican_creators/issue'
+
+  dependency 'setup', '~> 5.2'
+  dependency 'nokogiri', '~> 1.6.6.2'
+  dependency 'parseconfig', '~> 1.0.6'
+  dependency 'rainbow', '~> 2.0.0'
+  dependency 'manns_shared', '~> 1.0.0'
+  dependency 'notifier', '~> 0.5.1'
+
+  extra_dev_deps << ['coveralls', '~> 0.8']
+  extra_dev_deps << ['hoe-bundler', '~> 1.2']
+  extra_dev_deps << ['hoe-deveiate', '~> 0.7']
+  extra_dev_deps << ['hoe-gemspec', '~> 1.0']
+  extra_dev_deps << ['hoe-doofus', '~> 1.0']
+  extra_dev_deps << ['hoe-git', '~> 1.6']
+  extra_dev_deps << ['hoe-rubygems', '~> 1.0']
+  extra_dev_deps << ['hoe-manns', '~> 1.0']
+  extra_dev_deps << ['hoe-reek', '~> 1.0']
+  extra_dev_deps << ['hoe-rubocop', '~> 0.1']
+  extra_dev_deps << ['hoe-travis', '~> 1.2']
+  extra_dev_deps << ['hoe-version', '~> 1.2']
+  extra_dev_deps << ['hoe-yard', '~> 0.1']
+  extra_dev_deps << ['hoe-seattlerb', '~> 1.3']
+  extra_dev_deps << ['hoe-version', '~> 1.2']
+  extra_dev_deps << ['hoe', '~> 3.14']
+  extra_dev_deps << ['ZenTest', '~> 4.11']
+  extra_dev_deps << ['rake', '~> 10.0']
+  extra_dev_deps << ['simplecov', '~> 0.7']
+  extra_dev_deps << ['coveralls', '~> 0.8']
+  extra_dev_deps << ['gem-release', '~> 0.7']
+  extra_dev_deps << ['indexer', '~> 0.3']
+  extra_dev_deps << ['reek', '~> 3.3']
+  extra_dev_deps << ['manns_shared', '~> 1.0']
+  extra_dev_deps << ['rainbow', '~> 2.0']
+  extra_dev_deps << ['bundler', '~> 1.10']
+  extra_dev_deps << ['parseconfig', '~> 1.0']
+  extra_dev_deps << ['minitest', '~> 5.8.1']
+  extra_dev_deps << ['rspec', '~> 3.3']
+  extra_dev_deps << ['rubocop', '~> 0.34']
+  extra_dev_deps << ['simplecov', '~> 0.10']
+  extra_dev_deps << ['fpm', '~> 1.4.0']
+  extra_dev_deps << ['bundler-audit', '~> 0.4.0']
 end
 
-# Rubocop
-require 'rubocop/rake_task'
-desc 'Run RuboCop on the lib directory'
-RuboCop::RakeTask.new(:rubocop) do |task|
-  task.patterns = ['lib/**/*.rb, test/**/*.rb']
-  # only show the files with failures
-  task.formatters = ['files']
-  # don't abort rake on failure
-  task.fail_on_error = false
-end
-
-# Reek
-require 'reek/rake/task'
-Reek::Rake::Task.new do |t|
-  t.name = 'reek'
-  t.config_file = 'config.reek'
-  t.source_files = 'lib/**/*.rb'
-  t.reek_opts = '' # -U
-  t.fail_on_error = false
-  t.verbose = true
-end
-
-# Setup procedure
-desc 'Launching the setup'
-task :setup_start do
-  version = PublicanCreators::Version::STRING
-  puts '######################################################'.color(:yellow)
-  puts '#            PublicanCrators Setup                   #'.color(:yellow)
-  puts "#            Version: #{version}                         #".color(:yellow)
-  puts '#                                                    #'.color(:yellow)
-  puts '# Please file bugreports on:                         #'.color(:yellow)
-  puts '# http://saigkill-bugs.myjetbrains.com/youtrack      #'.color(:yellow)
-  puts '######################################################'.color(:yellow)
-end
-
-desc 'Link binary PublicanCreator.rb'
-task :link_binary_cre do
-  puts 'Removing binaries'
-  publicancrebin = '/usr/bin/publicancreators'
-  system("sudo rm #{publicancrebin}") if File.exist?("#{publicancrebin}")
-end
-
-desc 'Link binary revision_creator.rb'
-task :link_binary_rev do
-  publicanrevbin = '/usr/bin/publicancreators-rev'
-  system("sudo rm #{publicanrevbin}") if File.exist?("#{publicanrevbin}")
-end
+###################################### SETUP ZONE #####################################################################
 
 require 'etc'
 require 'fileutils'
@@ -151,231 +153,10 @@ task :backup_config do
   end
 end
 
-desc 'Setup'
-task :setuprb do
-  system('setup uninstall --force')
-  system('setup.rb config --sysconfdir=$HOME/.publican_creators')
-  system('setup.rb install')
-end
-
 desc 'Run setup'
-task :setup => [:setup_start, :link_binary_cre, :link_binary_rev, :create_desktop_cre, :create_desktop_rev, :backup_config, :setuprb] do
-  puts 'Finished Setup'.color(:green)
-end
-
-require 'fileutils'
-desc 'Prepare Userdocs for translating'
-task :prepare_doc do
-  docs = './doc'
-  FileUtils.cd(docs) do
-    puts 'Running trans_drop'.color(:yellow)
-    system('publican trans_drop')
-    puts 'Preparing pot files'.color(:yellow)
-    system('publican update_pot')
-    puts 'Preparing po files for de-DE'.color(:yellow)
-    system('publican update_po --langs=de-DE')
-    puts 'All done. Please use a poeditor (like poedit) to translate'.color(:green)
-    puts 'For building doc use rake build_doc.'.color(:green)
-  end
-end
-
-require 'fileutils'
-desc 'Build Userdocs'
-task :build_doc do
-  docs = './doc'
-  FileUtils.cd(docs) do
-    puts 'Building all targets'.color(:yellow)
-    system('publican build --langs=en-US,de-DE --formats=html,pdf')
-    puts 'All done. Please use rake publish_doc for publishing.'.color(:green)
-  end
-end
-
-require 'fileutils'
-desc 'Publish Userdocs'
-task :publish_doc do
-  version = PublicanCreators::Version::STRING
-  home = Dir.home
-  srcde = 'doc/tmp/de-DE/html'
-  srcen = 'doc/tmp/en-US/html'
-  srcdepdf = 'doc/tmp/de-DE/pdf'
-  srcenpdf = 'doc/tmp/en-US/pdf'
-  target = "#{home}/RubymineProjects/saigkill.github.com"
-  targetde = "#{home}/RubymineProjects/saigkill.github.com/doc/publicancreators/de-DE/html"
-  targeten = "#{home}/RubymineProjects/saigkill.github.com/doc/publicancreators/en-US/html"
-  targetenpdf = "#{home}/RubymineProjects/saigkill.github.com/doc/publicancreators/en-US/pdf"
-  targetdepdf = "#{home}/RubymineProjects/saigkill.github.com/doc/publicancreators/de-DE/pdf"
-
-  puts 'Copying source html files to target git repository'.color(:yellow)
-  FileUtils.cp_r(Dir["#{srcde}/*"], "#{targetde}")
-  FileUtils.cp_r(Dir["#{srcen}/*"], "#{targeten}")
-  FileUtils.cp_r(Dir["#{srcdepdf}/*"], "#{targetdepdf}")
-  FileUtils.cp_r(Dir["#{srcenpdf}/*"], "#{targetenpdf}")
-
-  puts 'Checking in into repository'.color(:yellow)
-  FileUtils.cd(target) do
-    puts 'Adding missing files'.color(:yellow)
-    system('git add *')
-    puts 'Made commit'.color(:yellow)
-    system("git commit -m \"Updated doc for PublicanCreators #{version}\"")
-    puts 'Pushing it to origin'.color(:green)
-    system('git push')
-  end
-end
-
-require 'MannsShared'
-require 'yaml'
-require 'fileutils'
-desc 'Prepares for release'
-task :make_release do
-  version = PublicanCreators::Version::STRING
-  home = Dir.home
-  target = "#{home}/RubymineProjects/saigkill.github.com/_posts"
-  time = Time.new
-  date = time.strftime('%Y-%m-%d')
-  config = YAML.load_file('Index.yml')
-  oldversion = config['version']
-
-  puts('Updating index')
-  MannsShared.search_replace(oldversion, version, 'Index.yml')
-  MannsShared.search_replace(oldversion, version, 'VERSION')
-  system('index --using VERSION Index.yml')
-  puts 'Updating MANIFEST'
-  system('mast -u && mast -u')
-  system('git add MANIFEST .index')
-  puts 'done'
-  puts 'Updating workspace'
-  system('git add .idea/*')
-  system('git commit -m "Updated workspace"')
-  puts 'done'
-  puts 'Making release'
-  system('rake release')
-
-  FileUtils.cd(target) do
-    FileUtils.touch "#{date}-PublicanCreators-#{version}-released-en.md"
-    File.write "#{date}-PublicanCreators-#{version}-released-en.md", <<EOF
----
-layout: post
-title: "PublicanCreators #{version} - A Gem for DocBook Publishers"
-description: "Using DocBook and Redhat's Publican daily? Then this Rubygem made your day."
-category: "programming"
-tags: [ruby, opensource, publican, en-US]
----
-{% include JB/setup %}
-
-[![PublicanCreators](http://saigkill.github.io/img/myprojects/publican_creator.png)](https://github.com/saigkill/PublicanCreators)
-# Introduction
-PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool [fedorahosted.org/publican/]. PublicanCreators asks after launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files. It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and will replace the default values with your name, your company, your company_divison and your private or your business email address, depending on your chosen environment. Also you can set inside your config file that you want to remove the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
-
-# Installation
-If you give it a try just follow the next steps (If you have already Ruby installed):
-
-  * gem install PublicanCreators
-  * cd /path/to/gem (In case of using RVM anything like ~/.rvm/gems/ruby-2.2.1/gems/youtube_dlhelper-#{version})
-  * rake setup
-
-# Dependencies
-You need to have yad and publican (a 4.x version) installed. If you use Ubuntu you can use the ppa ppa:sascha-manns-h/publican
-
-# Running the Gem
-To run it you can type publican_creators.rb, or just use the launcher.
-
-# Downloads
-All downloads of PublicanCreators:
-[![downloads-all](https://img.shields.io/gem/dt/PublicanCreators.svg)](https://rubygems.org/gems/PublicanCreators)
-# References
-  * Projects home: [https://github.com/saigkill/PublicanCreators](https://github.com/saigkill/PublicanCreators)
-  * User documentation (en): [http://saigkill.github.io/doc/publicancreators/en-US/html](http://saigkill.github.io/doc/publicancreators/en-US/html)
-  * User documentation (de): [http://saigkill.github.io/doc/publicancreators/de-DE/html](http://saigkill.github.io/doc/publicancreators/de-DE/html)
-  * Bug reports: [http://saigkill.ddns.net:8112/dashboard](http://saigkill.ddns.net:8112/dashboard)
-
-# What has be done in this version #{version}?
-  * Step 1
-  * Step2
-
-# Donations
-[![publicancreators](https://pledgie.com/campaigns/29306.png?skin_name=chrome)](https://pledgie.com/campaigns/29306)
-EOF
-  end
-  FileUtils.cd(target) do
-    FileUtils.touch "#{date}-PublicanCreators-#{version}-released-de.md"
-    File.write "#{date}-PublicanCreators-#{version}-released-de.md", <<EOF
----
-layout: post
-title: "PublicanCreators #{version} - Ein Gem für DocBook Publishers"
-description: "Benutzen Sie täglich DocBook und Redhat's publican? Dann ist dieses Gem für Sie."
-category: "programming"
-tags: [ruby, opensource, publican, de-DE]
----
-{% include JB/setup %}
-
-[![PublicanCreators](http://saigkill.github.io/img/myprojects/publican_creator.png)](https://github.com/saigkill/PublicanCreators)
-# Einleitung
-PublicanCreators ein kleines Tool für tägliche DocBook-Schreiber, die das Publican Tool [fedorahosted.org/publican/] nutzen.
-Nach dem Start fragt PublicanCreators nach dem Titel des Projektes, dem Projekttyp und die aktuelle Umgebung. Dies nutzt PublicanCreators um die von publican erzeugten Dateien zu manipulieren. So bearbeitet es die Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml und die Revision_History. Es setzt Ihren Namen, den Ihrer Firma, den Ihrer Abteilung oder auch die private oder geschäftliche Emailadresse (je nach benutzter Umgebung). Im Configfile des Programms können weitere Einstellungen vorgenommen werden, wie das entfernen des Titel Logos oder der Legal Notice. Abschließend generiert das Programm ein Buildscript (Rakefile) für jedes Projekt.
-
-# Installation
-Wenn Ruby bereits installiert ist, kann PublicanCreators wie folgt installiert werden:
-
-  * gem install PublicanCreators
-  * cd /path/to/gem (Falls RVM benutzt wird z.B. ~/.rvm/gems/ruby-2.2.1/gems/PublicanCreators-#{version})
-  * rake setup
-
-# Abhängigkeiten
-Sie benötigen yad und publican (eine 4.x version), die bereits installiert sein müssen. Falls Sie Ubuntu nutzen, können Sie das ppa ppa:sascha-manns-h/publican nutzen.
-
-# Das Gem starten
-Starten Sie publican_creators.rb, oder benutzen Sie einfach den launcher.
-
-# Downloads
-Gesamtdownloads von PublicanCreators:
-[![downloads-all](https://img.shields.io/gem/dt/PublicanCreators.svg)](https://rubygems.org/gems/PublicanCreators)
-# Referenzen
-  * Projekt Home: [https://github.com/saigkill/PublicanCreators](https://github.com/saigkill/PublicanCreators)
-  * User Dokumentation (en): [http://saigkill.github.io/doc/publicancreators/en-US/html](http://saigkill.github.io/doc/publicancreators/en-US/html)
-  * User Dokumentation (de): [http://saigkill.github.io/doc/publicancreators/de-DE/html](http://saigkill.github.io/doc/publicancreators/de-DE/html)
-  * Bugreports: [http://saigkill.ddns.net:8112/dashboard](http://saigkill.ddns.net:8112/dashboard)
-
-# Was ist neu in version #{version}?
-  * Step 1
-  * Step2
-
-# Donations
-[![publicancreators](https://pledgie.com/campaigns/29306.png?skin_name=chrome)](https://pledgie.com/campaigns/29306)
-EOF
-  end
-  puts 'Prepared your Blogpost. Please add the changes of this release'
-  puts 'Now ready for social media posting'
-
-  # rubocop:disable Style/MultilineOperationIndentation
-  # Create email to ruby-talk
-  space = '%20'
-  crlf = '%0D%0A'
-  subject = "[ANN] PublicanCreators #{version} released"
-  subject.gsub!(/ /, "#{space}")
-  body = 'Hello Ruby list,' + "#{crlf}" + "#{crlf}" +
-      "i would like to announce the PublicanCreators gem in version #{version}." + "#{crlf}" + "#{crlf}" +
-      "What happend in version #{version}?" + "#{crlf}" +
-      '* Its the initial release' + "#{crlf}" +
-      '* Fixed LCV 1-4' + "#{crlf}" + "#{crlf}" +
-      'What is PublicanCreators?' + "#{crlf}" + "#{crlf}" +
-      'PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool' + "#{crlf}" + "#{crlf}" +
-      'Installation:'+ "#{crlf}" + "#{crlf}" +
-      '    gem install PublicanCreators' + "#{crlf}" +
-      '    cd /path/to/gem \(In case of using RVM anything like ~/.rvm/gems/ruby-2.2.1/gems/PublicanCreators\)' + "#{crlf}" +
-      '    rake setup' + "#{crlf}" + "#{crlf}" +
-      'Dependencies:'+ "#{crlf}" + "#{crlf}" +
-      '* publican' + "#{crlf}" +
-      '* yad' + "#{crlf}" + "#{crlf}" +
-      'Using the gem:' + "#{crlf}" + "#{crlf}" +
-      'To use the gem just type in the console:' + "#{crlf}" + "#{crlf}" +
-      '    publican_creators.rb' + "#{crlf}" + "#{crlf}" +
-      'or use the launcher.' + "#{crlf}" + "#{crlf}" +
-      'References:' + "#{crlf}" +
-      '* Issue tracker: http://saigkill-bugs.myjetbrains.com/youtrack/issues' + "#{crlf}" +
-      '* Home: https://github.com/saigkill/PublicanCreators' + "#{crlf}" +
-      'Greetings Sascha'
-  body.gsub!(/ /, "#{space}")
-  system("thunderbird mailto:ruby-talk@ruby-lang.org?subject=#{subject}\\&body=#{body}")
-  system('rm pkg/*')
+task :setup => [:setup_start, :create_desktop_cre, :create_desktop_rev, :backup_config] do
+  system('setup.rb uninstall --force')
+  system('setup.rb config --sysconfdir=$HOME/.manns_shared')
+  system('setup.rb install')
 end
 # vim: syntax=ruby
