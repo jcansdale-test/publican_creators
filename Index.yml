@@ -1,6 +1,5 @@
 --- 
 name:    latex_curriculum_vitae
-version: 1.0.0
 title:   Latex_curriculum_vitae
 summary: A program for creating an application
 
@@ -23,20 +22,14 @@ requirements:
 - rainbow
 - manns_shared
 - bundler (build)
-- yard (build)
 - hoe (build)
-- hoe-highline (build)
-- hoe-yard (build)
 - hoe-bundler (build
-- hoe-deveiate (build)
 - hoe-gemspec (build)
-- hoe-doofus (build)
 - hoe-git (build)
 - hoe-rubygems (build)
 - hoe-manns (build)
 - hoe-reek (build)
 - hoe-rubocop (build)
-- hoe-travis (build)
 - hoe-seattlerb (build)
 - coveralls (build)
 - indexer (build)
@@ -44,12 +37,9 @@ requirements:
 - gem-release (build)
 - rspec (build)
 - simplecov (build)
-- indexer (build)
 - rake (build)
 - test (test)
 - rubocp (test)
-- reek (test)
-- ZenTest (test)
 
 repositories:
   upstream: https://gitlab.com/saigkill/publican_creators.git

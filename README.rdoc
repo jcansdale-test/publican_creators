@@ -5,22 +5,22 @@ code  :: https://gitlab.com/saigkill/publican_creators
 docs  :: https://gitlab.com/saigkill/publican_creators/wikis/home
 bugs  :: https://gitlab.com/saigkill/publican_creators/issues
 mailinglist :: https://groups.google.com/forum/#!forum/publicancreators
-openhub statistics :: https://www.openhub.net/p/PublicanCreators
-openhatch :: http://openhatch.org/projects/PublicanCreators
+openhub statistics :: https://www.openhub.net/p/publican_creators
+openhatch :: http://openhatch.org/projects/publicancreators
 mailinglist :: https://groups.google.com/forum/#!forum/publicancreators
+license :: {<img src="http://img.shields.io/:license-mit-blue.svg" />}[https://gitlab.com/saigkill/publican_creators/blob/master/LICENSE.rdoc]
 last public version  :: {<img src="https://badge.fury.io/rb/publican_creators.png" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
 downloads latest :: {<img src="https://img.shields.io/gem/dtv/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
 downloads all :: {<img src="https://img.shields.io/gem/dt/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
-continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/PublicanCreators.png?branch=master" alt="Build Status" />}[https://secure.travis-ci.org/saigkill/PublicanCreators]
-continuous integration :: {<img src="https://scrutinizer-ci.com/gp/publican-creators/badges/build.png?b=master&s=9133fc88d0e0064ca8c0b873250bf2cbcda77712" />}[https://scrutinizer-ci.com/gp/publican_creators]
-code quality :: {<img src="https://scrutinizer-ci.com/gp/publican-creators/badges/quality-score.png?b=master&s=5c3fc0d104b141cb3d349c4cbb3703f3ad5d3ad2" />}[https://scrutinizer-ci.com/gp/publican_creators/]
+continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/publican_creators.png?branch=master" alt="Build Status" />}[https://secure.travis-ci.org/saigkill/publican_creators]
+continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/build.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
+code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
 code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators/badges/gpa.svg" alt="Code Quality" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
+security :: {<img src="https://hakiri.io/github/saigkill/publican_creators/master.svg" alt="security" />}[https://hakiri.io/github/saigkill/publican_creators/master]
 test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.svg?branch=master&service=github" alt="Test Coverage" />}[https://coveralls.io/github/saigkill/PublicanCreators]
-still maintained :: {<img src="http://stillmaintained.com/saigkill/PublicanCreators.png" alt="Maintained?" />}[http://stillmaintained.com/saigkill/PublicanCreators]
-dependency check :: {<img src="https://gemnasium.com/30fa9e5a05d551923777e372c8dbb834.svg" alt="Build Status" />}[https://gemnasium.com/4ed576a6572ae68437b5a8f09120850b]
+dependency check :: {<img src="https://gemnasium.com/saigkill/publican_creators.svg" alt="Dependency Status" />}[https://gemnasium.com/saigkill/publican_creators]
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" alt="Documentation Quality" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
 donations :: {<img src="https://pledgie.com/campaigns/29306.png?skin_name=chrome" alt="Build Status" />}[https://pledgie.com/campaigns/29306]
-donations :: {<img src="http://img.shields.io/gratipay/saigkill.svg" alt="Build Status" />}[https://gratipay.com/~saigkill/]
 donations :: {<img src="http://tsv-neuss.de/cms/upload/News-Bilder/amazon1.png" alt="Build Status" />}[http://www.amazon.de/registry/wishlist/D75HOEQ00BDD]
 
 == DESCRIPTION:
@@ -42,8 +42,6 @@ the Title Logo or the Legal Notice. As a feature it ships a build script for eac
     revision_creator.rb (The revision updater)
 
 Or just use the Launcher.
-
-If you like this little program so don't forget to give this GitLab repository a star :-)
 
 == REQUIREMENTS:
 

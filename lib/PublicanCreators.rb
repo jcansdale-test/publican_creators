@@ -22,18 +22,18 @@ require 'manns_shared'
 # @return [String] true or false
 class PublicanCreators
   # Versionizing
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 
   my_name = File.basename($PROGRAM_NAME)
 
   puts "Script: #{my_name}"
-  puts "Version: #{version}"
+  puts "Version: #{VERSION}"
   puts
   puts 'Copyright (C) 2015 Sascha Manns <samannsml@directbox.com>'
   puts 'Description: This script creates a article or book set with'
   puts 'Publican. Then it modifies it for your needs.'
   puts 'License: GPL-3'
-  puts 'Bugs: Please file bugs on http://saigkill-bugs.myjetbrains.com/youtrack/'
+  puts 'Bugs: Please file bugs on https://gitlab.com/saigkill/publican_creators/issues'
 
   puts 'Reading the config file in publicancreators.cfg'
   # @note Run config method who reads in the config file and puts the variables

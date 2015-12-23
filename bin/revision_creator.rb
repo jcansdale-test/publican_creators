@@ -5,5 +5,5 @@
 # License: GPL-3
 
 require File.expand_path(File.join(File.dirname(__FILE__),
-                                   '../lib/PublicanCreators', 'revision.rb'))
+                                   '../lib/publican_creators', 'revision.rb'))
 RevisionCreator.new

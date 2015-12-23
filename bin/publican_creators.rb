@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
-require 'PublicanCreators'
+require 'publican_creators'
 require 'bundler/setup'
 
 IRB.start

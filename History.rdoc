@@ -1,3 +1,15 @@
+=== 1.0.1 / 2015-12-23
+
+* 1 minor enhancement
+
+  * updated dependencies
+
+=== 0.4.14 / 2015-12-07
+
+* 1 minor enhancement
+
+  * fixed URL for openHUB and Openhatch
+
 === 0.4.13 / 2015-09-08
 
 * 3 minor enhancements
