@@ -21,12 +21,12 @@ env:
 before_install:
     - gem install bundler
     - sudo apt-get update
-    - sudo apt-get install software-properties-common
+    - sudo apt-get install software-properties-common -y
     - sudo apt-get install publican
     - sudo add-apt-repository ppa:sascha-manns-h/publican -y
     - sudo apt-get update
     - sudo apt-get install --only-upgrade publican
-    - sudo apt-get install publican-xcom-dummy publican-manns publican-ils
+    - sudo apt-get install publican-xcom-dummy publican-manns publican-ils -y
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose
