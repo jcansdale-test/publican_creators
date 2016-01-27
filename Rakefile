@@ -45,8 +45,8 @@ Hoe.spec 'publican_creators' do
 
   dependency 'setup', '~> 5.2'
   dependency 'nokogiri', '~> 1.6.7'
-  dependency 'parseconfig', '~> 1.0.6'
-  dependency 'rainbow', '~> 2.0.0'
+  dependency 'parseconfig', '~> 1.0'
+  dependency 'rainbow', '~> 2.1'
   dependency 'notifier', '~> 0.5'
 
   extra_dev_deps << ['coveralls', '~> 0.8']
@@ -60,13 +60,13 @@ Hoe.spec 'publican_creators' do
   extra_dev_deps << ['hoe-version', '~> 1.2']
   extra_dev_deps << ['hoe-seattlerb', '~> 1.3']
   extra_dev_deps << ['hoe', '~> 3.14']
-  extra_dev_deps << ['rake', '~> 10.4']
+  extra_dev_deps << ['rake', '~> 10.5']
   extra_dev_deps << ['gem-release', '~> 0.7']
   extra_dev_deps << ['indexer', '~> 0.3']
   extra_dev_deps << ['manns_shared', '~> 1.0']
   extra_dev_deps << ['bundler', '~> 1.11']
   extra_dev_deps << ['rspec', '~> 3.4']
-  extra_dev_deps << ['rubocop', '~> 0.35']
+  extra_dev_deps << ['rubocop', '~> 0.36']
   extra_dev_deps << ['simplecov', '~> 0.11']
 end
 
