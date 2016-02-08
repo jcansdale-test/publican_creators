@@ -22,7 +22,7 @@ require 'manns_shared'
 # @return [String] true or false
 class PublicanCreators
   # Versionizing
-  VERSION = '1.0.2'
+  VERSION = '1.0.3'
 
   my_name = File.basename($PROGRAM_NAME)
 

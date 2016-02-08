@@ -66,7 +66,7 @@ Hoe.spec 'publican_creators' do
   extra_dev_deps << ['manns_shared', '~> 1.0']
   extra_dev_deps << ['bundler', '~> 1.11']
   extra_dev_deps << ['rspec', '~> 3.4']
-  extra_dev_deps << ['rubocop', '~> 0.36']
+  extra_dev_deps << ['rubocop', '~> 0.37']
   extra_dev_deps << ['simplecov', '~> 0.11']
 end
 

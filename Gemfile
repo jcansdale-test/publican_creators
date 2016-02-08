@@ -29,7 +29,7 @@ gem "indexer", "~>0.3", :group => [:development, :test]
 gem "manns_shared", "~>1.0", :group => [:development, :test]
 gem "bundler", "~>1.11", :group => [:development, :test]
 gem "rspec", "~>3.4", :group => [:development, :test]
-gem "rubocop", "~>0.36", :group => [:development, :test]
+gem "rubocop", "~>0.37", :group => [:development, :test]
 gem "simplecov", "~>0.11", :group => [:development, :test]
 
 # vim: syntax=ruby
