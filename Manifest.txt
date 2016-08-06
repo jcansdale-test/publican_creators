@@ -2,9 +2,6 @@
 .codeclimate.yml
 .coveralls.yml
 .gemnasium.yml
-.gemrelease
-.gemtest
-.index
 .rspec
 .rubocop.yml
 .scrutinizer.yml
@@ -15,12 +12,10 @@ CONTRIBUTING.md
 Gemfile
 Gemfile.lock
 History.rdoc
-Index.yml
 LICENSE.rdoc
 Manifest.txt
 README.rdoc
 Rakefile
-VERSION
 bin/publican_creators.rb
 bin/revision_creator.rb
 config.reek
@@ -37,5 +32,3 @@ lib/publican_creators/notifier.rb
 lib/publican_creators/prepare.rb
 lib/publican_creators/revision.rb
 lib/publican_creators/testlib.rb
-spec/lib_spec.rb
-spec/spec_helper.rb

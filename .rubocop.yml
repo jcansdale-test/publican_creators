@@ -2,11 +2,11 @@ AllCops:
 
   Include:
     - 'lib/**/*.rb'
-    - 'test/**/*.rb'
+    - 'spec/**/*.rb'
 
   Exclude:
     - 'Rakefile'
-    - 'test/The_holy_Bible/*'
+    - 'spec/The_holy_Bible/*'
 
   DisplayCopNames: true
 
