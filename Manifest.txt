@@ -32,3 +32,5 @@ lib/publican_creators/notifier.rb
 lib/publican_creators/prepare.rb
 lib/publican_creators/revision.rb
 lib/publican_creators/testlib.rb
+spec/lib_spec.rb
+spec/spec_helper.rb
