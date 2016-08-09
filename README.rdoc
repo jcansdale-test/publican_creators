@@ -3,9 +3,9 @@
 home  :: http://saigkill.github.io
 code  :: https://github.com/saigkill/publican_creators
 docs  :: https://saigkill.github.io/docs/publicancreators/en-US/html/
-bugs  :: https://saigkill.myjetbrains.com/youtrack/issues?q=project%3A+PublicanCreator
+bugs  :: https://saigkill.myjetbrains.com/youtrack/issues
 openhub statistics :: https://www.openhub.net/p/publican_creators
-openhatch :: http://openhatch.org/projects/publicancreators
+openhatch :: https://openhatch.org/projects/PublicanCreators
 license :: {<img src="http://img.shields.io/:license-mit-blue.svg" />}[https://gitlab.com/saigkill/publican_creators/blob/master/LICENSE.rdoc]
 last public version  :: {<img src="https://badge.fury.io/rb/publican_creators.png" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
 downloads latest :: {<img src="https://img.shields.io/gem/dtv/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
