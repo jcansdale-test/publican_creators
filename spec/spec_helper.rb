@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'test'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'spec'))
 require 'coveralls'
 require 'simplecov'
 require 'fileutils'
