@@ -1,3 +1,13 @@
+=== 1.1.0 / 2016-08-24
+
+* 1 minor enhancement
+
+  * updated dependencies
+
+* 1 major enhancement
+
+  * fixed setup (Removed :setup_start from :setup)
+
 === 1.0.4 / 2016-08-06
 
 * 1 minor enhancement

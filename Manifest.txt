@@ -22,7 +22,7 @@ config.reek
 data/publican_creators/publican-revision.png
 data/publican_creators/publican.png
 etc/publicancreators.cfg
-lib/PublicanCreators.rb
+lib/publican_creators.rb
 lib/publican_creators/change.rb
 lib/publican_creators/checker.rb
 lib/publican_creators/create.rb

@@ -22,14 +22,14 @@ require 'manns_shared'
 # @return [String] true or false
 class PublicanCreators
   # Versionizing
-  VERSION = '1.0.4'
+  VERSION = '1.1.0'
 
   my_name = File.basename($PROGRAM_NAME)
 
   puts "Script: #{my_name}"
   puts "Version: #{VERSION}"
   puts
-  puts 'Copyright (C) 2015 Sascha Manns <samannsml@directbox.com>'
+  puts 'Copyright (C) 2015-2016 Sascha Manns <samannsml@directbox.com>'
   puts 'Description: This script creates a article or book set with'
   puts 'Publican. Then it modifies it for your needs.'
   puts 'License: GPL-3'
@@ -228,6 +228,6 @@ class PublicanCreators
 
     puts "Now you can find your documentation there: #{targetdir}/#{title}"
     Notifier.run
-    puts "Thanks for using: #{my_name} #{version}"
+    puts "Thanks for using: #{my_name} #{VERSION}"
   end
 end

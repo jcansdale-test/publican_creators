@@ -18,7 +18,7 @@ Hoe.plugin :doofus
 Hoe.plugin :email
 # Hoe.plugin :gem_prelude_sucks
 #Hoe.plugins.delete :git
-#Hoe.plugin :git
+Hoe.plugin :git
 Hoe.plugin :highline
 #Hoe.plugin :inline
 Hoe.plugin :manns
@@ -40,7 +40,7 @@ Hoe.spec 'publican_creators' do
   self.history_file = 'History.rdoc'
   self.readme_file = 'README.rdoc'
   self.extra_rdoc_files = FileList['*.rdoc'].to_a
-  self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature requests on: https://saigkill.myjetbrains.com/youtrack/issues?q=project%3A+PublicanCreator'
+  self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature requests on: https://saigkill.myjetbrains.com/youtrack/issues'
 
   dependency 'setup', '~> 5.2'
   dependency 'nokogiri', '~> 1.6'
@@ -127,7 +127,7 @@ task :backup_config do
 end
 
 desc 'Run setup'
-task :setup => [:setup_start, :create_desktop_cre, :create_desktop_rev, :backup_config] do
+task :setup => [:create_desktop_cre, :create_desktop_rev, :backup_config] do
   system('setup.rb uninstall --force')
   system('setup.rb config --sysconfdir=$HOME/.manns_shared')
   system('setup.rb install')
