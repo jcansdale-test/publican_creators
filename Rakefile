@@ -18,7 +18,7 @@ Hoe.plugin :doofus
 Hoe.plugin :email
 # Hoe.plugin :gem_prelude_sucks
 #Hoe.plugins.delete :git
-Hoe.plugin :git
+#Hoe.plugin :git
 Hoe.plugin :highline
 #Hoe.plugin :inline
 Hoe.plugin :manns
@@ -30,7 +30,7 @@ Hoe.plugin :version
 Hoe.plugin :website
 
 Hoe.spec 'publican_creators' do
-  developer('Sascha Manns', 'samannsml@directbox.com')
+  developer('Sascha Manns', 'Sascha.Manns@mailbox.org')
   license 'MIT' # this should match the license in the README
   require_ruby_version '>= 2.2.0'
 
@@ -40,7 +40,7 @@ Hoe.spec 'publican_creators' do
   self.history_file = 'History.rdoc'
   self.readme_file = 'README.rdoc'
   self.extra_rdoc_files = FileList['*.rdoc'].to_a
-  self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature requests on: https://saigkill.myjetbrains.com/youtrack/issues'
+  self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature requests on: https://github.com/saigkill/latex_curriculum_vitae/issues'
 
   dependency 'setup', '~> 5.2'
   dependency 'nokogiri', '~> 1.6'

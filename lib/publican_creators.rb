@@ -2,7 +2,7 @@
 # @author Sascha Manns
 # @abstract Main Class for PublicanCreators
 #
-# Copyright (C) 2015-2016  Sascha Manns <samannsml@directbox.com>
+# Copyright (C) 2015-2017  Sascha Manns <Sascha.Manns@mailbox.org>
 # License: MIT
 
 # Dependencies
@@ -22,7 +22,7 @@ require 'manns_shared'
 # @return [String] true or false
 class PublicanCreators
   # Versionizing
-  VERSION = '1.1.0'
+  VERSION = '1.1.1'
 
   my_name = File.basename($PROGRAM_NAME)
 

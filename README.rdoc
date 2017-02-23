@@ -1,9 +1,7 @@
 = publican_creators
 
-home  :: http://saigkill.github.io
+home  :: http://saigkill.tuxfamily.org
 code  :: https://github.com/saigkill/publican_creators
-docs  :: https://saigkill.github.io/docs/publicancreators/en-US/html/
-bugs  :: https://saigkill.myjetbrains.com/youtrack/issues
 openhub statistics :: https://www.openhub.net/p/publican_creators
 min. rubyver :: 2.2.0
 license :: {<img src="http://img.shields.io/:license-mit-blue.svg" />}[https://gitlab.com/saigkill/publican_creators/blob/master/LICENSE.rdoc]
@@ -19,7 +17,7 @@ test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators
 dependency check :: {<img src="https://gemnasium.com/saigkill/publican_creators.svg" alt="Dependency Status" />}[https://gemnasium.com/saigkill/publican_creators]
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" alt="Documentation Quality" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
 donations :: {<img src="https://pledgie.com/campaigns/29306.png?skin_name=chrome" alt="Build Status" />}[https://pledgie.com/campaigns/29306]
-donations :: {<img src="http://tsv-neuss.de/cms/upload/News-Bilder/amazon1.png" alt="Build Status" />}[http://www.amazon.de/registry/wishlist/D75HOEQ00BDD]
+donations :: {<img src="https://saigkill.tuxfamily.org/dotclear/public/Amazon.png" alt="Build Status" />}[http://www.amazon.de/registry/wishlist/D75HOEQ00BDD]
 
 == DESCRIPTION:
 
@@ -29,6 +27,11 @@ It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group
 will replace the default values with your name, your company, your company_divison and your private or your business
 email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
 the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
+
+== INFORMATION:
+
+publican_creators (in this case a Rubygem) don't would be updated anymore. The project itself continues with the new
+C#-GNOME-App "PublicanCreators" at https://github.com/saigkill/PublicanCreators.
 
 == FEATURES/PROBLEMS:
 
@@ -69,22 +72,12 @@ You have to run the setup after each gem update.
 
 If you like this gem, don't forget to give the GitLab repo a start :-)
 
-== DEVELOPERS:
-
-After checking out the source, run:
-
-  $ rake newb
-
-This task will install any missing dependencies, run the tests/specs,
-and generate the RDoc.
-
-Read https://github.com/saigkill/publican_creators/blob/master/CONTRIBUTING.md
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2015-2016 Sascha Manns <samannsml@directbox.com>
+Copyright (c) 2015-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

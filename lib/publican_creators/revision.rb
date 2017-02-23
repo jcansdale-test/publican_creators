@@ -1,7 +1,7 @@
 # @author Sascha Manns
 # @abstract Class RevisionCreator for PublicanCreator
 #
-# Copyright (C) 2015-2016  Sascha Manns <samannsml@directbox.com>
+# Copyright (C) 2015-2017  Sascha Manns <Sascha.Manns@mailbox.org>
 # License: MIT
 #
 # Dependencies

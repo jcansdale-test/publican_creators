@@ -3,7 +3,7 @@
 # @author Sascha Manns
 # @abstract Notifier Module for latex_curriculum_vitae
 #
-# Copyright (C) 2015-2016  Sascha Manns <samannsml@directbox.com>
+# Copyright (C) 2015-2016  Sascha Manns <Sascha.Manns@mailbox.org>
 # License: MIT
 
 # Dependencies
