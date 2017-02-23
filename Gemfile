@@ -11,7 +11,6 @@ gem "rainbow", "~>2.1"
 gem "notifier", "~>0.5"
 
 gem "hoe-highline", "~>0.2", :group => [:development, :test]
-gem "rdoc", "~>4.0", :group => [:development, :test]
 gem "coveralls", "~>0.8", :group => [:development, :test]
 gem "hoe-bundler", "~>1.3", :group => [:development, :test]
 gem "hoe-git", "~>1.6", :group => [:development, :test]
@@ -28,5 +27,6 @@ gem "bundler", "~>1.11", :group => [:development, :test]
 gem "rspec", "~>3.5", :group => [:development, :test]
 gem "rubocop", "~>0.42", :group => [:development, :test]
 gem "simplecov", "~>0.12", :group => [:development, :test]
+gem "rdoc", "~>4.0", :group => [:development, :test]
 
 # vim: syntax=ruby
