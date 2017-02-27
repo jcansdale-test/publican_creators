@@ -2,6 +2,7 @@
 
 home  :: http://saigkill.tuxfamily.org
 code  :: https://github.com/saigkill/publican_creators
+docs  :: https://saigkill.tuxfamily.org/docs/publican_creators/en-US/html/
 openhub statistics :: https://www.openhub.net/p/publican_creators
 min. rubyver :: 2.2.0
 license :: {<img src="http://img.shields.io/:license-mit-blue.svg" />}[https://gitlab.com/saigkill/publican_creators/blob/master/LICENSE.rdoc]
@@ -66,7 +67,7 @@ The installation is very easy.
     cd /path/to/gem (In case of using RVM ~/.rvm/gems/ruby-2.2.1/gems/publican_creators)
     rake
 
-Read the documentation at: https://saigkill.github.io/docs/publicancreators/en-US/html/
+Read the documentation at: https://saigkill.tuxfamily.org/docs/publican_creators/en-US/html/
 
 You have to run the setup after each gem update.
 

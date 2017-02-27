@@ -43,9 +43,9 @@ Hoe.spec 'publican_creators' do
   self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature requests on: https://github.com/saigkill/latex_curriculum_vitae/issues'
 
   dependency 'setup', '~> 5.2'
-  dependency 'nokogiri', '~> 1.6'
+  dependency 'nokogiri', '~> 1.7'
   dependency 'parseconfig', '~> 1.0'
-  dependency 'rainbow', '~> 2.1'
+  dependency 'rainbow', '~> 2.2'
   dependency 'notifier', '~> 0.5'
 
   extra_dev_deps << ['coveralls', '~> 0.8']
@@ -57,13 +57,12 @@ Hoe.spec 'publican_creators' do
   extra_dev_deps << ['hoe-rubocop', '~> 1.0']
   extra_dev_deps << ['hoe-version', '~> 1.2']
   extra_dev_deps << ['hoe-seattlerb', '~> 1.3']
-  extra_dev_deps << ['hoe', '~> 3.15']
-  extra_dev_deps << ['rake', '~> 11.2']
+  extra_dev_deps << ['hoe', '~> 3.16']
+  extra_dev_deps << ['rake', '~> 12.0']
   extra_dev_deps << ['manns_shared', '~> 1.0']
-  extra_dev_deps << ['bundler', '~> 1.11']
+  extra_dev_deps << ['bundler', '~> 1.14']
   extra_dev_deps << ['rspec', '~> 3.5']
-  extra_dev_deps << ['rubocop', '~> 0.42']
-  extra_dev_deps << ['simplecov', '~> 0.12']
+  extra_dev_deps << ['rubocop', '~> 0.47']
 end
 
 ###################################### SETUP ZONE #####################################################################
