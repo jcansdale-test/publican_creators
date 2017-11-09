@@ -1,15 +1,15 @@
 require 'rspec'
-require 'publican_creators/checker'
-require 'publican_creators/get'
-require 'publican_creators/change'
-require 'publican_creators/export'
-require 'publican_creators/create'
-require 'publican_creators/testlib'
 require 'fileutils'
 require 'tempfile'
 require 'nokogiri'
-require 'bundler/setup'
 require 'rainbow/ext/string'
+require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/checker')
+require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/get')
+require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/change')
+require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/export')
+require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/create')
+require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/testlib')
+
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe 'PublicanCreatorsCreate' do
@@ -92,33 +92,6 @@ end
 
 describe 'PublicanCreatorsChange' do
   describe '.add_entity' do
-    context 'Work Environment (Article) with global_entities variable' do
-      environment = 'Work'
-      title = 'The_holy_Bible-WorkArt'
-      brand_dir = '/usr/share/publican/Common_Content/XCOM'
-      global_entities = "#{brand_dir}/de-DE/entitiesxcom.ent"
-      ent = "#{title}/de-DE/#{title}.ent"
-      pattern = 'COMMON ENTITIES'
-      it 'Adds the Entities from the global ent file' do
-        PublicanCreatorsChange.add_entity(environment, global_entities, ent)
-        result = PublicanCreatorsTest.check_content(ent, pattern)
-        expect(result).equal? 'true'
-      end
-    end
-
-    context 'Work Environment (Book) with global_entities variable' do
-      environment = 'Work'
-      title = 'The_holy_Bible-WorkBook'
-      brand_dir = '/usr/share/publican/Common_Content/XCOM'
-      global_entities = "#{brand_dir}/de-DE/entitiesxcom.ent"
-      ent = "#{title}/de-DE/#{title}.ent"
-      pattern = 'COMMON ENTITIES'
-      it 'Adds the Entities from the global ent file' do
-        PublicanCreatorsChange.add_entity(environment, global_entities, ent)
-        result = PublicanCreatorsTest.check_content(ent, pattern)
-        expect(result).equal? 'true'
-      end
-    end
 
     context 'Private Environment (Article) without global_entities variable' do
       environment = 'Private'

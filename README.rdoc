@@ -1,49 +1,56 @@
 = publican_creators
 
-home  :: http://saigkill.tuxfamily.org
-code  :: https://github.com/saigkill/publican_creators
-docs  :: https://saigkill.tuxfamily.org/docs/publican_creators/en-US/html/
-openhub statistics :: https://www.openhub.net/p/publican_creators
+code  :: https://launchpad.net/publicancreators
+docs :: https://saigkill.github.io/publican_creators/userdocs/publican_creators/index.html
+apidoc :: http://rubydoc.info/gems/publican_creators
+bugs  :: https://bugs.launchpad.net/publicancreators
+questions :: https://answers.launchpad.net/publicancreators
+feature requests :: https://blueprints.launchpad.net/publicancreators
+openhub statistics :: https://www.openhub.net/p/publicancreators
+authors blog :: https://saigkill.tuxfamily.org
 min. rubyver :: 2.2.0
-license :: {<img src="http://img.shields.io/:license-mit-blue.svg" />}[https://gitlab.com/saigkill/publican_creators/blob/master/LICENSE.rdoc]
-last public version  :: {<img src="https://badge.fury.io/rb/publican_creators.png" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
-downloads latest :: {<img src="https://img.shields.io/gem/dtv/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
-downloads all :: {<img src="https://img.shields.io/gem/dt/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
-continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/publican_creators.png?branch=master" alt="Build Status" />}[https://secure.travis-ci.org/saigkill/publican_creators]
-continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/build.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
-code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
-code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators/badges/gpa.svg" alt="Code Quality" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
-security :: {<img src="https://hakiri.io/github/saigkill/publican_creators/master.svg" alt="security" />}[https://hakiri.io/github/saigkill/publican_creators/master]
-test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.svg?branch=master&service=github" alt="Test Coverage" />}[https://coveralls.io/github/saigkill/PublicanCreators]
-dependency check :: {<img src="https://gemnasium.com/saigkill/publican_creators.svg" alt="Dependency Status" />}[https://gemnasium.com/saigkill/publican_creators]
-documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" alt="Documentation Quality" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
-donations :: {<img src="https://pledgie.com/campaigns/29306.png?skin_name=chrome" alt="Build Status" />}[https://pledgie.com/campaigns/29306]
-donations :: {<img src="https://saigkill.tuxfamily.org/dotclear/public/Amazon.png" alt="Build Status" />}[http://www.amazon.de/registry/wishlist/D75HOEQ00BDD]
+
+If you're reading this on Github, please keep in mind, that this is just a
+mirror. The development happens on: https://launchpad.net/publicancreators.
 
 == DESCRIPTION:
 
-PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool https://fedorahosted.org/publican/. PublicanCreators asks after
-launching which title, type and environment should be used. Then it starts publican with that settings and works then with the produced files.
+PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool
+https://fedorahosted.org/publican/. PublicanCreators asks after launching which title, type and environment should be
+used. Then it starts publican with that settings and works then with the produced files.
 It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
 will replace the default values with your name, your company, your company_divison and your private or your business
 email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
 the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
 
-== INFORMATION:
+The History.rdoc contains a detailed description on what has changed. For most
+users the NEWS file might be a better place to look since it contains
+change summaries between the different versions.
 
-publican_creators (in this case a Rubygem) don't would be updated anymore. The project itself continues with the new
-C#-GNOME-App "PublicanCreators" at https://github.com/saigkill/PublicanCreators.
+hoe-reek is released under the GPL3 License, see the file 'License.rdoc'
+for more information.
+
+The official web site is:
+
+    https://launchpad.net/publicancreators
 
 == FEATURES/PROBLEMS:
 
 * GUI to control publican
 
+See the {status}[https://github.com/saigkill/latex_curriculum_vitae/blob/master/STATUS.rdoc] of the app.
+
 == SYNOPSIS:
 
-    publican_creators.rb (Main program)
-    revision_creator.rb (The revision updater)
+  $ publican_creators.rb (Main program)
+  $ revision_creator.rb (The revision updater)
 
-Or just use the Launcher.
+  Or just use the Launcher.
+
+Read the documentation at: https://saigkill.github.io/publican_creators/about/
+
+This Gem was programmed and tested for Linux systems. If anyone would like to make the methods also fit for other OS,
+i'm happy about Pull requests.
 
 == REQUIREMENTS:
 
@@ -54,47 +61,110 @@ Or just use the Launcher.
 * setup
 * notifier
 
-== REQUIREMENTS (hard)
+== REQUIREMENTS (hard dependencies):
 
 * yad
-* publican (a 4.x version is needed). If you use Ubuntu you can use the ppa ppa:sascha-manns-h/publican.
+* publican (a 4.x version is needed)
 
 == INSTALL:
 
 The installation is very easy.
 
     gem install publican_creators
-    cd /path/to/gem (In case of using RVM ~/.rvm/gems/ruby-2.2.1/gems/publican_creators)
+    cd /path/to/gem (In case of using RVM ~/.rvm/gems/ruby-$RUBYVERSION/gems/publican_creators)
     rake
 
-Read the documentation at: https://saigkill.tuxfamily.org/docs/publican_creators/en-US/html/
+Read the documentation at: https://saigkill.github.io/publican_creators/about/
 
 You have to run the setup after each gem update.
 
-If you like this gem, don't forget to give the GitLab repo a start :-)
+== DEVELOPERS:
 
+After checking out the source, run:
 
-== LICENSE:
+  $ rake newb
 
-(The MIT License)
+This task will install any missing dependencies, run the tests/specs,
+and generate the RDoc.
 
-Copyright (c) 2015-2017 Sascha Manns <Sascha.Manns@mailbox.org>
+=== IDEAS:
 
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
+* Add ideas on: https://blueprints.launchpad.net/publicancreators
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+=== COOL HACKS:
 
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+* Open a bugreport on https://bugs.launchpad.net/publicancreators.
+* Please use the -u flag when generating the patch as it makes the patch
+  more readable.
+* Write a good explanation of what the patch does.
+* It is better to use git format-patch command: git format-patch HEAD^
+
+=== CONTRIBUTOR CODE OF CONDUCT:
+
+As contributors and maintainers of this project, we pledge to respect all
+people who contribute through reporting issues, posting feature requests,
+updating documentation, submitting pull requests or patches, and other
+activities.
+
+We are committed to making participation in this project a harassment-free
+experience for everyone, regardless of level of experience, gender, gender
+identity and expression, sexual orientation, disability, personal
+appearance, body size, race, age, or religion.
+
+Examples of unacceptable behavior by participants include the use of sexual
+language or imagery, derogatory comments or personal attacks, trolling,
+public or private harassment, insults, or other unprofessional conduct.
+
+Project maintainers have the right and responsibility to remove, edit, or
+reject comments, commits, code, wiki edits, issues, and other contributions
+that are not aligned to this Code of Conduct. Project maintainers who do
+not follow the Code of Conduct may be removed from the project team.
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported by opening an issue or contacting one or more of the project
+maintainers.
+
+This Code of Conduct is adapted from the {Contributor Covenant}[http:contributor-covenant.org],
+version 1.0.0, available at {http://contributor-covenant.org/version/1/0/0/}[http://contributor-covenant.org/version/1/0/0/].
+
+=== MAINTANANCE POLICY:
+
+I'm following the Semantic Versioning for its releases: (Major).(Minor).(Patch).
+
+ * Major version: Whenever there is something significant or any backwards
+   incompatible changes.
+ * Minor version: When new, backwards compatible functionality is introduced a
+   minor feature is introduced, or when a set of smaller features is rolled out.
+ * Patch number: When backwards compatible bug fixes are introduced that fix
+   incorrect behavior.
+ * The current stable release will receive security patches and bug fixes
+   (eg. 5.0 -> 5.0.1).
+ * Feature releases will mark the next supported stable release where the minor
+   version is increased numerically by increments of one (eg. 5.0 -> 5.1).
+
+I encourage everyone to run the latest stable release to ensure that you can
+easily upgrade to the most secure and feature rich experience. In order to
+make sure you can easily run the most recent stable release, we are working
+hard to keep the update process simple and reliable.
+
+=== STRUCTURE:
+
+==== BRANCHES:
+
+===== `master` BRANCH:
+The master branch is the current edge of development.
+
+===== `X.X` BRANCH:
+The X.X branch is the last stable branch. It will used for tarballs.
+
+===== MERGE REQUESTS:
+If you want to merge your branch with the trunk, join the team.
+
+Please base all Merge requests off the `master` branch. Merges to
+`X.X` only occur through the `master` branch.
+
+== PROBLEM REPORTING:
+
+Bugs should be reported to https://bugs.launchpad.net/publicancreators. You will need to create an
+account for yourself.
+

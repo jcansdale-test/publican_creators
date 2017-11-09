@@ -2,40 +2,36 @@
 # @author Sascha Manns
 # @abstract Main Class for PublicanCreators
 #
-# Copyright (C) 2015-2017  Sascha Manns <Sascha.Manns@mailbox.org>
+# Copyright (C) 2015-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 # License: MIT
 
 # Dependencies
-require 'publican_creators/checker'
-require 'publican_creators/get'
-require 'publican_creators/change'
-require 'publican_creators/export'
-require 'publican_creators/prepare'
-require 'publican_creators/notifier'
+require_relative 'publican_creators/checker'
+require_relative 'publican_creators/get'
+require_relative 'publican_creators/change'
+require_relative 'publican_creators/export'
+require_relative 'publican_creators/prepare'
+require_relative 'publican_creators/notifier'
 require 'fileutils'
 require 'nokogiri'
 require 'rainbow/ext/string'
-require 'bundler/setup'
-require 'manns_shared'
 
 # Main Class of PublicanCreators
 # @return [String] true or false
 class PublicanCreators
   # Versionizing
-  VERSION = '1.1.2'
+  VERSION = '1.1.2'.freeze
 
-  my_name = File.basename($PROGRAM_NAME)
-
-  puts "Script: #{my_name}"
-  puts "Version: #{VERSION}"
+  puts 'publican_creators'.color(:yellow)
+  puts "Version: #{VERSION}".color(:yellow)
   puts
-  puts 'Copyright (C) 2015-2016 Sascha Manns <samannsml@directbox.com>'
-  puts 'Description: This script creates a article or book set with'
-  puts 'Publican. Then it modifies it for your needs.'
-  puts 'License: GPL-3'
-  puts 'Bugs: Please file bugs on https://gitlab.com/saigkill/publican_creators/issues'
+  puts 'Copyright (C) 2015-2017 Sascha Manns <Sascha.Manns@mailbox.org>'.color(:yellow)
+  puts 'Description: This script creates a article or book set with'.color(:yellow)
+  puts 'Publican. Then it modifies it for your needs.'.color(:yellow)
+  puts 'License: GPL-3'.color(:yellow)
+  puts 'Bugs: Please file bugs on https://bugs.launchpad.net/publicancreators'.color(:yellow)
 
-  puts 'Reading the config file in publicancreators.cfg'
+  puts 'Reading the config file in publicancreators.cfg'.color(:yellow)
   # @note Run config method who reads in the config file and puts the variables
   # in an array
   # name, email, language, use_brand, title_logo, legal, brand, company_name,
@@ -43,7 +39,7 @@ class PublicanCreators
   #     articles_dir_business, reports_dir_business, books_dir_business,
   #     articles_dir_private, homework_dir_private, books_dir_private,
   #     brand_private, brand_homework, db5, conf_ver, xfc_brand_dir,
-  #     pdfview = PublicanCreatorsGet.config
+  #     pdf_view = PublicanCreatorsGet.config
 
   home = Dir.home
   config = ParseConfig.new("#{home}/.publican_creators/publicancreators.cfg")
@@ -70,7 +66,7 @@ class PublicanCreators
   brand_homework = config['brand_homework']
   db5 = config['db5']
   xfc_brand_dir = config['xfc_brand_dir']
-  pdfview = config['pdfview']
+  pdf_view = config['pdfview']
 
   puts 'Your configuration is:'
   puts "Your Name: #{name}"
@@ -96,7 +92,7 @@ class PublicanCreators
   puts "DocBook5 as default: #{db5}"
   puts "Config version: #{conf_ver}"
   puts "XFC brand dir: #{xfc_brand_dir}"
-  puts "Your prefered PDF-Viewer: #{pdfview}"
+  puts "Your prefered PDF-Viewer: #{pdf_view}"
 
   global_entities = "#{brand_dir}/#{glob_entities}"
   puts "Your global entities file is there: #{global_entities}"
@@ -119,10 +115,10 @@ class PublicanCreators
   homework = 'TRUE' if opt == 'Homework'
 
   # @note Hardcoded variables
-  artinfo = "#{title}/#{language}/Article_Info.xml"
-  bookinfo = "#{title}/#{language}/Book_Info.xml"
-  revhist = "#{title}/#{language}/Revision_History.xml"
-  agroup = "#{title}/#{language}/Author_Group.xml"
+  art_info = "#{title}/#{language}/Article_Info.xml"
+  book_info = "#{title}/#{language}/Book_Info.xml"
+  rev_hist = "#{title}/#{language}/Revision_History.xml"
+  a_group = "#{title}/#{language}/Author_Group.xml"
   ent = "#{title}/#{language}/#{title}.ent"
   builds = "#{title}/#{language}/Rakefile"
 
@@ -191,21 +187,24 @@ class PublicanCreators
     # @param [String] environment Work or Private
     # @param [String] type Book or Article
     # @param [String] legal remove legalnotice from article? (config file)
-    PublicanCreatorsChange.remove_legal(environment, type, legal, artinfo)
+    # @param [String] art_info Path to Article_Info.xml
+    PublicanCreatorsChange.remove_legal(environment, type, legal, art_info)
 
-    # @param [String] artinfo path to Article_Info (hardcoded)
-    # @param [String] bookinfo path to Book_Info (hardcoded)
+    # @param [String] art_info path to Article_Info (hardcoded)
+    # @param [String] book_info path to Book_Info (hardcoded)
     # @param [String] title_logo remove titlelogo from articlepage (config file)
     # @param [String] type Book or Article
-    PublicanCreatorsChange.remove_orgname_prepare(bookinfo, artinfo, title_logo,
+    PublicanCreatorsChange.remove_orgname_prepare(book_info, art_info, title_logo,
                                                   type)
 
     # @param [String] environment Work or Private
     # @param [String] name your name (config file)
     # @param [String] email_business business email address (config file)
+    # @param [String] email private email address (config file)
     # @param [String] title comes from titleget[3]
+    # @param [String] rev_hist Path to Revision_History.xml
     PublicanCreatorsChange.fix_revhist(environment, name, email_business, email,
-                                       revhist)
+                                       rev_hist)
 
     # @param [String] title comes from titleget[3]
     # @param [String] name your name (config file)
@@ -215,7 +214,7 @@ class PublicanCreators
     # @param [String] email your private email address
     PublicanCreatorsChange.fix_authorgroup(name, email_business, company_name,
                                            company_division, email, environment,
-                                           agroup)
+                                           a_group)
 
     # @param [String] title comes from titleget[3]
     # @param [String] builds path to buildscript (hardcoded)
@@ -224,10 +223,10 @@ class PublicanCreators
     #                 stylesheets (config file)
     # @param [String] pdfview your prefered PDF-Viewer (config file)
     PublicanCreatorsExport.export_buildscript(title, builds, language,
-                                              xfc_brand_dir, pdfview)
+                                              xfc_brand_dir, pdf_view)
 
     puts "Now you can find your documentation there: #{targetdir}/#{title}"
     Notifier.run
-    puts "Thanks for using: #{my_name} #{VERSION}"
+    puts "Thanks for using: publican_creators #{VERSION}"
   end
 end

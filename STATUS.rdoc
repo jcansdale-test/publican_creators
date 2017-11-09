@@ -1,0 +1,30 @@
+= Misc status badges
+
+== Gem
+last public version  :: {<img src="https://badge.fury.io/rb/publican_creators.png" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+downloads latest :: {<img src="https://img.shields.io/gem/dtv/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+downloads all :: {<img src="https://img.shields.io/gem/dt/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+
+== Continuous Integration
+continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/publican_creators.png?branch=master" alt="Build Status" />}[https://secure.travis-ci.org/saigkill/publican_creators]
+continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/build.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
+
+== Test Coverage
+test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.svg?branch=master&service=github" alt="Test Coverage" />}[https://coveralls.io/github/saigkill/PublicanCreators]
+
+== Code Review
+code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
+code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators/badges/gpa.svg" alt="Code Quality" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
+
+== Security
+security :: {<img src="https://hakiri.io/github/saigkill/publican_creators/master.svg" alt="security" />}[https://hakiri.io/github/saigkill/publican_creators/master]
+
+== Dependencies
+dependency check :: {<img src="https://gemnasium.com/saigkill/publican_creators.svg" alt="Dependency Status" />}[https://gemnasium.com/saigkill/publican_creators]
+
+== Documentation
+documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" alt="Documentation Quality" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
+
+== Donations
+donations :: {<img src="https://pledgie.com/campaigns/29306.png?skin_name=chrome" alt="Build Status" />}[https://pledgie.com/campaigns/29306]
+donations :: {<img src="https://saigkill.tuxfamily.org/dotclear/public/Amazon.png" alt="Build Status" />}[http://www.amazon.de/registry/wishlist/D75HOEQ00BDD]
