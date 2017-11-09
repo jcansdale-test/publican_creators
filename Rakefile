@@ -18,7 +18,7 @@ Hoe.plugin :doofus
 Hoe.plugin :email
 # Hoe.plugin :gem_prelude_sucks
 #Hoe.plugins.delete :git
-#Hoe.plugin :git
+Hoe.plugin :git
 Hoe.plugin :highline
 #Hoe.plugin :inline
 Hoe.plugin :manns
@@ -43,7 +43,7 @@ Hoe.spec 'publican_creators' do
   self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature requests on: https://github.com/saigkill/latex_curriculum_vitae/issues'
 
   dependency 'setup', '~> 5.2'
-  dependency 'nokogiri', '~> 1.7'
+  dependency 'nokogiri', '~> 1.8'
   dependency 'parseconfig', '~> 1.0'
   dependency 'rainbow', '~> 2.2'
   dependency 'notifier', '~> 0.5'
@@ -53,16 +53,17 @@ Hoe.spec 'publican_creators' do
   extra_dev_deps << ['hoe-git', '~> 1.6']
   extra_dev_deps << ['hoe-rubygems', '~> 1.0']
   extra_dev_deps << ['hoe-manns', '~> 1.5']
-  extra_dev_deps << ['hoe-reek', '~> 1.1']
+  extra_dev_deps << ['hoe-reek', '~> 1.2']
   extra_dev_deps << ['hoe-rubocop', '~> 1.0']
   extra_dev_deps << ['hoe-version', '~> 1.2']
   extra_dev_deps << ['hoe-seattlerb', '~> 1.3']
   extra_dev_deps << ['hoe', '~> 3.16']
-  extra_dev_deps << ['rake', '~> 12.0']
+  extra_dev_deps << ['rake', '~> 12.2']
+  extra_dev_deps << ['rdoc', '~> 5.1']
   extra_dev_deps << ['manns_shared', '~> 1.0']
-  extra_dev_deps << ['bundler', '~> 1.14']
-  extra_dev_deps << ['rspec', '~> 3.5']
-  extra_dev_deps << ['rubocop', '~> 0.47']
+  extra_dev_deps << ['bundler', '~> 1.16']
+  extra_dev_deps << ['rspec', '~> 3.7']
+  extra_dev_deps << ['rubocop', '~> 0.51']
 end
 
 ###################################### SETUP ZONE #####################################################################

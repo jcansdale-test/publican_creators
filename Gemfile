@@ -5,7 +5,7 @@
 source "https://rubygems.org/"
 
 gem "setup", "~>5.2"
-gem "nokogiri", "~>1.7"
+gem "nokogiri", "~>1.8"
 gem "parseconfig", "~>1.0"
 gem "rainbow", "~>2.2"
 gem "notifier", "~>0.5"
@@ -16,16 +16,16 @@ gem "hoe-bundler", "~>1.3", :group => [:development, :test]
 gem "hoe-git", "~>1.6", :group => [:development, :test]
 gem "hoe-rubygems", "~>1.0", :group => [:development, :test]
 gem "hoe-manns", "~>1.5", :group => [:development, :test]
-gem "hoe-reek", "~>1.1", :group => [:development, :test]
+gem "hoe-reek", "~>1.2", :group => [:development, :test]
 gem "hoe-rubocop", "~>1.0", :group => [:development, :test]
 gem "hoe-version", "~>1.2", :group => [:development, :test]
 gem "hoe-seattlerb", "~>1.3", :group => [:development, :test]
 gem "hoe", "~>3.16", :group => [:development, :test]
-gem "rake", "~>12.0", :group => [:development, :test]
+gem "rake", "~>12.2", :group => [:development, :test]
+gem "rdoc", "~>5.1", :group => [:development, :test]
 gem "manns_shared", "~>1.0", :group => [:development, :test]
-gem "bundler", "~>1.14", :group => [:development, :test]
-gem "rspec", "~>3.5", :group => [:development, :test]
-gem "rubocop", "~>0.47", :group => [:development, :test]
-gem "rdoc", "~>4.0", :group => [:development, :test]
+gem "bundler", "~>1.16", :group => [:development, :test]
+gem "rspec", "~>3.7", :group => [:development, :test]
+gem "rubocop", "~>0.51", :group => [:development, :test]
 
 # vim: syntax=ruby
