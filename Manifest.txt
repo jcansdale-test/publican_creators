@@ -1,14 +1,3 @@
-.autotest
-.codeclimate.yml
-.coveralls.yml
-.gemnasium.yml
-.rspec
-.rubocop.yml
-.scrutinizer.yml
-.travis.yml
-.yardopts
-CODE_OF_CONDUCT.md
-CONTRIBUTING.md
 Gemfile
 Gemfile.lock
 History.rdoc
@@ -16,6 +5,7 @@ LICENSE.rdoc
 Manifest.txt
 README.rdoc
 Rakefile
+NEWS
 bin/publican_creators.rb
 bin/revision_creator.rb
 config.reek

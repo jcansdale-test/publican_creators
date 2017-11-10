@@ -36,7 +36,7 @@ before_install:
     - sudo add-apt-repository ppa:sascha-manns-h/publican -y
     - sudo apt-get update
     - sudo apt-get install --only-upgrade publican -y
-    - sudo apt-get install publican-xcom-dummy publican-manns publican-ils -y
+    - sudo apt-get install publican-xcom publican-manns -y
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose

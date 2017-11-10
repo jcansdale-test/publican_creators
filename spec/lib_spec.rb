@@ -9,8 +9,7 @@ require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/change')
 require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/export')
 require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/create')
 require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/testlib')
-
-require File.dirname(__FILE__) + '/spec_helper'
+require_relative 'spec_helper'
 
 describe 'PublicanCreatorsCreate' do
   describe '.init_docu_work' do
@@ -49,38 +48,6 @@ describe 'PublicanCreatorsCreate' do
       homework = 'FALSE'
       db5 = 'true'
       it 'creates a new set of documentation for Private/Article' do
-        PublicanCreatorsCreate.init_docu_private(title, type, homework,
-                                                 language, brand_homework,
-                                                 brand_private, db5)
-        expect(Dir.exist?(title)).equal? 'true'
-      end
-    end
-
-    context 'Private (Article/Homework)' do
-      title = 'The_holy_Bible-PrivArtHome'
-      type = 'Article'
-      language = 'de-DE'
-      brand_private = 'manns'
-      brand_homework = 'ils'
-      homework = 'TRUE'
-      db5 = 'true'
-      it 'creates a new set of documentation for Private/Article/Homework' do
-        PublicanCreatorsCreate.init_docu_private(title, type, homework,
-                                                 language, brand_homework,
-                                                 brand_private, db5)
-        expect(Dir.exist?(title)).equal? 'true'
-      end
-    end
-
-    context 'Private (Book)' do
-      title = 'The_holy_Bible-PrivBook'
-      type = 'Book'
-      language = 'de-DE'
-      brand_private = 'manns'
-      brand_homework = 'ils'
-      homework = 'TRUE'
-      db5 = 'true'
-      it 'creates a new set of documentation for Private/Book' do
         PublicanCreatorsCreate.init_docu_private(title, type, homework,
                                                  language, brand_homework,
                                                  brand_private, db5)
