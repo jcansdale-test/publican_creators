@@ -9,7 +9,8 @@ require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/change')
 require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/export')
 require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/create')
 require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/testlib')
-require_relative 'spec_helper'
+
+require File.dirname(__FILE__) + '/spec_helper'
 
 describe 'PublicanCreatorsCreate' do
   describe '.init_docu_work' do
@@ -54,11 +55,70 @@ describe 'PublicanCreatorsCreate' do
         expect(Dir.exist?(title)).equal? 'true'
       end
     end
+
+    context 'Private (Article/Homework)' do
+      title = 'The_holy_Bible-PrivArtHome'
+      type = 'Article'
+      language = 'de-DE'
+      brand_private = 'manns'
+      brand_homework = 'ils'
+      homework = 'TRUE'
+      db5 = 'true'
+      it 'creates a new set of documentation for Private/Article/Homework' do
+        PublicanCreatorsCreate.init_docu_private(title, type, homework,
+                                                 language, brand_homework,
+                                                 brand_private, db5)
+        expect(Dir.exist?(title)).equal? 'true'
+      end
+    end
+
+    context 'Private (Book)' do
+      title = 'The_holy_Bible-PrivBook'
+      type = 'Book'
+      language = 'de-DE'
+      brand_private = 'manns'
+      brand_homework = 'ils'
+      homework = 'TRUE'
+      db5 = 'true'
+      it 'creates a new set of documentation for Private/Book' do
+        PublicanCreatorsCreate.init_docu_private(title, type, homework,
+                                                 language, brand_homework,
+                                                 brand_private, db5)
+        expect(Dir.exist?(title)).equal? 'true'
+      end
+    end
   end
 end
 
 describe 'PublicanCreatorsChange' do
   describe '.add_entity' do
+    context 'Work Environment (Article) with global_entities variable' do
+      environment = 'Work'
+      title = 'The_holy_Bible-WorkArt'
+      brand_dir = '/usr/share/publican/Common_Content/XCOM'
+      global_entities = "#{brand_dir}/de-DE/entitiesxcom.ent"
+      ent = "#{title}/de-DE/#{title}.ent"
+      pattern = 'COMMON ENTITIES'
+      it 'Adds the Entities from the global ent file' do
+        PublicanCreatorsChange.add_entity(environment, global_entities, ent)
+        result = PublicanCreatorsTest.check_content(ent, pattern)
+        expect(result).equal? 'true'
+      end
+    end
+
+    context 'Work Environment (Book) with global_entities variable' do
+      environment = 'Work'
+      title = 'The_holy_Bible-WorkBook'
+      brand_dir = '/usr/share/publican/Common_Content/XCOM'
+      global_entities = "#{brand_dir}/de-DE/entitiesxcom.ent"
+      ent = "#{title}/de-DE/#{title}.ent"
+      pattern = 'COMMON ENTITIES'
+      it 'Adds the Entities from the global ent file' do
+        PublicanCreatorsChange.add_entity(environment, global_entities, ent)
+        result = PublicanCreatorsTest.check_content(ent, pattern)
+        expect(result).equal? 'true'
+      end
+    end
 
     context 'Private Environment (Article) without global_entities variable' do
       environment = 'Private'
