@@ -11,7 +11,7 @@ require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/create')
 require File.join(File.dirname(__FILE__), '..', 'lib/publican_creators/testlib')
 
 require File.dirname(__FILE__) + '/spec_helper'
-
+# rubocop:disable Metrics/BlockLength
 describe 'PublicanCreatorsCreate' do
   describe '.init_docu_work' do
     context 'Work (Article)' do

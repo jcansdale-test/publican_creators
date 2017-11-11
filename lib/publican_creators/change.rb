@@ -1,17 +1,23 @@
-# Changer Module for PublicanCreators
-# PublicanCreatorsChange
-# @author Sascha Manns
-# @abstract Class for all file changes
+# Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 #
-# Copyright (C) 2015-2017  Sascha Manns <samannsml@directbox.com>
-# License: MIT
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Dependencies
 
 require 'nokogiri'
-require 'publican_creators/create'
-require 'publican_creators/checker'
-require 'manns_shared'
+require_relative 'create'
+require_relative 'checker'
 
 # Module what contains all methods who are doing changes in files
 module PublicanCreatorsChange
@@ -30,49 +36,34 @@ module PublicanCreatorsChange
   end
 
   # This method checks the environment and runs the method for
-  # @param [String] environment shows if you actually want to create a private
-  #                             or Business Publication. If Work is given it
-  #                             reads your global entity file and appends it on
-  #                             the ent file.
-  # @param [String] title comes from the get method. This param represents the
-  #                 name or title of your work. It is used in all important
-  #                 code places.
-  # @param [String] type represents the Document-Type like Article or Book.
-  # @param [String] language is just the ISO Code of your target language like:
-  #                 de-DE, en-GB or such things.
-  # @param [String] brand can be a special customized brand for your company to
-  #                 fit the styleguide.
-  # @param [String] db5 just sets your preferences. If you like to have DocBook
-  #                 5.x as default you can set it there.
-  # @param [String] brand_homework can be a special customized brand for
-  #                 distance learning schools.
-  # @param [String] brand_private is used in all methods with a "private" in the
-  #                 name. If this brand is set it will be used instead of the
-  #                 original publican brand.
-  # @param [String] homework if homework is set
+  # @param [String] environment   shows if you actually want to create a private or Business Publication. If Work is
+  #                               given it reads your global entity file and appends it on the ent file.
+  # @param [String] title         comes from the get method. This param represents the name or title of your work. It
+  #                               is used in all important code places.
+  # @param [String] type          represents the Document-Type like Article or Book.
+  # @param [String] language      is just the ISO Code of your target language like: de-DE, en-GB or such things.
+  # @param [String] brand         can be a special customized brand for your company to fit the styleguide.
+  # @param [String] db5           just sets your preferences.
+  # @param [String] brand_homework can be a special customized brand for distance learning schools.
+  # @param [String] brand_private is used in all methods with a "private" in the name. If this brand is set it will
+  #                               be used instead of the original publican brand.
+  # @param [String] homework      if homework is set
   # @return [String] true or false
-  def self.check_environment(environment, title, type, language, brand, db5,
-      homework, brand_homework, brand_private)
+  def self.check_environment(environment, title, type, language, brand, db5, homework, brand_homework, brand_private)
     if environment == 'Work'
       PublicanCreatorsCreate.init_docu_work(title, type, language, brand, db5)
     else
-      PublicanCreatorsCreate.init_docu_private(title, type, homework, language,
-                                               brand_homework, brand_private,
-                                               db5)
+      PublicanCreatorsCreate.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
     end
   end
 
-  # By working for my employer i'm creating publications which refers to a
-  # global entity file.
-  # This method adds the entities from that file into the local one. It returns
-  # a success or fail.
-  # @param [String] environment shows if you actually want to create a private
-  #                 or Business Publication. If Work is given it reads your
-  #                 global entity file and appends it on the ent file.
+  # By working for my employer i'm creating publications which refers to a global entity file.
+  # This method adds the entities from that file into the local one. It returns a success or fail.
+  # @param [String] environment   shows if you actually want to create a private or Business Publication. If Work
+  #                               is given it reads your global entity file and appends it on the ent file.
   # @param [String] global_entities is just the path to the global entity file.
   # @param [String] ent Path to the entity file
   # @return [String] true or false
-  # This method smells of :reek:UncommunicativeVariableName
   def self.add_entity(environment, global_entities, ent)
     if environment == 'Work'
       if global_entities.empty?
@@ -80,9 +71,9 @@ module PublicanCreatorsChange
       else
         puts 'Adding global entities...'
         # @note Adding global entities
-        open(ent, 'a') do |f|
-          f << "\n"
-          f << "<!-- COMMON ENTITIES -->\n"
+        open(ent, 'a') do |add|
+          add << "\n"
+          add << "<!-- COMMON ENTITIES -->\n"
         end
         input = File.open(global_entities)
         data_to_copy = input.read
@@ -96,12 +87,10 @@ module PublicanCreatorsChange
     end
   end
 
-  # In this method the standard-holder from the local entity-file will be
-  # replaced with the company_name or if it is a private work the name of the
-  # present user. It returns a sucess or fail.
-  # @param [String] title comes from the get method. This @param represents the
-  #                 name or title of your work. It is used in all important code
-  #                 places.
+  # In this method the standard-holder from the local entity-file will be replaced with the company_name or if it is a
+  # private work the name of the present user. It returns a sucess or fail.
+  # @note If the environment "Work" is given the entity file will be set as HOLDER otherwise it sets your name.
+  # @param [String] title comes from the get method.
   # @param [String] environment shows if you actually want to create a private
   #                 or Business Publication. If Work is given it reads your
   #                 global entity file and appends it on the ent file.
@@ -109,16 +98,14 @@ module PublicanCreatorsChange
   # @param [String] company_name is the name of your company
   # @param [String] ent Path to the entity file
   # @return [String] true or false
-  # @note If the environment "Work" is given the entity file will be set as
-  # HOLDER otherwise it sets your name.
   def self.change_holder(title, environment, name, company_name, ent)
     # @note Replace the Holder with the real one
     puts 'Replace holder field with the present user'
-    if environment == 'Work'
-      namefill = "#{company_name}"
-    else
-      namefill = "#{name}"
-    end
+    namefill = if environment == 'Work'
+                 company_name.to_s
+               else
+                 name.to_s
+               end
     change_holder_do(namefill, title, ent)
   end
 
@@ -132,21 +119,19 @@ module PublicanCreatorsChange
   # @return [String] true or false
   def self.change_holder_do(namefill, title, ent)
     text = File.read(ent)
-    new_contents = text.gsub("| You need to change the HOLDER entity in the \
-de-DE/#{title}.ent file |", "#{namefill}")
+    new_contents = text.gsub("| You need to change the HOLDER entity in the de-DE/#{title}.ent file |", namefill.to_s)
     puts new_contents
     File.open(ent, 'w') { |file| file.puts new_contents }
   end
 
-  # This method removes the <orgname> node from the XML file. Remove titlepage
-  # logo because of doing this with the publican branding files. This method
-  # will applied if environment is Work, "type" is Article and title_logo is
-  # "false".
-  # It returns a sucess or fail.
-  # @param [String] info can be bookinfo or artinfo
-  # @param [String] title_logo means that you can set if you want to use
-  #                 Publican's Title Logo or use your own Title Logo with your
-  #                 Stylesheets.
+  # This method removes the <orgname> node from the XML file. Remove titlepage logo because of doing this with the
+  # publican branding files. This method will applied if environment is Work, "type" is Article and title_logo is
+  # "false". It returns a sucess or fail.
+  # TODO: Try to fix this in future
+  # rubocop:disable Style/GuardClause
+  # @param [String] info        can be bookinfo or artinfo
+  # @param [String] title_logo  means that you can set if you want to use Publican's Title Logo or use your own Title
+  #                             Logo with your Stylesheets.
   # @return [String] true or false
   def self.remove_orgname(info, title_logo)
     if title_logo == 'false'
@@ -162,19 +147,17 @@ de-DE/#{title}.ent file |", "#{namefill}")
   end
 
   # Checks if bookinfo or artinfo is needed, then it starts remove_orgname
-  # @param [String] bookinfo Book_Info. Which is used there depends on the
-  #                 param "type".
-  # @param [String] artinfo Article_Info. Which is used there depends on the
-  #                 param "type".
-  # @param [String] title_logo means that you can set if you want to use
-  #                 Publican's Title Logo or use your own Title Logo with your
-  #                 Stylesheets.
-  # @param [String] type represents the Document-Type like Article or Book.
+  # @param [String] bookinfo    Book_Info. Which is used there depends on the param "type".
+  # @param [String] artinfo     Article_Info. Which is used there depends on the param "type".
+  # @param [String] title_logo  means that you can set if you want to use Publican's Title Logo or use your
+  #                             own Title Logo with your Stylesheets.
+  # @param [String] type        represents the Document-Type like Article or Book.
   def self.remove_orgname_prepare(bookinfo, artinfo, title_logo, type)
     info = artinfo if type == 'Article'
     info = bookinfo if type == 'Book'
     remove_orgname(info, title_logo)
   end
+
   # This method replaces the old productversion to the new revision
   # @param [String] language The default language from the config file
   # @param [String] revision The new revision number
@@ -182,33 +165,29 @@ de-DE/#{title}.ent file |", "#{namefill}")
   # @return [String] true or false
   def self.replace_productnumber(revision, edition, language)
     puts 'Replacing the productnumber'
-    if File.exist?("#{language}/Article_Info.xml")
-      info = "#{language}/Article_Info.xml"
-    else
-      info = "#{language}/Book_Info.xml"
-    end
+    info = if File.exist?("#{language}/Article_Info.xml")
+             "#{language}/Article_Info.xml"
+           else
+             "#{language}/Book_Info.xml"
+           end
     doc = Nokogiri::XML(IO.read(info))
     doc.search('productnumber').each do |node|
-      node.content = "#{revision}"
+      node.content = revision.to_s
     end
     doc.search('edition').each do |node|
-      node.content = "#{edition}"
+      node.content = edition.to_s
     end
     IO.write(info, doc.to_xml)
   end
 
-  # This method removes the XI-Includes for the legal notice
-  # It returns a sucess or fail.
-  # @param [String] environment shows if you actually want to create a private
-  #                 or Business Publication. If Work is given it reads your
-  #                 global entity file and appends it on the ent file.
-  # @param [String] type represents the Document-Type like Article or Book.
-  # @param [String] legal means if you don't like to have a Legal Notice on
-  #                 Publican's default place you can define it there. Actually
-  #                 it just works with Articles. In my case i'm using the
-  #                 Legal Notice inside the Article's Structure.
-  # @param [String] artinfo Article_Info. Which is used there depends on the
-  #                 param "type".
+  # This method removes the XI-Includes for the legal notice. It returns a sucess or fail.
+  # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is
+  #                             given it reads your global entity file and appends it on the ent file.
+  # @param [String] type        represents the Document-Type like Article or Book.
+  # @param [String] legal       means if you don't like to have a Legal Notice on Publican's default place you can
+  #                             define it there. Actually it just works with Articles. In my case i'm using the
+  #                             Legal Notice inside the Article's Structure.
+  # @param [String] artinfo     Article_Info. Which is used there depends on the param "type".
   # @return [String] true or false
   def self.remove_legal(environment, type, legal, artinfo)
     if environment == 'Work'
@@ -231,37 +210,36 @@ de-DE/#{title}.ent file |", "#{namefill}")
     end
   end
 
-  # This method splits the name variable into firstname and surname. These
-  # variables are setted into the Revision_History. If the environment is "Work"
-  # your email_business will be used, otherwise your private email_address.
-  # It returns a sucess or fail.
-  # @param [String] revhist Path to the Revision_History
-  # @param [String] environment shows if you actually want to create a private
-  #                 or Business Publication. If Work is given it reads your
-  #                 global entity file and appends it on the ent file.
-  # @param [String] name is your name.
+  # This method splits the name variable into firstname and surname. These variables are setted into the
+  # Revision_History. If the environment is "Work" your email_business will be used, otherwise your private
+  # email_address. It returns a sucess or fail.
+  # @param [String] revhist     Path to the Revision_History
+  # @param [String] environment shows if you actually want to create a private or Business Publication. If Work is
+  #                             given it reads your global entity file and appends it on the ent file.
+  # @param [String] name        is your name.
   # @param [String] email_business is your business email address.
-  # @param [String] email is your private email address.
+  # @param [String] email       is your private email address.
   # @return [String] true or false
   def self.fix_revhist(environment, name, email_business, email, revhist)
     firstname, surname = get_name(name)
     # @note Revision_History: Change default stuff to the present user
     puts 'Replace the default content with the new content from the user
 (Revision History)'
-    add_result('Enter your first name here.', "#{firstname}", revhist)
-    add_result('Enter your surname here.', "#{surname}", revhist)
+    add_result('Enter your first name here.', firstname.to_s, revhist)
+    add_result('Enter your surname here.', surname.to_s, revhist)
     add_result('Initial creation by publican', 'Initial creation', revhist)
 
     if environment == 'Work'
-      add_result('Enter your email address here.', "#{email_business}", revhist)
+      add_result('Enter your email address here.', email_business.to_s, revhist)
     else
-      add_result('Enter your email address here.', "#{email}", revhist)
+      add_result('Enter your email address here.', email.to_s, revhist)
     end
   end
 
-  # This method replaces the standard values from Author_Group to the present
-  # user issues. It will be launched for the Work environment. It returns a
-  # sucess or fail.
+  # This method replaces the standard values from Author_Group to the present user issues. It will be launched for
+  # the Work environment. It returns a sucess or fail.
+  # TODO: Try to fix this in future
+  # rubocop:disable Metrics/AbcSize
   # @param [String] name is your name.
   # @param [String] email_business is your business email address.
   # @param [String] company_name is just your companies name.
@@ -273,23 +251,23 @@ de-DE/#{title}.ent file |", "#{namefill}")
   # @param [String] agroup Path to Author_Group.xml
   # @return [String] true or false
   def self.fix_authorgroup(name, email_business, company_name, company_division,
-      email, environment, agroup)
+                           email, environment, agroup)
     firstname, surname = get_name(name)
     # @note Author Group: Change the default stuff to the present user
     puts 'Replace the default content with the new content from the user
 (Authors_Group)'
-    add_result('Enter your first name here.', "#{firstname}", agroup)
-    add_result('Enter your surname here.', "#{surname}", agroup)
+    add_result('Enter your first name here.', firstname.to_s, agroup)
+    add_result('Enter your surname here.', surname.to_s, agroup)
     add_result('Initial creation by publican', 'Initial creation', agroup)
 
     if environment == 'Work'
-      add_result('Enter your email address here.', "#{email_business}", agroup)
-      add_result('Enter your organisation\'s name here.', "#{company_name}",
+      add_result('Enter your email address here.', email_business.to_s, agroup)
+      add_result('Enter your organisation\'s name here.', company_name.to_s,
                  agroup)
       add_result('Enter your organisational division here.',
-                 "#{company_division}", agroup)
+                 company_division.to_s, agroup)
     else
-      add_result('Enter your email address here.', "#{email}", agroup)
+      add_result('Enter your email address here.', email.to_s, agroup)
       add_result('Enter your organisation\'s name here.', '', agroup)
       add_result('Enter your organisational division here.', '', agroup)
     end

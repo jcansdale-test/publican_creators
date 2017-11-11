@@ -8,6 +8,7 @@ AllCops:
     - 'Rakefile'
     - 'spec/The_holy_Bible/*'
     - 'docs/**/*'
+    - 'Gemfile*'
 
   DisplayCopNames: true
 

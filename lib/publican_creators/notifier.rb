@@ -1,26 +1,32 @@
-#!/usr/bin/env ruby
-# encoding: utf-8
-# @author Sascha Manns
-# @abstract Notifier Module for latex_curriculum_vitae
+# Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 #
-# Copyright (C) 2015-2016  Sascha Manns <Sascha.Manns@mailbox.org>
-# License: MIT
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Dependencies
+require 'notifier'
+require 'xdg'
 
 # Module for notify the user
-require 'notifier'
-
 module Notifier
   def self.run
-    home = Dir.home
-    prefix = "#{home}/.rvm/rubies/default"
-    datadir = "#{prefix}/share"
-    img = "#{datadir}/.publican_creators/publican.png"
+    data_xdg = XDG['DATA_HOME']
+    install_path = "#{data_xdg}/icons/"
+    img = "#{install_path}/publican.png"
     Notifier.notify(
-        :image => "#{img}",
-        :title => "Your Documentation",
-        :message => "The preparation of your Documentation is finished."
+      image: img.to_s,
+      title: 'Your Documentation',
+      message: 'The preparation of your Documentation is finished.'
     )
   end
 end

@@ -1,13 +1,22 @@
-# PublicanCreatorsGet
-# @author Sascha Manns
-# @abstract Class for gathering information from config file and user input
+# Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 #
-# Copyright (C) 2015-2017  Sascha Manns <Sascha.Manns@mailbox.org>
-# License: MIT
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Dependencies
 
 require 'parseconfig'
+require 'xdg'
 
 # This method provides methods for user inputs
 module PublicanCreatorsGet
@@ -21,14 +30,14 @@ module PublicanCreatorsGet
 --field="Type:CBE" --field="Optional:CBE" --field="Enter a title name \
 (with underscores instead of blanks and without umlauts):TEXT" \
 --field="Please file bugs or feature requests \
-on http://saigkill-bugs.myjetbrains.com/youtrack/:LBL" --button="Go!" "Work,Private" \
+on https://bugs.launchpad.net/publicancreators:LBL" --button="Go!" "Work,Private" \
 "Article,Book" "Normal,Report,Homework"`
     # @note Format: Work/Private Article/Book title!Normal Report Homework
     # @note Cleanup the array
     environment, type, opt, titlefix = titlein.chomp.split('|')
 
     # @note replace blanks with underscores
-    title = titlefix.gsub(/ /, '_')
+    title = titlefix.tr(' ', '_')
 
     [environment, type, opt, title]
   end
@@ -58,8 +67,8 @@ entering Revision textes with blanks.:LBL" --button="Go!"`
   # @return [String] language
   def self.config_revision
     include ParseConfig
-    home = Dir.home
-    config = ParseConfig.new("#{home}/.publican_creators/publicancreators.cfg")
+    sys_xdg = XDG['CONFIG_HOME']
+    config = ParseConfig.new("#{sys_xdg}/publican_creators/publicancreators.cfg")
     language = config['language']
     puts language
   end

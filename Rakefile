@@ -18,7 +18,6 @@ Hoe.plugin :rubygems
 Hoe.plugin :travis
 Hoe.plugin :version
 
-
 Hoe.spec 'publican_creators' do
   developer('Sascha Manns', 'Sascha.Manns@mailbox.org')
   license 'GPL-3.0' # this should match the license in the README
@@ -33,6 +32,7 @@ Hoe.spec 'publican_creators' do
   dependency 'parseconfig', '~> 1.0'
   dependency 'rainbow', '~> 2.2'
   dependency 'notifier', '~> 0.5'
+  dependency 'xdg', '~> 2.2'
 
   extra_dev_deps << ['coveralls', '~> 0.8']
   extra_dev_deps << ['hoe-bundler', '~> 1.3']
@@ -53,68 +53,75 @@ end
 
 ###################################### SETUP ZONE #####################################################################
 
-require 'etc'
 require 'fileutils'
+require 'xdg'
+desc 'Install Icons'
+task :install_icons do
+  data_xdg = XDG['DATA_HOME']
+  install_path = "#{data_xdg}/icons/"
+  FileUtils.mkdir(insttall_path) unless File.exist?(install_path)
+  from_publican = 'data/publican_creators/publican.png'
+  from_publican_revision = 'data/publican_creators/publican-revision.png'
+  FileUtils.cp(from_publican, install_path)
+  FileUtils.cp(from_publican_revision, install_path)
+  puts 'Installed icons'
+end
+
+require 'fileutils'
+require 'xdg'
+desc 'Install config'
+task :install_config do
+  sys_xdg = XDG['CONFIG_HOME']
+  from = 'etc/publicancreators.cfg'
+  sysconf_dir = "#{sys_xdg}/publican_creators"
+  FileUtils.mkdir(sysconf_dir) unless File.exist?(sysconf_dir)
+  FileUtils.cp(from, sysconf_dir)
+end
+
+require 'fileutils'
+require 'xdg'
 desc 'Create Desktop files'
 task :create_desktop_cre do
-  home = Dir.home
-  prefix = "#{home}/.rvm/rubies/default"
-  datadir = "#{prefix}/share"
-  publicancre = "#{home}/.local/share/applications/publicancreators.desktop"
-  publicancreico = "#{datadir}/publican_creators/publican.png"
-  system("sudo rm #{publicancre}") if File.exists?(publicancre)
-  puts 'Creating Desktop file for PublicanCreators'.color(:yellow)
-  FileUtils.touch "#{publicancre}"
-  File.write "#{publicancre}", <<EOF
+  sys_xdg = XDG['CONFIG_HOME']
+  data_xdg = XDG['DATA_HOME']
+  publicancre = "#{data_xdg}/applications/publicancreators.desktop"
+  publicancreico = "#{data_xdg}/icons/publican.png"
+  FileUtils.rm(publicancre) if File.exist?(publicancre)
+  puts 'Creating Desktop file for publican_creators'.color(:yellow)
+  FileUtils.touch publicancre.to_s
+  File.write publicancre.to_s, <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=PublicanCreators
+Name=publican_creators
 Exec=publican_creators.rb
 Icon=#{publicancreico}
 EOF
 end
 
-require 'etc'
+require 'xdg'
 require 'fileutils'
 desc 'Create publicancreators-rev.desktop'
 task :create_desktop_rev do
-  home = Dir.home
-  prefix = "#{home}/.rvm/rubies/default"
-  datadir = "#{prefix}/share"
-  publicanrev = "#{home}/.local/share/applications/publicancreators-rev.desktop"
-  publicanrevico = "#{datadir}/publican_creators/publican-revision.png"
-  system("sudo rm #{publicanrev}") if File.exist?(publicanrev)
-  puts 'Creating Desktop file for PublicanCreatorsRevision'.color(:yellow)
-  FileUtils.touch "#{publicanrev}"
-  File.write "#{publicanrev}", <<EOF
+  sys_xdg = XDG['CONFIG_HOME']
+  data_xdg = XDG['DATA_HOME']
+  publicanrev = "#{data_xdg}/applications/publicancreators-rev.desktop"
+  publicanrevico = "#{data_xdg}/icons/publican-revision.png"
+  FileUtils.rm(publicanrev) if File.exist?(publicanrev)
+  puts 'Creating Desktop file for Revision updater'.color(:yellow)
+  FileUtils.touch publicanrev.to_s
+  File.write publicanrev.to_s, <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=PublicanCreatorsRevision
+Name=revision_creator
 Exec=revision_creator.rb
 Icon=#{publicanrevico}
 EOF
 end
 
-require 'fileutils'
-desc 'Backup config  file'
-task :backup_config do
-  home = Dir.home
-  prefix = "#{home}/.publican_creators"
-  from = 'publicancreators.cfg'
-  to = 'publicancreators.bak'
-  if File.exist?("#{prefix}/#{from}")
-    FileUtils.cd(prefix) do
-      FileUtils.cp(from, to)
-    end
-  end
-end
-
 desc 'Run setup'
-task :setup => [:create_desktop_cre, :create_desktop_rev, :backup_config] do
-  system('setup.rb uninstall --force')
-  system('setup.rb config --sysconfdir=$HOME/.manns_shared')
-  system('setup.rb install')
+task setup: %i[install_icons install_config create_desktop_cre create_desktop_rev] do
+  puts 'Setup finished'
 end
 # vim: syntax=ruby

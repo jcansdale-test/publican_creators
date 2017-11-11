@@ -1,17 +1,23 @@
-# PublicanCreatorsExport
-# @author Sascha Manns
-# @abstract Class for exporting bash scripts
+# Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 #
-# Copyright (C) 2015-2017  Sascha Manns <Sascha.Manns@mailbox.org>
-# License: MIT
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Dependencies
 
-require 'publican_creators/change'
+require_relative 'change'
 require 'fileutils'
 require 'rainbow/ext/string'
-
-# rubocop:disable Metrics/MethodLength
 # Module for running exports to a file
 module PublicanCreatorsExport
   # Exports a predefined Shellscript to the target directory.
@@ -29,9 +35,9 @@ module PublicanCreatorsExport
   # @return [String] true or false
   def self.export_buildscript(title, builds, language, xfc_brand_dir, pdfview)
     puts 'Export the buildscript into new directory...'
-    FileUtils.touch "#{builds}"
-    # rubocop:disable Metrics/LineLength
-    File.write "#{builds}", <<EOF
+    FileUtils.touch builds.to_s
+    # rubocop:disable Layout/IndentHeredoc
+    File.write builds.to_s, <<BUILDSCRIPT
 # -*- ruby -*-
 # encoding: utf-8
 require 'fileutils'
@@ -225,6 +231,6 @@ desc 'Run convert to all formats'
 task :export_all => [:export_most, :export_wml, :export_man, :export_txt, :export_epub, :export_eclipse] do
   puts 'Successfull exported to all formats'
 end
-EOF
+BUILDSCRIPT
   end
 end

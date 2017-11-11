@@ -3,6 +3,8 @@
 * ddd
 
  * updated dependencies
+ * code refactoring with rubocop and reek
+ * use XDG Standard for config files
 
 === 1.1.2 / 2017-02-27
 

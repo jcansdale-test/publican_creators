@@ -1,9 +1,17 @@
-# PublicanCreatorsChecker
-# @author Sascha Manns
-# @abstract Class for checking directories and creating them
+# Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 #
-# Copyright (C) 2015-2017  Sascha Manns <Sascha.Manns@mailbox.org>
-# License: MIT
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Dependencies
 
@@ -18,6 +26,8 @@ module Checker
   # @return [String] true or false
   def self.check_dir(todos)
     # @note Checking if dir exists
+    # TODO: Try to fix this in future
+    # rubocop:disable Style/GuardClause
     if Dir.exist?(todos)
       puts 'Found directory. Im using it.'
     else
@@ -27,7 +37,7 @@ module Checker
       if Dir.exist?(todos)
         puts 'Created new directory...'
       else
-        fail('Cant create directory')
+        raise('Cant create directory')
       end
     end
   end
@@ -42,7 +52,7 @@ module Checker
     if Dir.exist?(title)
       puts 'Creating documentation was a success...'
     else
-      fail('Cant create documentation. Please try it manual with publican...')
+      raise('Cant create documentation. Please try it manual with publican...')
     end
   end
 end

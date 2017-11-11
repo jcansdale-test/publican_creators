@@ -1,14 +1,21 @@
-# Create Module for PublicanCreators
-# PublicanCreatorsChange
-# @author Sascha Manns
-# @abstract Class for all file changes
+# Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 #
-# Copyright (C) 2015-2017  Sascha Manns <Sascha.Manns@mailbox.org>
-# License: MIT
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Dependencies
 require 'nokogiri'
-require 'publican_creators/checker'
+require_relative 'checker'
 
 # Class for creating stuff
 class PublicanCreatorsCreate
@@ -51,6 +58,7 @@ class PublicanCreatorsCreate
   #                       the name or title of your work. It is used in all
   #                       important code places.
   # @param [String] type  represents the Document-Type like Article or Book.
+  # @param [String] homework can be true or false
   # @param [String] brand_private is used in all methods with a "private" in the
   #                       name. If this brand is set it will be used instead of
   #                       the original publican brand.
@@ -65,8 +73,7 @@ class PublicanCreatorsCreate
   # the method it starts another method "PublicanCreatorsChange.check_result".
   # This method checks if the directory with the content of the parameter title
   # is available.
-  def self.init_docu_private(title, type, homework, language, brand_homework,
-      brand_private, db5)
+  def self.init_docu_private(title, type, homework, language, brand_homework, brand_private, db5)
     puts 'Creating initial documentation ...'
 
     if type == 'Article'
@@ -95,8 +102,7 @@ class PublicanCreatorsCreate
   # @param [String] brand_homework can be a special customized brand for
   #                       distance learning schools.
   # @param [String] homework true if homework set
-  def self.private_article(language, title, brand_private, brand_homework,
-      homework)
+  def self.private_article(language, title, brand_private, brand_homework, homework)
     # @note Initial creation of documentation with publican
     string = "--type Article --lang #{language} --name #{title}"
     # Use brand_private if brand_private is set
