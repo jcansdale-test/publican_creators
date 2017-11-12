@@ -38,7 +38,7 @@ The official website is:
 
 * GUI to control publican
 
-See the {status}[https://github.com/saigkill/latex_curriculum_vitae/blob/master/STATUS.rdoc] of the app.
+See the {status}[https://github.com/saigkill/publican_creators/blob/master/STATUS.rdoc] of the app.
 
 == SYNOPSIS:
 
