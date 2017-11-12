@@ -57,8 +57,6 @@ I'm happy about Pull requests.
 * nokogiri
 * parseconfig
 * rainbow
-* manns_shared
-* setup
 * notifier
 
 == REQUIREMENTS (hard dependencies):
