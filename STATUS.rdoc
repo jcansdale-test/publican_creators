@@ -10,7 +10,7 @@ continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/publi
 continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/build.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
 
 == Test Coverage
-test coverage :: {<img src="https://coveralls.io/repos/saigkill/PublicanCreators/badge.svg?branch=master&service=github" alt="Test Coverage" />}[https://coveralls.io/github/saigkill/PublicanCreators]
+test coverage :: {<img src="https://coveralls.io/repos/github/saigkill/publican_creators/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/saigkill/publican_creators?branch=master]
 
 == Code Review
 code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]

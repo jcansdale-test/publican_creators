@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using publican_creators | How to use publican_creators | publican_creators 1.2.0</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets @@#version@@ (based on DocBook XSL Stylesheets 1.79.1) - chunked" /><meta name="product-name" content="publican_creators" /><meta name="product-number" content="1.2.0" /><meta name="book-title" content="How to use publican_creators" /><meta name="chapter-title" content="Chapter 3. Using publican_creators" /><link rel="home" href="index.html" title="How to use publican_creators" /><link rel="up" href="index.html" title="How to use publican_creators" /><link rel="prev" href="sec.configuration.html" title="Chapter 2. The Configuration file" /><link rel="next" href="sec.feedback.html" title="Chapter 4. Add a revision" /><script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="How to use publican_creators"><span class="book-icon">How to use publican_creators</span></a><span> › </span><a class="crumb" href="sec.using.html">Using publican_creators</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>How to use publican_creators</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="preface.html"><span class="number"> </span><span class="name">Preface</span></a></li><li class="inactive"><a href="sec.introduction.html"><span class="number">1 </span><span class="name">Introduction</span></a></li><li class="inactive"><a href="sec.configuration.html"><span class="number">2 </span><span class="name">The Configuration file</span></a></li><li class="inactive"><a href="sec.using.html"><span class="number">3 </span><span class="name">Using publican_creators</span></a></li><li class="inactive"><a href="sec.feedback.html"><span class="number">4 </span><span class="name">Add a revision</span></a></li><li class="inactive"><a href="ch05.html"><span class="number">5 </span><span class="name">The Build script</span></a></li><li class="inactive"><a href="revision_history.html"><span class="number">A </span><span class="name">Revision History</span></a></li><li class="inactive"><a href="sec.gfdl.html"><span class="number">B </span><span class="name">GNU Free Documentation License</span></a></li><li class="inactive"><a href="ix01.html"><span class="number"> </span><span class="name">Index</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. The Configuration file" href="sec.configuration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Add a revision" href="sec.feedback.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="How to use publican_creators"><span class="book-icon">How to use publican_creators</span></a><span> › </span><a class="crumb" href="sec.using.html">Using publican_creators</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. The Configuration file" href="sec.configuration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Add a revision" href="sec.feedback.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="sec.using"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">publican_creators</span> <span class="productnumber ">1.2.0</span></div><div><h1 class="title"><span class="number">3 </span><span class="name">Using publican_creators</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="sec.using.html#idp4"><span class="number">3.1 </span><span class="name">Launching publican_creators</span></a></span></dt><dt><span class="sect1"><a href="sec.using.html#idp5"><span class="number">3.2 </span><span class="name">What it does</span></a></span></dt></dl></div></div>
+    
+    <div class="sect1 " id="idp4"><div class="titlepage"><div><div><h2 class="title" id="idp4"><span class="number">3.1 </span><span class="name">Launching publican_creators</span> <a title="Permalink" class="permalink" href="sec.using.html#idp4">#</a></h2></div></div></div>
+        
+        <p>For launching <span class="productname ">publican_creators</span> you have to click on your <span class="guimenuitem ">PublicanCreators</span> from your <span class="guimenu ">Program Launcher</span>.</p>             
+        <p>You see a graphical interface (the look and feel depends on your chosen
+            theme):
+            </p><div class="mediaobject" align="center"><img xmlns="" src="images/PublicanCreators.png" width="" /></div><p>
+        </p>
+        <p>Now you can choose one of that options:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+                    <p><span class="bold"><strong>Environment</strong></span>: Work or Private</p>
+                </li><li class="listitem ">
+                    <p><span class="bold"><strong>Type</strong></span>: Article or Book</p>
+                </li><li class="listitem ">
+                    <p><span class="bold"><strong>Optional</strong></span>: Normal, Report, Homework</p>
+                </li><li class="listitem ">
+                    <p><span class="bold"><strong>Title</strong></span>:<span class="italic">Your
+                            Title</span>. You can use a normal entry with blanks, or you can use
+                        underscores instead of blanks (Version: 0.4.2.0). But don't use umlauts like
+                        "Ä", "Ö", "Ü" or "ß" because Publican just understands ASCII chars.</p><div id="idp459" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.png" /><h6>Tip</h6>
+                            <p>You can use the publican.cfg to fix this. If your document is
+                                named "Sören und die Ägäis" you can type as title "Soren und die
+                                Agais". After the documentation creation is finished, you can add to
+                                the publican.cfg</p>
+                            <p>
+                                </p><div class="verbatim-wrap"><pre class="programlisting">docname: Soren_und_die_Agais</pre></div><p>
+                            </p>
+                            <p>The chosen name should be the same as your root document. The root
+                                document of the example would be named:
+                                    <code class="code">Soren_und_die_Agais.xml</code>. Then you can change the
+                                title in the <code class="code">Article_Info.xml</code> or
+                                    <code class="code">Book_Info.xml</code> to your needs like “Sören und die
+                                Ägäis”. Also, it's possible to use “AE” instead of “'Ä”and so
+                                on.</p>
+                        </div>
+                </li></ul></div>
+        <p>After clicking on <span class="bold"><strong>Go!</strong></span> the documentation will be
+            created by <span class="application ">publican</span>.</p>
+    </div>
+    <div class="sect1 " id="idp5"><div class="titlepage"><div><div><h2 class="title" id="idp5"><span class="number">3.2 </span><span class="name">What it does</span> <a title="Permalink" class="permalink" href="sec.using.html#idp5">#</a></h2></div></div></div>
+        
+        <p>
+            </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+                    <p>The <code class="methodname">PublicanCreatorsGet.title</code> will be launched. This method returns a
+                        array which will be splitted into the variables “environment”, “type”, “opt”
+                        and “title”. The “environment” reflects the situation private or work.
+                        “type” will be article or book. “opt” can be report, homework or just
+                        normal.</p>
+                </li><li class="listitem ">
+                    <p>The <code class="methodname">PublicanCreatorsPrepare.prepare</code> will be launched. It will find out
+                        what target directory to be used. This depends on your configuration file
+                        and your given input from the previous method.</p>
+                </li><li class="listitem ">
+                    <p>Now <code class="methodname">PublicanCreatorsChange.check_environment</code> checks the environment and
+                        runs <code class="methodname">PublicanCreatorsChange.init_docu_work</code> or
+                        <code class="methodname">PublicanCreatorsChange.init_docu_private</code> for running <code class="command">publican
+                            create</code> with all chosen flags.</p>
+                </li><li class="listitem ">
+                    <p><code class="methodname">PublicanCreatorsChange.add_entity</code> will work with your <code class="filename">TITLE.ent</code> file. If
+                        the environment <code class="varname">Work</code> is chosen, and the variable <code class="varname">global_entities</code> is
+                        filled, it will copy the whole content of the entity file to your new local
+                        entity file. The variable <code class="varname">global_entities</code> can set in your users
+                        configuration file.</p>
+                </li><li class="listitem ">
+                    <p>Next the method
+                            <code class="methodname">PublicanCreatorsChange.change_holder</code> works with
+                        your entity file too. In case of private environment, it will use your name
+                        as HOLDER. Otherwise, it uses your companies name.</p>
+                </li><li class="listitem ">
+                    <p>Sometimes its useful to do not use the given legal notice (In case of
+                        small documents or reports). If you are in environment “Work” and has chosen
+                        “Article” and has set <code class="varname">legal</code> = true in your configuration file it
+                        (<code class="methodname">PublicanCreatorsChange.remove_legal</code>) will remove the legal notice.</p>
+                </li><li class="listitem ">
+                    <p>Per default, Publican adds some Docbook lines for including a title logo.
+                        If you are already defined a Title Logo in your XSL-Stylesheets then you can
+                        set <code class="varname">title_logo</code> = false”. Then the method
+                            <code class="methodname">PublicanCreatorsChange.remove_orgname</code> removes
+                        the predefined title logo from the <code class="filename">Article_Info.xml</code> or
+                            <code class="filename">Book_Info.xml</code> from your project.</p>
+                </li><li class="listitem ">
+                    <p>Next step is <code class="methodname">PublicanCreatorsChange.fix_revhist</code>.
+                        In all environments it will use the firstname and surname of the user and
+                        replaces them with the default entries in
+                            <code class="filename">Revision_History.xml</code>. In case of using in
+                        environment “Work” it will use your work email address for replacing the
+                        default. Otherwise, it uses your private address.</p>
+                </li><li class="listitem ">
+                    <p>Now the method
+                            <code class="methodname">PublicanCreatorsChange.fix_authorgroup</code> does
+                        similar the previous method just for the
+                            <code class="filename">Author_Group.xml</code> file. In addition, it can set the
+                        company_name and company_division if chosen.</p>
+                </li><li class="listitem ">
+                    <p>The last method
+                            <code class="methodname">PublicanCreatorsExport.export_buildscript</code>
+                        generates a build script for your project.</p>
+                </li></ol></div><p>
+        </p>
+    </div>
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="sec.feedback.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Add a revision</span></a><a class="nav-link" href="sec.configuration.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>The Configuration file</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2017 
+        Sascha Manns</p><ul><li><a href="http://saigkill.tuxfamily.org" target="_top"></a></li><li><a href="https://saigkill.tuxfamily.org/dotclear/?contact" target="_top"></a></li></ul></div></div></body></html>

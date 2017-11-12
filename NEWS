@@ -1,8 +1,8 @@
 ===============================================================================
-latex_curriculum_vitae 2.1.0 - 2017-11-06
+publican_creators 1.2.0 - 2017-11-11
 ===============================================================================
 
-    latex_curriculum_vitae 2.1.1 is the culmination of one days'
+    publican_creators 1.2.0 is the culmination of three days'
     work by 1 developer.
 
     New Features:
@@ -11,17 +11,15 @@ latex_curriculum_vitae 2.1.0 - 2017-11-06
 
     Enhancements:
 
-      * Now you can choose between "Pony" and "Evolution" for mailing out.
+      * Now the config files and images are following the XDG Standard.
       See Documentation.
 
     Notable Bugs Fixed:
 
-      * 4 minor enhancements
+      * 2 minor enhancements
 
-        * LCV#3: Use more communicative variable names
-        * LCV#4: Use Codeclimates new V2 engine
-        * LCV#5: Fix Rubocop and Reek
-        * LCV#6: Cleanup Rakefile
+        * updated dependencies
+        * Refactor code to pacify Rubocop
 
 
 ===============================================================================
@@ -31,20 +29,20 @@ SOURCES / PACKAGES
 Sources
 -------
 
-    * latex_curriculum_vitae 2.1.0 Tarballs:
-      https://launchpad.net/hoe-manns/2.x/2.1.0/+download/
-      latex_curriculum_vitae-2.1.1.tar.xz
+    * publican_creators 1.2.0 Tarballs:
+      https://launchpad.net/publicancreators/1.x/1.2.0/+download/
+      publican_creators-1.2.0.tar.xz
 
 Packages
 --------
 
     Download and installation information is available here:
 
-    * https://saigkill.github.io/latex_curriculum_vitae/about/
+    * https://saigkill.github.io/publican_creators/about/
 
     Gems:
 
-    * https://rubygems.org/gems/latex_curriculum_vitae
+    * https://rubygems.org/gems/publican_creators
 
 ===============================================================================
 REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
@@ -53,11 +51,11 @@ REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
     If you encounter any bad behavior with this release, please do not
     hesitate to file bugs!
 
-    * https://bugs.launchpad.net/latexcv
+    * https://bugs.launchpad.net/publicancreators
 
 
 ===============================================================================
-VALUED LATEX_CURRICULUM_VITAE CONTRIBUTORS
+VALUED PUBLICAN_CREATORS CONTRIBUTORS
 ===============================================================================
 
 Contributors For This Release

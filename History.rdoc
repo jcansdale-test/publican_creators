@@ -1,6 +1,6 @@
 === 1.2.0 / 2017-11-07
 
-* ddd
+* 3 minor enhancements
 
  * updated dependencies
  * code refactoring with rubocop and reek

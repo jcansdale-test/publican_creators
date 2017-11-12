@@ -15,22 +15,22 @@ mirror. The development happens on: https://launchpad.net/publicancreators.
 
 == DESCRIPTION:
 
-PublicanCreators are a small tool for daily DocBook writers who are using the Redhat publican tool
-https://fedorahosted.org/publican/. PublicanCreators asks after launching which title, type and environment should be
+publican_creators are a small tool for daily DocBook writers who are using the Redhat publican tool
+https://fedorahosted.org/publican/. publican_creators asks after launching which title, type and environment should be
 used. Then it starts publican with that settings and works then with the produced files.
-It will work inside the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
+It will work on the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
 will replace the default values with your name, your company, your company_divison and your private or your business
-email address, depending on your chosen environment. Also you can set inside your config file that you want to remove
-the Title Logo or the Legal Notice. As a feature it ships a build script for each project.
+email address, depending on your chosen environment. Also, you can set your config file that you want to remove
+the Title Logo or the Legal Notice. As a feature, it ships a build script for each project.
 
-The History.rdoc contains a detailed description on what has changed. For most
+The History.rdoc contains a detailed description of what has changed. For most
 users the NEWS file might be a better place to look since it contains
 change summaries between the different versions.
 
 hoe-reek is released under the GPL3 License, see the file 'License.rdoc'
 for more information.
 
-The official web site is:
+The official website is:
 
     https://launchpad.net/publicancreators
 
@@ -47,10 +47,10 @@ See the {status}[https://github.com/saigkill/latex_curriculum_vitae/blob/master/
 
   Or just use the Launcher.
 
-Read the documentation at: https://saigkill.github.io/publican_creators/about/
+Read the documentation: https://saigkill.github.io/publican_creators/about/
 
-This Gem was programmed and tested for Linux systems. If anyone would like to make the methods also fit for other OS,
-i'm happy about Pull requests.
+This Gem was programmed and tested on Linux systems. If anyone would like to make the methods also fit for other OS,
+I'm happy about Pull requests.
 
 == REQUIREMENTS:
 
@@ -74,7 +74,7 @@ The installation is very easy.
     cd /path/to/gem (In case of using RVM ~/.rvm/gems/ruby-$RUBYVERSION/gems/publican_creators)
     rake
 
-Read the documentation at: https://saigkill.github.io/publican_creators/about/
+Read the documentation: https://saigkill.github.io/publican_creators/about/
 
 You have to run the setup after each gem update.
 
@@ -93,7 +93,7 @@ and generate the RDoc.
 
 === COOL HACKS:
 
-* Open a bugreport on https://bugs.launchpad.net/publicancreators.
+* Open a bug report on https://bugs.launchpad.net/publicancreators.
 * Please use the -u flag when generating the patch as it makes the patch
   more readable.
 * Write a good explanation of what the patch does.
@@ -107,7 +107,7 @@ updating documentation, submitting pull requests or patches, and other
 activities.
 
 We are committed to making participation in this project a harassment-free
-experience for everyone, regardless of level of experience, gender, gender
+experience for everyone, regardless of the level of experience, gender, gender
 identity and expression, sexual orientation, disability, personal
 appearance, body size, race, age, or religion.
 
@@ -117,25 +117,25 @@ public or private harassment, insults, or other unprofessional conduct.
 
 Project maintainers have the right and responsibility to remove, edit, or
 reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct. Project maintainers who do
+that are not aligned with this Code of Conduct. Project maintainers who do
 not follow the Code of Conduct may be removed from the project team.
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
+Instances of abusive, harassing or otherwise unacceptable behavior may be
 reported by opening an issue or contacting one or more of the project
 maintainers.
 
 This Code of Conduct is adapted from the {Contributor Covenant}[http:contributor-covenant.org],
 version 1.0.0, available at {http://contributor-covenant.org/version/1/0/0/}[http://contributor-covenant.org/version/1/0/0/].
 
-=== MAINTANANCE POLICY:
+=== MAINTENANCE POLICY:
 
 I'm following the Semantic Versioning for its releases: (Major).(Minor).(Patch).
 
- * Major version: Whenever there is something significant or any backwards
+ * Major version: Whenever there is something significant or any backward
    incompatible changes.
- * Minor version: When new, backwards compatible functionality is introduced a
+ * Minor version: When new, backward compatible functionality is introduced a
    minor feature is introduced, or when a set of smaller features is rolled out.
- * Patch number: When backwards compatible bug fixes are introduced that fix
+ * Patch number: When backward compatible bug fixes are introduced that fix
    incorrect behavior.
  * The current stable release will receive security patches and bug fixes
    (eg. 5.0 -> 5.0.1).
@@ -143,7 +143,7 @@ I'm following the Semantic Versioning for its releases: (Major).(Minor).(Patch).
    version is increased numerically by increments of one (eg. 5.0 -> 5.1).
 
 I encourage everyone to run the latest stable release to ensure that you can
-easily upgrade to the most secure and feature rich experience. In order to
+easily upgrade to the most secure and feature-rich experience. In order to
 make sure you can easily run the most recent stable release, we are working
 hard to keep the update process simple and reliable.
 
@@ -155,7 +155,7 @@ hard to keep the update process simple and reliable.
 The master branch is the current edge of development.
 
 ===== `X.X` BRANCH:
-The X.X branch is the last stable branch. It will used for tarballs.
+The X.X branch is the last stable branch. It will be used for tarballs.
 
 ===== MERGE REQUESTS:
 If you want to merge your branch with the trunk, join the team.
