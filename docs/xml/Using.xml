@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:svg="http://www.w3.org/2000/svg" xmlns:mml="http://www.w3.org/1998/Math/MathML"
+    xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" xml:id="sec.using">
+    <title>Using publican_creators</title>
+    <sect1>
+        <title>Launching publican_creators</title>
+        <para>For launching <productname>publican_creators</productname> you have to click on your <guimenuitem>PublicanCreators</guimenuitem> from your <guimenu>Program Launcher</guimenu>.</para>             
+        <para>You see a graphical interface (the look and feel depends on your chosen
+            theme):
+            <mediaobject>
+                <imageobject role="fo">
+                    <imagedata fileref="PublicanCreators.png" width="50%" align="center"/>
+                </imageobject>
+                <imageobject role="html">
+                    <imagedata fileref="PublicanCreators.png" width="50%" align="center"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+        <para>Now you can choose one of that options:<itemizedlist>
+                <listitem>
+                    <para><emphasis role="bold">Environment</emphasis>: Work or Private</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Type</emphasis>: Article or Book</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Optional</emphasis>: Normal, Report, Homework</para>
+                </listitem>
+                <listitem>
+                    <para><emphasis role="bold">Title</emphasis>:<emphasis role="italic">Your
+                            Title</emphasis>. You can use a normal entry with blanks, or you can use
+                        underscores instead of blanks (Version: 0.4.2.0). But don't use umlauts like
+                        "Ä", "Ö", "Ü" or "ß" because Publican just understands ASCII chars.<tip>
+                            <para>You can use the publican.cfg to fix this. If your document is
+                                named "Sören und die Ägäis" you can type as title "Soren und die
+                                Agais". After the documentation creation is finished, you can add to
+                                the publican.cfg</para>
+                            <para>
+                                <programlisting>docname: Soren_und_die_Agais</programlisting>
+                            </para>
+                            <para>The chosen name should be the same as your root document. The root
+                                document of the example would be named:
+                                    <code>Soren_und_die_Agais.xml</code>. Then you can change the
+                                title in the <code>Article_Info.xml</code> or
+                                    <code>Book_Info.xml</code> to your needs like “Sören und die
+                                Ägäis”. Also, it's possible to use “AE” instead of “'Ä”and so
+                                on.</para>
+                        </tip></para>
+                </listitem>
+            </itemizedlist></para>
+        <para>After clicking on <emphasis role="bold">Go!</emphasis> the documentation will be
+            created by <application>publican</application>.</para>
+    </sect1>
+    <sect1>
+        <title>What it does</title>
+        <para>
+            <orderedlist>
+                <listitem>
+                    <para>The <methodname>PublicanCreatorsGet.title</methodname> will be launched. This method returns a
+                        array which will be splitted into the variables “environment”, “type”, “opt”
+                        and “title”. The “environment” reflects the situation private or work.
+                        “type” will be article or book. “opt” can be report, homework or just
+                        normal.</para>
+                </listitem>
+                <listitem>
+                    <para>The <methodname>PublicanCreatorsPrepare.prepare</methodname> will be launched. It will find out
+                        what target directory to be used. This depends on your configuration file
+                        and your given input from the previous method.</para>
+                </listitem>                
+                <listitem>
+                    <para>Now <methodname>PublicanCreatorsChange.check_environment</methodname> checks the environment and
+                        runs <methodname>PublicanCreatorsChange.init_docu_work</methodname> or
+                        <methodname>PublicanCreatorsChange.init_docu_private</methodname> for running <command>publican
+                            create</command> with all chosen flags.</para>
+                </listitem>
+                <listitem>
+                    <para><methodname>PublicanCreatorsChange.add_entity</methodname> will work with your <filename>TITLE.ent</filename> file. If
+                        the environment <varname>Work</varname> is chosen, and the variable <varname>global_entities</varname> is
+                        filled, it will copy the whole content of the entity file to your new local
+                        entity file. The variable <varname>global_entities</varname> can set in your users
+                        configuration file.</para>
+                </listitem>
+                <listitem>
+                    <para>Next the method
+                            <methodname>PublicanCreatorsChange.change_holder</methodname> works with
+                        your entity file too. In case of private environment, it will use your name
+                        as HOLDER. Otherwise, it uses your companies name.</para>
+                </listitem>
+                <listitem>
+                    <para>Sometimes its useful to do not use the given legal notice (In case of
+                        small documents or reports). If you are in environment “Work” and has chosen
+                        “Article” and has set <varname>legal</varname> = true in your configuration file it
+                        (<methodname>PublicanCreatorsChange.remove_legal</methodname>) will remove the legal notice.</para>
+                </listitem>
+                <listitem>
+                    <para>Per default, Publican adds some Docbook lines for including a title logo.
+                        If you are already defined a Title Logo in your XSL-Stylesheets then you can
+                        set <varname>title_logo</varname> = false”. Then the method
+                            <methodname>PublicanCreatorsChange.remove_orgname</methodname> removes
+                        the predefined title logo from the <filename>Article_Info.xml</filename> or
+                            <filename>Book_Info.xml</filename> from your project.</para>
+                </listitem>
+                <listitem>
+                    <para>Next step is <methodname>PublicanCreatorsChange.fix_revhist</methodname>.
+                        In all environments it will use the firstname and surname of the user and
+                        replaces them with the default entries in
+                            <filename>Revision_History.xml</filename>. In case of using in
+                        environment “Work” it will use your work email address for replacing the
+                        default. Otherwise, it uses your private address.</para>
+                </listitem>
+                <listitem>
+                    <para>Now the method
+                            <methodname>PublicanCreatorsChange.fix_authorgroup</methodname> does
+                        similar the previous method just for the
+                            <filename>Author_Group.xml</filename> file. In addition, it can set the
+                        company_name and company_division if chosen.</para>
+                </listitem>
+                <listitem>
+                    <para>The last method
+                            <methodname>PublicanCreatorsExport.export_buildscript</methodname>
+                        generates a build script for your project.</para>
+                </listitem>
+            </orderedlist>
+        </para>
+    </sect1>
+</chapter>

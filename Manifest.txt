@@ -4,6 +4,9 @@ History.rdoc
 LICENSE.rdoc
 Manifest.txt
 README.rdoc
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+MAINTENANCE.md
 Rakefile
 NEWS
 bin/publican_creators.rb

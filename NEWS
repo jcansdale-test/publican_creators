@@ -1,4 +1,60 @@
 ===============================================================================
+publican_creators 1.2.1 - 2018-04-29
+===============================================================================
+
+    publican_creators 1.2.1 is the culmination of three days'
+    work by 1 developer.
+
+    New Features:
+
+      * Nothing yet
+
+    Enhancements:
+
+      * Nothing yet
+
+    Notable Bugs Fixed:
+
+      * 1 minor enhancements
+
+        * updated dependencies, updated projects and documentation url
+
+
+===============================================================================
+SOURCES / PACKAGES
+===============================================================================
+
+Packages
+--------
+
+    Gems:
+
+    * https://rubygems.org/gems/publican_creators
+
+===============================================================================
+REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
+===============================================================================
+
+    If you encounter any bad behavior with this release, please do not
+    hesitate to file bugs!
+
+    * https://github.com/saigkill/publican_creators/issues
+
+
+===============================================================================
+VALUED PUBLICAN_CREATORS CONTRIBUTORS
+===============================================================================
+
+Contributors For This Release
+-----------------------------
+
+    The following people directly contributed to the release of this version
+    of hoe-manns. Without their help, there would be no release!
+
+     Sascha Manns
+
+
+===============================================================================
 publican_creators 1.2.0 - 2017-11-11
 ===============================================================================
 

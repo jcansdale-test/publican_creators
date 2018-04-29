@@ -1,17 +1,26 @@
 = publican_creators
 
-code  :: https://launchpad.net/publicancreators
-docs :: https://saigkill.github.io/publican_creators/userdocs/publican_creators/index.html
+code  :: https://github.com/saigkill/publican_creators
+docs :: https://saigkill.tuxfamily.org/documentation/publican_creators
 apidoc :: http://rubydoc.info/gems/publican_creators
-bugs  :: https://bugs.launchpad.net/publicancreators
-questions :: https://answers.launchpad.net/publicancreators
-feature requests :: https://blueprints.launchpad.net/publicancreators
+bugs & feature requests  :: https://github.com/saigkill/publican_creators/issues
+questions :: https://groups.google.com/forum/#!forum/publican_creators
 openhub statistics :: https://www.openhub.net/p/publicancreators
 authors blog :: https://saigkill.tuxfamily.org
-min. rubyver :: 2.2.0
+min. rubyver :: 2.3.0
 
-If you're reading this on Github, please keep in mind, that this is just a
-mirror. The development happens on: https://launchpad.net/publicancreators.
+last public version  :: {<img src="https://badge.fury.io/rb/publican_creators.png" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+downloads latest :: {<img src="https://img.shields.io/gem/dtv/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+downloads all :: {<img src="https://img.shields.io/gem/dt/publican_creators.svg" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
+continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/publican_creators.png?branch=master" alt="Build Status" />}[https://secure.travis-ci.org/saigkill/publican_creators]
+continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/build.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
+test coverage :: {<img src="https://coveralls.io/repos/github/saigkill/publican_creators/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/saigkill/publican_creators?branch=master]
+code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
+code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators/badges/gpa.svg" alt="Code Quality" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
+security :: {<img src="https://hakiri.io/github/saigkill/publican_creators/master.svg" alt="security" />}[https://hakiri.io/github/saigkill/publican_creators/master]
+dependency check :: {<img src="https://gemnasium.com/saigkill/publican_creators.svg" alt="Dependency Status" />}[https://gemnasium.com/saigkill/publican_creators]
+documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" alt="Documentation Quality" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
+
 
 == DESCRIPTION:
 
@@ -32,13 +41,11 @@ for more information.
 
 The official website is:
 
-    https://launchpad.net/publicancreators
+    https://github.com/saigkill/publican_creators
 
 == FEATURES/PROBLEMS:
 
 * GUI to control publican
-
-See the {status}[https://github.com/saigkill/publican_creators/blob/master/STATUS.rdoc] of the app.
 
 == SYNOPSIS:
 
@@ -46,8 +53,6 @@ See the {status}[https://github.com/saigkill/publican_creators/blob/master/STATU
   $ revision_creator.rb (The revision updater)
 
   Or just use the Launcher.
-
-Read the documentation: https://saigkill.github.io/publican_creators/about/
 
 This Gem was programmed and tested on Linux systems. If anyone would like to make the methods also fit for other OS,
 I'm happy about Pull requests.
@@ -72,8 +77,6 @@ The installation is very easy.
     cd /path/to/gem (In case of using RVM ~/.rvm/gems/ruby-$RUBYVERSION/gems/publican_creators)
     rake
 
-Read the documentation: https://saigkill.github.io/publican_creators/about/
-
 You have to run the setup after each gem update.
 
 == DEVELOPERS:
@@ -84,85 +87,3 @@ After checking out the source, run:
 
 This task will install any missing dependencies, run the tests/specs,
 and generate the RDoc.
-
-=== IDEAS:
-
-* Add ideas on: https://blueprints.launchpad.net/publicancreators
-
-=== COOL HACKS:
-
-* Open a bug report on https://bugs.launchpad.net/publicancreators.
-* Please use the -u flag when generating the patch as it makes the patch
-  more readable.
-* Write a good explanation of what the patch does.
-* It is better to use git format-patch command: git format-patch HEAD^
-
-=== CONTRIBUTOR CODE OF CONDUCT:
-
-As contributors and maintainers of this project, we pledge to respect all
-people who contribute through reporting issues, posting feature requests,
-updating documentation, submitting pull requests or patches, and other
-activities.
-
-We are committed to making participation in this project a harassment-free
-experience for everyone, regardless of the level of experience, gender, gender
-identity and expression, sexual orientation, disability, personal
-appearance, body size, race, age, or religion.
-
-Examples of unacceptable behavior by participants include the use of sexual
-language or imagery, derogatory comments or personal attacks, trolling,
-public or private harassment, insults, or other unprofessional conduct.
-
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned with this Code of Conduct. Project maintainers who do
-not follow the Code of Conduct may be removed from the project team.
-
-Instances of abusive, harassing or otherwise unacceptable behavior may be
-reported by opening an issue or contacting one or more of the project
-maintainers.
-
-This Code of Conduct is adapted from the {Contributor Covenant}[http:contributor-covenant.org],
-version 1.0.0, available at {http://contributor-covenant.org/version/1/0/0/}[http://contributor-covenant.org/version/1/0/0/].
-
-=== MAINTENANCE POLICY:
-
-I'm following the Semantic Versioning for its releases: (Major).(Minor).(Patch).
-
- * Major version: Whenever there is something significant or any backward
-   incompatible changes.
- * Minor version: When new, backward compatible functionality is introduced a
-   minor feature is introduced, or when a set of smaller features is rolled out.
- * Patch number: When backward compatible bug fixes are introduced that fix
-   incorrect behavior.
- * The current stable release will receive security patches and bug fixes
-   (eg. 5.0 -> 5.0.1).
- * Feature releases will mark the next supported stable release where the minor
-   version is increased numerically by increments of one (eg. 5.0 -> 5.1).
-
-I encourage everyone to run the latest stable release to ensure that you can
-easily upgrade to the most secure and feature-rich experience. In order to
-make sure you can easily run the most recent stable release, we are working
-hard to keep the update process simple and reliable.
-
-=== STRUCTURE:
-
-==== BRANCHES:
-
-===== `master` BRANCH:
-The master branch is the current edge of development.
-
-===== `X.X` BRANCH:
-The X.X branch is the last stable branch. It will be used for tarballs.
-
-===== MERGE REQUESTS:
-If you want to merge your branch with the trunk, join the team.
-
-Please base all Merge requests off the `master` branch. Merges to
-`X.X` only occur through the `master` branch.
-
-== PROBLEM REPORTING:
-
-Bugs should be reported to https://bugs.launchpad.net/publicancreators. You will need to create an
-account for yourself.
-

@@ -30,7 +30,7 @@ require 'xdg'
 # @return [String] true or false
 class PublicanCreators
   # Versionizing
-  VERSION = '1.2.0'.freeze
+  VERSION = '1.2.1'.freeze
 
   puts 'publican_creators'.color(:yellow)
   puts "Version: #{VERSION}".color(:yellow)
