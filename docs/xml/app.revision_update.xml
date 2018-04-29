@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbookxi.rng"
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<appendix version="5.0" xml:id="appe-Documentation-hoe-reek-Revision_History"
+	xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Revision History</title>
+	<revhistory>
+		<revision>
+			<revnumber>1.2.1-0</revnumber>
+			<date>Sun Apr 29 2018</date>
+			<author>
+				<personname>
+					<firstname>Sascha</firstname>
+					<surname>Manns</surname>
+				</personname>
+				<email>Sascha.Manns@mailbox.org</email>
+			</author>
+			<revdescription>
+				<simplelist>
+					<member>Updated projects and documentation url</member>
+				</simplelist>
+			</revdescription>
+		</revision>
+		
+		<revision>
+			<revnumber>1.2.0-0</revnumber>
+			<date>Thu Nov 09 2017</date>
+			<author>
+				<personname>
+					<firstname>Sascha</firstname>
+					<surname>Manns</surname>
+				</personname>
+				<email>Sascha.Manns@mailbox.org</email>
+			</author>
+			<revdescription>
+				<simplelist>
+					<member>Moved to daps</member>
+				</simplelist>
+			</revdescription>
+		</revision>
+		
+		<revision>
+			<revnumber>1.1.0-0</revnumber>
+			<date>Sun May 16 2015</date>
+			<author>
+				<personname>
+					<firstname>Sascha</firstname>
+					<surname>Manns</surname>
+				</personname>
+				<email>Sascha.Manns@mailbox.org</email>
+			</author>
+			<revdescription>
+				<simplelist>
+					<member>Updated for Version 0.4.0</member>
+				</simplelist>
+			</revdescription>
+		</revision>
+		
+		<revision>
+			<revnumber>1.0.0-0</revnumber>
+			<date>Sat May 9 2015</date>
+			<author>
+				<personname>
+					<firstname>Sascha</firstname>
+					<surname>Manns</surname>
+				</personname>
+				<email>Sascha.Manns@mailbox.org</email>
+			</author>
+			<revdescription>
+				<simplelist>
+					<member>Initial creation by publican</member>
+				</simplelist>
+			</revdescription>
+		</revision>
+	</revhistory>
+</appendix>

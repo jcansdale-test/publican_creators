@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<?xml-model href="/usr/share/xml/docbook/schema/rng/5.0/docbook.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<section version="5.0" xml:lang="en-US" xmlns="http://docbook.org/ns/docbook"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="feedback">
+	<info xml:id="Feedback">
+		<title>Feedback!</title>
+	</info>
+
+	<indexterm>
+		<primary>Feedback</primary>
+		<secondary>Contact information</secondary>
+	</indexterm>
+
+	<para> I'm happy about feedback. You can send me an email: <link
+			xlink:href="mailto:Sascha.Manns@mailbox.org">Sascha.Manns@mailbox.org</link>. </para>
+	<para><emphasis role="bold">Contact</emphasis></para>
+	<itemizedlist>
+		<listitem>
+			<para>Authors Blog: <link xlink:href="http://saigkill.tuxfamily.org"
+					>http://saigkill.tuxfamily.org</link></para>
+		</listitem>
+	</itemizedlist>
+
+	<para><emphasis role="bold">Contribute</emphasis></para>
+	<itemizedlist>
+		<listitem>
+			<para>Clone the code: <link xlink:href="https://git.launchpad.net/publicancreators"
+				>https://git.launchpad.net/publicancreators</link>. Feel free to add new Stuff.</para>
+		</listitem>
+		<listitem>
+			<para>File a bug: <link xlink:href="https://bugs.launchpad.net/publicancreators"
+				>https://bugs.launchpad.net/publicancreators</link></para>
+		</listitem>
+		<listitem>
+			<para>File a feature request: <link
+				xlink:href="https://blueprints.launchpad.net/publicancreators"
+				>https://blueprints.launchpad.net/publicancreators</link></para>
+		</listitem>
+		<listitem>
+			<para>Ask a question: <link xlink:href="https://answers.launchpad.net/publicancreators"
+				>https://answers.launchpad.net/publicancreators</link></para>
+		</listitem>
+		<listitem>
+			<para>Improve the Docs: <link
+				xlink:href="ttps://git.launchpad.net/~sascha-manns-h/publicancreators/+git/docbook"
+				>ttps://git.launchpad.net/~sascha-manns-h/publicancreators/+git/docbook</link></para>
+		</listitem>
+	</itemizedlist>
+	<para>The APIDoc can be found here: <link
+			xlink:href="http://www.rubydoc.info/gems/publican_creators/"
+			>http://www.rubydoc.info/gems/publican_creators/</link></para>
+</section>

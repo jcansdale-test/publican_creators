@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter version="5.0" xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:svg="http://www.w3.org/2000/svg" xmlns:mml="http://www.w3.org/1998/Math/MathML"
+    xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" xml:id="sec.feedback">
+    <title>Add a revision</title>
+    <para>PublicanCreators also ships a graphical revision adder. Just click <guimenuitem>PublicanCreatorsRevision</guimenuitem> from your <guimenu>Program Launcher</guimenu>.</para>
+    <para>Now you see a graphical interface (the look and feel depends on your chosen theme):</para>
+    <para><mediaobject>
+        <imageobject role="fo">
+            <imagedata fileref="RevisionCreator.png" width="50%" align="center"/>
+        </imageobject>
+        <imageobject role="html">
+            <imagedata fileref="RevisionCreator.png" width="50%" align="center"/>
+        </imageobject>
+    </mediaobject></para>
+    <para>There you have three important tweaks:</para>
+    <itemizedlist>
+        <listitem>
+            <para><emphasis role="bold">Projectdir</emphasis>: Use that to move to your <emphasis
+                    role="italic">target directory</emphasis> (That directory where your projects
+                publican.cfg is)</para>
+        </listitem>
+        <listitem>
+            <para><emphasis role="bold">Commits</emphasis>: There you can place one to five
+                    <emphasis role="italic">revision texts</emphasis>. If you need more than 5
+                regularly so file a bug report. You can use a normal entry with blanks, or you can
+                use underscores instead of blanks (Version: 0.4.2.0). There you can use
+                Umlauts.</para>
+        </listitem>
+        <listitem>
+            <para><emphasis role="bold">Revision number</emphasis>: There you can place your
+                    <emphasis role="italic">revision number</emphasis>.</para>
+        </listitem>
+    </itemizedlist>
+    <important>
+        <para>From Version 0.4.4.0 PublicanCreators ships a new feature. The entered Revision number
+            will be split internal. If you enter a number like “0.4.1-0” the program splits it into
+            a revision number 0.4.1 and an edition number 0. So the product version tag in
+            Article_Info.xml or Book_Info.xml will be replaced with the revision number, and the
+            edition field will become the edition value.</para>
+    </important>
+</chapter>
