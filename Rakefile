@@ -62,7 +62,6 @@ Hoe.spec 'publican_creators' do
   dependency 'xdg', '~> 2.2'
 
   extra_dev_deps << ['coveralls', '~> 0.8']
-  extra_dev_deps << ['hoe-git', '~> 1.6']
   extra_dev_deps << ['hoe-rubygems', '~> 1.0']
   extra_dev_deps << ['hoe-manns', '~> 2.1']
   extra_dev_deps << ['hoe-reek', '~> 1.2']

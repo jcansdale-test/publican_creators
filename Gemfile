@@ -11,7 +11,6 @@ gem "notifier", "~>0.5"
 gem "xdg", "~>2.2"
 
 gem "coveralls", "~>0.8", :group => [:development, :test]
-gem "hoe-git", "~>1.6", :group => [:development, :test]
 gem "hoe-rubygems", "~>1.0", :group => [:development, :test]
 gem "hoe-manns", "~>2.1", :group => [:development, :test]
 gem "hoe-reek", "~>1.2", :group => [:development, :test]
