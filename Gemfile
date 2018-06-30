@@ -17,11 +17,11 @@ gem "hoe-manns", "~>2.1", :group => [:development, :test]
 gem "hoe-reek", "~>1.2", :group => [:development, :test]
 gem "hoe-rubocop", "~>1.0", :group => [:development, :test]
 gem "hoe-version", "~>1.2", :group => [:development, :test]
-gem "hoe", "~>3.16", :group => [:development, :test]
+gem "hoe", "~>3.17", :group => [:development, :test]
 gem "rake", "~>12.3", :group => [:development, :test]
 gem "rdoc", "~>6.0", :group => [:development, :test]
 gem "bundler", "~>1.16", :group => [:development, :test]
 gem "rspec", "~>3.7", :group => [:development, :test]
-gem "rubocop", "~>0.55", :group => [:development, :test]
+gem "rubocop", "~>0.57", :group => [:development, :test]
 
 # vim: syntax=ruby

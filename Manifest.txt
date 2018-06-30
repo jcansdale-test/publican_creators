@@ -8,7 +8,6 @@ CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 MAINTENANCE.md
 Rakefile
-NEWS
 bin/publican_creators.rb
 bin/revision_creator.rb
 config.reek

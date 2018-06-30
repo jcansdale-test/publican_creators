@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
+# Copyright (C) 2013-2018 Sascha Manns <Sascha.Manns@outlook.de>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,16 +30,16 @@ require 'xdg'
 # @return [String] true or false
 class PublicanCreators
   # Versionizing
-  VERSION = '1.2.1'.freeze
+  VERSION = '1.2.2'.freeze
 
   puts 'publican_creators'.color(:yellow)
   puts "Version: #{VERSION}".color(:yellow)
   puts
-  puts 'Copyright (C) 2015-2017 Sascha Manns <Sascha.Manns@mailbox.org>'.color(:yellow)
+  puts 'Copyright (C) 2015-2018 Sascha Manns <Sascha.Manns@outlook.de>'.color(:yellow)
   puts 'Description: This script creates a article or book set with'.color(:yellow)
   puts 'Publican. Then it modifies it for your needs.'.color(:yellow)
   puts 'License: GPL-3'.color(:yellow)
-  puts 'Bugs: Please file bugs on https://bugs.launchpad.net/publicancreators'.color(:yellow)
+  puts 'Bugs: Please file bugs on https://github.com/saigkill/publican_creators/issues'.color(:yellow)
 
   puts 'Reading the config file in publicancreators.cfg'.color(:yellow)
   # @note Run config method who reads in the config file and puts the variables in an array

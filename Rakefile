@@ -46,7 +46,7 @@ Hoe.plugin :travis
 Hoe.plugin :version
 
 Hoe.spec 'publican_creators' do
-  developer('Sascha Manns', 'Sascha.Manns@mailbox.org')
+  developer('Sascha Manns', 'Sascha.Manns@outlook.de')
   license 'GPL-3.0' # this should match the license in the README
   require_ruby_version '>= 2.3.0'
 
@@ -68,12 +68,12 @@ Hoe.spec 'publican_creators' do
   extra_dev_deps << ['hoe-reek', '~> 1.2']
   extra_dev_deps << ['hoe-rubocop', '~> 1.0']
   extra_dev_deps << ['hoe-version', '~> 1.2']
-  extra_dev_deps << ['hoe', '~> 3.16']
+  extra_dev_deps << ['hoe', '~> 3.17']
   extra_dev_deps << ['rake', '~> 12.3']
   extra_dev_deps << ['rdoc', '~> 6.0']
   extra_dev_deps << ['bundler', '~> 1.16']
   extra_dev_deps << ['rspec', '~> 3.7']
-  extra_dev_deps << ['rubocop', '~> 0.55']
+  extra_dev_deps << ['rubocop', '~> 0.57']
 end
 
 ###################################### SETUP ZONE #####################################################################

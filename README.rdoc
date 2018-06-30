@@ -1,12 +1,12 @@
 = publican_creators
 
 code  :: https://github.com/saigkill/publican_creators
-docs :: https://saigkill.tuxfamily.org/documentation/publican_creators
+docs :: http://docs.saigkill.tuxfamily.org/publican_creators
 apidoc :: http://rubydoc.info/gems/publican_creators
 bugs & feature requests  :: https://github.com/saigkill/publican_creators/issues
-questions :: https://groups.google.com/forum/#!forum/publican_creators
+mailing list :: https://groups.google.com/forum/#!forum/publican_creators
 openhub statistics :: https://www.openhub.net/p/publicancreators
-authors blog :: https://saigkill.tuxfamily.org
+authors blog :: https://saigkills-backtrace.de
 min. rubyver :: 2.3.0
 
 last public version  :: {<img src="https://badge.fury.io/rb/publican_creators.png" alt="Build Status" />}[http://rubygems.org/gems/publican_creators]
@@ -18,7 +18,6 @@ test coverage :: {<img src="https://coveralls.io/repos/github/saigkill/publican_
 code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/publican_creators/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/publican_creators/]
 code quality :: {<img src="https://codeclimate.com/github/saigkill/PublicanCreators/badges/gpa.svg" alt="Code Quality" />}[https://codeclimate.com/github/saigkill/PublicanCreators]
 security :: {<img src="https://hakiri.io/github/saigkill/publican_creators/master.svg" alt="security" />}[https://hakiri.io/github/saigkill/publican_creators/master]
-dependency check :: {<img src="https://gemnasium.com/saigkill/publican_creators.svg" alt="Dependency Status" />}[https://gemnasium.com/saigkill/publican_creators]
 documentation quality :: {<img src="http://inch-ci.org/github/saigkill/PublicanCreators.svg?branch=master" alt="Documentation Quality" />}[http://inch-ci.org/github/saigkill/PublicanCreators]
 
 
@@ -32,9 +31,7 @@ will replace the default values with your name, your company, your company_divis
 email address, depending on your chosen environment. Also, you can set your config file that you want to remove
 the Title Logo or the Legal Notice. As a feature, it ships a build script for each project.
 
-The History.rdoc contains a detailed description of what has changed. For most
-users the NEWS file might be a better place to look since it contains
-change summaries between the different versions.
+The History.rdoc contains a detailed description of what has changed.
 
 hoe-reek is released under the GPL3 License, see the file 'License.rdoc'
 for more information.
