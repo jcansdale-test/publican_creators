@@ -21,6 +21,7 @@ require_relative 'publican_creators/change'
 require_relative 'publican_creators/export'
 require_relative 'publican_creators/prepare'
 require_relative 'publican_creators/notifier'
+require_relative 'publican_creators/version'
 require 'fileutils'
 require 'nokogiri'
 require 'rainbow/ext/string'
@@ -29,9 +30,6 @@ require 'xdg'
 # Main Class of PublicanCreators
 # @return [String] true or false
 class PublicanCreators
-  # Versionizing
-  VERSION = '1.2.2'.freeze
-
   puts 'publican_creators'.color(:yellow)
   puts "Version: #{VERSION}".color(:yellow)
   puts
@@ -39,7 +37,7 @@ class PublicanCreators
   puts 'Description: This script creates a article or book set with'.color(:yellow)
   puts 'Publican. Then it modifies it for your needs.'.color(:yellow)
   puts 'License: GPL-3'.color(:yellow)
-  puts 'Bugs: Please file bugs on https://github.com/saigkill/publican_creators/issues'.color(:yellow)
+  puts 'Bugs: Please file bugs on https://dev.azure.com/saigkill/publican_creators/_workitems'.color(:yellow)
 
   puts 'Reading the config file in publicancreators.cfg'.color(:yellow)
   # @note Run config method who reads in the config file and puts the variables in an array
@@ -206,6 +204,6 @@ class PublicanCreators
 
     puts "Now you can find your documentation there: #{targetdir}/#{title}".color(:green)
     Notifier.run
-    puts "Thanks for using: publican_creators #{VERSION}".color(:green)
+    puts "Thanks for using: publican_creators #{PublicanCreators::Version::STRING}".color(:green)
   end
 end
