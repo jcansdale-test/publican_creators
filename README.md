@@ -3,16 +3,15 @@
 ## DESCRIPTION:
 
 publican_creators are a small tool for daily DocBook writers who are using the Redhat publican tool
-https://fedorahosted.org/publican/. publican_creators asks after launching which title, type and environment should be
-used. Then it starts publican with that settings and works then with the produced files.
-It will work on the Article_Info.xml, Book_Info.xml, TITLE.ent, Author_Group.xml and Revision_History.xml and
-will replace the default values with your name, your company, your company_divison and your private or your business
-email address, depending on your chosen environment. Also, you can set your config file that you want to remove
-the Title Logo or the Legal Notice. As a feature, it ships a build script for each project.
+https://fedorahosted.org/publican/. 
+
+publican_creators provides a simple gui for creating new DocBook stuff. It supports different environments, so you can predefine currently
+three environments (like work, home, home2) and work with them. You also can build to different output targets through
+the shipped Buildscript.
 
 The CHANGELOG.md contains a detailed description of what has changed.
 
-hoe-reek is released under the GPL3 License, see the file 'License.rdoc' for more information.
+hoe-reek is released under the GPL3 License, see the file 'LICENSE.md' for more information.
 
 The official website is:
 
