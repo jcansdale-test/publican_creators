@@ -1,43 +1,64 @@
-# Ruby
-# Package your Ruby application.
-# Add steps that install rails, analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
+variables:
+- group: Standard
 
-pool:
-  vmImage: 'Ubuntu 16.04'
+jobs:
 
-steps:
-- task: UseRubyVersion@0
-  inputs:
-    versionSpec: '>= 2.5'
+- job: Linux
 
-- script: |
-    gem install bundler
-    bundle install --retry=3 --jobs=4
-  displayName: 'bundle install'
+  pool:
+    vmImage: 'ubuntu 16.04'
 
-- script: |
-    sudo apt-get install software-properties-common -y
-    sudo apt-get install publican -y
-    sudo add-apt-repository ppa:sascha-manns-h/publican -y
-    sudo apt-get update
-    sudo apt-get install --only-upgrade publican -y
-    sudo apt-get install publican-xcom publican-manns -y
-  displayName: 'Install dependencies'
+  steps:
+  - task: UseRubyVersion@0
+    inputs:
+      versionSpec: '>= 2.5'
 
-- script: rake setup
-  displayName: 'rake setup'
+  - script: |
+      gem install bundler
+      bundle install --retry=3 --jobs=4
+    displayName: 'bundle install'
 
-- script: bundle exec rake
-  displayName: 'bundle exec rake'
+  - script: |
+      sudo apt-get install software-properties-common -y
+      sudo apt-get install publican -y
+      sudo add-apt-repository ppa:sascha-manns-h/publican -y
+      sudo apt-get update
+      sudo apt-get install --only-upgrade publican -y
+      sudo apt-get install publican-xcom publican-manns -y
+    displayName: 'Install dependencies'
 
-- script: rake setup
-  displayName: 'rake spec'
+  - script: rake setup
+    displayName: 'rake setup'
 
-- task: PublishTestResults@2
+  - script: bundle exec rake
+    displayName: 'bundle exec rake'
 
-#- task: PublishCodeCoverageResults@1
-#  inputs:
-#    codeCoverageTool: Cobertura
-#    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
-#   reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+  - script: rake spec
+    displayName: 'rake spec'
+
+  - script: gem build publican_creators.gemspec
+    displayName: 'Build gem'
+
+  - task: PublishTestResults@2  
+
+- job: Windows
+
+  pool:
+    vmImage: 'vs2017-win2016'
+
+  steps:
+  - task: UseRubyVersion@0
+    inputs:
+      versionSpec: '>= 2.5'
+
+  - script: |
+      gem install bundler
+      bundle install --retry=3 --jobs=4
+    displayName: 'bundle install'
+
+  - script: gem build publican_creators.gemspec
+    displayName: 'Build gem'
+
+  - task: gitmirror@0
+    inputs:
+      GitRepoUrl: 'https://$(GithubPAT)@github.com/saigkill/publican_creators'

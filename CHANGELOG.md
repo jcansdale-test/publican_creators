@@ -1,3 +1,11 @@
+### 1.2.3 / 2019-05-20
+
+  * Updated dependencies
+    * Bump rspec from 3.7.0 to 3.8.0
+    * Bump rdoc from 6.0.4 to 6.1.1
+    * [Security] Bump nokogiri from 1.8.3 to 1.10.3
+    * Bump rubocop from 0.57.2 to 0.68.1
+
 ### 1.2.2 / 2018-06-30
 
 #### 1 patch enhancement
