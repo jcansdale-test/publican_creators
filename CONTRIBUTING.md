@@ -1,10 +1,10 @@
 # IDEAS:
 
-* Add ideas on: https://dev.azure.com/saigkill/publican_creators/_workitems
+* Add ideas on: https://github.com/saigkill/publican_creators/issues
 
 ## COOL HACKS:
 
-* Open a bugreport on https://dev.azure.com/saigkill/publican_creators/_workitems .
+* Open a bugreport on https://github.com/saigkill/publican_creators/issues .
 * Please use the -u flag when generating the patch as it makes the patch
   more readable.
 * Write a good explanation of what the patch does.
