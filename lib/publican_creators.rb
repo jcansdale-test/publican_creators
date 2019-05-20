@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Copyright (C) 2013-2018 Sascha Manns <Sascha.Manns@outlook.de>
+# Copyright (C) 2013-2019 Sascha Manns <Sascha.Manns@outlook.de>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class PublicanCreators
   puts 'Description: This script creates a article or book set with'.color(:yellow)
   puts 'Publican. Then it modifies it for your needs.'.color(:yellow)
   puts 'License: GPL-3'.color(:yellow)
-  puts 'Bugs: Please file bugs on https://dev.azure.com/saigkill/publican_creators/_workitems'.color(:yellow)
+  puts 'Bugs: Please file bugs on https://github.com/saigkill/publican_creators/issues'.color(:yellow)
 
   puts 'Reading the config file in publicancreators.cfg'.color(:yellow)
   # @note Run config method who reads in the config file and puts the variables in an array

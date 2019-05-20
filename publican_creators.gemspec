@@ -21,31 +21,31 @@ Gem::Specification.new do |s|
   s.bindir = 'bin'
   s.executables = ['publican_creators.rb', 'revision_creator.rb']
   s.extra_rdoc_files = ['CHANGELOG.md', 'LICENSE.md', 'MAINTENANCE.md', 'README.md']
-  s.homepage = 'https://dev.azure.com/saigkill/publican_creators'
+  s.homepage = 'https://github.com/saigkill/publican_creators'
   s.licenses = ['GPL-3.0']
   s.summary = 'Small tool for daily DocBook writers'
 
   s.metadata = {
-      'homepage_uri' => 'https://dev.azure.com/saigkill/publican_creators',
-      'changelog_uri' => 'https://dev.azure.com/saigkill/_git/publican_creators?path=%2FCHANGELOG.md&version=GBmaster',
-      'source_code_uri' => 'https://dev.azure.com/saigkill/_git/publican_creators',
-      'documentation_uri' => 'https://saigkillsbacktrace.azurewebsites.net/doc-pc',
-      'bug_tracker_uri' => 'https://dev.azure.com/saigkill/publican_creators/_workitems'
+      'homepage_uri' => 'https://github.com/saigkill/publican_creators',
+      'changelog_uri' => 'https://github.com/saigkill/publican_creators/blob/master/CHANGELOG.md',
+      'source_code_uri' => 'https://github.com/saigkill/publican_creators',
+      'documentation_uri' => 'https://saschamanns.de/docs/publican_creators/index.html',
+      'bug_tracker_uri' => 'https://github.com/saigkill/publican_creators/issues'
   }
 
-  s.add_runtime_dependency('rdoc', '~> 6.0')
+  s.add_runtime_dependency('rdoc', '~> 6.1')
   s.add_runtime_dependency('rake', '~> 12.3')
   s.add_runtime_dependency('rainbow', '~> 3.0')
   s.add_runtime_dependency('bundler', '~> 1.16')
   s.add_runtime_dependency('parseconfig', '~> 1.0')
-  s.add_runtime_dependency('rspec', '~> 3.7')
+  s.add_runtime_dependency('rspec', '~> 3.8')
   s.add_runtime_dependency('xdg', '~> 2.2')
-  s.add_runtime_dependency('nokogiri', '~> 1.8')
+  s.add_runtime_dependency('nokogiri', '~> 1.10')
   s.add_runtime_dependency('combine_pdf', '~> 1.0')
   s.add_runtime_dependency('pony', '~> 1')
   s.add_runtime_dependency('notifier', '~> 0.5')
   s.add_runtime_dependency('coveralls', '~> 0.8')
-  s.add_runtime_dependency('rubocop', '~> 0.57')
+  s.add_runtime_dependency('rubocop', '~> 0.68')
 end
 
 # rubocop:enable Metrics/BlockLength

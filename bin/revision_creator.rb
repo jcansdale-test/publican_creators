@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Copyright (C) 2013-2018 Sascha Manns <Sascha.Manns@outlook.de>
+# Copyright (C) 2013-2019 Sascha Manns <Sascha.Manns@outlook.de>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
