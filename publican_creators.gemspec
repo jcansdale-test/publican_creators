@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('rdoc', '~> 6.1')
   s.add_runtime_dependency('rake', '~> 12.3')
   s.add_runtime_dependency('rainbow', '~> 3.0')
-  s.add_runtime_dependency('bundler', '~> 1.16')
+  s.add_runtime_dependency('bundler', '~> 2.0.1')
   s.add_runtime_dependency('parseconfig', '~> 1.0')
   s.add_runtime_dependency('rspec', '~> 3.8')
   s.add_runtime_dependency('xdg', '~> 2.2')
