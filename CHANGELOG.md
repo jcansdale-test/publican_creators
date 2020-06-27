@@ -1,3 +1,7 @@
+### 1.2.4 / 2020-06-27
+
+  * updated dependencies
+
 ### 1.2.3 / 2019-05-20
 
   * Updated dependencies

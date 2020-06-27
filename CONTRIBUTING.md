@@ -17,8 +17,5 @@
 ### `master` BRANCH:
 The master branch is the last stable version.
 
-### `develop` BRANCH:
-The develop branch is the current edge of development.
-
 ### PULL REQUESTS:
-Please base all Pullrequests off the `develop` branch. Merges to `X.X` only occur through the `develop` branch.
+Please base all Pullrequests off the `master` branch.

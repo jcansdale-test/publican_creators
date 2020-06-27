@@ -20,7 +20,7 @@ The official website is:
 |What|Where|
 |-----|-------------------------------------------------------------------------------------|
 |code  | https://github.com/saigkill/publican_creators |
-|docs | https://saschamanns.de/docs/publican_creators/index.html |
+|docs | https://saigkill.github.io/publican_creators/ |
 |apidoc | http://rubydoc.info/gems/publican_creators |
 |bugs & feature requests  | https://github.com/saigkill/publican_creators/issues |
 |mailing list | https://groups.google.com/forum/#!forum/publican_creators |
@@ -34,7 +34,7 @@ The official website is:
 |downloads latest | [![Downloads latest](https://img.shields.io/gem/dtv/publican_creators.svg)](http://rubygems.org/gems/publican_creators)  |
 |downloads all | [![Downloads all](https://img.shields.io/gem/dt/publican_creators.svg)](http://rubygems.org/gems/publican_creators) |
 |code quality | [![Maintainability](https://api.codeclimate.com/v1/badges/e6e62c135374e4c9e495/maintainability)](https://codeclimate.com/github/saigkill/publican_creators/maintainability) |
-|continuous integration | [![Build Status](https://dev.azure.com/saigkill/publican_creators/_apis/build/status/publican_creators-CI?branchName=master)](https://dev.azure.com/saigkill/publican_creators/_build/latest?definitionId=11&branchName=master) |
+|continuous integration | ![CI](https://github.com/saigkill/publican_creators/workflows/CI/badge.svg?branch=master&event=push) |
 |dependencies|[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=saigkill/publican_creators)](https://dependabot.com) |
 |security | [![Security](https://hakiri.io/github/saigkill/publican_creators/master.svg)](https://hakiri.io/github/saigkill/publican_creators/master/shield) |
 |vulnerabilities|[![Known Vulnerabilities](https://snyk.io/test/github/saigkill/publican_creators/badge.svg?targetFile=Gemfile.lock)](https://snyk.io/test/github/saigkill/publican_creators?targetFile=Gemfile.lock) | 

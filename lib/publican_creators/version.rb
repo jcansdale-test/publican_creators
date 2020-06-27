@@ -18,7 +18,7 @@ module PublicanCreators
   # This module holds the latex_curriculum_vitae version information.
 
   module Version
-    STRING = '1.2.3'.freeze
+    STRING = '1.2.4'.freeze
     MSG = '%<version>s (using Parser %<parser_version>s, running on ' \
     '%<ruby_engine>s %<ruby_version>s %<ruby_platform>s)'.freeze
 

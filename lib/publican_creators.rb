@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# Copyright (C) 2013-2019 Sascha Manns <Sascha.Manns@outlook.de>
+# Copyright (C) 2013-2020 Sascha Manns <Sascha.Manns@outlook.de>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ class PublicanCreators
   puts 'publican_creators'.color(:yellow)
   puts "Version: #{VERSION}".color(:yellow)
   puts
-  puts 'Copyright (C) 2015-2018 Sascha Manns <Sascha.Manns@outlook.de>'.color(:yellow)
+  puts 'Copyright (C) 2015-2020 Sascha Manns <Sascha.Manns@outlook.de>'.color(:yellow)
   puts 'Description: This script creates a article or book set with'.color(:yellow)
   puts 'Publican. Then it modifies it for your needs.'.color(:yellow)
   puts 'License: GPL-3'.color(:yellow)
