@@ -67,7 +67,8 @@ entering Revision textes with blanks.:LBL" --button="Go!"`
   # @return [String] language
   def self.config_revision
     include ParseConfig
-    sys_xdg = XDG['CONFIG_HOME']
+    xdg = XDG::Environment.new
+    sys_xdg = xdg.config_home
     config = ParseConfig.new("#{sys_xdg}/publican_creators/publicancreators.cfg")
     language = config['language']
     puts language

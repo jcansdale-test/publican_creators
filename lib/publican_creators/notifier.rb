@@ -20,7 +20,8 @@ require 'xdg'
 # Module for notify the user
 module Notifier
   def self.run
-    data_xdg = XDG['DATA_HOME']
+    xdg = XDG::Environment.new
+    data_xdg = xdg.data_home
     install_path = "#{data_xdg}/icons/"
     img = "#{install_path}/publican.png"
     Notifier.notify(
