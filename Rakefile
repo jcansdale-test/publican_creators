@@ -35,17 +35,12 @@
 require 'fileutils'
 require 'xdg'
 desc 'Install config'
-task :install_config do
+task :install_setup do
   xdg = XDG::Environment.new
   sys_xdg = xdg.config_home
   from = 'etc/publicancreators.cfg'
   sysconf_dir = "#{sys_xdg}/publican_creators"
   FileUtils.mkdir(sysconf_dir) unless File.exist?(sysconf_dir)
   FileUtils.cp(from, sysconf_dir)
-end
-
-desc 'Run setup'
-task setup: %i[install_config] do
-  puts 'Setup finished'
 end
 # vim: syntax=ruby
