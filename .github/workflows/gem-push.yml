@@ -28,7 +28,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install --only-upgrade publican -y
         sudo apt-get install publican-xcom publican-manns -y
-        rake setup bundle exec rake
+        rake setup
         rake spec
 
     - name: Publish to GPR
