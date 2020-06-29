@@ -34,21 +34,6 @@
 
 require 'fileutils'
 require 'xdg'
-desc 'Install Icons'
-task :install_icons do
-  xdg = XDG::Environment.new
-  data_xdg = xdg.data_home
-  install_path = "#{data_xdg}/icons/"
-  FileUtils.mkdir(install_path) unless File.exist?(install_path)
-  from_publican = 'data/publican_creators/publican.png'
-  from_publican_revision = 'data/publican_creators/publican-revision.png'
-  FileUtils.cp(from_publican, install_path)
-  FileUtils.cp(from_publican_revision, install_path)
-  puts 'Installed icons'
-end
-
-require 'fileutils'
-require 'xdg'
 desc 'Install config'
 task :install_config do
   xdg = XDG::Environment.new
@@ -60,7 +45,7 @@ task :install_config do
 end
 
 desc 'Run setup'
-task setup: %i[install_icons install_config ] do
+task setup: %i[install_config] do
   puts 'Setup finished'
 end
 # vim: syntax=ruby
