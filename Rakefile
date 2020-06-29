@@ -35,7 +35,7 @@
 require 'fileutils'
 require 'xdg'
 desc 'Install config'
-task :install_setup do
+task :setup do
   xdg = XDG::Environment.new
   sys_xdg = xdg.config_home
   from = 'etc/publicancreators.cfg'
