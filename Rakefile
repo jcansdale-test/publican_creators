@@ -59,52 +59,8 @@ task :install_config do
   FileUtils.cp(from, sysconf_dir)
 end
 
-require 'fileutils'
-require 'xdg'
-desc 'Create Desktop files'
-task :create_desktop_cre do
-  xdg = XDG::Environment.new
-  sys_xdg = xdg.config_home
-  data_xdg = xdg.data_home
-  publicancre = "#{data_xdg}/applications/publicancreators.desktop"
-  publicancreico = "#{data_xdg}/icons/publican.png"
-  FileUtils.rm(publicancre) if File.exist?(publicancre)
-  puts 'Creating Desktop file for publican_creators'.color(:yellow)
-  FileUtils.touch publicancre.to_s
-  File.write publicancre.to_s, <<EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=publican_creators
-Exec=publican_creators.rb
-Icon=#{publicancreico}
-EOF
-end
-
-require 'xdg'
-require 'fileutils'
-desc 'Create publicancreators-rev.desktop'
-task :create_desktop_rev do
-  xdg = XDG::Environment.new
-  sys_xdg = xdg.config_home
-  data_xdg = xdg.data_home
-  publicanrev = "#{data_xdg}/applications/publicancreators-rev.desktop"
-  publicanrevico = "#{data_xdg}/icons/publican-revision.png"
-  FileUtils.rm(publicanrev) if File.exist?(publicanrev)
-  puts 'Creating Desktop file for Revision updater'.color(:yellow)
-  FileUtils.touch publicanrev.to_s
-  File.write publicanrev.to_s, <<EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=revision_creator
-Exec=revision_creator.rb
-Icon=#{publicanrevico}
-EOF
-end
-
 desc 'Run setup'
-task setup: %i[install_icons install_config create_desktop_cre create_desktop_rev] do
+task setup: %i[install_icons install_config ] do
   puts 'Setup finished'
 end
 # vim: syntax=ruby
