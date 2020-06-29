@@ -36,7 +36,8 @@ require 'fileutils'
 require 'xdg'
 desc 'Install Icons'
 task :install_icons do
-  data_xdg = XDG['DATA_HOME']
+  xdg = XDG::Environment.new
+  data_xdg = xdg.data_home
   install_path = "#{data_xdg}/icons/"
   FileUtils.mkdir(install_path) unless File.exist?(install_path)
   from_publican = 'data/publican_creators/publican.png'
@@ -50,7 +51,8 @@ require 'fileutils'
 require 'xdg'
 desc 'Install config'
 task :install_config do
-  sys_xdg = XDG['CONFIG_HOME']
+  xdg = XDG::Environment.new
+  sys_xdg = xdg.config_home
   from = 'etc/publicancreators.cfg'
   sysconf_dir = "#{sys_xdg}/publican_creators"
   FileUtils.mkdir(sysconf_dir) unless File.exist?(sysconf_dir)
@@ -61,8 +63,9 @@ require 'fileutils'
 require 'xdg'
 desc 'Create Desktop files'
 task :create_desktop_cre do
-  sys_xdg = XDG['CONFIG_HOME']
-  data_xdg = XDG['DATA_HOME']
+  xdg = XDG::Environment.new
+  sys_xdg = xdg.config_home
+  data_xdg = xdg.data_home
   publicancre = "#{data_xdg}/applications/publicancreators.desktop"
   publicancreico = "#{data_xdg}/icons/publican.png"
   FileUtils.rm(publicancre) if File.exist?(publicancre)
@@ -82,8 +85,9 @@ require 'xdg'
 require 'fileutils'
 desc 'Create publicancreators-rev.desktop'
 task :create_desktop_rev do
-  sys_xdg = XDG['CONFIG_HOME']
-  data_xdg = XDG['DATA_HOME']
+  xdg = XDG::Environment.new
+  sys_xdg = xdg.config_home
+  data_xdg = xdg.data_home
   publicanrev = "#{data_xdg}/applications/publicancreators-rev.desktop"
   publicanrevico = "#{data_xdg}/icons/publican-revision.png"
   FileUtils.rm(publicanrev) if File.exist?(publicanrev)

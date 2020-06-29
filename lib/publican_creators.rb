@@ -43,7 +43,8 @@ class PublicanCreators
   # @note Run config method who reads in the config file and puts the variables in an array
   # TODO: Try to fix this in future (conf_ver, use_brand)
   # rubocop:disable Lint/UselessAssignment
-  sys_xdg = XDG['CONFIG_HOME']
+  xdg = XDG::Environment.new
+  sys_xdg = xdg.config_home
   config = ParseConfig.new("#{sys_xdg}/publican_creators/publicancreators.cfg")
   conf_ver = config['conf_ver']
   name = config['name']
