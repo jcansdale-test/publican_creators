@@ -18,19 +18,6 @@ jobs:
       with:
         version: 2.7.x
 
-    - name: Set up a Testingservice
-      run: |
-        gem install bundler
-        bundle install --retry=3 --retry=4
-        sudo apt-get install software-properties-common -y
-        sudo apt-get install publican -y
-        sudo add-apt-repository ppa:sascha-manns-h/publican -y
-        sudo apt-get update
-        sudo apt-get install --only-upgrade publican -y
-        sudo apt-get install publican-xcom publican-manns -y
-        rake setup
-        rake spec
-
     - name: Publish to GPR
       run: |
         mkdir -p $HOME/.gem
@@ -42,14 +29,3 @@ jobs:
       env:
         GEM_HOST_API_KEY: ${{secrets.GITHUB_TOKEN}}
         OWNER: ${{github.repository_owner}}
-
-    - name: Publish to RubyGems
-      run: |
-        mkdir -p $HOME/.gem
-        touch $HOME/.gem/credentials
-        chmod 0600 $HOME/.gem/credentials
-        printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
-        gem build *.gemspec
-        gem push *.gem
-      env:
-        GEM_HOST_API_KEY: ${{secrets.RUBYGEMS_AUTH_TOKEN}}
